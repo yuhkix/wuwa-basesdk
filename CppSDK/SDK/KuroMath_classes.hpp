@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroMath_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroMath_structs.hpp"
 
 
 namespace SDK
@@ -37,15 +37,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroBitwiseLibrary">();
+		STATIC_CLASS_IMPL("KuroBitwiseLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroBitwiseLibrary")
 	}
 	static class UKuroBitwiseLibrary* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroBitwiseLibrary>();
 	}
 };
-static_assert(alignof(UKuroBitwiseLibrary) == 0x000008, "Wrong alignment on UKuroBitwiseLibrary");
-static_assert(sizeof(UKuroBitwiseLibrary) == 0x000030, "Wrong size on UKuroBitwiseLibrary");
+DUMPER7_ASSERTS_UKuroBitwiseLibrary;
 
 // Class KuroMath.KuroEasingLibrary
 // 0x0000 (0x0030 - 0x0030)
@@ -87,15 +90,100 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroEasingLibrary">();
+		STATIC_CLASS_IMPL("KuroEasingLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroEasingLibrary")
 	}
 	static class UKuroEasingLibrary* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroEasingLibrary>();
 	}
 };
-static_assert(alignof(UKuroEasingLibrary) == 0x000008, "Wrong alignment on UKuroEasingLibrary");
-static_assert(sizeof(UKuroEasingLibrary) == 0x000030, "Wrong size on UKuroEasingLibrary");
+DUMPER7_ASSERTS_UKuroEasingLibrary;
+
+// Class KuroMath.KuroSimplePolygonLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroSimplePolygonLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static struct FKuroGeometrySimplePolygon Conv_ArrayToKuroGeometrySimplePolygon(const TArray<struct FVectorDouble>& PathVertices);
+	static TArray<struct FVectorDouble> Conv_KuroGeometrySimplePolygonToArray(const struct FKuroGeometrySimplePolygon& Polygon);
+	static void SampleSplineToPolygon(const class USplineComponent* Spline, struct FKuroGeometrySimplePolygon* Polygon, const struct FKuroSplineSamplingOptions& SamplingOptions);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroSimplePolygonLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroSimplePolygonLibrary")
+	}
+	static class UKuroSimplePolygonLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroSimplePolygonLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroSimplePolygonLibrary;
+
+// Class KuroMath.KuroPolygonListLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroPolygonListLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static int32 AddPolygonToList(struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometrySimplePolygon& OuterPolygon, const TArray<struct FKuroGeometrySimplePolygon>& HolePolygons, bool bFixHoleOrientations);
+	static void AppendPolygonList(struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometryGeneralPolygonList& PolygonsToAppend);
+	static struct FKuroGeometryGeneralPolygonList CreatePolygonListFromSimplePolygons(const TArray<struct FKuroGeometrySimplePolygon>& OuterPolygons);
+	static struct FKuroGeometryGeneralPolygonList CreatePolygonListFromSinglePolygon(const struct FKuroGeometrySimplePolygon& OuterPolygon, const TArray<struct FKuroGeometrySimplePolygon>& HolePolygons, bool bFixHoleOrientations);
+	static int32 GetPolygonCount(const struct FKuroGeometryGeneralPolygonList& PolygonList);
+	static struct FKuroGeometrySimplePolygon GetSimplePolygon(const struct FKuroGeometryGeneralPolygonList& PolygonList, bool* bValidIndices, int32 PolygonIndex, int32 HoleIndex);
+	static struct FKuroGeometryGeneralPolygonList PolygonsDifference(const struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometryGeneralPolygonList& PolygonsToSubtract);
+	static struct FKuroGeometryGeneralPolygonList PolygonsExclusiveOr(const struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometryGeneralPolygonList& PolygonsToExclusiveOr);
+	static struct FKuroGeometryGeneralPolygonList PolygonsIntersection(const struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometryGeneralPolygonList& PolygonsToIntersect);
+	static struct FKuroGeometryGeneralPolygonList PolygonsOpenPathsDifference(const struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometryGeneralPolygonList& PolygonsToSubtract, double StrokeWidth, EJoinType JoinType, EEndType EndType);
+	static struct FKuroGeometryGeneralPolygonList PolygonsUnion(const struct FKuroGeometryGeneralPolygonList& PolygonList, bool bCopyInputOnFailure);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroPolygonListLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPolygonListLibrary")
+	}
+	static class UKuroPolygonListLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroPolygonListLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroPolygonListLibrary;
+
+// Class KuroMath.KuroPolygonLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroPolygonLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static TArray<struct FVector2D> ClipPolygonByWeilerAtherton(TArray<struct FVector2D>* Polygon, TArray<struct FVector2D>* Window);
+	static void EliminateSplineGaps(const TArray<class USplineComponent*>& Splines, const float Tolerance);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroPolygonLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPolygonLibrary")
+	}
+	static class UKuroPolygonLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroPolygonLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroPolygonLibrary;
 
 }
 

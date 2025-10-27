@@ -43,41 +43,29 @@ public:
 	class UObject*                                DebugWin;                                          // 0x0118(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void 强化或还原角色(bool 是否需要强化);
-	void TouchDebug();
-	void PrintTimeScale();
-	void UpdateFunctionKey();
-	void 作弊指令(const struct FKey& 输入按键_0, bool 按下_0);
-	void ReceiveInitCheatManager();
 	void ExecuteUbergraph_BP_KuroCheatManager(int32 EntryPoint);
+	void ReceiveInitCheatManager();
+	void 作弊指令(const struct FKey& 输入按键_0, bool 按下_0);
+	void UpdateFunctionKey();
+	void PrintTimeScale();
+	void TouchDebug();
+	void 强化或还原角色(bool 是否需要强化);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BP_KuroCheatManager_C">();
+		BP_STATIC_CLASS_IMPL("BP_KuroCheatManager_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BP_KuroCheatManager_C")
 	}
 	static class UBP_KuroCheatManager_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UBP_KuroCheatManager_C>();
 	}
 };
-static_assert(alignof(UBP_KuroCheatManager_C) == 0x000008, "Wrong alignment on UBP_KuroCheatManager_C");
-static_assert(sizeof(UBP_KuroCheatManager_C) == 0x000120, "Wrong size on UBP_KuroCheatManager_C");
-static_assert(offsetof(UBP_KuroCheatManager_C, UberGraphFrame) == 0x000080, "Member 'UBP_KuroCheatManager_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, CharacterController) == 0x000088, "Member 'UBP_KuroCheatManager_C::CharacterController' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, 输入按键) == 0x000090, "Member 'UBP_KuroCheatManager_C::输入按键' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, 按下) == 0x0000B0, "Member 'UBP_KuroCheatManager_C::按下' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, LeftAlt) == 0x0000B1, "Member 'UBP_KuroCheatManager_C::LeftAlt' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, LeftCtrl) == 0x0000B2, "Member 'UBP_KuroCheatManager_C::LeftCtrl' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, 全局TimeDilation倍数) == 0x0000B4, "Member 'UBP_KuroCheatManager_C::全局TimeDilation倍数' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, LastDebugPressTime) == 0x0000B8, "Member 'UBP_KuroCheatManager_C::LastDebugPressTime' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, DebugSpeed) == 0x0000BC, "Member 'UBP_KuroCheatManager_C::DebugSpeed' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, GhostMode) == 0x0000BD, "Member 'UBP_KuroCheatManager_C::GhostMode' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, 被销毁怪物缓存) == 0x0000C0, "Member 'UBP_KuroCheatManager_C::被销毁怪物缓存' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, TouchDebugSize) == 0x000110, "Member 'UBP_KuroCheatManager_C::TouchDebugSize' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, 角色是否已强化) == 0x000114, "Member 'UBP_KuroCheatManager_C::角色是否已强化' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, RightCtrl) == 0x000115, "Member 'UBP_KuroCheatManager_C::RightCtrl' has a wrong offset!");
-static_assert(offsetof(UBP_KuroCheatManager_C, DebugWin) == 0x000118, "Member 'UBP_KuroCheatManager_C::DebugWin' has a wrong offset!");
+DUMPER7_ASSERTS_UBP_KuroCheatManager_C;
 
 }
 

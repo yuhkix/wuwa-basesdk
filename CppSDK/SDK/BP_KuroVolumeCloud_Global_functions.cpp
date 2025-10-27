@@ -17,109 +17,111 @@
 namespace SDK
 {
 
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.CleanMID
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_KuroVolumeCloud_Global_C::CleanMID()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "CleanMID");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.CheckNeed Update
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_KuroVolumeCloud_Global_C::CheckNeed_Update()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "CheckNeed Update");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.Update
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_KuroVolumeCloud_Global_C::Update()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "Update");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.GetLerpGIData
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.ExecuteUbergraph_BP_KuroVolumeCloud_Global
+// (Final, UbergraphFunction)
 // Parameters:
-// float                                   Time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSD_KuroTraceCloudData*          LerpData_0                                             (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroVolumeCloud_Global_C::GetLerpGIData(float Time, struct FSD_KuroTraceCloudData* LerpData_0)
+void ABP_KuroVolumeCloud_Global_C::ExecuteUbergraph_BP_KuroVolumeCloud_Global(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "GetLerpGIData");
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "ExecuteUbergraph_BP_KuroVolumeCloud_Global");
 
-	Params::BP_KuroVolumeCloud_Global_C_GetLerpGIData Parms{};
+	Params::BP_KuroVolumeCloud_Global_C_ExecuteUbergraph_BP_KuroVolumeCloud_Global Parms{};
 
-	Parms.Time = Time;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (LerpData_0 != nullptr)
-		*LerpData_0 = std::move(Parms.LerpData_0);
 }
 
 
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.UpdateCloudLighting
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroVolumeCloud_Global_C::UpdateCloudLighting()
+void ABP_KuroVolumeCloud_Global_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "UpdateCloudLighting");
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "ReceiveEndPlay");
+
+	Params::BP_KuroVolumeCloud_Global_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.UpdateQualitySwitch
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroVolumeCloud_Global_C::UpdateQualitySwitch()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "UpdateQualitySwitch");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.UpdateCloudTransform
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.BeforeSave
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_KuroVolumeCloud_Global_C::UpdateCloudTransform()
+void ABP_KuroVolumeCloud_Global_C::BeforeSave()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "UpdateCloudTransform");
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "BeforeSave");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.BeforeCookForPC
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_KuroVolumeCloud_Global_C::UserConstructionScript()
+void ABP_KuroVolumeCloud_Global_C::BeforeCookForPC()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "BeforeCookForPC");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.BeforeCookForMobile
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroVolumeCloud_Global_C::BeforeCookForMobile()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "BeforeCookForMobile");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_KuroVolumeCloud_Global_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -159,79 +161,111 @@ void ABP_KuroVolumeCloud_Global_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.BeforeCookForMobile
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_KuroVolumeCloud_Global_C::BeforeCookForMobile()
+void ABP_KuroVolumeCloud_Global_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "BeforeCookForMobile");
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.BeforeCookForPC
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.UpdateCloudTransform
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_KuroVolumeCloud_Global_C::BeforeCookForPC()
+void ABP_KuroVolumeCloud_Global_C::UpdateCloudTransform()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "BeforeCookForPC");
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "UpdateCloudTransform");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.BeforeSave
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.UpdateCloudLighting
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_KuroVolumeCloud_Global_C::BeforeSave()
+void ABP_KuroVolumeCloud_Global_C::UpdateCloudLighting()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "BeforeSave");
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "UpdateCloudLighting");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_KuroVolumeCloud_Global_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.ExecuteUbergraph_BP_KuroVolumeCloud_Global
-// (Final, UbergraphFunction)
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.GetLerpGIData
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSD_KuroTraceCloudData*          LerpData_0                                             (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroVolumeCloud_Global_C::ExecuteUbergraph_BP_KuroVolumeCloud_Global(int32 EntryPoint)
+void ABP_KuroVolumeCloud_Global_C::GetLerpGIData(float Time, struct FSD_KuroTraceCloudData* LerpData_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "ExecuteUbergraph_BP_KuroVolumeCloud_Global");
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "GetLerpGIData");
 
-	Params::BP_KuroVolumeCloud_Global_C_ExecuteUbergraph_BP_KuroVolumeCloud_Global Parms{};
+	Params::BP_KuroVolumeCloud_Global_C_GetLerpGIData Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Time = Time;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (LerpData_0 != nullptr)
+		*LerpData_0 = std::move(Parms.LerpData_0);
+}
+
+
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.Update
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroVolumeCloud_Global_C::Update()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "Update");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.CheckNeed Update
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroVolumeCloud_Global_C::CheckNeed_Update()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "CheckNeed Update");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.CleanMID
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroVolumeCloud_Global_C::CleanMID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "CleanMID");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

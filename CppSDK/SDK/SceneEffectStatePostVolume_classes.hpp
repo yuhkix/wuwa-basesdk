@@ -39,19 +39,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"SceneEffectStatePostVolume_C">();
+		BP_STATIC_CLASS_IMPL("SceneEffectStatePostVolume_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SceneEffectStatePostVolume_C")
 	}
 	static class ASceneEffectStatePostVolume_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ASceneEffectStatePostVolume_C>();
 	}
 };
-static_assert(alignof(ASceneEffectStatePostVolume_C) == 0x000008, "Wrong alignment on ASceneEffectStatePostVolume_C");
-static_assert(sizeof(ASceneEffectStatePostVolume_C) == 0x0002C8, "Wrong size on ASceneEffectStatePostVolume_C");
-static_assert(offsetof(ASceneEffectStatePostVolume_C, KuroPostProcess) == 0x0002B0, "Member 'ASceneEffectStatePostVolume_C::KuroPostProcess' has a wrong offset!");
-static_assert(offsetof(ASceneEffectStatePostVolume_C, DefaultSceneRoot) == 0x0002B8, "Member 'ASceneEffectStatePostVolume_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ASceneEffectStatePostVolume_C, Enabled) == 0x0002C0, "Member 'ASceneEffectStatePostVolume_C::Enabled' has a wrong offset!");
-static_assert(offsetof(ASceneEffectStatePostVolume_C, value) == 0x0002C4, "Member 'ASceneEffectStatePostVolume_C::value' has a wrong offset!");
+DUMPER7_ASSERTS_ASceneEffectStatePostVolume_C;
 
 }
 

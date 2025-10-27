@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Niagara_classes.hpp"
 #include "KuroPointCloud_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Niagara_classes.hpp"
 
 
 namespace SDK
@@ -43,34 +43,47 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroPointCloudActor">();
+		STATIC_CLASS_IMPL("KuroPointCloudActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudActor")
 	}
 	static class AKuroPointCloudActor* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<AKuroPointCloudActor>();
 	}
 };
-static_assert(alignof(AKuroPointCloudActor) == 0x000008, "Wrong alignment on AKuroPointCloudActor");
-static_assert(sizeof(AKuroPointCloudActor) == 0x000338, "Wrong size on AKuroPointCloudActor");
-static_assert(offsetof(AKuroPointCloudActor, InstancedStaticMeshComponent) == 0x0002B0, "Member 'AKuroPointCloudActor::InstancedStaticMeshComponent' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, PointCloudAsset) == 0x0002B8, "Member 'AKuroPointCloudActor::PointCloudAsset' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, PointNumToStopDivide) == 0x0002C0, "Member 'AKuroPointCloudActor::PointNumToStopDivide' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, BoxLengthToStopDivide) == 0x0002C4, "Member 'AKuroPointCloudActor::BoxLengthToStopDivide' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, InstanceScale) == 0x0002C8, "Member 'AKuroPointCloudActor::InstanceScale' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, KdTree) == 0x0002D0, "Member 'AKuroPointCloudActor::KdTree' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, CustomData) == 0x000328, "Member 'AKuroPointCloudActor::CustomData' has a wrong offset!");
+DUMPER7_ASSERTS_AKuroPointCloudActor;
 
 // Class KuroPointCloud.KuroPointCloudCache
-// 0x00E0 (0x0110 - 0x0030)
+// 0x0228 (0x0258 - 0x0030)
 class UKuroPointCloudCache final : public UObject
 {
 public:
-	TArray<struct FVector>                        PositionCache;                                     // 0x0030(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FQuat>                          RotationCache;                                     // 0x0040(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FVector>                        ScaleCache;                                        // 0x0050(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<int32>                                 IndexCache;                                        // 0x0060(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TMap<class FName, int32>                      MetaDataInt;                                       // 0x0070(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	TMap<class FName, float>                      MetaDataFloat;                                     // 0x00C0(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FVector>                        PositionCache;                                     // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FQuat>                          RotationCache;                                     // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FVector>                        ScaleCache;                                        // 0x0050(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<float>                                 AgeCache;                                          // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<int32>                                 IndexCache;                                        // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<float>                                 FlatCustomFloatCache;                              // 0x0080(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	int32                                         CustomFloatCacheStride;                            // 0x0090(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_94[0x4];                                       // 0x0094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, int32>                      CustomFloatCacheDataOffsets;                       // 0x0098(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FKuroPointCloudCacheCustomFloat> CustomFloatCache;                                 // 0x00E8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<int32>                                 CurveMapCache;                                     // 0x00F8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<float>                                 CurveStartTimeCache;                               // 0x0108(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<float>                                 FlatCurveCustomFloatCache;                         // 0x0118(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	int32                                         CurveCustomFloatCacheStride;                       // 0x0128(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_12C[0x4];                                      // 0x012C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, int32>                      CurveCustomFloatCacheDataOffsets;                  // 0x0130(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FKuroPointCloudCacheCustomFloat> CurveCustomFloatCache;                            // 0x0180(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, int32>                      MetaDataInt;                                       // 0x0190(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, float>                      MetaDataFloat;                                     // 0x01E0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	int32                                         NumPoints;                                         // 0x0230(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         NumCurves;                                         // 0x0234(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ReleaseCPUData;                                    // 0x0238(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_239[0x1F];                                     // 0x0239(0x001F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	float GetMetaDataFloat(class FName Name_0);
@@ -79,27 +92,49 @@ public:
 	bool HasMetaDataInt(class FName Name_0);
 	void SetMetaDataFloat(class FName Name_0, float Value);
 	void SetMetaDataInt(class FName Name_0, int32 Value);
-	void UpdateFromData(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales);
-	void UpdateFromDataWithIndices(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales, const TArray<int32>& Indices);
+	bool UpdateFromData(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales);
+	bool UpdateFromDataEx(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales, const TArray<float>& Ages, const TArray<int32>& Indices, const TArray<struct FKuroPointCloudCacheCustomFloat>& CustomFloats, const TArray<float>& CurveStartTimes, const TArray<struct FKuroPointCloudCacheCustomFloat>& CurveCustomFloats);
+
+	bool CheckConsistency(bool Verbosity) const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroPointCloudCache">();
+		STATIC_CLASS_IMPL("KuroPointCloudCache")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudCache")
 	}
 	static class UKuroPointCloudCache* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroPointCloudCache>();
 	}
 };
-static_assert(alignof(UKuroPointCloudCache) == 0x000008, "Wrong alignment on UKuroPointCloudCache");
-static_assert(sizeof(UKuroPointCloudCache) == 0x000110, "Wrong size on UKuroPointCloudCache");
-static_assert(offsetof(UKuroPointCloudCache, PositionCache) == 0x000030, "Member 'UKuroPointCloudCache::PositionCache' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudCache, RotationCache) == 0x000040, "Member 'UKuroPointCloudCache::RotationCache' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudCache, ScaleCache) == 0x000050, "Member 'UKuroPointCloudCache::ScaleCache' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudCache, IndexCache) == 0x000060, "Member 'UKuroPointCloudCache::IndexCache' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudCache, MetaDataInt) == 0x000070, "Member 'UKuroPointCloudCache::MetaDataInt' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudCache, MetaDataFloat) == 0x0000C0, "Member 'UKuroPointCloudCache::MetaDataFloat' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroPointCloudCache;
+
+// Class KuroPointCloud.KuroPointCloudFunctionLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroPointCloudFunctionLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static bool SetNiagaraKuroPointCloudCache(class UNiagaraComponent* NiagaraComponent, class UKuroPointCloudCache* KuroPointCloudCache, class FName ParameterName);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroPointCloudFunctionLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudFunctionLibrary")
+	}
+	static class UKuroPointCloudFunctionLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroPointCloudFunctionLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroPointCloudFunctionLibrary;
 
 // Class KuroPointCloud.KuroPointCloudInstance
 // 0x0068 (0x0098 - 0x0030)
@@ -123,18 +158,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroPointCloudInstance">();
+		STATIC_CLASS_IMPL("KuroPointCloudInstance")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudInstance")
 	}
 	static class UKuroPointCloudInstance* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroPointCloudInstance>();
 	}
 };
-static_assert(alignof(UKuroPointCloudInstance) == 0x000008, "Wrong alignment on UKuroPointCloudInstance");
-static_assert(sizeof(UKuroPointCloudInstance) == 0x000098, "Wrong size on UKuroPointCloudInstance");
-static_assert(offsetof(UKuroPointCloudInstance, PointCloudCache) == 0x000030, "Member 'UKuroPointCloudInstance::PointCloudCache' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudInstance, KdTree) == 0x000038, "Member 'UKuroPointCloudInstance::KdTree' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudInstance, QTree2D) == 0x000090, "Member 'UKuroPointCloudInstance::QTree2D' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroPointCloudInstance;
 
 // Class KuroPointCloud.KuroPointCloudStreamingConfig
 // 0x0018 (0x0050 - 0x0038)
@@ -152,17 +187,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroPointCloudStreamingConfig">();
+		STATIC_CLASS_IMPL("KuroPointCloudStreamingConfig")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudStreamingConfig")
 	}
 	static class UKuroPointCloudStreamingConfig* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroPointCloudStreamingConfig>();
 	}
 };
-static_assert(alignof(UKuroPointCloudStreamingConfig) == 0x000008, "Wrong alignment on UKuroPointCloudStreamingConfig");
-static_assert(sizeof(UKuroPointCloudStreamingConfig) == 0x000050, "Wrong size on UKuroPointCloudStreamingConfig");
-static_assert(offsetof(UKuroPointCloudStreamingConfig, StreamingCells) == 0x000038, "Member 'UKuroPointCloudStreamingConfig::StreamingCells' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudStreamingConfig, CellSize) == 0x000048, "Member 'UKuroPointCloudStreamingConfig::CellSize' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroPointCloudStreamingConfig;
 
 // Class KuroPointCloud.KuroPointCloudStreamingActor
 // 0x0028 (0x02D8 - 0x02B0)
@@ -176,17 +212,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroPointCloudStreamingActor">();
+		STATIC_CLASS_IMPL("KuroPointCloudStreamingActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudStreamingActor")
 	}
 	static class AKuroPointCloudStreamingActor* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<AKuroPointCloudStreamingActor>();
 	}
 };
-static_assert(alignof(AKuroPointCloudStreamingActor) == 0x000008, "Wrong alignment on AKuroPointCloudStreamingActor");
-static_assert(sizeof(AKuroPointCloudStreamingActor) == 0x0002D8, "Wrong size on AKuroPointCloudStreamingActor");
-static_assert(offsetof(AKuroPointCloudStreamingActor, SceneRoot) == 0x0002B0, "Member 'AKuroPointCloudStreamingActor::SceneRoot' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudStreamingActor, PointCloudWorldComponent) == 0x0002B8, "Member 'AKuroPointCloudStreamingActor::PointCloudWorldComponent' has a wrong offset!");
+DUMPER7_ASSERTS_AKuroPointCloudStreamingActor;
 
 // Class KuroPointCloud.KuroPointCloudStreamer
 // 0x0090 (0x00C0 - 0x0030)
@@ -202,18 +239,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroPointCloudStreamer">();
+		STATIC_CLASS_IMPL("KuroPointCloudStreamer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudStreamer")
 	}
 	static class UKuroPointCloudStreamer* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroPointCloudStreamer>();
 	}
 };
-static_assert(alignof(UKuroPointCloudStreamer) == 0x000008, "Wrong alignment on UKuroPointCloudStreamer");
-static_assert(sizeof(UKuroPointCloudStreamer) == 0x0000C0, "Wrong size on UKuroPointCloudStreamer");
-static_assert(offsetof(UKuroPointCloudStreamer, Config) == 0x000030, "Member 'UKuroPointCloudStreamer::Config' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudStreamer, SpawnedActors) == 0x000088, "Member 'UKuroPointCloudStreamer::SpawnedActors' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudStreamer, ActorPool) == 0x000098, "Member 'UKuroPointCloudStreamer::ActorPool' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroPointCloudStreamer;
 
 // Class KuroPointCloud.KuroPointCloudWorldActor
 // 0x0028 (0x02D8 - 0x02B0)
@@ -231,19 +268,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroPointCloudWorldActor">();
+		STATIC_CLASS_IMPL("KuroPointCloudWorldActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudWorldActor")
 	}
 	static class AKuroPointCloudWorldActor* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<AKuroPointCloudWorldActor>();
 	}
 };
-static_assert(alignof(AKuroPointCloudWorldActor) == 0x000008, "Wrong alignment on AKuroPointCloudWorldActor");
-static_assert(sizeof(AKuroPointCloudWorldActor) == 0x0002D8, "Wrong size on AKuroPointCloudWorldActor");
-static_assert(offsetof(AKuroPointCloudWorldActor, SceneComponent) == 0x0002B0, "Member 'AKuroPointCloudWorldActor::SceneComponent' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudWorldActor, PointCloudWorldComponent) == 0x0002B8, "Member 'AKuroPointCloudWorldActor::PointCloudWorldComponent' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudWorldActor, GroupName) == 0x0002C0, "Member 'AKuroPointCloudWorldActor::GroupName' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudWorldActor, SubGroupName) == 0x0002CC, "Member 'AKuroPointCloudWorldActor::SubGroupName' has a wrong offset!");
+DUMPER7_ASSERTS_AKuroPointCloudWorldActor;
 
 // Class KuroPointCloud.KuroPointCloudWorldComponent
 // 0x0020 (0x00E0 - 0x00C0)
@@ -262,17 +298,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroPointCloudWorldComponent">();
+		STATIC_CLASS_IMPL("KuroPointCloudWorldComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudWorldComponent")
 	}
 	static class UKuroPointCloudWorldComponent* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroPointCloudWorldComponent>();
 	}
 };
-static_assert(alignof(UKuroPointCloudWorldComponent) == 0x000008, "Wrong alignment on UKuroPointCloudWorldComponent");
-static_assert(sizeof(UKuroPointCloudWorldComponent) == 0x0000E0, "Wrong size on UKuroPointCloudWorldComponent");
-static_assert(offsetof(UKuroPointCloudWorldComponent, KuroPointCloudCollectionName) == 0x0000C0, "Member 'UKuroPointCloudWorldComponent::KuroPointCloudCollectionName' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudWorldComponent, PointCloudInstance) == 0x0000D8, "Member 'UKuroPointCloudWorldComponent::PointCloudInstance' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroPointCloudWorldComponent;
 
 // Class KuroPointCloud.KuroPointCloudWorldSystem
 // 0x0078 (0x00B0 - 0x0038)
@@ -291,17 +328,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroPointCloudWorldSystem">();
+		STATIC_CLASS_IMPL("KuroPointCloudWorldSystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPointCloudWorldSystem")
 	}
 	static class UKuroPointCloudWorldSystem* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroPointCloudWorldSystem>();
 	}
 };
-static_assert(alignof(UKuroPointCloudWorldSystem) == 0x000008, "Wrong alignment on UKuroPointCloudWorldSystem");
-static_assert(sizeof(UKuroPointCloudWorldSystem) == 0x0000B0, "Wrong size on UKuroPointCloudWorldSystem");
-static_assert(offsetof(UKuroPointCloudWorldSystem, Streamer) == 0x000040, "Member 'UKuroPointCloudWorldSystem::Streamer' has a wrong offset!");
-static_assert(offsetof(UKuroPointCloudWorldSystem, Collections) == 0x000050, "Member 'UKuroPointCloudWorldSystem::Collections' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroPointCloudWorldSystem;
 
 // Class KuroPointCloud.KuroVirtualPointCloud2DQTree
 // 0x0090 (0x00C0 - 0x0030)
@@ -328,44 +366,43 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroVirtualPointCloud2DQTree">();
+		STATIC_CLASS_IMPL("KuroVirtualPointCloud2DQTree")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroVirtualPointCloud2DQTree")
 	}
 	static class UKuroVirtualPointCloud2DQTree* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroVirtualPointCloud2DQTree>();
 	}
 };
-static_assert(alignof(UKuroVirtualPointCloud2DQTree) == 0x000010, "Wrong alignment on UKuroVirtualPointCloud2DQTree");
-static_assert(sizeof(UKuroVirtualPointCloud2DQTree) == 0x0000C0, "Wrong size on UKuroVirtualPointCloud2DQTree");
-static_assert(offsetof(UKuroVirtualPointCloud2DQTree, QTree) == 0x000030, "Member 'UKuroVirtualPointCloud2DQTree::QTree' has a wrong offset!");
-static_assert(offsetof(UKuroVirtualPointCloud2DQTree, QTreeBoundMin) == 0x000048, "Member 'UKuroVirtualPointCloud2DQTree::QTreeBoundMin' has a wrong offset!");
-static_assert(offsetof(UKuroVirtualPointCloud2DQTree, QTreeBoundMax) == 0x000050, "Member 'UKuroVirtualPointCloud2DQTree::QTreeBoundMax' has a wrong offset!");
-static_assert(offsetof(UKuroVirtualPointCloud2DQTree, WorldToPointCloudLocal) == 0x000060, "Member 'UKuroVirtualPointCloud2DQTree::WorldToPointCloudLocal' has a wrong offset!");
-static_assert(offsetof(UKuroVirtualPointCloud2DQTree, PointCloudLocalToWorld) == 0x000090, "Member 'UKuroVirtualPointCloud2DQTree::PointCloudLocalToWorld' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroVirtualPointCloud2DQTree;
 
 // Class KuroPointCloud.NiagaraDataInterfaceKuroPointCloud
 // 0x0018 (0x0058 - 0x0040)
 class UNiagaraDataInterfaceKuroPointCloud final : public UNiagaraDataInterface
 {
 public:
-	class UKuroPointCloudCache*                   PointCloudCache;                                   // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FName                                   WorldCollectionName;                               // 0x0048(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UKuroPointCloudCache*                   PointCloudCache;                                   // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   WorldCollectionName;                               // 0x0048(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"NiagaraDataInterfaceKuroPointCloud">();
+		STATIC_CLASS_IMPL("NiagaraDataInterfaceKuroPointCloud")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NiagaraDataInterfaceKuroPointCloud")
 	}
 	static class UNiagaraDataInterfaceKuroPointCloud* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UNiagaraDataInterfaceKuroPointCloud>();
 	}
 };
-static_assert(alignof(UNiagaraDataInterfaceKuroPointCloud) == 0x000008, "Wrong alignment on UNiagaraDataInterfaceKuroPointCloud");
-static_assert(sizeof(UNiagaraDataInterfaceKuroPointCloud) == 0x000058, "Wrong size on UNiagaraDataInterfaceKuroPointCloud");
-static_assert(offsetof(UNiagaraDataInterfaceKuroPointCloud, PointCloudCache) == 0x000040, "Member 'UNiagaraDataInterfaceKuroPointCloud::PointCloudCache' has a wrong offset!");
-static_assert(offsetof(UNiagaraDataInterfaceKuroPointCloud, WorldCollectionName) == 0x000048, "Member 'UNiagaraDataInterfaceKuroPointCloud::WorldCollectionName' has a wrong offset!");
+DUMPER7_ASSERTS_UNiagaraDataInterfaceKuroPointCloud;
 
 }
 

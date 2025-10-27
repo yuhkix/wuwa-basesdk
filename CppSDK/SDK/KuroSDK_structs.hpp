@@ -62,14 +62,7 @@ public:
 	class FString                                 ChannelId;                                         // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ExParams;                                          // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FLoginStruct) == 0x000008, "Wrong alignment on FLoginStruct");
-static_assert(sizeof(FLoginStruct) == 0x000058, "Wrong size on FLoginStruct");
-static_assert(offsetof(FLoginStruct, LoginCode) == 0x000000, "Member 'FLoginStruct::LoginCode' has a wrong offset!");
-static_assert(offsetof(FLoginStruct, Uid) == 0x000008, "Member 'FLoginStruct::Uid' has a wrong offset!");
-static_assert(offsetof(FLoginStruct, UserName) == 0x000018, "Member 'FLoginStruct::UserName' has a wrong offset!");
-static_assert(offsetof(FLoginStruct, Token) == 0x000028, "Member 'FLoginStruct::Token' has a wrong offset!");
-static_assert(offsetof(FLoginStruct, ChannelId) == 0x000038, "Member 'FLoginStruct::ChannelId' has a wrong offset!");
-static_assert(offsetof(FLoginStruct, ExParams) == 0x000048, "Member 'FLoginStruct::ExParams' has a wrong offset!");
+DUMPER7_ASSERTS_FLoginStruct;
 
 // ScriptStruct KuroSDK.PaymentStruct
 // 0x0038 (0x0038 - 0x0000)
@@ -82,12 +75,7 @@ public:
 	class FString                                 Type;                                              // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ExtraInfo;                                         // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FPaymentStruct) == 0x000008, "Wrong alignment on FPaymentStruct");
-static_assert(sizeof(FPaymentStruct) == 0x000038, "Wrong size on FPaymentStruct");
-static_assert(offsetof(FPaymentStruct, OrderId) == 0x000000, "Member 'FPaymentStruct::OrderId' has a wrong offset!");
-static_assert(offsetof(FPaymentStruct, PaymentType) == 0x000010, "Member 'FPaymentStruct::PaymentType' has a wrong offset!");
-static_assert(offsetof(FPaymentStruct, Type) == 0x000018, "Member 'FPaymentStruct::Type' has a wrong offset!");
-static_assert(offsetof(FPaymentStruct, ExtraInfo) == 0x000028, "Member 'FPaymentStruct::ExtraInfo' has a wrong offset!");
+DUMPER7_ASSERTS_FPaymentStruct;
 
 // ScriptStruct KuroSDK.BasicInfo
 // 0x0048 (0x0048 - 0x0000)
@@ -101,13 +89,7 @@ public:
 	bool                                          bIsValid;                                          // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FBasicInfo) == 0x000008, "Wrong alignment on FBasicInfo");
-static_assert(sizeof(FBasicInfo) == 0x000048, "Wrong size on FBasicInfo");
-static_assert(offsetof(FBasicInfo, DeviceId) == 0x000000, "Member 'FBasicInfo::DeviceId' has a wrong offset!");
-static_assert(offsetof(FBasicInfo, Platform) == 0x000010, "Member 'FBasicInfo::Platform' has a wrong offset!");
-static_assert(offsetof(FBasicInfo, ModelName) == 0x000020, "Member 'FBasicInfo::ModelName' has a wrong offset!");
-static_assert(offsetof(FBasicInfo, CPUModelName) == 0x000030, "Member 'FBasicInfo::CPUModelName' has a wrong offset!");
-static_assert(offsetof(FBasicInfo, bIsValid) == 0x000040, "Member 'FBasicInfo::bIsValid' has a wrong offset!");
+DUMPER7_ASSERTS_FBasicInfo;
 
 }
 

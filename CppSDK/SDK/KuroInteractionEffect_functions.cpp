@@ -248,5 +248,33 @@ void UKuroInteractionEffectSystem::RegisterSPModelCharacterEIComp(class UNiagara
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionPlacementTriggerActor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UStaticMesh*                      PlacementMesh                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSoftObjectPath                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FSoftObjectPath UKuroInteractionEffectSystem::SearchInteractionPlacementTriggerActor(class UStaticMesh* PlacementMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroInteractionEffectSystem", "SearchInteractionPlacementTriggerActor");
+
+	Params::KuroInteractionEffectSystem_SearchInteractionPlacementTriggerActor Parms{};
+
+	Parms.PlacementMesh = PlacementMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
 }
 

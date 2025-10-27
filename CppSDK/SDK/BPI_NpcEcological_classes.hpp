@@ -34,7 +34,11 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BPI_NpcEcological_C">();
+		BP_STATIC_CLASS_IMPL("BPI_NpcEcological_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BPI_NpcEcological_C")
 	}
 	static class IBPI_NpcEcological_C* GetDefaultObj()
 	{
@@ -50,8 +54,7 @@ public:
 		return reinterpret_cast<const UObject*>(this);
 	}
 };
-static_assert(alignof(IBPI_NpcEcological_C) == 0x000001, "Wrong alignment on IBPI_NpcEcological_C");
-static_assert(sizeof(IBPI_NpcEcological_C) == 0x000001, "Wrong size on IBPI_NpcEcological_C");
+DUMPER7_ASSERTS_IBPI_NpcEcological_C;
 
 }
 

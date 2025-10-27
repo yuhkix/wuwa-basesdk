@@ -238,7 +238,7 @@ void ABP_GlobalGI_C::UpdateFog()
 
 
 // Function BP_GlobalGI.BP_GlobalGI_C.Update Env
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void ABP_GlobalGI_C::Update_Env()
 {
@@ -1190,7 +1190,7 @@ void ABP_GlobalGI_C::UpdateOcean()
 
 
 // Function BP_GlobalGI.BP_GlobalGI_C.IsPerformanceLightExist
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void ABP_GlobalGI_C::IsPerformanceLightExist()
 {

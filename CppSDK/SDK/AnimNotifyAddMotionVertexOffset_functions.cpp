@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function AnimNotifyAddMotionVertexOffset.AnimNotifyAddMotionVertexOffset_C.GetNotifyName
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
@@ -31,12 +31,7 @@ class FString UAnimNotifyAddMotionVertexOffset_C::GetNotifyName() const
 
 	Params::AnimNotifyAddMotionVertexOffset_C_GetNotifyName Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }

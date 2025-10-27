@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "KuroNetwork_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
+#include "KuroNetwork_structs.hpp"
 #include "JsEnv_structs.hpp"
 
 
@@ -29,26 +29,31 @@ public:
 	static void Post(const class FString& URL, const TMap<class FString, class FString>& HeaderParam, const class FString& Content, TDelegate<void(bool bConnectedSuccessfully, int32 HttpResponseCode, const class FString& Data)> Handle, float InTimeoutSecs);
 	static void PostAli(const TMap<class FString, class FString>& QueryParameter, TDelegate<void(bool bConnectedSuccessfully, int32 HttpResponseCode, const class FString& Data)> Handle, float InTimeoutSecs);
 	static void PostRpt(const class FString& ContentStr, bool IsGlobal, TDelegate<void(const class FString& Data, int32 LocalErrorCode, int32 RemoteErrorCode, int32 HttpResponseCode, bool bConnectedSuccessfully)> Handle, float InTimeoutSecs);
+	static void PostRpt1(const class FString& ContentStr, const class FString& Content1Str, bool IsGlobal, TDelegate<void(const class FString& Data, int32 LocalErrorCode, int32 RemoteErrorCode, int32 HttpResponseCode, bool bConnectedSuccessfully)> Handle, float InTimeoutSecs);
+	static void PostRpt2(const class FString& Url, const class FString& ContentStr, const class FString& Content1Str, TDelegate<void(const class FString& Data, int32 LocalErrorCode, int32 RemoteErrorCode, int32 HttpResponseCode, bool bConnectedSuccessfully)> Handle, float InTimeoutSecs);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroHttp">();
+		STATIC_CLASS_IMPL("KuroHttp")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroHttp")
 	}
 	static class UKuroHttp* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroHttp>();
 	}
 };
-static_assert(alignof(UKuroHttp) == 0x000008, "Wrong alignment on UKuroHttp");
-static_assert(sizeof(UKuroHttp) == 0x000030, "Wrong size on UKuroHttp");
+DUMPER7_ASSERTS_UKuroHttp;
 
 // Class KuroNetwork.KuroHttpServerRequestProxy
-// 0x0080 (0x00B0 - 0x0030)
+// 0x00C0 (0x00F0 - 0x0030)
 class UKuroHttpServerRequestProxy final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x80];                                      // 0x0030(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xC0];                                      // 0x0030(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool GetHeader(const class FString& Key, TArray<class FString>* OutHeader);
@@ -58,15 +63,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroHttpServerRequestProxy">();
+		STATIC_CLASS_IMPL("KuroHttpServerRequestProxy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroHttpServerRequestProxy")
 	}
 	static class UKuroHttpServerRequestProxy* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroHttpServerRequestProxy>();
 	}
 };
-static_assert(alignof(UKuroHttpServerRequestProxy) == 0x000008, "Wrong alignment on UKuroHttpServerRequestProxy");
-static_assert(sizeof(UKuroHttpServerRequestProxy) == 0x0000B0, "Wrong size on UKuroHttpServerRequestProxy");
+DUMPER7_ASSERTS_UKuroHttpServerRequestProxy;
 
 // Class KuroNetwork.KuroHttpServerRouterProxy
 // 0x0088 (0x00B8 - 0x0030)
@@ -84,19 +92,21 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroHttpServerRouterProxy">();
+		STATIC_CLASS_IMPL("KuroHttpServerRouterProxy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroHttpServerRouterProxy")
 	}
 	static class UKuroHttpServerRouterProxy* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroHttpServerRouterProxy>();
 	}
 };
-static_assert(alignof(UKuroHttpServerRouterProxy) == 0x000008, "Wrong alignment on UKuroHttpServerRouterProxy");
-static_assert(sizeof(UKuroHttpServerRouterProxy) == 0x0000B8, "Wrong size on UKuroHttpServerRouterProxy");
-static_assert(offsetof(UKuroHttpServerRouterProxy, HttpRequestDelegate) == 0x000030, "Member 'UKuroHttpServerRouterProxy::HttpRequestDelegate' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroHttpServerRouterProxy;
 
 // Class KuroNetwork.KuroKcpClient
-// 0x0368 (0x0398 - 0x0030)
+// 0x03A0 (0x03D0 - 0x0030)
 class UKuroKcpClient final : public UObject
 {
 public:
@@ -115,13 +125,17 @@ public:
 	TMulticastInlineDelegate<void()>              OnTcpConnected;                                    // 0x0118(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnTcpConnectFailed;                                // 0x0128(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	class UKuroTcpClient*                         TcpClient;                                         // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_140[0x258];                                    // 0x0140(0x0258)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_140[0x290];                                    // 0x0140(0x0290)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void CloseTcpConnect();
+	bool Connect(const class FString& Addr, const int32 Port, const bool CrcCheckDisable);
+	void Disconnect();
+	class FString GetDebugString(const struct FArrayBuffer& ArrayBuffer, const class FString& Separator, int16 MsgId, int32 SeqNo);
 	void HandleKcpConnect(const uint32 NeedCrcCheck, const uint32 Conv);
 	void HandleTcpConnected();
 	void HandleTcpConnectFailed();
+	bool SendM(int8 MsgType, int32 SeqNo, int16 RpcId, int16 MsgId, const struct FArrayBuffer& ArrayBuffer, bool UseKcp);
 	void SendTcpMessage(int16 RpcId, int16 MsgId, const struct FArrayBuffer& ArrayBuffer);
 	void SetEnType(uint8 Type, int16 MsgId);
 	bool SetK(uint8 Type, const struct FArrayBuffer& KeyBuffer);
@@ -138,36 +152,25 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroKcpClient">();
+		STATIC_CLASS_IMPL("KuroKcpClient")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroKcpClient")
 	}
 	static class UKuroKcpClient* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroKcpClient>();
 	}
 };
-static_assert(alignof(UKuroKcpClient) == 0x000008, "Wrong alignment on UKuroKcpClient");
-static_assert(sizeof(UKuroKcpClient) == 0x000398, "Wrong size on UKuroKcpClient");
-static_assert(offsetof(UKuroKcpClient, OnConnectSuccess) == 0x000038, "Member 'UKuroKcpClient::OnConnectSuccess' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, OnRecResp) == 0x000048, "Member 'UKuroKcpClient::OnRecResp' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, OnRecException) == 0x000070, "Member 'UKuroKcpClient::OnRecException' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, OnRecPush) == 0x000098, "Member 'UKuroKcpClient::OnRecPush' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, OnRecTcpException) == 0x0000C0, "Member 'UKuroKcpClient::OnRecTcpException' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, OnError) == 0x0000E8, "Member 'UKuroKcpClient::OnError' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, RemoteMtu) == 0x000110, "Member 'UKuroKcpClient::RemoteMtu' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, UseNewResolveIp) == 0x000114, "Member 'UKuroKcpClient::UseNewResolveIp' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, IsMultiThreaded) == 0x000115, "Member 'UKuroKcpClient::IsMultiThreaded' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, IsTickDrivenOutside) == 0x000116, "Member 'UKuroKcpClient::IsTickDrivenOutside' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, OpenSendVerify) == 0x000117, "Member 'UKuroKcpClient::OpenSendVerify' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, OnTcpConnected) == 0x000118, "Member 'UKuroKcpClient::OnTcpConnected' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, OnTcpConnectFailed) == 0x000128, "Member 'UKuroKcpClient::OnTcpConnectFailed' has a wrong offset!");
-static_assert(offsetof(UKuroKcpClient, TcpClient) == 0x000138, "Member 'UKuroKcpClient::TcpClient' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroKcpClient;
 
 // Class KuroNetwork.KuroKcpTestWorker
-// 0x0250 (0x0280 - 0x0030)
+// 0x0260 (0x0290 - 0x0030)
 class UKuroKcpTestWorker final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x250];                                     // 0x0030(0x0250)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x260];                                     // 0x0030(0x0260)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnConnectSuccess();
@@ -178,15 +181,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroKcpTestWorker">();
+		STATIC_CLASS_IMPL("KuroKcpTestWorker")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroKcpTestWorker")
 	}
 	static class UKuroKcpTestWorker* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroKcpTestWorker>();
 	}
 };
-static_assert(alignof(UKuroKcpTestWorker) == 0x000008, "Wrong alignment on UKuroKcpTestWorker");
-static_assert(sizeof(UKuroKcpTestWorker) == 0x000280, "Wrong size on UKuroKcpTestWorker");
+DUMPER7_ASSERTS_UKuroKcpTestWorker;
 
 // Class KuroNetwork.KuroNetworkChange
 // 0x0020 (0x0050 - 0x0030)
@@ -202,16 +208,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroNetworkChange">();
+		STATIC_CLASS_IMPL("KuroNetworkChange")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroNetworkChange")
 	}
 	static class UKuroNetworkChange* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroNetworkChange>();
 	}
 };
-static_assert(alignof(UKuroNetworkChange) == 0x000008, "Wrong alignment on UKuroNetworkChange");
-static_assert(sizeof(UKuroNetworkChange) == 0x000050, "Wrong size on UKuroNetworkChange");
-static_assert(offsetof(UKuroNetworkChange, NetworkChangeDelegate) == 0x000030, "Member 'UKuroNetworkChange::NetworkChangeDelegate' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroNetworkChange;
 
 // Class KuroNetwork.KuroNetworkDetection
 // 0x0000 (0x0030 - 0x0030)
@@ -229,15 +237,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroNetworkDetection">();
+		STATIC_CLASS_IMPL("KuroNetworkDetection")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroNetworkDetection")
 	}
 	static class UKuroNetworkDetection* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroNetworkDetection>();
 	}
 };
-static_assert(alignof(UKuroNetworkDetection) == 0x000008, "Wrong alignment on UKuroNetworkDetection");
-static_assert(sizeof(UKuroNetworkDetection) == 0x000030, "Wrong size on UKuroNetworkDetection");
+DUMPER7_ASSERTS_UKuroNetworkDetection;
 
 // Class KuroNetwork.KuroNetworkSetting
 // 0x0058 (0x0088 - 0x0030)
@@ -256,22 +267,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroNetworkSetting">();
+		STATIC_CLASS_IMPL("KuroNetworkSetting")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroNetworkSetting")
 	}
 	static class UKuroNetworkSetting* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroNetworkSetting>();
 	}
 };
-static_assert(alignof(UKuroNetworkSetting) == 0x000008, "Wrong alignment on UKuroNetworkSetting");
-static_assert(sizeof(UKuroNetworkSetting) == 0x000088, "Wrong size on UKuroNetworkSetting");
-static_assert(offsetof(UKuroNetworkSetting, AlAki) == 0x000030, "Member 'UKuroNetworkSetting::AlAki' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, AlAks) == 0x000040, "Member 'UKuroNetworkSetting::AlAks' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, RptPub) == 0x000050, "Member 'UKuroNetworkSetting::RptPub' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, RptUrl) == 0x000060, "Member 'UKuroNetworkSetting::RptUrl' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, RptUrlGlobal) == 0x000070, "Member 'UKuroNetworkSetting::RptUrlGlobal' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, EnableDump) == 0x000080, "Member 'UKuroNetworkSetting::EnableDump' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, UseNativeMethod) == 0x000081, "Member 'UKuroNetworkSetting::UseNativeMethod' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroNetworkSetting;
 
 // Class KuroNetwork.KuroTcpClient
 // 0x0070 (0x00A0 - 0x0030)
@@ -294,17 +301,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroTcpClient">();
+		STATIC_CLASS_IMPL("KuroTcpClient")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroTcpClient")
 	}
 	static class UKuroTcpClient* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroTcpClient>();
 	}
 };
-static_assert(alignof(UKuroTcpClient) == 0x000010, "Wrong alignment on UKuroTcpClient");
-static_assert(sizeof(UKuroTcpClient) == 0x0000A0, "Wrong size on UKuroTcpClient");
-static_assert(offsetof(UKuroTcpClient, IsTickDrivenOutside) == 0x000060, "Member 'UKuroTcpClient::IsTickDrivenOutside' has a wrong offset!");
-static_assert(offsetof(UKuroTcpClient, RecvData) == 0x000090, "Member 'UKuroTcpClient::RecvData' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroTcpClient;
 
 // Class KuroNetwork.SendHttpRequest
 // 0x0020 (0x0058 - 0x0038)
@@ -321,17 +329,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"SendHttpRequest">();
+		STATIC_CLASS_IMPL("SendHttpRequest")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SendHttpRequest")
 	}
 	static class USendHttpRequest* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<USendHttpRequest>();
 	}
 };
-static_assert(alignof(USendHttpRequest) == 0x000008, "Wrong alignment on USendHttpRequest");
-static_assert(sizeof(USendHttpRequest) == 0x000058, "Wrong size on USendHttpRequest");
-static_assert(offsetof(USendHttpRequest, OnSuccess) == 0x000038, "Member 'USendHttpRequest::OnSuccess' has a wrong offset!");
-static_assert(offsetof(USendHttpRequest, OnFail) == 0x000048, "Member 'USendHttpRequest::OnFail' has a wrong offset!");
+DUMPER7_ASSERTS_USendHttpRequest;
 
 }
 

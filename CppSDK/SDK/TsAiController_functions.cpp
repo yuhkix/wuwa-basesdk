@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsAiController.TsAiController_C.ExecuteUbergraph_TsAiController
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// (Final, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -33,17 +33,12 @@ void ATsAiController_C::ExecuteUbergraph_TsAiController(int32 EntryPoint)
 
 	Parms.EntryPoint = EntryPoint;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.ReceiveDestroyed
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
 void ATsAiController_C::ReceiveDestroyed()
 {
@@ -52,17 +47,12 @@ void ATsAiController_C::ReceiveDestroyed()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsAiController_C", "ReceiveDestroyed");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.ActivateSkillGroup
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   skillGroupIndex                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    activate                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -79,17 +69,12 @@ void ATsAiController_C::ActivateSkillGroup(int32 skillGroupIndex, bool activate)
 	Parms.skillGroupIndex = skillGroupIndex;
 	Parms.activate = activate;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddSkillCd
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   skillInfoId                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   cdAdd                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -106,17 +91,12 @@ void ATsAiController_C::AddSkillCd(int32 skillInfoId, float cdAdd)
 	Parms.skillInfoId = skillInfoId;
 	Parms.cdAdd = cdAdd;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.SetBattleWanderTime
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   min_0                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // float                                   max_0                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
@@ -133,17 +113,12 @@ void ATsAiController_C::SetBattleWanderTime(float min_0, float max_0)
 	Parms.min_0 = min_0;
 	Parms.max_0 = max_0;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddComplicatedEventBinder
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FSAiConditions&            conditions                                             (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class UKuroBooleanEventBinder*          eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
@@ -160,17 +135,12 @@ void ATsAiController_C::AddComplicatedEventBinder(const struct FSAiConditions& c
 	Parms.conditions = std::move(conditions);
 	Parms.eventBinder = eventBinder;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.OnStart
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsAiController_C::OnStart()
 {
@@ -179,17 +149,12 @@ void ATsAiController_C::OnStart()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsAiController_C", "OnStart");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.GetDebugText
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
 
@@ -202,19 +167,14 @@ class FText ATsAiController_C::GetDebugText()
 
 	Params::TsAiController_C_GetDebugText Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function TsAiController.TsAiController_C.ChangeHatred
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // float                                   rate                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
@@ -233,17 +193,12 @@ void ATsAiController_C::ChangeHatred(int32 entityId, float rate, float abs)
 	Parms.rate = rate;
 	Parms.abs = abs;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.ClearHatred
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -258,17 +213,12 @@ void ATsAiController_C::ClearHatred(int32 entityId)
 
 	Parms.entityId = entityId;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.SetBattleWanderIndex
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   index                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -283,17 +233,12 @@ void ATsAiController_C::SetBattleWanderIndex(int32 index)
 
 	Parms.index = index;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddBattleWanderEndTime
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   addTime                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -308,17 +253,12 @@ void ATsAiController_C::AddBattleWanderEndTime(float addTime)
 
 	Parms.addTime = addTime;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.TestChangeAi
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const class FString&                    id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
@@ -333,17 +273,12 @@ void ATsAiController_C::TestChangeAi(const class FString& id)
 
 	Parms.id = std::move(id);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AicApplyBuff
-// (Native, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int64                                   buffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -358,17 +293,12 @@ void ATsAiController_C::AicApplyBuff(int64 buffId)
 
 	Parms.buffId = buffId;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AicRemoveBuff
-// (Native, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int64                                   buffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -383,17 +313,12 @@ void ATsAiController_C::AicRemoveBuff(int64 buffId)
 
 	Parms.buffId = buffId;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AicAddTag
-// (Native, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
@@ -408,17 +333,12 @@ void ATsAiController_C::AicAddTag(const struct FGameplayTag& tag)
 
 	Parms.tag = std::move(tag);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AicRemoveTag
-// (Native, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
@@ -433,17 +353,12 @@ void ATsAiController_C::AicRemoveTag(const struct FGameplayTag& tag)
 
 	Parms.tag = std::move(tag);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.SetAiEnable
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
@@ -460,17 +375,12 @@ void ATsAiController_C::SetAiEnable(bool enable, const class FString& key)
 	Parms.enable = enable;
 	Parms.key = std::move(key);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.LogReport
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   logId                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -485,17 +395,12 @@ void ATsAiController_C::LogReport(int32 logId)
 
 	Parms.logId = logId;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.SetAiSenseEnable
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   index                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
@@ -512,17 +417,12 @@ void ATsAiController_C::SetAiSenseEnable(int32 index, bool enable)
 	Parms.index = index;
 	Parms.enable = enable;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddOrRemoveAiSense
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   aiSenseId                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    add                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
@@ -539,17 +439,12 @@ void ATsAiController_C::AddOrRemoveAiSense(int32 aiSenseId, bool add)
 	Parms.aiSenseId = aiSenseId;
 	Parms.add = add;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.EnableAiSenseByType
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   type                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
@@ -566,17 +461,12 @@ void ATsAiController_C::EnableAiSenseByType(int32 type, bool enable)
 	Parms.type = type;
 	Parms.enable = enable;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddHateEventBinder
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UKuroPerceptionEventBinder*       handler1                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -591,17 +481,12 @@ void ATsAiController_C::AddHateEventBinder(class UKuroPerceptionEventBinder* han
 
 	Parms.handler1 = handler1;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddPerceptionEventBinder
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UKuroPerceptionEventBinder*       handler                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -616,17 +501,12 @@ void ATsAiController_C::AddPerceptionEventBinder(class UKuroPerceptionEventBinde
 
 	Parms.handler = handler;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddHateOutRangeEventBinder
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UKuroPerceptionEventBinder*       handler                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -641,17 +521,12 @@ void ATsAiController_C::AddHateOutRangeEventBinder(class UKuroPerceptionEventBin
 
 	Parms.handler = handler;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.SetPerceptionEventState
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    includeFriend                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 // bool                                    includeEnemy                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
@@ -670,17 +545,12 @@ void ATsAiController_C::SetPerceptionEventState(bool includeFriend, bool include
 	Parms.includeEnemy = includeEnemy;
 	Parms.includeNeutral = includeNeutral;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddSceneItemDestroyEventBinder
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   distance                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UKuroActorEventBinder*            eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
@@ -697,17 +567,12 @@ void ATsAiController_C::AddSceneItemDestroyEventBinder(float distance, class UKu
 	Parms.distance = distance;
 	Parms.eventBinder = eventBinder;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.SetAiHateConfig
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const class FString&                    configId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -722,17 +587,12 @@ void ATsAiController_C::SetAiHateConfig(const class FString& configId)
 
 	Parms.configId = std::move(configId);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddAlertEventBinder
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UKuroBooleanEventBinder*          eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -747,17 +607,12 @@ void ATsAiController_C::AddAlertEventBinder(class UKuroBooleanEventBinder* event
 
 	Parms.eventBinder = eventBinder;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.SetAiAlertConfig
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const class FString&                    configId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -772,17 +627,12 @@ void ATsAiController_C::SetAiAlertConfig(const class FString& configId)
 
 	Parms.configId = std::move(configId);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.GetCoolDownDone
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
@@ -798,19 +648,14 @@ bool ATsAiController_C::GetCoolDownDone(int32 id)
 
 	Parms.id = id;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function TsAiController.TsAiController_C.GetCoolDownRemainTime
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -826,19 +671,14 @@ float ATsAiController_C::GetCoolDownRemainTime(int32 id)
 
 	Parms.id = id;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function TsAiController.TsAiController_C.SetCoolDown
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   cd                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -855,17 +695,12 @@ void ATsAiController_C::SetCoolDown(int32 id, float cd)
 	Parms.id = id;
 	Parms.cd = cd;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.InitCooldownEvent
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UKuroBooleanEventBinder*          eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
@@ -882,17 +717,12 @@ void ATsAiController_C::InitCooldownEvent(int32 id, class UKuroBooleanEventBinde
 	Parms.id = id;
 	Parms.eventBinder = eventBinder;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.StartCooldownTimer
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
@@ -909,17 +739,12 @@ void ATsAiController_C::StartCooldownTimer(int32 id, float duration)
 	Parms.id = id;
 	Parms.duration = duration;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.逻辑主控
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -932,19 +757,14 @@ bool ATsAiController_C::逻辑主控()
 
 	Params::TsAiController_C_逻辑主控 Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function TsAiController.TsAiController_C.移动主控
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -957,19 +777,14 @@ bool ATsAiController_C::移动主控()
 
 	Params::TsAiController_C_移动主控 Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function TsAiController.TsAiController_C.获取控制权时
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsAiController_C::获取控制权时()
 {
@@ -978,17 +793,12 @@ void ATsAiController_C::获取控制权时()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsAiController_C", "获取控制权时");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.状态切换时
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // ECharacterState                         oldState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // ECharacterState                         newState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1007,17 +817,12 @@ void ATsAiController_C::状态切换时(ECharacterState oldState, ECharacterStat
 	Parms.newState = newState;
 	Parms.isAutonomousProxy = isAutonomousProxy;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.检查状态机状态
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // TArray<class FString>&                  states                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
@@ -1033,12 +838,7 @@ bool ATsAiController_C::检查状态机状态(TArray<class FString>& states)
 
 	Parms.states = std::move(states);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	states = std::move(Parms.states);
 
@@ -1047,7 +847,7 @@ bool ATsAiController_C::检查状态机状态(TArray<class FString>& states)
 
 
 // Function TsAiController.TsAiController_C.切换状态机状态
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // TArray<class FString>&                  states                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
@@ -1062,19 +862,14 @@ void ATsAiController_C::切换状态机状态(TArray<class FString>& states)
 
 	Parms.states = std::move(states);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	states = std::move(Parms.states);
 }
 
 
 // Function TsAiController.TsAiController_C.GetDebugStateMachine
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // TArray<class FText>&                    output                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
@@ -1089,19 +884,14 @@ void ATsAiController_C::GetDebugStateMachine(TArray<class FText>& output)
 
 	Parms.output = std::move(output);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	output = std::move(Parms.output);
 }
 
 
 // Function TsAiController.TsAiController_C.AicApplyBuffToTarget
-// (Native, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   targetId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int64                                   buffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1118,17 +908,12 @@ void ATsAiController_C::AicApplyBuffToTarget(int32 targetId, int64 buffId)
 	Parms.targetId = targetId;
 	Parms.buffId = buffId;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddLevelVarBoolEventBinder
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FSAiLevelVar&              levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UKuroBooleanEventBinder*          eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1145,17 +930,12 @@ void ATsAiController_C::AddLevelVarBoolEventBinder(const struct FSAiLevelVar& le
 	Parms.levelVar = std::move(levelVar);
 	Parms.eventBinder = eventBinder;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsAiController.TsAiController_C.AddLevelVarIntEventBinder
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FSAiLevelVar&              levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UKuroIntEventBinder*              eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1172,12 +952,7 @@ void ATsAiController_C::AddLevelVarIntEventBinder(const struct FSAiLevelVar& lev
 	Parms.levelVar = std::move(levelVar);
 	Parms.eventBinder = eventBinder;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

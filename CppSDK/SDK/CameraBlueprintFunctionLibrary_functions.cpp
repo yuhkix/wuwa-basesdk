@@ -17,22 +17,22 @@
 namespace SDK
 {
 
-// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.OnPossess
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.ExitCameraExplore
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class APawn*                            pawn                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCameraBlueprintFunctionLibrary_C::OnPossess(class APawn* pawn, class UObject* __WorldContext)
+void UCameraBlueprintFunctionLibrary_C::ExitCameraExplore(int32 id, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "OnPossess");
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "ExitCameraExplore");
 
-	Params::CameraBlueprintFunctionLibrary_C_OnPossess Parms{};
+	Params::CameraBlueprintFunctionLibrary_C_ExitCameraExplore Parms{};
 
-	Parms.pawn = pawn;
+	Parms.id = id;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -44,50 +44,20 @@ void UCameraBlueprintFunctionLibrary_C::OnPossess(class APawn* pawn, class UObje
 }
 
 
-// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetCameraMode
-// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECustomCameraMode                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-ECustomCameraMode UCameraBlueprintFunctionLibrary_C::GetCameraMode(class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetCameraMode");
-
-	Params::CameraBlueprintFunctionLibrary_C_GetCameraMode Parms{};
-
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetCameraRotation
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.ResetFightCameraPitchAndArmLength
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FRotator&                  rotator                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCameraBlueprintFunctionLibrary_C::SetCameraRotation(const struct FRotator& rotator, class UObject* __WorldContext)
+void UCameraBlueprintFunctionLibrary_C::ResetFightCameraPitchAndArmLength(class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SetCameraRotation");
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "ResetFightCameraPitchAndArmLength");
 
-	Params::CameraBlueprintFunctionLibrary_C_SetCameraRotation Parms{};
+	Params::CameraBlueprintFunctionLibrary_C_ResetFightCameraPitchAndArmLength Parms{};
 
-	Parms.rotator = std::move(rotator);
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -99,20 +69,47 @@ void UCameraBlueprintFunctionLibrary_C::SetCameraRotation(const struct FRotator&
 }
 
 
-// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetTargetSocketLocation
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetFightCameraFollow
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    follow                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::SetFightCameraFollow(bool follow, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SetFightCameraFollow");
+
+	Params::CameraBlueprintFunctionLibrary_C_SetFightCameraFollow Parms{};
+
+	Parms.follow = follow;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetFightCameraLocation
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-struct FVectorDouble UCameraBlueprintFunctionLibrary_C::GetTargetSocketLocation(class UObject* __WorldContext)
+struct FVectorDouble UCameraBlueprintFunctionLibrary_C::GetFightCameraLocation(class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetTargetSocketLocation");
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetFightCameraLocation");
 
-	Params::CameraBlueprintFunctionLibrary_C_GetTargetSocketLocation Parms{};
+	Params::CameraBlueprintFunctionLibrary_C_GetFightCameraLocation Parms{};
 
 	Parms.__WorldContext = __WorldContext;
 
@@ -174,20 +171,20 @@ void UCameraBlueprintFunctionLibrary_C::SetWidgetCameraBlendParams(float blendTi
 }
 
 
-// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetFightCameraLocation
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetTargetSocketLocation
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-struct FVectorDouble UCameraBlueprintFunctionLibrary_C::GetFightCameraLocation(class UObject* __WorldContext)
+struct FVectorDouble UCameraBlueprintFunctionLibrary_C::GetTargetSocketLocation(class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetFightCameraLocation");
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetTargetSocketLocation");
 
-	Params::CameraBlueprintFunctionLibrary_C_GetFightCameraLocation Parms{};
+	Params::CameraBlueprintFunctionLibrary_C_GetTargetSocketLocation Parms{};
 
 	Parms.__WorldContext = __WorldContext;
 
@@ -202,22 +199,22 @@ struct FVectorDouble UCameraBlueprintFunctionLibrary_C::GetFightCameraLocation(c
 }
 
 
-// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetFightCameraFollow
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetCameraRotation
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    follow                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// const struct FRotator&                  rotator                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCameraBlueprintFunctionLibrary_C::SetFightCameraFollow(bool follow, class UObject* __WorldContext)
+void UCameraBlueprintFunctionLibrary_C::SetCameraRotation(const struct FRotator& rotator, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SetFightCameraFollow");
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SetCameraRotation");
 
-	Params::CameraBlueprintFunctionLibrary_C_SetFightCameraFollow Parms{};
+	Params::CameraBlueprintFunctionLibrary_C_SetCameraRotation Parms{};
 
-	Parms.follow = follow;
+	Parms.rotator = std::move(rotator);
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -229,20 +226,50 @@ void UCameraBlueprintFunctionLibrary_C::SetFightCameraFollow(bool follow, class 
 }
 
 
-// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.ResetFightCameraPitchAndArmLength
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetCameraMode
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECustomCameraMode                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCameraBlueprintFunctionLibrary_C::ResetFightCameraPitchAndArmLength(class UObject* __WorldContext)
+ECustomCameraMode UCameraBlueprintFunctionLibrary_C::GetCameraMode(class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "ResetFightCameraPitchAndArmLength");
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetCameraMode");
 
-	Params::CameraBlueprintFunctionLibrary_C_ResetFightCameraPitchAndArmLength Parms{};
+	Params::CameraBlueprintFunctionLibrary_C_GetCameraMode Parms{};
 
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.OnPossess
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class APawn*                            pawn                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::OnPossess(class APawn* pawn, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "OnPossess");
+
+	Params::CameraBlueprintFunctionLibrary_C_OnPossess Parms{};
+
+	Parms.pawn = pawn;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -282,33 +309,6 @@ void UCameraBlueprintFunctionLibrary_C::EnterCameraExplore(int32 id, const struc
 	Parms.fadeDistance = fadeDistance;
 	Parms.armLengthMin = armLengthMin;
 	Parms.armLengthMax = armLengthMax;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.ExitCameraExplore
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UCameraBlueprintFunctionLibrary_C::ExitCameraExplore(int32 id, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "ExitCameraExplore");
-
-	Params::CameraBlueprintFunctionLibrary_C_ExitCameraExplore Parms{};
-
-	Parms.id = id;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -1803,6 +1803,121 @@ void UCameraBlueprintFunctionLibrary_C::ExitCameraGuide(class UObject* __WorldCo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.EnableCameraSpecificLockTarget
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   priority                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 UCameraBlueprintFunctionLibrary_C::EnableCameraSpecificLockTarget(int32 entityId, float priority, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "EnableCameraSpecificLockTarget");
+
+	Params::CameraBlueprintFunctionLibrary_C_EnableCameraSpecificLockTarget Parms{};
+
+	Parms.entityId = entityId;
+	Parms.priority = priority;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.DisableCameraSpecificLockOnTarget
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::DisableCameraSpecificLockOnTarget(int32 id, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "DisableCameraSpecificLockOnTarget");
+
+	Params::CameraBlueprintFunctionLibrary_C_DisableCameraSpecificLockOnTarget Parms{};
+
+	Parms.id = id;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.IsCameraSpecificLockEnable
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UCameraBlueprintFunctionLibrary_C::IsCameraSpecificLockEnable(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "IsCameraSpecificLockEnable");
+
+	Params::CameraBlueprintFunctionLibrary_C_IsCameraSpecificLockEnable Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetCameraSpecificLockEntityId
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 UCameraBlueprintFunctionLibrary_C::GetCameraSpecificLockEntityId(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetCameraSpecificLockEntityId");
+
+	Params::CameraBlueprintFunctionLibrary_C_GetCameraSpecificLockEntityId Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 }

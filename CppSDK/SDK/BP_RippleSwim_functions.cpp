@@ -37,6 +37,26 @@ void ABP_RippleSwim_C::ExecuteUbergraph_BP_RippleSwim(int32 EntryPoint)
 }
 
 
+// Function BP_RippleSwim.BP_RippleSwim_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_RippleSwim_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RippleSwim_C", "ReceiveEndPlay");
+
+	Params::BP_RippleSwim_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_RippleSwim.BP_RippleSwim_C.TestHitEvent
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:

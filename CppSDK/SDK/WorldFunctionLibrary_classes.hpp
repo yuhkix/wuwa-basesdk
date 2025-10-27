@@ -15,9 +15,9 @@
 #include "EInputAction_structs.hpp"
 #include "EInputState_structs.hpp"
 #include "EDetachType_structs.hpp"
+#include "EWeatherState_structs.hpp"
 #include "ERelation_structs.hpp"
 #include "EPawnChannel_structs.hpp"
-#include "EWeatherState_structs.hpp"
 #include "EWuYinQuState_structs.hpp"
 
 
@@ -168,19 +168,25 @@ public:
 	static void UnregisterToBpActorController(class FName groupTag, TScriptInterface<class IBPI_SceneBp_C> sceneBp, class UObject* __WorldContext);
 	static void SummonRandomRequest(int32 summonerId, int32 index, const struct FTransformDouble& transform, int32 skillId, bool isVisible, class UObject* __WorldContext);
 	static int32 GetSummonRandomEntity(int32 summonerId, int32 index, class UObject* __WorldContext);
+	static bool GetTrapDefenseUseBpUsing(class UObject* __WorldContext);
+	static void DisableAllRoleWithoutControl(bool needEffect, class UObject* __WorldContext);
+	static TArray<class AActor*> GetFormationActors(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"WorldFunctionLibrary_C">();
+		BP_STATIC_CLASS_IMPL("WorldFunctionLibrary_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"WorldFunctionLibrary_C")
 	}
 	static class UWorldFunctionLibrary_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UWorldFunctionLibrary_C>();
 	}
 };
-static_assert(alignof(UWorldFunctionLibrary_C) == 0x000008, "Wrong alignment on UWorldFunctionLibrary_C");
-static_assert(sizeof(UWorldFunctionLibrary_C) == 0x000030, "Wrong size on UWorldFunctionLibrary_C");
+DUMPER7_ASSERTS_UWorldFunctionLibrary_C;
 
 }
 

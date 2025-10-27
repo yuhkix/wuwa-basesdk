@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "AIModule_classes.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -27,37 +28,44 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTComposite_ParallelNode">();
+		STATIC_CLASS_IMPL("BTComposite_ParallelNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTComposite_ParallelNode")
 	}
 	static class UBTComposite_ParallelNode* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UBTComposite_ParallelNode>();
 	}
 };
-static_assert(alignof(UBTComposite_ParallelNode) == 0x000008, "Wrong alignment on UBTComposite_ParallelNode");
-static_assert(sizeof(UBTComposite_ParallelNode) == 0x0000A0, "Wrong size on UBTComposite_ParallelNode");
-static_assert(offsetof(UBTComposite_ParallelNode, Test) == 0x000098, "Member 'UBTComposite_ParallelNode::Test' has a wrong offset!");
+DUMPER7_ASSERTS_UBTComposite_ParallelNode;
 
 // Class KuroAI.BTComposite_Random
-// 0x0010 (0x00A8 - 0x0098)
+// 0x0030 (0x00C8 - 0x0098)
 class UBTComposite_Random final : public UBTCompositeNode
 {
 public:
 	TArray<int32>                                 Weights;                                           // 0x0098(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, NativeAccessSpecifierPublic)
+	TArray<int32>                                 WeightIncrements;                                  // 0x00A8(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, NativeAccessSpecifierPublic)
+	float                                         ResetTime;                                         // 0x00B8(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Key;                                               // 0x00BC(0x000C)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTComposite_Random">();
+		STATIC_CLASS_IMPL("BTComposite_Random")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTComposite_Random")
 	}
 	static class UBTComposite_Random* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UBTComposite_Random>();
 	}
 };
-static_assert(alignof(UBTComposite_Random) == 0x000008, "Wrong alignment on UBTComposite_Random");
-static_assert(sizeof(UBTComposite_Random) == 0x0000A8, "Wrong size on UBTComposite_Random");
-static_assert(offsetof(UBTComposite_Random, Weights) == 0x000098, "Member 'UBTComposite_Random::Weights' has a wrong offset!");
+DUMPER7_ASSERTS_UBTComposite_Random;
 
 // Class KuroAI.BTDecorator_ForceFailure
 // 0x0000 (0x0070 - 0x0070)
@@ -66,15 +74,42 @@ class UBTDecorator_ForceFailure final : public UBTDecorator
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTDecorator_ForceFailure">();
+		STATIC_CLASS_IMPL("BTDecorator_ForceFailure")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTDecorator_ForceFailure")
 	}
 	static class UBTDecorator_ForceFailure* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UBTDecorator_ForceFailure>();
 	}
 };
-static_assert(alignof(UBTDecorator_ForceFailure) == 0x000008, "Wrong alignment on UBTDecorator_ForceFailure");
-static_assert(sizeof(UBTDecorator_ForceFailure) == 0x000070, "Wrong size on UBTDecorator_ForceFailure");
+DUMPER7_ASSERTS_UBTDecorator_ForceFailure;
+
+// Class KuroAI.KuroAILibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroAILibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static class UBTNode* GetCurrentRootNode(class UBehaviorTreeComponent* BTComp);
+	static void ResetRandomNode(class UBehaviorTreeComponent* BTComp, class UBTNode* Node, const TArray<int32>& WeightsOverride);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroAILibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroAILibrary")
+	}
+	static class UKuroAILibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroAILibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroAILibrary;
 
 }
 

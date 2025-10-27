@@ -15,12 +15,13 @@ namespace SDK
 {
 
 // UserDefinedEnum EBatchBulletPosition.EBatchBulletPosition
-// NumValues: 0x0003
+// NumValues: 0x0004
 enum class EBatchBulletPosition : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator1                           = 1,
-	EBatchBulletPosition_MAX                 = 2,
+	NewEnumerator3                           = 2,
+	EBatchBulletPosition_MAX                 = 3,
 };
 
 }

@@ -26,24 +26,25 @@ public:
 	TDelegate<void(const int32 Width, const int32 Height)> CloudGameOnChangeResolutionDelegate;      // 0x0080(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 
 public:
+	static void ClipBoardPaste();
 	static void SendDataToPipeBinary(const class FString& Data);
 	static void SendDataToPipeBinaryWithKey(const class FString& Key, const class FString& Data);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroCloudGameWrapper">();
+		STATIC_CLASS_IMPL("KuroCloudGameWrapper")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroCloudGameWrapper")
 	}
 	static class UKuroCloudGameWrapper* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroCloudGameWrapper>();
 	}
 };
-static_assert(alignof(UKuroCloudGameWrapper) == 0x000008, "Wrong alignment on UKuroCloudGameWrapper");
-static_assert(sizeof(UKuroCloudGameWrapper) == 0x0000A8, "Wrong size on UKuroCloudGameWrapper");
-static_assert(offsetof(UKuroCloudGameWrapper, CloudGameOnReceiveDataDelegate) == 0x000030, "Member 'UKuroCloudGameWrapper::CloudGameOnReceiveDataDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroCloudGameWrapper, CloudGameOnReceiveDataWithKeyDelegate) == 0x000058, "Member 'UKuroCloudGameWrapper::CloudGameOnReceiveDataWithKeyDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroCloudGameWrapper, CloudGameOnChangeResolutionDelegate) == 0x000080, "Member 'UKuroCloudGameWrapper::CloudGameOnChangeResolutionDelegate' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroCloudGameWrapper;
 
 }
 

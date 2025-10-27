@@ -1016,6 +1016,31 @@ bool UKuroLauncherLibrary::IsLocalPackaging()
 }
 
 
+// Function KuroHotPatch.KuroLauncherLibrary.IsSeparateVideo
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroLauncherLibrary::IsSeparateVideo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroLauncherLibrary", "IsSeparateVideo");
+
+	Params::KuroLauncherLibrary_IsSeparateVideo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroHotPatch.KuroLauncherLibrary.IsStartupMountSuccess
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:

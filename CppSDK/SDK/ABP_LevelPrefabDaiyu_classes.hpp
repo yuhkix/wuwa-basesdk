@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 #include "KuroAnim_classes.hpp"
 
 
@@ -19,31 +19,31 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_LevelPrefabDaiyu.ABP_LevelPrefabDaiyu_C
-// 0x0610 (0x0D60 - 0x0750)
+// 0x0730 (0x0F80 - 0x0850)
 class UABP_LevelPrefabDaiyu_C final : public UKuroAnimInstance
 {
 public:
-	uint8                                         Pad_748[0x8];                                      // 0x0748(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0750(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0758(0x0038)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x0790(0x0060)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_5;                  // 0x07F0(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_4;                  // 0x0818(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x0840(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x0868(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_1;                  // 0x0890(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult;                    // 0x08B8(0x0028)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_3;                    // 0x08E0(0x0090)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_3;                       // 0x0970(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_2;                    // 0x09A8(0x0090)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_2;                       // 0x0A38(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x0A70(0x0090)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x0B00(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0B38(0x0090)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x0BC8(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x0C00(0x0148)()
-	class FString                                 State;                                             // 0x0D48(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	float                                         PlayRate;                                          // 0x0D58(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_848[0x8];                                      // 0x0848(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0850(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0858(0x0038)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x0890(0x0060)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_5;                  // 0x08F0(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_4;                  // 0x0918(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x0940(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x0968(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_1;                  // 0x0990(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult;                    // 0x09B8(0x0028)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_3;                    // 0x09E0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_3;                       // 0x0AB8(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_2;                    // 0x0AF0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_2;                       // 0x0BC8(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x0C00(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x0CD8(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0D10(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x0DE8(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x0E20(0x0148)()
+	class FString                                 State;                                             // 0x0F68(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	float                                         PlayRate;                                          // 0x0F78(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_ABP_LevelPrefabDaiyu(int32 EntryPoint);
@@ -60,35 +60,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"ABP_LevelPrefabDaiyu_C">();
+		BP_STATIC_CLASS_IMPL("ABP_LevelPrefabDaiyu_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ABP_LevelPrefabDaiyu_C")
 	}
 	static class UABP_LevelPrefabDaiyu_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UABP_LevelPrefabDaiyu_C>();
 	}
 };
-static_assert(alignof(UABP_LevelPrefabDaiyu_C) == 0x000010, "Wrong alignment on UABP_LevelPrefabDaiyu_C");
-static_assert(sizeof(UABP_LevelPrefabDaiyu_C) == 0x000D60, "Wrong size on UABP_LevelPrefabDaiyu_C");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, UberGraphFrame) == 0x000750, "Member 'UABP_LevelPrefabDaiyu_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_Root) == 0x000758, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_Root' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_Slot) == 0x000790, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_Slot' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_TransitionResult_5) == 0x0007F0, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_TransitionResult_5' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_TransitionResult_4) == 0x000818, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_TransitionResult_4' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_TransitionResult_3) == 0x000840, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_TransitionResult_3' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_TransitionResult_2) == 0x000868, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_TransitionResult_2' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_TransitionResult_1) == 0x000890, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_TransitionResult_1' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_TransitionResult) == 0x0008B8, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_TransitionResult' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_SequencePlayer_3) == 0x0008E0, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_SequencePlayer_3' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_StateResult_3) == 0x000970, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_StateResult_3' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_SequencePlayer_2) == 0x0009A8, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_SequencePlayer_2' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_StateResult_2) == 0x000A38, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_StateResult_2' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_SequencePlayer_1) == 0x000A70, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_SequencePlayer_1' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_StateResult_1) == 0x000B00, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_StateResult_1' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_SequencePlayer) == 0x000B38, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_SequencePlayer' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_StateResult) == 0x000BC8, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_StateResult' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, AnimGraphNode_StateMachine) == 0x000C00, "Member 'UABP_LevelPrefabDaiyu_C::AnimGraphNode_StateMachine' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, State) == 0x000D48, "Member 'UABP_LevelPrefabDaiyu_C::State' has a wrong offset!");
-static_assert(offsetof(UABP_LevelPrefabDaiyu_C, PlayRate) == 0x000D58, "Member 'UABP_LevelPrefabDaiyu_C::PlayRate' has a wrong offset!");
+DUMPER7_ASSERTS_UABP_LevelPrefabDaiyu_C;
 
 }
 

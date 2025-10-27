@@ -100,19 +100,24 @@ public:
 	static class FString GetLocalGameDataPath(class UObject* __WorldContext);
 	static void ActivitySequenceEmitEvent(const class FString& param, class UObject* __WorldContext);
 	static float GetUiWeaponEquippedRoleId(class UObject* __WorldContext);
+	static void EnablePhotographTimeDilation(float timeDilation, class UObject* __WorldContext);
+	static void DisablePhotographTimeDilation(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"UiBlueprintFunctionLibrary_C">();
+		BP_STATIC_CLASS_IMPL("UiBlueprintFunctionLibrary_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"UiBlueprintFunctionLibrary_C")
 	}
 	static class UUiBlueprintFunctionLibrary_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UUiBlueprintFunctionLibrary_C>();
 	}
 };
-static_assert(alignof(UUiBlueprintFunctionLibrary_C) == 0x000008, "Wrong alignment on UUiBlueprintFunctionLibrary_C");
-static_assert(sizeof(UUiBlueprintFunctionLibrary_C) == 0x000030, "Wrong size on UUiBlueprintFunctionLibrary_C");
+DUMPER7_ASSERTS_UUiBlueprintFunctionLibrary_C;
 
 }
 

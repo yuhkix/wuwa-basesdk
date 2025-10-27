@@ -21,24 +21,27 @@ namespace SDK
 class UBPF_CameraHelper_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void D_GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform);
-	static void D_GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location);
-	static void GetCameraRotator(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FRotator* Rotator);
-	static void GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location);
 	static void GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform);
+	static void GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location);
+	static void GetCameraRotator(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FRotator* Rotator);
+	static void D_GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location);
+	static void D_GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BPF_CameraHelper_C">();
+		BP_STATIC_CLASS_IMPL("BPF_CameraHelper_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BPF_CameraHelper_C")
 	}
 	static class UBPF_CameraHelper_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UBPF_CameraHelper_C>();
 	}
 };
-static_assert(alignof(UBPF_CameraHelper_C) == 0x000008, "Wrong alignment on UBPF_CameraHelper_C");
-static_assert(sizeof(UBPF_CameraHelper_C) == 0x000030, "Wrong size on UBPF_CameraHelper_C");
+DUMPER7_ASSERTS_UBPF_CameraHelper_C;
 
 }
 

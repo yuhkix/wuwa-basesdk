@@ -31,17 +31,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"TsAnimNotifyStateAddMaterialController_C">();
+		BP_STATIC_CLASS_IMPL("TsAnimNotifyStateAddMaterialController_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TsAnimNotifyStateAddMaterialController_C")
 	}
 	static class UTsAnimNotifyStateAddMaterialController_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UTsAnimNotifyStateAddMaterialController_C>();
 	}
 };
-static_assert(alignof(UTsAnimNotifyStateAddMaterialController_C) == 0x000008, "Wrong alignment on UTsAnimNotifyStateAddMaterialController_C");
-static_assert(sizeof(UTsAnimNotifyStateAddMaterialController_C) == 0x000058, "Wrong size on UTsAnimNotifyStateAddMaterialController_C");
-static_assert(offsetof(UTsAnimNotifyStateAddMaterialController_C, ControllerData) == 0x000048, "Member 'UTsAnimNotifyStateAddMaterialController_C::ControllerData' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifyStateAddMaterialController_C, UserData) == 0x000050, "Member 'UTsAnimNotifyStateAddMaterialController_C::UserData' has a wrong offset!");
+DUMPER7_ASSERTS_UTsAnimNotifyStateAddMaterialController_C;
 
 }
 

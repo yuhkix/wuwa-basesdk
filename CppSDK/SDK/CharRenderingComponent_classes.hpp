@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "ECharacterDitherType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "ECharacterSlotSpecifiedType_structs.hpp"
 #include "ECharacterControllerCaseType_structs.hpp"
+#include "ECharacterDitherType_structs.hpp"
 #include "ECharacterBodySpecifiedType_structs.hpp"
+#include "ECharacterSlotSpecifiedType_structs.hpp"
 #include "ECharacterRenderingType_structs.hpp"
 
 
@@ -93,23 +93,27 @@ public:
 	void SetMaterialPropertyColorV2(class FName name, const struct FLinearColor& value, EKuroCharBodySpecifiedType bodyType, EKuroCharSlotSpecifiedType slotType, EKuroCharMeshPart meshPart);
 	void SetMaterialReplaceV2(class UMaterialInterface* material, EKuroCharBodySpecifiedType bodyType, EKuroCharSlotSpecifiedType slotType, EKuroCharMeshPart meshPart);
 	void RemoveExternalMaterialReplaceV2(EKuroCharBodySpecifiedType bodyType, EKuroCharSlotSpecifiedType slotType, EKuroCharMeshPart meshPart);
+	class FName GetSkeletalMeshComponentBodyName(class USkeletalMeshComponent* skeletalComp);
+	void AddFloatUpdateParamPermanentByIndexV2(class FName name, float value, class FName bodyName, float materialIndex);
+	void SetEffectGroupProgress(float progress, int32 groupHandleId);
+	float GetOpacityConsiderVisibility();
+	void SetShouldCastShadow(bool castShadow);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"CharRenderingComponent_C">();
+		BP_STATIC_CLASS_IMPL("CharRenderingComponent_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CharRenderingComponent_C")
 	}
 	static class UCharRenderingComponent_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UCharRenderingComponent_C>();
 	}
 };
-static_assert(alignof(UCharRenderingComponent_C) == 0x000008, "Wrong alignment on UCharRenderingComponent_C");
-static_assert(sizeof(UCharRenderingComponent_C) == 0x0000F8, "Wrong size on UCharRenderingComponent_C");
-static_assert(offsetof(UCharRenderingComponent_C, UberGraphFrame) == 0x0000D8, "Member 'UCharRenderingComponent_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UCharRenderingComponent_C, InteractionConfig) == 0x0000E0, "Member 'UCharRenderingComponent_C::InteractionConfig' has a wrong offset!");
-static_assert(offsetof(UCharRenderingComponent_C, DecalShadowConfig) == 0x0000E8, "Member 'UCharRenderingComponent_C::DecalShadowConfig' has a wrong offset!");
-static_assert(offsetof(UCharRenderingComponent_C, MonsterUseBodyEffect) == 0x0000F0, "Member 'UCharRenderingComponent_C::MonsterUseBodyEffect' has a wrong offset!");
+DUMPER7_ASSERTS_UCharRenderingComponent_C;
 
 }
 

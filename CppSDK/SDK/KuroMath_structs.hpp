@@ -10,6 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
+
 
 namespace SDK
 {
@@ -51,6 +54,79 @@ enum class EEasingType : uint8
 	EaseInOutBounce                          = 30,
 	EEasingType_MAX                          = 31,
 };
+
+// Enum KuroMath.EEndType
+// NumValues: 0x0006
+enum class EEndType : uint8
+{
+	Polygon                                  = 0,
+	Joined                                   = 1,
+	Butt                                     = 2,
+	Square                                   = 3,
+	Round                                    = 4,
+	EEndType_MAX                             = 5,
+};
+
+// Enum KuroMath.EJoinType
+// NumValues: 0x0004
+enum class EJoinType : uint8
+{
+	Square                                   = 0,
+	Round                                    = 1,
+	Miter                                    = 2,
+	EJoinType_MAX                            = 3,
+};
+
+// Enum KuroMath.EKuroMathSampleSpacing
+// NumValues: 0x0005
+enum class EKuroMathSampleSpacing : uint8
+{
+	UniformDistance                          = 0,
+	UniformTime                              = 1,
+	ErrorTolerance                           = 2,
+	OriginPoints                             = 3,
+	EKuroMathSampleSpacing_MAX               = 4,
+};
+
+// ScriptStruct KuroMath.KuroGeometryGeneralPolygonList
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FKuroGeometryGeneralPolygonList final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FKuroGeometryGeneralPolygonList;
+
+// ScriptStruct KuroMath.KuroGeometrySimplePolygon
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FKuroGeometrySimplePolygon final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FKuroGeometrySimplePolygon;
+
+// ScriptStruct KuroMath.KuroSplineSamplingOptions
+// 0x000C (0x000C - 0x0000)
+struct FKuroSplineSamplingOptions final
+{
+public:
+	int32                                         NumSamples;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ErrorTolerance;                                    // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroMathSampleSpacing                        SampleSpacing;                                     // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESplineCoordinateSpace                        CoordinateSpace;                                   // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FKuroSplineSamplingOptions;
+
+// ScriptStruct KuroMath.Vector2DArrayStruct
+// 0x0010 (0x0010 - 0x0000)
+struct FVector2DArrayStruct final
+{
+public:
+	TArray<struct FVector2D>                      Vector2Ds;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVector2DArrayStruct;
 
 }
 

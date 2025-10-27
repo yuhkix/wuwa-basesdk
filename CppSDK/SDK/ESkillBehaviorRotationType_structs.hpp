@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum ESkillBehaviorRotationType.ESkillBehaviorRotationType
-// NumValues: 0x0006
+// NumValues: 0x0007
 enum class ESkillBehaviorRotationType : uint8
 {
 	NewEnumerator12                          = 0,
@@ -23,7 +23,8 @@ enum class ESkillBehaviorRotationType : uint8
 	NewEnumerator14                          = 2,
 	NewEnumerator15                          = 3,
 	NewEnumerator16                          = 4,
-	ESkillBehaviorRotationType_MAX           = 5,
+	NewEnumerator17                          = 5,
+	ESkillBehaviorRotationType_MAX           = 6,
 };
 
 }

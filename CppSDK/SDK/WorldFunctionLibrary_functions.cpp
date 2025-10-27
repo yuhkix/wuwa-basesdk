@@ -4276,5 +4276,88 @@ int32 UWorldFunctionLibrary_C::GetSummonRandomEntity(int32 summonerId, int32 ind
 	return Parms.ReturnValue;
 }
 
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetTrapDefenseUseBpUsing
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UWorldFunctionLibrary_C::GetTrapDefenseUseBpUsing(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("WorldFunctionLibrary_C", "GetTrapDefenseUseBpUsing");
+
+	Params::WorldFunctionLibrary_C_GetTrapDefenseUseBpUsing Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.DisableAllRoleWithoutControl
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    needEffect                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWorldFunctionLibrary_C::DisableAllRoleWithoutControl(bool needEffect, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("WorldFunctionLibrary_C", "DisableAllRoleWithoutControl");
+
+	Params::WorldFunctionLibrary_C_DisableAllRoleWithoutControl Parms{};
+
+	Parms.needEffect = needEffect;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetFormationActors
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TArray<class AActor*> UWorldFunctionLibrary_C::GetFormationActors(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("WorldFunctionLibrary_C", "GetFormationActors");
+
+	Params::WorldFunctionLibrary_C_GetFormationActors Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
 }
 

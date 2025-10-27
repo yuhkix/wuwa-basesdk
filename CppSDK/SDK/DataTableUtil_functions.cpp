@@ -533,7 +533,7 @@ TArray<struct FSSkillMontage> UDataTableUtil_C::LoadAllSkillMontages(class UObje
 // class UDataTable*                       CharacterFightInfo                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class FString&                    CharacterResourcePath                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSCharacterFightInfo*            outInfo                                                (Parm, OutParm, HasGetValueTypeHash)
+// struct FSCharacterFightInfo*            outInfo                                                (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
 // bool*                                   outIsFound                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadCharacterFightInfo(class UDataTable* CharacterFightInfo, const class FString& CharacterResourcePath, class UObject* __WorldContext, struct FSCharacterFightInfo* outInfo, bool* outIsFound)

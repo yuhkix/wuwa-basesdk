@@ -37,20 +37,7 @@ public:
 	struct FKey                                   K2Node_Event_key_1;                                // 0x0038(0x0020)(UObjectWrapper, HasGetValueTypeHash)
 	struct FKey                                   K2Node_Event_key;                                  // 0x0058(0x0020)(HasGetValueTypeHash)
 };
-static_assert(alignof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController) == 0x000008, "Wrong alignment on BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController");
-static_assert(sizeof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController) == 0x000078, "Wrong size on BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, EntryPoint) == 0x000000, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::EntryPoint' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, CallFunc_TsGetGmIsOpen_ReturnValue) == 0x000004, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::CallFunc_TsGetGmIsOpen_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, K2Node_Event_PossessedPawn) == 0x000008, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::K2Node_Event_PossessedPawn' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, K2Node_DynamicCast_AsTs_Base_Character) == 0x000010, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, K2Node_DynamicCast_bSuccess) == 0x000018, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, K2Node_Event_UnpossessedPawn) == 0x000020, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::K2Node_Event_UnpossessedPawn' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, K2Node_DynamicCast_AsBP_Kuro_Cheat_Manager) == 0x000028, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::K2Node_DynamicCast_AsBP_Kuro_Cheat_Manager' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, K2Node_DynamicCast_bSuccess_1) == 0x000030, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, CallFunc_IsValid_ReturnValue) == 0x000031, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, CallFunc_IsValid_ReturnValue_1) == 0x000032, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, K2Node_Event_key_1) == 0x000038, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::K2Node_Event_key_1' has a wrong offset!");
-static_assert(offsetof(BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController, K2Node_Event_key) == 0x000058, "Member 'BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController::K2Node_Event_key' has a wrong offset!");
+DUMPER7_ASSERTS_BP_CharacterController_C_ExecuteUbergraph_BP_CharacterController;
 
 // Function BP_CharacterController.BP_CharacterController_C.OnReleaseAnyKey
 // 0x0020 (0x0020 - 0x0000)
@@ -59,9 +46,7 @@ struct BP_CharacterController_C_OnReleaseAnyKey final
 public:
 	struct FKey                                   key;                                               // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 };
-static_assert(alignof(BP_CharacterController_C_OnReleaseAnyKey) == 0x000008, "Wrong alignment on BP_CharacterController_C_OnReleaseAnyKey");
-static_assert(sizeof(BP_CharacterController_C_OnReleaseAnyKey) == 0x000020, "Wrong size on BP_CharacterController_C_OnReleaseAnyKey");
-static_assert(offsetof(BP_CharacterController_C_OnReleaseAnyKey, key) == 0x000000, "Member 'BP_CharacterController_C_OnReleaseAnyKey::key' has a wrong offset!");
+DUMPER7_ASSERTS_BP_CharacterController_C_OnReleaseAnyKey;
 
 // Function BP_CharacterController.BP_CharacterController_C.OnPressAnyKey
 // 0x0020 (0x0020 - 0x0000)
@@ -70,9 +55,7 @@ struct BP_CharacterController_C_OnPressAnyKey final
 public:
 	struct FKey                                   key;                                               // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, UObjectWrapper, HasGetValueTypeHash)
 };
-static_assert(alignof(BP_CharacterController_C_OnPressAnyKey) == 0x000008, "Wrong alignment on BP_CharacterController_C_OnPressAnyKey");
-static_assert(sizeof(BP_CharacterController_C_OnPressAnyKey) == 0x000020, "Wrong size on BP_CharacterController_C_OnPressAnyKey");
-static_assert(offsetof(BP_CharacterController_C_OnPressAnyKey, key) == 0x000000, "Member 'BP_CharacterController_C_OnPressAnyKey::key' has a wrong offset!");
+DUMPER7_ASSERTS_BP_CharacterController_C_OnPressAnyKey;
 
 // Function BP_CharacterController.BP_CharacterController_C.ReceivePossess
 // 0x0008 (0x0008 - 0x0000)
@@ -81,9 +64,7 @@ struct BP_CharacterController_C_ReceivePossess final
 public:
 	class APawn*                                  PossessedPawn;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(BP_CharacterController_C_ReceivePossess) == 0x000008, "Wrong alignment on BP_CharacterController_C_ReceivePossess");
-static_assert(sizeof(BP_CharacterController_C_ReceivePossess) == 0x000008, "Wrong size on BP_CharacterController_C_ReceivePossess");
-static_assert(offsetof(BP_CharacterController_C_ReceivePossess, PossessedPawn) == 0x000000, "Member 'BP_CharacterController_C_ReceivePossess::PossessedPawn' has a wrong offset!");
+DUMPER7_ASSERTS_BP_CharacterController_C_ReceivePossess;
 
 // Function BP_CharacterController.BP_CharacterController_C.ReceiveUnPossess
 // 0x0008 (0x0008 - 0x0000)
@@ -92,9 +73,7 @@ struct BP_CharacterController_C_ReceiveUnPossess final
 public:
 	class APawn*                                  UnpossessedPawn;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(BP_CharacterController_C_ReceiveUnPossess) == 0x000008, "Wrong alignment on BP_CharacterController_C_ReceiveUnPossess");
-static_assert(sizeof(BP_CharacterController_C_ReceiveUnPossess) == 0x000008, "Wrong size on BP_CharacterController_C_ReceiveUnPossess");
-static_assert(offsetof(BP_CharacterController_C_ReceiveUnPossess, UnpossessedPawn) == 0x000000, "Member 'BP_CharacterController_C_ReceiveUnPossess::UnpossessedPawn' has a wrong offset!");
+DUMPER7_ASSERTS_BP_CharacterController_C_ReceiveUnPossess;
 
 }
 

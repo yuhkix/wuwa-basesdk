@@ -21,23 +21,26 @@ namespace SDK
 class UEffectViewComponent_C final : public USceneComponent
 {
 public:
-	void Stop(bool immediately);
-	void Play();
-	void SetAutoPlay(bool autoPlay);
 	void EditorTick(float deltaSecond);
+	void SetAutoPlay(bool autoPlay);
+	void Play();
+	void Stop(bool immediately);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"EffectViewComponent_C">();
+		BP_STATIC_CLASS_IMPL("EffectViewComponent_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"EffectViewComponent_C")
 	}
 	static class UEffectViewComponent_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UEffectViewComponent_C>();
 	}
 };
-static_assert(alignof(UEffectViewComponent_C) == 0x000010, "Wrong alignment on UEffectViewComponent_C");
-static_assert(sizeof(UEffectViewComponent_C) == 0x000220, "Wrong size on UEffectViewComponent_C");
+DUMPER7_ASSERTS_UEffectViewComponent_C;
 
 }
 

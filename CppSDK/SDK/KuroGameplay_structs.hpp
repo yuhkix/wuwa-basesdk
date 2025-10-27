@@ -10,10 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "KuroCurve_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -58,63 +57,6 @@ enum class EMultiEffectType : uint8
 	EMultiEffectType_MAX                     = 1,
 };
 
-// Enum KuroGameplay.ESignificanceGroup
-// NumValues: 0x0006
-enum class ESignificanceGroup : uint8
-{
-	Idle                                     = 0,
-	Low                                      = 1,
-	Middle                                   = 2,
-	High                                     = 3,
-	Critical                                 = 4,
-	ESignificanceGroup_MAX                   = 5,
-};
-
-// Enum KuroGameplay.EActorCavernMode
-// NumValues: 0x0005
-enum class EActorCavernMode : uint8
-{
-	ActorCavernMode_None                     = 0,
-	ActorCavernMode_Outside                  = 1,
-	ActorCavernMode_Inside                   = 2,
-	ActorCavernMode_IntermediateZone         = 3,
-	ActorCavernMode_MAX                      = 4,
-};
-
-// Enum KuroGameplay.EDisableActorTickStrategy
-// NumValues: 0x0006
-enum class EDisableActorTickStrategy : uint8
-{
-	DisableActorTickStrategy_None            = 0,
-	DisableActorTickStrategy_DistanceOnly    = 1,
-	DisableActorTickStrategy_NotRenderedOnly = 2,
-	DisableActorTickStrategy_NotRenderedAndDistance = 3,
-	DisableActorTickStrategy_MaxInterval     = 4,
-	DisableActorTickStrategy_MAX             = 5,
-};
-
-// Enum KuroGameplay.EGameBudgetAllocatorActorMode
-// NumValues: 0x0005
-enum class EGameBudgetAllocatorActorMode : uint8
-{
-	GBA_ActorMode_Rendered                   = 0,
-	GBA_ActorMode_NotRendered                = 1,
-	GBA_ActorMode_Fighting                   = 2,
-	GBA_ActorMode_Num                        = 3,
-	GBA_ActorMode_MAX                        = 4,
-};
-
-// Enum KuroGameplay.EGameBudgetAllocatorGlobalMode
-// NumValues: 0x0005
-enum class EGameBudgetAllocatorGlobalMode : uint8
-{
-	GBA_GlobalMode_Normal                    = 0,
-	GBA_GlobalMode_Fighting                  = 1,
-	GBA_GlobalMode_Cutscene                  = 2,
-	GBA_GlobalMode_Num                       = 3,
-	GBA_GlobalMode_MAX                       = 4,
-};
-
 // Enum KuroGameplay.ELockAxis
 // NumValues: 0x0007
 enum class ELockAxis : uint8
@@ -150,15 +92,15 @@ enum class EKuroEasingFuncType : uint8
 	KEF_MAX                                  = 15,
 };
 
-// ScriptStruct KuroGameplay.KuroGASMessageParams
+// ScriptStruct KuroGameplay.KuroParameterFloat
 // 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FKuroGASMessageParams final
+struct FKuroParameterFloat final
 {
 public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   Name;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FKuroGASMessageParams) == 0x000008, "Wrong alignment on FKuroGASMessageParams");
-static_assert(sizeof(FKuroGASMessageParams) == 0x000010, "Wrong size on FKuroGASMessageParams");
+DUMPER7_ASSERTS_FKuroParameterFloat;
 
 // ScriptStruct KuroGameplay.EffectModelNiagaraExtraState
 // 0x00F0 (0x00F0 - 0x0000)
@@ -169,68 +111,226 @@ public:
 	TMap<class FName, struct FKuroCurveLinearColor> ColorParameters;                                 // 0x0050(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TMap<class FName, struct FKuroCurveVector>    VectorParameters;                                  // 0x00A0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FEffectModelNiagaraExtraState) == 0x000008, "Wrong alignment on FEffectModelNiagaraExtraState");
-static_assert(sizeof(FEffectModelNiagaraExtraState) == 0x0000F0, "Wrong size on FEffectModelNiagaraExtraState");
-static_assert(offsetof(FEffectModelNiagaraExtraState, FloatParameters) == 0x000000, "Member 'FEffectModelNiagaraExtraState::FloatParameters' has a wrong offset!");
-static_assert(offsetof(FEffectModelNiagaraExtraState, ColorParameters) == 0x000050, "Member 'FEffectModelNiagaraExtraState::ColorParameters' has a wrong offset!");
-static_assert(offsetof(FEffectModelNiagaraExtraState, VectorParameters) == 0x0000A0, "Member 'FEffectModelNiagaraExtraState::VectorParameters' has a wrong offset!");
+DUMPER7_ASSERTS_FEffectModelNiagaraExtraState;
 
-// ScriptStruct KuroGameplay.GameBudgetAllocatorGroupConfig
-// 0x0078 (0x0078 - 0x0000)
-struct FGameBudgetAllocatorGroupConfig final
+// ScriptStruct KuroGameplay.KuroEffectPostProcessSkyBoxSetting
+// 0x20E0 (0x20E0 - 0x0000)
+struct FKuroEffectPostProcessSkyBoxSetting final
 {
 public:
-	class FName                                   GroupName;                                         // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESignificanceGroup                            SignificanceGroup;                                 // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        TickPriority;                                      // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EDisableActorTickStrategy                     DisableActorTickStrategy;                          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        DisableActorTickDistance;                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x5C];                                      // 0x001C(0x005C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         bOverride_ZenithColor : 1;                         // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_NadirColor : 1;                          // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_NadirFalloff : 1;                        // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_NadirFalloff_Mobile : 1;                 // 0x0000(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_HorizonColor : 1;                        // 0x0000(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_HorizonFalloff : 1;                      // 0x0000(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_TopColor : 1;                            // 0x0000(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_TopFalloff : 1;                          // 0x0000(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_TopColorMobile : 1;                      // 0x0001(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_TopFalloffMobile : 1;                    // 0x0001(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SunDiscColor : 1;                        // 0x0001(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SunScatterColor : 1;                     // 0x0001(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SunSize : 1;                             // 0x0001(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SunScatterSize : 1;                      // 0x0001(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SunMeshScale : 1;                        // 0x0001(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SunMeshColor : 1;                        // 0x0001(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonTexture : 1;                         // 0x0002(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonPhase : 1;                           // 0x0002(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonDiscColor : 1;                       // 0x0002(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonScatterColor : 1;                    // 0x0002(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonSize : 1;                            // 0x0002(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonScatterSize : 1;                     // 0x0002(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ExtremeWeatherWeight : 1;                // 0x0002(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ST_TopColor : 1;                         // 0x0002(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ST_DomeColorTint : 1;                    // 0x0003(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ST_TopWidth : 1;                         // 0x0003(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveLinearColor                  ZenithColor;                                       // 0x0008(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  NadirColor;                                        // 0x0228(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        NadirFalloff;                                      // 0x0448(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        NadirFalloff_Mobile;                               // 0x04D8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  HorizonColor;                                      // 0x0568(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        HorizonFalloff;                                    // 0x0788(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  TopColor;                                          // 0x0818(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        TopFalloff;                                        // 0x0A38(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  TopColorMobile;                                    // 0x0AC8(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        TopFalloffMobile;                                  // 0x0CE8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  SunDiscColor;                                      // 0x0D78(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  SunScatterColor;                                   // 0x0F98(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        SunSize;                                           // 0x11B8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        SunScatterSize;                                    // 0x1248(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        SunMeshScale;                                      // 0x12D8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  SunMeshColor;                                      // 0x1368(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  MoonDiscColor;                                     // 0x1588(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class UTexture2D*                             MoonTexture;                                       // 0x17A8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        MoonPhase;                                         // 0x17B0(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  MoonScatterColor;                                  // 0x1840(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        MoonSize;                                          // 0x1A60(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        MoonScatterSize;                                   // 0x1AF0(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        ExtremeWeatherWeight;                              // 0x1B80(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  ST_TopColor;                                       // 0x1C10(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  ST_DomeColorTint;                                  // 0x1E30(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        ST_TopWidth;                                       // 0x2050(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGameBudgetAllocatorGroupConfig) == 0x000004, "Wrong alignment on FGameBudgetAllocatorGroupConfig");
-static_assert(sizeof(FGameBudgetAllocatorGroupConfig) == 0x000078, "Wrong size on FGameBudgetAllocatorGroupConfig");
-static_assert(offsetof(FGameBudgetAllocatorGroupConfig, GroupName) == 0x000000, "Member 'FGameBudgetAllocatorGroupConfig::GroupName' has a wrong offset!");
-static_assert(offsetof(FGameBudgetAllocatorGroupConfig, SignificanceGroup) == 0x00000C, "Member 'FGameBudgetAllocatorGroupConfig::SignificanceGroup' has a wrong offset!");
-static_assert(offsetof(FGameBudgetAllocatorGroupConfig, TickPriority) == 0x000010, "Member 'FGameBudgetAllocatorGroupConfig::TickPriority' has a wrong offset!");
-static_assert(offsetof(FGameBudgetAllocatorGroupConfig, DisableActorTickStrategy) == 0x000014, "Member 'FGameBudgetAllocatorGroupConfig::DisableActorTickStrategy' has a wrong offset!");
-static_assert(offsetof(FGameBudgetAllocatorGroupConfig, DisableActorTickDistance) == 0x000018, "Member 'FGameBudgetAllocatorGroupConfig::DisableActorTickDistance' has a wrong offset!");
+DUMPER7_ASSERTS_FKuroEffectPostProcessSkyBoxSetting;
 
-// ScriptStruct KuroGameplay.GameBudgetAllocatorTickDetailConfig
+// ScriptStruct KuroGameplay.KuroSceneTeamItem
 // 0x0008 (0x0008 - 0x0000)
-struct FGameBudgetAllocatorTickDetailConfig final
+struct FKuroSceneTeamItem final
 {
 public:
-	uint32                                        MaxTickInterval;                                   // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionStartSize;                            // 0x0004(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionIntervalSize;                         // 0x0006(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EntityId;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsMyRole;                                          // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FGameBudgetAllocatorTickDetailConfig) == 0x000004, "Wrong alignment on FGameBudgetAllocatorTickDetailConfig");
-static_assert(sizeof(FGameBudgetAllocatorTickDetailConfig) == 0x000008, "Wrong size on FGameBudgetAllocatorTickDetailConfig");
-static_assert(offsetof(FGameBudgetAllocatorTickDetailConfig, MaxTickInterval) == 0x000000, "Member 'FGameBudgetAllocatorTickDetailConfig::MaxTickInterval' has a wrong offset!");
-static_assert(offsetof(FGameBudgetAllocatorTickDetailConfig, TickReductionStartSize) == 0x000004, "Member 'FGameBudgetAllocatorTickDetailConfig::TickReductionStartSize' has a wrong offset!");
-static_assert(offsetof(FGameBudgetAllocatorTickDetailConfig, TickReductionIntervalSize) == 0x000006, "Member 'FGameBudgetAllocatorTickDetailConfig::TickReductionIntervalSize' has a wrong offset!");
+DUMPER7_ASSERTS_FKuroSceneTeamItem;
 
-// ScriptStruct KuroGameplay.GameBudgetAllocatorAfterTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FGameBudgetAllocatorAfterTickFunction final : public FTickFunction
+// ScriptStruct KuroGameplay.KuroParameterLinearColor
+// 0x001C (0x001C - 0x0000)
+struct FKuroParameterLinearColor final
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   Name;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Value;                                             // 0x000C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGameBudgetAllocatorAfterTickFunction) == 0x000008, "Wrong alignment on FGameBudgetAllocatorAfterTickFunction");
-static_assert(sizeof(FGameBudgetAllocatorAfterTickFunction) == 0x000030, "Wrong size on FGameBudgetAllocatorAfterTickFunction");
+DUMPER7_ASSERTS_FKuroParameterLinearColor;
 
-// ScriptStruct KuroGameplay.GameBudgetAllocatorTickFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FGameBudgetAllocatorTickFunction final : public FTickFunction
+// ScriptStruct KuroGameplay.KuroParameterVector
+// 0x0018 (0x0018 - 0x0000)
+struct FKuroParameterVector final
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   Name;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Value;                                             // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FGameBudgetAllocatorTickFunction) == 0x000008, "Wrong alignment on FGameBudgetAllocatorTickFunction");
-static_assert(sizeof(FGameBudgetAllocatorTickFunction) == 0x000030, "Wrong size on FGameBudgetAllocatorTickFunction");
+DUMPER7_ASSERTS_FKuroParameterVector;
+
+// ScriptStruct KuroGameplay.KuroParameterArrayVector
+// 0x0020 (0x0020 - 0x0000)
+struct FKuroParameterArrayVector final
+{
+public:
+	class FName                                   Name;                                              // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        Value;                                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKuroParameterArrayVector;
+
+// ScriptStruct KuroGameplay.KuroEffectNiagaraParametersStruct
+// 0x0060 (0x0060 - 0x0000)
+struct FKuroEffectNiagaraParametersStruct final
+{
+public:
+	TArray<struct FKuroParameterFloat>            UserParameterFloat;                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroParameterLinearColor>      UserParameterColor;                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroParameterVector>           UserParameterVector;                               // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroParameterArrayVector>      UserParameterArrayVector;                          // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroParameterFloat>            MaterialParameterFloat;                            // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroParameterLinearColor>      MaterialParameterColor;                            // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKuroEffectNiagaraParametersStruct;
+
+// ScriptStruct KuroGameplay.KuroEffectSpecData
+// 0x0018 (0x0018 - 0x0000)
+struct FKuroEffectSpecData final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Path;                                              // 0x0004(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         SpecType;                                          // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         EffectRegularType;                                 // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LifeTime;                                          // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKuroEffectSpecData;
+
+// ScriptStruct KuroGameplay.KuroEffectContext
+// 0x0030 (0x0030 - 0x0000)
+struct FKuroEffectContext
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                SourceObject;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DisablePostProcess;                                // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CreateFromType;                                    // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PlayFlag;                                          // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CreateFromBpEffectActor;                           // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ContextType;                                       // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         HitEffectType;                                     // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AnsSlotName;                                       // 0x0024(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKuroEffectContext;
+
+// ScriptStruct KuroGameplay.KuroSkeletalMeshEffectContext
+// 0x0010 (0x0040 - 0x0030)
+struct FKuroSkeletalMeshEffectContext : public FKuroEffectContext
+{
+public:
+	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsSyncTimeDilation;                                // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FKuroSkeletalMeshEffectContext;
+
+// ScriptStruct KuroGameplay.KuroEffectRuntimeGhostEffectContext
+// 0x0010 (0x0050 - 0x0040)
+struct FKuroEffectRuntimeGhostEffectContext final : public FKuroSkeletalMeshEffectContext
+{
+public:
+	float                                         SpawnRate;                                         // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseSpawnRate;                                      // 0x0044(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SpawnInterval;                                     // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GhostLifeTime;                                     // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKuroEffectRuntimeGhostEffectContext;
+
+// ScriptStruct KuroGameplay.KuroEffectAudioContext
+// 0x0008 (0x0038 - 0x0030)
+struct FKuroEffectAudioContext final : public FKuroEffectContext
+{
+public:
+	bool                                          FromPrimaryRole;                                   // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FKuroEffectAudioContext;
+
+// ScriptStruct KuroGameplay.KuroGASMessageParams
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FKuroGASMessageParams final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FKuroGASMessageParams;
+
+// ScriptStruct KuroGameplay.KuroInputDefine
+// 0x0001 (0x0001 - 0x0000)
+struct FKuroInputDefine final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FKuroInputDefine;
+
+// ScriptStruct KuroGameplay.KuroLevelSwitchMaterialData
+// 0x0030 (0x0030 - 0x0000)
+struct FKuroLevelSwitchMaterialData final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeChildren;                                  // 0x0008(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstance*                      EnterMaterial;                                     // 0x0010(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroLevelMaterialDynamicData*          MaterialAsset;                                     // 0x0018(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bExitReverse;                                      // 0x0020(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstance*                      ExitMaterial;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKuroLevelSwitchMaterialData;
 
 // ScriptStruct KuroGameplay.KuroProgressBarStyle
 // 0x0240 (0x0248 - 0x0008)
@@ -242,12 +342,7 @@ public:
 	struct FSlateBrush                            FillImage;                                         // 0x0128(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateBrush                            MarqueeImage;                                      // 0x01B8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FKuroProgressBarStyle) == 0x000008, "Wrong alignment on FKuroProgressBarStyle");
-static_assert(sizeof(FKuroProgressBarStyle) == 0x000248, "Wrong size on FKuroProgressBarStyle");
-static_assert(offsetof(FKuroProgressBarStyle, BackgroundImage) == 0x000008, "Member 'FKuroProgressBarStyle::BackgroundImage' has a wrong offset!");
-static_assert(offsetof(FKuroProgressBarStyle, FillImageMiddle) == 0x000098, "Member 'FKuroProgressBarStyle::FillImageMiddle' has a wrong offset!");
-static_assert(offsetof(FKuroProgressBarStyle, FillImage) == 0x000128, "Member 'FKuroProgressBarStyle::FillImage' has a wrong offset!");
-static_assert(offsetof(FKuroProgressBarStyle, MarqueeImage) == 0x0001B8, "Member 'FKuroProgressBarStyle::MarqueeImage' has a wrong offset!");
+DUMPER7_ASSERTS_FKuroProgressBarStyle;
 
 // ScriptStruct KuroGameplay.SequencerBindingRuntimeProxy
 // 0x0018 (0x0018 - 0x0000)
@@ -257,10 +352,7 @@ public:
 	struct FGuid                                  BindingID;                                         // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMovieSceneSequence*                    Sequence;                                          // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSequencerBindingRuntimeProxy) == 0x000008, "Wrong alignment on FSequencerBindingRuntimeProxy");
-static_assert(sizeof(FSequencerBindingRuntimeProxy) == 0x000018, "Wrong size on FSequencerBindingRuntimeProxy");
-static_assert(offsetof(FSequencerBindingRuntimeProxy, BindingID) == 0x000000, "Member 'FSequencerBindingRuntimeProxy::BindingID' has a wrong offset!");
-static_assert(offsetof(FSequencerBindingRuntimeProxy, Sequence) == 0x000010, "Member 'FSequencerBindingRuntimeProxy::Sequence' has a wrong offset!");
+DUMPER7_ASSERTS_FSequencerBindingRuntimeProxy;
 
 // ScriptStruct KuroGameplay.KuroSplineParams
 // 0x0018 (0x0018 - 0x0000)
@@ -271,10 +363,7 @@ public:
 	bool                                          bClosedLoop;                                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FKuroSplineParams) == 0x000008, "Wrong alignment on FKuroSplineParams");
-static_assert(sizeof(FKuroSplineParams) == 0x000018, "Wrong size on FKuroSplineParams");
-static_assert(offsetof(FKuroSplineParams, Points) == 0x000000, "Member 'FKuroSplineParams::Points' has a wrong offset!");
-static_assert(offsetof(FKuroSplineParams, bClosedLoop) == 0x000010, "Member 'FKuroSplineParams::bClosedLoop' has a wrong offset!");
+DUMPER7_ASSERTS_FKuroSplineParams;
 
 // ScriptStruct KuroGameplay.PerformanceStatisticsTagTreeNodeSerialize
 // 0x0028 (0x0028 - 0x0000)
@@ -287,13 +376,7 @@ public:
 	int32                                         Mode;                                              // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 UserDefineMessage;                                 // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FPerformanceStatisticsTagTreeNodeSerialize) == 0x000008, "Wrong alignment on FPerformanceStatisticsTagTreeNodeSerialize");
-static_assert(sizeof(FPerformanceStatisticsTagTreeNodeSerialize) == 0x000028, "Wrong size on FPerformanceStatisticsTagTreeNodeSerialize");
-static_assert(offsetof(FPerformanceStatisticsTagTreeNodeSerialize, Tag) == 0x000000, "Member 'FPerformanceStatisticsTagTreeNodeSerialize::Tag' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagTreeNodeSerialize, AverageTime) == 0x00000C, "Member 'FPerformanceStatisticsTagTreeNodeSerialize::AverageTime' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagTreeNodeSerialize, MaxTime) == 0x000010, "Member 'FPerformanceStatisticsTagTreeNodeSerialize::MaxTime' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagTreeNodeSerialize, Mode) == 0x000014, "Member 'FPerformanceStatisticsTagTreeNodeSerialize::Mode' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagTreeNodeSerialize, UserDefineMessage) == 0x000018, "Member 'FPerformanceStatisticsTagTreeNodeSerialize::UserDefineMessage' has a wrong offset!");
+DUMPER7_ASSERTS_FPerformanceStatisticsTagTreeNodeSerialize;
 
 // ScriptStruct KuroGameplay.PerformanceStatisticsTagTreeSerialize
 // 0x0038 (0x0038 - 0x0000)
@@ -303,10 +386,7 @@ public:
 	struct FPerformanceStatisticsTagTreeNodeSerialize NodeSerialize;                                 // 0x0000(0x0028)(NativeAccessSpecifierPublic)
 	TArray<struct FPerformanceStatisticsTagTreeNodeSerialize> ChildTags;                             // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FPerformanceStatisticsTagTreeSerialize) == 0x000008, "Wrong alignment on FPerformanceStatisticsTagTreeSerialize");
-static_assert(sizeof(FPerformanceStatisticsTagTreeSerialize) == 0x000038, "Wrong size on FPerformanceStatisticsTagTreeSerialize");
-static_assert(offsetof(FPerformanceStatisticsTagTreeSerialize, NodeSerialize) == 0x000000, "Member 'FPerformanceStatisticsTagTreeSerialize::NodeSerialize' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagTreeSerialize, ChildTags) == 0x000028, "Member 'FPerformanceStatisticsTagTreeSerialize::ChildTags' has a wrong offset!");
+DUMPER7_ASSERTS_FPerformanceStatisticsTagTreeSerialize;
 
 // ScriptStruct KuroGameplay.PerformanceStatisticsUnitRecord
 // 0x0028 (0x0028 - 0x0000)
@@ -319,13 +399,7 @@ public:
 	float                                         Time;                                              // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 UserDefineMessage;                                 // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FPerformanceStatisticsUnitRecord) == 0x000008, "Wrong alignment on FPerformanceStatisticsUnitRecord");
-static_assert(sizeof(FPerformanceStatisticsUnitRecord) == 0x000028, "Wrong size on FPerformanceStatisticsUnitRecord");
-static_assert(offsetof(FPerformanceStatisticsUnitRecord, FrameCount) == 0x000000, "Member 'FPerformanceStatisticsUnitRecord::FrameCount' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsUnitRecord, Tag) == 0x000004, "Member 'FPerformanceStatisticsUnitRecord::Tag' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsUnitRecord, Mode) == 0x000010, "Member 'FPerformanceStatisticsUnitRecord::Mode' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsUnitRecord, Time) == 0x000014, "Member 'FPerformanceStatisticsUnitRecord::Time' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsUnitRecord, UserDefineMessage) == 0x000018, "Member 'FPerformanceStatisticsUnitRecord::UserDefineMessage' has a wrong offset!");
+DUMPER7_ASSERTS_FPerformanceStatisticsUnitRecord;
 
 // ScriptStruct KuroGameplay.PerformanceStatisticsSectionRecordSerialize
 // 0x0020 (0x0020 - 0x0000)
@@ -336,10 +410,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FPerformanceStatisticsUnitRecord> UnitRecordValues;                                // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FPerformanceStatisticsSectionRecordSerialize) == 0x000008, "Wrong alignment on FPerformanceStatisticsSectionRecordSerialize");
-static_assert(sizeof(FPerformanceStatisticsSectionRecordSerialize) == 0x000020, "Wrong size on FPerformanceStatisticsSectionRecordSerialize");
-static_assert(offsetof(FPerformanceStatisticsSectionRecordSerialize, SectionName) == 0x000000, "Member 'FPerformanceStatisticsSectionRecordSerialize::SectionName' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsSectionRecordSerialize, UnitRecordValues) == 0x000010, "Member 'FPerformanceStatisticsSectionRecordSerialize::UnitRecordValues' has a wrong offset!");
+DUMPER7_ASSERTS_FPerformanceStatisticsSectionRecordSerialize;
 
 // ScriptStruct KuroGameplay.PerformanceStatisticsSectionsSerialize
 // 0x0010 (0x0010 - 0x0000)
@@ -348,9 +419,7 @@ struct FPerformanceStatisticsSectionsSerialize final
 public:
 	TArray<struct FPerformanceStatisticsSectionRecordSerialize> SectionRecords;                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FPerformanceStatisticsSectionsSerialize) == 0x000008, "Wrong alignment on FPerformanceStatisticsSectionsSerialize");
-static_assert(sizeof(FPerformanceStatisticsSectionsSerialize) == 0x000010, "Wrong size on FPerformanceStatisticsSectionsSerialize");
-static_assert(offsetof(FPerformanceStatisticsSectionsSerialize, SectionRecords) == 0x000000, "Member 'FPerformanceStatisticsSectionsSerialize::SectionRecords' has a wrong offset!");
+DUMPER7_ASSERTS_FPerformanceStatisticsSectionsSerialize;
 
 // ScriptStruct KuroGameplay.PerformanceStatisticsTagNode
 // 0x0088 (0x0088 - 0x0000)
@@ -364,13 +433,7 @@ public:
 	float                                         MaxTime;                                           // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x6C];                                      // 0x001C(0x006C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FPerformanceStatisticsTagNode) == 0x000008, "Wrong alignment on FPerformanceStatisticsTagNode");
-static_assert(sizeof(FPerformanceStatisticsTagNode) == 0x000088, "Wrong size on FPerformanceStatisticsTagNode");
-static_assert(offsetof(FPerformanceStatisticsTagNode, Tag) == 0x000000, "Member 'FPerformanceStatisticsTagNode::Tag' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagNode, RecordFramesCount) == 0x00000C, "Member 'FPerformanceStatisticsTagNode::RecordFramesCount' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagNode, TotalTime) == 0x000010, "Member 'FPerformanceStatisticsTagNode::TotalTime' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagNode, AverageTime) == 0x000014, "Member 'FPerformanceStatisticsTagNode::AverageTime' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagNode, MaxTime) == 0x000018, "Member 'FPerformanceStatisticsTagNode::MaxTime' has a wrong offset!");
+DUMPER7_ASSERTS_FPerformanceStatisticsTagNode;
 
 // ScriptStruct KuroGameplay.PerformanceStatisticsTagNodeForSerialize
 // 0x001C (0x001C - 0x0000)
@@ -383,13 +446,7 @@ public:
 	float                                         AverageTime;                                       // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxTime;                                           // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FPerformanceStatisticsTagNodeForSerialize) == 0x000004, "Wrong alignment on FPerformanceStatisticsTagNodeForSerialize");
-static_assert(sizeof(FPerformanceStatisticsTagNodeForSerialize) == 0x00001C, "Wrong size on FPerformanceStatisticsTagNodeForSerialize");
-static_assert(offsetof(FPerformanceStatisticsTagNodeForSerialize, Tag) == 0x000000, "Member 'FPerformanceStatisticsTagNodeForSerialize::Tag' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagNodeForSerialize, RecordFramesCount) == 0x00000C, "Member 'FPerformanceStatisticsTagNodeForSerialize::RecordFramesCount' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagNodeForSerialize, TotalTime) == 0x000010, "Member 'FPerformanceStatisticsTagNodeForSerialize::TotalTime' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagNodeForSerialize, AverageTime) == 0x000014, "Member 'FPerformanceStatisticsTagNodeForSerialize::AverageTime' has a wrong offset!");
-static_assert(offsetof(FPerformanceStatisticsTagNodeForSerialize, MaxTime) == 0x000018, "Member 'FPerformanceStatisticsTagNodeForSerialize::MaxTime' has a wrong offset!");
+DUMPER7_ASSERTS_FPerformanceStatisticsTagNodeForSerialize;
 
 }
 

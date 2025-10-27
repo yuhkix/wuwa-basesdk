@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -17,23 +18,186 @@ namespace SDK
 {
 
 // Enum KuroVehicle.EKuroVehicleMovementMode
-// NumValues: 0x0005
+// NumValues: 0x0006
 enum class EKuroVehicleMovementMode : uint8
 {
 	KURO_VEHICLE_MOVE_None                   = 0,
 	KURO_VEHICLE_MOVE_Falling                = 1,
 	KURO_VEHICLE_MOVE_Shipping               = 2,
-	KURO_VEHICLE_MOVE_Custom                 = 3,
-	KURO_VEHICLE_MOVE_MAX                    = 4,
+	KURO_VEHICLE_MOVE_Motorcycling           = 3,
+	KURO_VEHICLE_MOVE_Custom                 = 4,
+	KURO_VEHICLE_MOVE_MAX                    = 5,
 };
+
+// Enum KuroVehicle.EHangLimitType
+// NumValues: 0x0003
+enum class EHangLimitType : uint8
+{
+	NoLimit                                  = 0,
+	CutSphere                                = 1,
+	EHangLimitType_MAX                       = 2,
+};
+
+// Enum KuroVehicle.EMotorSubState
+// NumValues: 0x0005
+enum class EMotorSubState : uint8
+{
+	Stop                                     = 0,
+	TwoWheelMoving                           = 1,
+	OneWheelMoving                           = 2,
+	AirMoving                                = 3,
+	EMotorSubState_MAX                       = 4,
+};
+
+// ScriptStruct KuroVehicle.MotorHangConfigParams
+// 0x0020 (0x0020 - 0x0000)
+struct FMotorHangConfigParams final
+{
+public:
+	float                                         MaxDist;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GPerCm;                                            // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Damping;                                           // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotateDamping;                                     // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHangLimitType                                LimitType;                                         // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                LimitAxis;                                         // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMotorHangConfigParams;
+
+// ScriptStruct KuroVehicle.MotorPowerMovingParams
+// 0x000C (0x000C - 0x0000)
+struct FMotorPowerMovingParams final
+{
+public:
+	float                                         MaxAccelToWheel;                                   // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxSpeed;                                          // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAccelToVehicle;                                 // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMotorPowerMovingParams;
+
+// ScriptStruct KuroVehicle.MotorMovingStateParams
+// 0x003C (0x003C - 0x0000)
+struct FMotorMovingStateParams final
+{
+public:
+	bool                                          bLockRotateAxis;                                   // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Velocity;                                          // 0x0004(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10[0xC];                                       // 0x0010(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                RotateAxis;                                        // 0x001C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotateSpeed;                                       // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                NextRotateAxis;                                    // 0x002C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NextRotateSpeed;                                   // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMotorMovingStateParams;
+
+// ScriptStruct KuroVehicle.MotorContactPhysParams
+// 0x000C (0x000C - 0x0000)
+struct FMotorContactPhysParams final
+{
+public:
+	float                                         MotorHitReboundReduce;                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MotorHitReboundCoeff;                              // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MotorHitDragCoeff;                                 // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMotorContactPhysParams;
+
+// ScriptStruct KuroVehicle.MotorFloatRange
+// 0x0018 (0x0018 - 0x0000)
+struct FMotorFloatRange final
+{
+public:
+	float                                         FromMin;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FromMax;                                           // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ToMin;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ToMax;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            Curve;                                             // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMotorFloatRange;
+
+// ScriptStruct KuroVehicle.MotorBrakingConfig
+// 0x0028 (0x0028 - 0x0000)
+struct FMotorBrakingConfig final
+{
+public:
+	struct FMotorFloatRange                       FrontWheelBrakingAccel;                            // 0x0000(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         DefaultBrakingAccel;                               // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BackwardBrakingRate;                               // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ContactRate;                                       // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMotorBrakingConfig;
+
+// ScriptStruct KuroVehicle.MotorBalanceConfig
+// 0x0060 (0x0060 - 0x0000)
+struct alignas(0x10) FMotorBalanceConfig final
+{
+public:
+	float                                         AirBalanceDecreaseRate;                            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AirBalanceDegSpeed;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AirBalanceDegMinTargetOffset;                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OneWheelBalanceDecreaseRate;                       // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OneWheelBalanceDegSpeed;                           // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TwoWheelBalanceDecreaseRate;                       // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TwoWheelBalanceDegSpeed;                           // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               NormalBalanceRotator;                              // 0x001C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FMotorFloatRange                       BodyIncline;                                       // 0x0028(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         BodyInclineDegSpeed;                               // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BodyInclineDegRate;                                // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x18];                                      // 0x0048(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMotorBalanceConfig;
+
+// ScriptStruct KuroVehicle.MotorAccelConfig
+// 0x0110 (0x0110 - 0x0000)
+struct FMotorAccelConfig final
+{
+public:
+	struct FMotorFloatRange                       BackWheelRate;                                     // 0x0000(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         NormalDrag;                                        // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrontWheelBrakingDrag;                             // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BackWheelBrakingDrag;                              // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BackMoveBrakingDragRate;                           // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMotorFloatRange                       PowerAccel;                                        // 0x0028(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         MaxTimeLengthWhenNoSupport;                        // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotateAccelNormal;                                 // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMotorFloatRange                       TurnSpeedNormal;                                   // 0x0048(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         RotateAccelFrontBraking;                           // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMotorFloatRange                       TurnSpeedFrontBraking;                             // 0x0068(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         RotateAccelBackMove;                               // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMotorFloatRange                       TurnSpeedBackMove;                                 // 0x0088(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FMotorFloatRange                       RotateAccelBackBraking;                            // 0x00A0(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FMotorFloatRange                       RotateAccelRateBackBraking;                        // 0x00B8(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FMotorFloatRange                       TurnSpeedBackBraking;                              // 0x00D0(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FMotorFloatRange                       TurnSpeedRateBackBraking;                          // 0x00E8(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         MaxSpeed;                                          // 0x0100(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxBackSpeed;                                      // 0x0104(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxSpeedInTurn;                                    // 0x0108(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMotorAccelConfig;
+
+// ScriptStruct KuroVehicle.MotorTurnConfig
+// 0x0030 (0x0030 - 0x0000)
+struct FMotorTurnConfig final
+{
+public:
+	struct FVector                                FrontWheelTurnAxis;                                // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMotorFloatRange                       FrontWheelTurnAngle;                               // 0x0010(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         FrontWheelTurnRate;                                // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMotorTurnConfig;
 
 // ScriptStruct KuroVehicle.VehicleRootMotionSourceGroup
 // 0x0000 (0x0038 - 0x0038)
 struct FVehicleRootMotionSourceGroup final : public FRootMotionSourceGroup
 {
 };
-static_assert(alignof(FVehicleRootMotionSourceGroup) == 0x000008, "Wrong alignment on FVehicleRootMotionSourceGroup");
-static_assert(sizeof(FVehicleRootMotionSourceGroup) == 0x000038, "Wrong size on FVehicleRootMotionSourceGroup");
+DUMPER7_ASSERTS_FVehicleRootMotionSourceGroup;
 
 }
 

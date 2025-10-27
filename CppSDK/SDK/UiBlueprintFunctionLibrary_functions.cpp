@@ -2173,5 +2173,57 @@ float UUiBlueprintFunctionLibrary_C::GetUiWeaponEquippedRoleId(class UObject* __
 	return Parms.ReturnValue;
 }
 
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.EnablePhotographTimeDilation
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   timeDilation                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UUiBlueprintFunctionLibrary_C::EnablePhotographTimeDilation(float timeDilation, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UiBlueprintFunctionLibrary_C", "EnablePhotographTimeDilation");
+
+	Params::UiBlueprintFunctionLibrary_C_EnablePhotographTimeDilation Parms{};
+
+	Parms.timeDilation = timeDilation;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.DisablePhotographTimeDilation
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UUiBlueprintFunctionLibrary_C::DisablePhotographTimeDilation(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UiBlueprintFunctionLibrary_C", "DisablePhotographTimeDilation");
+
+	Params::UiBlueprintFunctionLibrary_C_DisablePhotographTimeDilation Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

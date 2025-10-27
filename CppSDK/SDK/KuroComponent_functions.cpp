@@ -17,6 +17,25 @@
 namespace SDK
 {
 
+// Function KuroComponent.GpuNpcAvoidComponent.InitGpuNpcAvoid
+// (Final, Native, Public, BlueprintCallable)
+
+void UGpuNpcAvoidComponent::InitGpuNpcAvoid()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GpuNpcAvoidComponent", "InitGpuNpcAvoid");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroComponent.KuroAnimPerfTestComponent.DestroySkeletalMeshActors
 // (Final, Native, Public, BlueprintCallable)
 
@@ -531,6 +550,31 @@ bool UKuroSceneItemMoveComponent::AddRotationStep(const struct FRotator& BeginRo
 }
 
 
+// Function KuroComponent.KuroSceneItemMoveComponent.CalcVelocity
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             DeltaTime                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroSceneItemMoveComponent::CalcVelocity(const float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "CalcVelocity");
+
+	Params::KuroSceneItemMoveComponent_CalcVelocity Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroComponent.KuroSceneItemMoveComponent.GetNextMoveTarget
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -619,6 +663,56 @@ void UKuroSceneItemMoveComponent::Kuro_SetGravityDirect(const struct FVector& In
 }
 
 
+// Function KuroComponent.KuroSceneItemMoveComponent.SetAvoidanceEnabled
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bEnable                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroSceneItemMoveComponent::SetAvoidanceEnabled(bool bEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "SetAvoidanceEnabled");
+
+	Params::KuroSceneItemMoveComponent_SetAvoidanceEnabled Parms{};
+
+	Parms.bEnable = bEnable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComponent.KuroSceneItemMoveComponent.SetAvoidanceGroupMask
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FNavAvoidanceMask&         GroupMask                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UKuroSceneItemMoveComponent::SetAvoidanceGroupMask(const struct FNavAvoidanceMask& GroupMask)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "SetAvoidanceGroupMask");
+
+	Params::KuroSceneItemMoveComponent_SetAvoidanceGroupMask Parms{};
+
+	Parms.GroupMask = std::move(GroupMask);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroComponent.KuroSceneItemMoveComponent.SetEnableDebugForMove
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -634,6 +728,56 @@ void UKuroSceneItemMoveComponent::SetEnableDebugForMove(bool Enable)
 	Params::KuroSceneItemMoveComponent_SetEnableDebugForMove Parms{};
 
 	Parms.Enable = Enable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComponent.KuroSceneItemMoveComponent.SetGroupsToAvoidMask
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FNavAvoidanceMask&         GroupMask                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UKuroSceneItemMoveComponent::SetGroupsToAvoidMask(const struct FNavAvoidanceMask& GroupMask)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "SetGroupsToAvoidMask");
+
+	Params::KuroSceneItemMoveComponent_SetGroupsToAvoidMask Parms{};
+
+	Parms.GroupMask = std::move(GroupMask);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComponent.KuroSceneItemMoveComponent.SetGroupsToIgnoreMask
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FNavAvoidanceMask&         GroupMask                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UKuroSceneItemMoveComponent::SetGroupsToIgnoreMask(const struct FNavAvoidanceMask& GroupMask)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "SetGroupsToIgnoreMask");
+
+	Params::KuroSceneItemMoveComponent_SetGroupsToIgnoreMask Parms{};
+
+	Parms.GroupMask = std::move(GroupMask);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -835,10 +979,10 @@ bool UKuroSceneItemMoveComponent::StartRotate()
 // Function KuroComponent.KuroSceneItemMoveComponent.StopAllMove
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    BroadcastStopCallback                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    BroadcastIndexCallback                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bBroadcastStopCallback                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bBroadcastIndexCallback                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroSceneItemMoveComponent::StopAllMove(bool BroadcastStopCallback, bool BroadcastIndexCallback)
+void UKuroSceneItemMoveComponent::StopAllMove(bool bBroadcastStopCallback, bool bBroadcastIndexCallback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -847,8 +991,8 @@ void UKuroSceneItemMoveComponent::StopAllMove(bool BroadcastStopCallback, bool B
 
 	Params::KuroSceneItemMoveComponent_StopAllMove Parms{};
 
-	Parms.BroadcastStopCallback = BroadcastStopCallback;
-	Parms.BroadcastIndexCallback = BroadcastIndexCallback;
+	Parms.bBroadcastStopCallback = bBroadcastStopCallback;
+	Parms.bBroadcastIndexCallback = bBroadcastIndexCallback;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -863,9 +1007,10 @@ void UKuroSceneItemMoveComponent::StopAllMove(bool BroadcastStopCallback, bool B
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // EKuroSceneItemStopRotateMethod          StopMethod                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bBroadcastRotateStopCallback                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroSceneItemMoveComponent::StopRotate(EKuroSceneItemStopRotateMethod StopMethod)
+bool UKuroSceneItemMoveComponent::StopRotate(EKuroSceneItemStopRotateMethod StopMethod, bool bBroadcastRotateStopCallback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -875,6 +1020,7 @@ bool UKuroSceneItemMoveComponent::StopRotate(EKuroSceneItemStopRotateMethod Stop
 	Params::KuroSceneItemMoveComponent_StopRotate Parms{};
 
 	Parms.StopMethod = StopMethod;
+	Parms.bBroadcastRotateStopCallback = bBroadcastRotateStopCallback;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

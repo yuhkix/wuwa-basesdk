@@ -33,16 +33,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"TsUiNavigationTextChangeListener_C">();
+		BP_STATIC_CLASS_IMPL("TsUiNavigationTextChangeListener_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TsUiNavigationTextChangeListener_C")
 	}
 	static class UTsUiNavigationTextChangeListener_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UTsUiNavigationTextChangeListener_C>();
 	}
 };
-static_assert(alignof(UTsUiNavigationTextChangeListener_C) == 0x000008, "Wrong alignment on UTsUiNavigationTextChangeListener_C");
-static_assert(sizeof(UTsUiNavigationTextChangeListener_C) == 0x000110, "Wrong size on UTsUiNavigationTextChangeListener_C");
-static_assert(offsetof(UTsUiNavigationTextChangeListener_C, UberGraphFrame) == 0x000108, "Member 'UTsUiNavigationTextChangeListener_C::UberGraphFrame' has a wrong offset!");
+DUMPER7_ASSERTS_UTsUiNavigationTextChangeListener_C;
 
 }
 

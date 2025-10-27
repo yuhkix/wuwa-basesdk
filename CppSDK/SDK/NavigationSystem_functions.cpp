@@ -478,6 +478,46 @@ bool UNavigationSystemV1::D_NavigationGetWaterDeep(class UObject* WorldContextOb
 }
 
 
+// Function NavigationSystem.NavigationSystemV1.D_NavigationGetWaterSurface
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             Pos                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             Extend                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  WaterTop                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           PathfindingContext                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UNavigationQueryFilter>FilterClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNavigationSystemV1::D_NavigationGetWaterSurface(class UObject* WorldContextObject, const struct FVectorDouble& Pos, const struct FVectorDouble& Extend, float* WaterTop, class AActor* PathfindingContext, TSubclassOf<class UNavigationQueryFilter> FilterClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NavigationSystemV1", "D_NavigationGetWaterSurface");
+
+	Params::NavigationSystemV1_D_NavigationGetWaterSurface Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Pos = std::move(Pos);
+	Parms.Extend = std::move(Extend);
+	Parms.PathfindingContext = PathfindingContext;
+	Parms.FilterClass = FilterClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (WaterTop != nullptr)
+		*WaterTop = Parms.WaterTop;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function NavigationSystem.NavigationSystemV1.DestroyStreamingDungeonNavSystem
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:

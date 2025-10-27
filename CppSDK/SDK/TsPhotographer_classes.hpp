@@ -44,18 +44,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"TsPhotographer_C">();
+		BP_STATIC_CLASS_IMPL("TsPhotographer_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TsPhotographer_C")
 	}
 	static class ATsPhotographer_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ATsPhotographer_C>();
 	}
 };
-static_assert(alignof(ATsPhotographer_C) == 0x000008, "Wrong alignment on ATsPhotographer_C");
-static_assert(sizeof(ATsPhotographer_C) == 0x0002C8, "Wrong size on ATsPhotographer_C");
-static_assert(offsetof(ATsPhotographer_C, UberGraphFrame) == 0x0002B0, "Member 'ATsPhotographer_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsPhotographer_C, CameraArm) == 0x0002B8, "Member 'ATsPhotographer_C::CameraArm' has a wrong offset!");
-static_assert(offsetof(ATsPhotographer_C, CapsuleCollision) == 0x0002C0, "Member 'ATsPhotographer_C::CapsuleCollision' has a wrong offset!");
+DUMPER7_ASSERTS_ATsPhotographer_C;
 
 }
 

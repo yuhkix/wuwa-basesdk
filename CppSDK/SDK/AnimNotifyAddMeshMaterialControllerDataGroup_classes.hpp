@@ -34,17 +34,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"AnimNotifyAddMeshMaterialControllerDataGroup_C">();
+		BP_STATIC_CLASS_IMPL("AnimNotifyAddMeshMaterialControllerDataGroup_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AnimNotifyAddMeshMaterialControllerDataGroup_C")
 	}
 	static class UAnimNotifyAddMeshMaterialControllerDataGroup_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAnimNotifyAddMeshMaterialControllerDataGroup_C>();
 	}
 };
-static_assert(alignof(UAnimNotifyAddMeshMaterialControllerDataGroup_C) == 0x000008, "Wrong alignment on UAnimNotifyAddMeshMaterialControllerDataGroup_C");
-static_assert(sizeof(UAnimNotifyAddMeshMaterialControllerDataGroup_C) == 0x000058, "Wrong size on UAnimNotifyAddMeshMaterialControllerDataGroup_C");
-static_assert(offsetof(UAnimNotifyAddMeshMaterialControllerDataGroup_C, HideMeshAfterPlay) == 0x000048, "Member 'UAnimNotifyAddMeshMaterialControllerDataGroup_C::HideMeshAfterPlay' has a wrong offset!");
-static_assert(offsetof(UAnimNotifyAddMeshMaterialControllerDataGroup_C, MaterialAssetData) == 0x000050, "Member 'UAnimNotifyAddMeshMaterialControllerDataGroup_C::MaterialAssetData' has a wrong offset!");
+DUMPER7_ASSERTS_UAnimNotifyAddMeshMaterialControllerDataGroup_C;
 
 }
 

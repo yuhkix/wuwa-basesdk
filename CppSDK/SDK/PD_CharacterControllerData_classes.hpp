@@ -16,6 +16,7 @@
 #include "ECharacterSlotSpecifiedType_structs.hpp"
 #include "SMaterialControllerFloatGroup_structs.hpp"
 #include "ECharacterControllerApplyType_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "SMaterialControllerLoopTime_structs.hpp"
 #include "ECharacterControllerChannelSwitch_structs.hpp"
 #include "SMaterialControllerColorGroup_structs.hpp"
@@ -23,14 +24,13 @@
 #include "SMaterialControllerFloatParameter_structs.hpp"
 #include "SMaterialControllerColorParameter_structs.hpp"
 #include "SMaterialControllerTextureParameter_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass PD_CharacterControllerData.PD_CharacterControllerData_C
-// 0x4A50 (0x4C68 - 0x0218)
+// 0x4A48 (0x4C60 - 0x0218)
 class UPD_CharacterControllerData_C final : public UKuroMaterialControllerDataAsset
 {
 public:
@@ -118,16 +118,15 @@ public:
 	uint8                                         Pad_470A[0x6];                                     // 0x470A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSMaterialControllerFloatGroup         DitherValue;                                       // 0x4710(0x01B0)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TArray<class FString>                         OtherCases;                                        // 0x48C0(0x0010)(Edit, BlueprintVisible)
-	bool                                          CleanOriginEffect;                                 // 0x48D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay)
-	uint8                                         Pad_48D1[0x7];                                     // 0x48D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSMaterialControllerFloatGroup         RimIntensity;                                      // 0x48D8(0x01B0)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	TArray<class FString>                         CustomPartNames;                                   // 0x4A88(0x0010)(Edit, BlueprintVisible)
-	struct FSMaterialControllerFloatGroup         TextureMaskRange;                                  // 0x4A98(0x01B0)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	bool                                          MaskOriginEffect;                                  // 0x4C48(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          UpdateAtLeastOneFrame;                             // 0x4C49(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4C4A[0x6];                                     // 0x4C4A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         CustomExcludePartNames;                            // 0x4C50(0x0010)(Edit, BlueprintVisible)
-	bool                                          ForceUpdateOnAdd;                                  // 0x4C60(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay)
+	struct FSMaterialControllerFloatGroup         RimIntensity;                                      // 0x48D0(0x01B0)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TArray<class FString>                         CustomPartNames;                                   // 0x4A80(0x0010)(Edit, BlueprintVisible)
+	struct FSMaterialControllerFloatGroup         TextureMaskRange;                                  // 0x4A90(0x01B0)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	bool                                          MaskOriginEffect;                                  // 0x4C40(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          UpdateAtLeastOneFrame;                             // 0x4C41(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4C42[0x6];                                     // 0x4C42(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         CustomExcludePartNames;                            // 0x4C48(0x0010)(Edit, BlueprintVisible)
+	bool                                          ForceUpdateOnAdd;                                  // 0x4C58(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay)
+	bool                                          ForceBattleMask;                                   // 0x4C59(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay)
 
 public:
 	void InitCache();
@@ -135,90 +134,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"PD_CharacterControllerData_C">();
+		BP_STATIC_CLASS_IMPL("PD_CharacterControllerData_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PD_CharacterControllerData_C")
 	}
 	static class UPD_CharacterControllerData_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPD_CharacterControllerData_C>();
 	}
 };
-static_assert(alignof(UPD_CharacterControllerData_C) == 0x000008, "Wrong alignment on UPD_CharacterControllerData_C");
-static_assert(sizeof(UPD_CharacterControllerData_C) == 0x004C68, "Wrong size on UPD_CharacterControllerData_C");
-static_assert(offsetof(UPD_CharacterControllerData_C, DataType) == 0x000218, "Member 'UPD_CharacterControllerData_C::DataType' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, SpecifiedBodyType) == 0x000219, "Member 'UPD_CharacterControllerData_C::SpecifiedBodyType' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, SpecifiedParts) == 0x000220, "Member 'UPD_CharacterControllerData_C::SpecifiedParts' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, SpecifiedSlotType) == 0x000230, "Member 'UPD_CharacterControllerData_C::SpecifiedSlotType' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, MaterialModifyType) == 0x000231, "Member 'UPD_CharacterControllerData_C::MaterialModifyType' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, ReplaceMaterial) == 0x000238, "Member 'UPD_CharacterControllerData_C::ReplaceMaterial' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseRim) == 0x000240, "Member 'UPD_CharacterControllerData_C::UseRim' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseOutline) == 0x000241, "Member 'UPD_CharacterControllerData_C::UseOutline' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseDissolve) == 0x000242, "Member 'UPD_CharacterControllerData_C::UseDissolve' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, LoopTime) == 0x000244, "Member 'UPD_CharacterControllerData_C::LoopTime' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, RimRevertProperty) == 0x000250, "Member 'UPD_CharacterControllerData_C::RimRevertProperty' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, RimUseTex) == 0x000251, "Member 'UPD_CharacterControllerData_C::RimUseTex' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, RimChannel) == 0x000252, "Member 'UPD_CharacterControllerData_C::RimChannel' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, RimRange) == 0x000258, "Member 'UPD_CharacterControllerData_C::RimRange' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, RimColor) == 0x000408, "Member 'UPD_CharacterControllerData_C::RimColor' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, OutlineRevertProperty) == 0x000A68, "Member 'UPD_CharacterControllerData_C::OutlineRevertProperty' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, OutlineUseTex) == 0x000A69, "Member 'UPD_CharacterControllerData_C::OutlineUseTex' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, OutlineWidth) == 0x000A70, "Member 'UPD_CharacterControllerData_C::OutlineWidth' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, OutlineColor) == 0x000C20, "Member 'UPD_CharacterControllerData_C::OutlineColor' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, DissolveRevertProperty) == 0x001280, "Member 'UPD_CharacterControllerData_C::DissolveRevertProperty' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, DissolveChannel) == 0x001281, "Member 'UPD_CharacterControllerData_C::DissolveChannel' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, DissolveProgress) == 0x001288, "Member 'UPD_CharacterControllerData_C::DissolveProgress' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, DissolveColor) == 0x001438, "Member 'UPD_CharacterControllerData_C::DissolveColor' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, DissolveColorIntensity) == 0x001A98, "Member 'UPD_CharacterControllerData_C::DissolveColorIntensity' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseTextureSample) == 0x001C48, "Member 'UPD_CharacterControllerData_C::UseTextureSample' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, TextureSampleRevertProperty) == 0x001C49, "Member 'UPD_CharacterControllerData_C::TextureSampleRevertProperty' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseAlphaToMask) == 0x001C4A, "Member 'UPD_CharacterControllerData_C::UseAlphaToMask' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, MaskTexture) == 0x001C50, "Member 'UPD_CharacterControllerData_C::MaskTexture' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, Rotation) == 0x001C58, "Member 'UPD_CharacterControllerData_C::Rotation' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UVSelection) == 0x001E08, "Member 'UPD_CharacterControllerData_C::UVSelection' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, TextureScaleAndOffset) == 0x001E10, "Member 'UPD_CharacterControllerData_C::TextureScaleAndOffset' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, TextureSpeed) == 0x002470, "Member 'UPD_CharacterControllerData_C::TextureSpeed' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, TextureColorTint) == 0x002AD0, "Member 'UPD_CharacterControllerData_C::TextureColorTint' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, OutlineIntensity) == 0x003130, "Member 'UPD_CharacterControllerData_C::OutlineIntensity' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseOuterOutlineEffect) == 0x0032E0, "Member 'UPD_CharacterControllerData_C::UseOuterOutlineEffect' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, MobileUseDifferentMaterial) == 0x0032E1, "Member 'UPD_CharacterControllerData_C::MobileUseDifferentMaterial' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, ReplaceMaterialMobile) == 0x0032E8, "Member 'UPD_CharacterControllerData_C::ReplaceMaterialMobile' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, RevertMaterial) == 0x0032F0, "Member 'UPD_CharacterControllerData_C::RevertMaterial' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseParameterModify) == 0x0032F1, "Member 'UPD_CharacterControllerData_C::UseParameterModify' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, FloatParameters) == 0x0032F8, "Member 'UPD_CharacterControllerData_C::FloatParameters' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseColor) == 0x003308, "Member 'UPD_CharacterControllerData_C::UseColor' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, ColorRevertProperty) == 0x003309, "Member 'UPD_CharacterControllerData_C::ColorRevertProperty' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, BaseUseTex) == 0x00330A, "Member 'UPD_CharacterControllerData_C::BaseUseTex' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, BaseColor) == 0x003310, "Member 'UPD_CharacterControllerData_C::BaseColor' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, BaseColorIntensity) == 0x003970, "Member 'UPD_CharacterControllerData_C::BaseColorIntensity' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, EmissionUseTex) == 0x003B20, "Member 'UPD_CharacterControllerData_C::EmissionUseTex' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, EmissionColor) == 0x003B28, "Member 'UPD_CharacterControllerData_C::EmissionColor' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, EmissionIntensity) == 0x004188, "Member 'UPD_CharacterControllerData_C::EmissionIntensity' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, ColorParameters) == 0x004338, "Member 'UPD_CharacterControllerData_C::ColorParameters' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseCustomMaterialEffect) == 0x004348, "Member 'UPD_CharacterControllerData_C::UseCustomMaterialEffect' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, CustomRevertProperty) == 0x004349, "Member 'UPD_CharacterControllerData_C::CustomRevertProperty' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, CustomFloatParameters) == 0x004350, "Member 'UPD_CharacterControllerData_C::CustomFloatParameters' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, CustomColorParameters) == 0x004360, "Member 'UPD_CharacterControllerData_C::CustomColorParameters' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, CustomTextureParameters) == 0x004370, "Member 'UPD_CharacterControllerData_C::CustomTextureParameters' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseMotionOffset) == 0x004380, "Member 'UPD_CharacterControllerData_C::UseMotionOffset' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, MotionOffsetRevertProperty) == 0x004381, "Member 'UPD_CharacterControllerData_C::MotionOffsetRevertProperty' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, MotionOffsetLength) == 0x004384, "Member 'UPD_CharacterControllerData_C::MotionOffsetLength' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, MotionAffectVertexRange) == 0x004388, "Member 'UPD_CharacterControllerData_C::MotionAffectVertexRange' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, WeaponCases) == 0x004390, "Member 'UPD_CharacterControllerData_C::WeaponCases' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, IgnoreTimeDilation) == 0x0043A0, "Member 'UPD_CharacterControllerData_C::IgnoreTimeDilation' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, HiddenAfterEffect) == 0x0043A1, "Member 'UPD_CharacterControllerData_C::HiddenAfterEffect' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, DissolveSmooth) == 0x0043A8, "Member 'UPD_CharacterControllerData_C::DissolveSmooth' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, MotionNoiseSpeed) == 0x004558, "Member 'UPD_CharacterControllerData_C::MotionNoiseSpeed' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UseDitherEffect) == 0x004708, "Member 'UPD_CharacterControllerData_C::UseDitherEffect' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, DitherRevertProperty) == 0x004709, "Member 'UPD_CharacterControllerData_C::DitherRevertProperty' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, DitherValue) == 0x004710, "Member 'UPD_CharacterControllerData_C::DitherValue' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, OtherCases) == 0x0048C0, "Member 'UPD_CharacterControllerData_C::OtherCases' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, CleanOriginEffect) == 0x0048D0, "Member 'UPD_CharacterControllerData_C::CleanOriginEffect' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, RimIntensity) == 0x0048D8, "Member 'UPD_CharacterControllerData_C::RimIntensity' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, CustomPartNames) == 0x004A88, "Member 'UPD_CharacterControllerData_C::CustomPartNames' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, TextureMaskRange) == 0x004A98, "Member 'UPD_CharacterControllerData_C::TextureMaskRange' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, MaskOriginEffect) == 0x004C48, "Member 'UPD_CharacterControllerData_C::MaskOriginEffect' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UpdateAtLeastOneFrame) == 0x004C49, "Member 'UPD_CharacterControllerData_C::UpdateAtLeastOneFrame' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, CustomExcludePartNames) == 0x004C50, "Member 'UPD_CharacterControllerData_C::CustomExcludePartNames' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, ForceUpdateOnAdd) == 0x004C60, "Member 'UPD_CharacterControllerData_C::ForceUpdateOnAdd' has a wrong offset!");
+DUMPER7_ASSERTS_UPD_CharacterControllerData_C;
 
 }
 

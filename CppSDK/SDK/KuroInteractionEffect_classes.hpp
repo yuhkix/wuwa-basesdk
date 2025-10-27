@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroInteractionEffect_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroInteractionEffect_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -41,7 +41,7 @@ public:
 	uint8                                         Pad_149[0x7];                                      // 0x0149(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<int32, struct FSPModelSCPMap>            SPModelColorMap;                                   // 0x0150(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1A0[0x10];                                     // 0x01A0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTraceSphereElement*                    RainOcclusionTraceElement;                         // 0x01B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UTraceSphereElement*                    RainOcclusionTraceElement;                         // 0x01B0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_1B8[0x28];                                     // 0x01B8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -55,32 +55,21 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroEnviInteractionComponent">();
+		STATIC_CLASS_IMPL("KuroEnviInteractionComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroEnviInteractionComponent")
 	}
 	static class UKuroEnviInteractionComponent* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroEnviInteractionComponent>();
 	}
 };
-static_assert(alignof(UKuroEnviInteractionComponent) == 0x000008, "Wrong alignment on UKuroEnviInteractionComponent");
-static_assert(sizeof(UKuroEnviInteractionComponent) == 0x0001E0, "Wrong size on UKuroEnviInteractionComponent");
-static_assert(offsetof(UKuroEnviInteractionComponent, bCalEnviInteractionData) == 0x0000C8, "Member 'UKuroEnviInteractionComponent::bCalEnviInteractionData' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, RayFromOffset) == 0x0000CC, "Member 'UKuroEnviInteractionComponent::RayFromOffset' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, RayToOffset) == 0x0000D8, "Member 'UKuroEnviInteractionComponent::RayToOffset' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, FrameCountToWaterTrace) == 0x0000E4, "Member 'UKuroEnviInteractionComponent::FrameCountToWaterTrace' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, bUpdateWaterEID) == 0x0000E8, "Member 'UKuroEnviInteractionComponent::bUpdateWaterEID' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, bUpdateRainOcclusion) == 0x0000E9, "Member 'UKuroEnviInteractionComponent::bUpdateRainOcclusion' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, bUseSPModelCharacterData) == 0x0000EA, "Member 'UKuroEnviInteractionComponent::bUseSPModelCharacterData' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, ModelConfigId) == 0x0000EC, "Member 'UKuroEnviInteractionComponent::ModelConfigId' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, ModelStateId) == 0x0000F0, "Member 'UKuroEnviInteractionComponent::ModelStateId' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, LinkNiagaraModeId) == 0x0000F4, "Member 'UKuroEnviInteractionComponent::LinkNiagaraModeId' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, SPModelMPCMap) == 0x0000F8, "Member 'UKuroEnviInteractionComponent::SPModelMPCMap' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, bUseSPModelShiftColor) == 0x000148, "Member 'UKuroEnviInteractionComponent::bUseSPModelShiftColor' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, SPModelColorMap) == 0x000150, "Member 'UKuroEnviInteractionComponent::SPModelColorMap' has a wrong offset!");
-static_assert(offsetof(UKuroEnviInteractionComponent, RainOcclusionTraceElement) == 0x0001B0, "Member 'UKuroEnviInteractionComponent::RainOcclusionTraceElement' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroEnviInteractionComponent;
 
 // Class KuroInteractionEffect.KuroInteractionEffectSystem
-// 0x0228 (0x0260 - 0x0038)
+// 0x0278 (0x02B0 - 0x0038)
 class alignas(0x10) UKuroInteractionEffectSystem final : public UWorldSubsystem
 {
 public:
@@ -88,29 +77,30 @@ public:
 	TMap<TWeakObjectPtr<class UKuroEnviInteractionComponent>, struct FKuroEnviInteractionData> EnviInteractionCollections; // 0x0040(0x0050)(NativeAccessSpecifierPublic)
 	TMap<TWeakObjectPtr<class UNiagaraComponent>, TWeakObjectPtr<class UKuroEnviInteractionComponent>> SPModelEICompCollections; // 0x0090(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 	TMap<TWeakObjectPtr<class UNiagaraComponent>, TWeakObjectPtr<class UKuroEnviInteractionComponent>> NDIKuroRenderingCollections; // 0x00E0(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                         Pad_130[0x130];                                    // 0x0130(0x0130)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x180];                                    // 0x0130(0x0180)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UKuroInteractionEffectSystem* GetKuroInteractionEffectSystem(class UWorld* World);
 
 	void RegisterNDIKuroRenderingEIComp(class UNiagaraComponent* InNiagaraComp, class UKuroEnviInteractionComponent* SourceEIComp);
 	void RegisterSPModelCharacterEIComp(class UNiagaraComponent* InNiagaraComp, class UKuroEnviInteractionComponent* SourceEIComp);
+	struct FSoftObjectPath SearchInteractionPlacementTriggerActor(class UStaticMesh* PlacementMesh);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroInteractionEffectSystem">();
+		STATIC_CLASS_IMPL("KuroInteractionEffectSystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroInteractionEffectSystem")
 	}
 	static class UKuroInteractionEffectSystem* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroInteractionEffectSystem>();
 	}
 };
-static_assert(alignof(UKuroInteractionEffectSystem) == 0x000010, "Wrong alignment on UKuroInteractionEffectSystem");
-static_assert(sizeof(UKuroInteractionEffectSystem) == 0x000260, "Wrong size on UKuroInteractionEffectSystem");
-static_assert(offsetof(UKuroInteractionEffectSystem, EnviInteractionCollections) == 0x000040, "Member 'UKuroInteractionEffectSystem::EnviInteractionCollections' has a wrong offset!");
-static_assert(offsetof(UKuroInteractionEffectSystem, SPModelEICompCollections) == 0x000090, "Member 'UKuroInteractionEffectSystem::SPModelEICompCollections' has a wrong offset!");
-static_assert(offsetof(UKuroInteractionEffectSystem, NDIKuroRenderingCollections) == 0x0000E0, "Member 'UKuroInteractionEffectSystem::NDIKuroRenderingCollections' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroInteractionEffectSystem;
 
 }
 

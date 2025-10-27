@@ -32,21 +32,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"CrashSightSetting">();
+		STATIC_CLASS_IMPL("CrashSightSetting")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrashSightSetting")
 	}
 	static class UCrashSightSetting* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UCrashSightSetting>();
 	}
 };
-static_assert(alignof(UCrashSightSetting) == 0x000008, "Wrong alignment on UCrashSightSetting");
-static_assert(sizeof(UCrashSightSetting) == 0x000078, "Wrong size on UCrashSightSetting");
-static_assert(offsetof(UCrashSightSetting, bNeedUploadLog) == 0x000030, "Member 'UCrashSightSetting::bNeedUploadLog' has a wrong offset!");
-static_assert(offsetof(UCrashSightSetting, bInternational) == 0x000031, "Member 'UCrashSightSetting::bInternational' has a wrong offset!");
-static_assert(offsetof(UCrashSightSetting, AndroidAppID) == 0x000038, "Member 'UCrashSightSetting::AndroidAppID' has a wrong offset!");
-static_assert(offsetof(UCrashSightSetting, AndroidUploadURL) == 0x000048, "Member 'UCrashSightSetting::AndroidUploadURL' has a wrong offset!");
-static_assert(offsetof(UCrashSightSetting, IOSAppID) == 0x000058, "Member 'UCrashSightSetting::IOSAppID' has a wrong offset!");
-static_assert(offsetof(UCrashSightSetting, IOSUploadURL) == 0x000068, "Member 'UCrashSightSetting::IOSUploadURL' has a wrong offset!");
+DUMPER7_ASSERTS_UCrashSightSetting;
 
 }
 

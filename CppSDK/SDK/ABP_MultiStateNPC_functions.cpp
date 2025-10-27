@@ -539,6 +539,34 @@ void UABP_MultiStateNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Multi
 }
 
 
+// Function ABP_MultiStateNPC.ABP_MultiStateNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_BE174F4E4305A31C44EB53B8A0ACB38F
+// (BlueprintEvent)
+
+void UABP_MultiStateNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_BE174F4E4305A31C44EB53B8A0ACB38F()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_MultiStateNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_BE174F4E4305A31C44EB53B8A0ACB38F");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_MultiStateNPC.ABP_MultiStateNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_FE7049014D58E276D1DAA4A7B255E004
+// (BlueprintEvent)
+
+void UABP_MultiStateNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_FE7049014D58E276D1DAA4A7B255E004()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_MultiStateNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_FE7049014D58E276D1DAA4A7B255E004");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ABP_MultiStateNPC.ABP_MultiStateNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TextureFace_47C3F22343F4E2941D0AC3929521DD7B
 // (BlueprintEvent)
 

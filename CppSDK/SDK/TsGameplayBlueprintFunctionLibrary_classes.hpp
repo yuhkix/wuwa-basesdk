@@ -12,12 +12,12 @@
 
 #include "ESkillTargetDirection_structs.hpp"
 #include "Engine_classes.hpp"
-#include "EHookInteractTypeBp_structs.hpp"
-#include "EHitAnim_structs.hpp"
-#include "EVisionType_structs.hpp"
-#include "ECharacterLoadType_structs.hpp"
 #include "EMorphType_structs.hpp"
 #include "EFishingSkillType_structs.hpp"
+#include "EVisionType_structs.hpp"
+#include "ECharacterLoadType_structs.hpp"
+#include "EHookInteractTypeBp_structs.hpp"
+#include "EHitAnim_structs.hpp"
 #include "EAimViewState_structs.hpp"
 #include "ECharViewDirectionState_structs.hpp"
 #include "ECharParentMoveState_structs.hpp"
@@ -50,7 +50,7 @@ public:
 	static class FString GetGeDebugString(int32 entityId, class UObject* __WorldContext);
 	static class FString GetTagDebugStrings(int32 entityId, class UObject* __WorldContext);
 	static class FString GetBuffDebugStrings(int32 entityId, const class FString& buffStr, class UObject* __WorldContext);
-	static class FString GetShieldDebugString(int32 entityId, class UObject* __WorldContext);
+	static class FString GetShieldDebugString(int32 entityId, const class FString& filterStr, class UObject* __WorldContext);
 	static class FString GetPassiveSkillDebugString(int32 entityId, class UObject* __WorldContext);
 	static float GetShieldValue(int32 entityId, int32 shieldCid, class UObject* __WorldContext);
 	static class FString GetAttributeDebugString(int32 entityId, class UObject* __WorldContext);
@@ -290,21 +290,38 @@ public:
 	static void StartChargeSlash(int32 entityId, class UObject* __WorldContext);
 	static void StopChargeSlash(int32 entityId, class UObject* __WorldContext);
 	static void BeginSkillAsync(int32 entityId, class FName skillId, class AActor* target, class FName socketName, class UKuroBooleanEventBinder* eventBinder, class UObject* __WorldContext);
+	static class ATsBaseCharacter_C* GetCurrentPlayer(class UObject* __WorldContext);
 	static struct FVectorDouble SlashHookPointSafePointLoc(int32 entityId, class UObject* __WorldContext);
 	static struct FRotator SlashHookPointSafePointRot(int32 entityId, class UObject* __WorldContext);
+	static int32 GetFuLuoLuoSpecialEnergyType(int32 entityId, int32 index, class UObject* __WorldContext);
+	static void LockOnTargetAndSetShow(int32 entityId, const struct FSSkillTarget& config, class UObject* __WorldContext);
+	static void EndAbsoluteTimeStop(int32 entityId, class UObject* __WorldContext);
+	static void BeginTimeStopRequest(int32 entityId, float duration, class UObject* __WorldContext);
+	static void EndTimeStopRequest(int32 entityId, class UObject* __WorldContext);
+	static void BeginAbsoluteTimeStop(int32 entityId, float duration, bool stopMove, class UObject* __WorldContext);
+	static bool IsEnemy(class ATsBaseCharacter_C* owner, class ATsBaseCharacter_C* other, class UObject* __WorldContext);
+	static void SetWalkOffLedge(int32 entityId, bool walkOff, class UObject* __WorldContext);
+	static void EmitGlobalClientEvent(const struct FGameplayTag& eventNameTag, class UObject* __WorldContext);
+	static class FString GetFlyingFeatherTargetId(class ATsBaseCharacter_C* owner, class UObject* __WorldContext);
+	static struct FVectorDouble UpdateFlyingFeather(class ATsBaseCharacter_C* owner, const class FString& target, class UObject* __WorldContext);
+	static class AActor* AddFlyingFeatherTargetTag(const struct FGameplayTag& tag, const class FString& entityId, class UObject* __WorldContext);
+	static void StartFlyingFeather(class ATsBaseCharacter_C* owner, const struct FVectorDouble& initLocation, class UBP_FlyingFeatherConfig_C* config, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"TsGameplayBlueprintFunctionLibrary_C">();
+		BP_STATIC_CLASS_IMPL("TsGameplayBlueprintFunctionLibrary_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TsGameplayBlueprintFunctionLibrary_C")
 	}
 	static class UTsGameplayBlueprintFunctionLibrary_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UTsGameplayBlueprintFunctionLibrary_C>();
 	}
 };
-static_assert(alignof(UTsGameplayBlueprintFunctionLibrary_C) == 0x000008, "Wrong alignment on UTsGameplayBlueprintFunctionLibrary_C");
-static_assert(sizeof(UTsGameplayBlueprintFunctionLibrary_C) == 0x000030, "Wrong size on UTsGameplayBlueprintFunctionLibrary_C");
+DUMPER7_ASSERTS_UTsGameplayBlueprintFunctionLibrary_C;
 
 }
 

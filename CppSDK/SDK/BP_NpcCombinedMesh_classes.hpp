@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EBodyPartName_structs.hpp"
 #include "SNpcSetupPartInfo_structs.hpp"
+#include "EBodyPartName_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
 
@@ -41,49 +41,39 @@ public:
 	TArray<class UMaterialInstance*>              MINPCs;                                            // 0x03C0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void GetBackTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
-	void GetLegTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
-	void GetWeaponTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
-	void GetArmTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
-	void SetupSocket(class FName SocketName, const struct FTransform& Transform, class USkeletalMesh* SkeletalMesh, bool* Suc, class USkeletalMeshComponent** SkeletalComp);
-	void SetupSockets();
-	void SetupSkeletalMeshComponents(bool* Suc);
-	void ResetNpcMesh();
 	void SetupNpcMesh(class UPD_NpcSetupData_C* Data, bool bIgnoreSockets, bool* IsSuc, TArray<class USkeletalMeshComponent*>* SkleMain);
-	void SetSkeletalMeshMaterial(class UMaterialInterface* ReplaceMaterial, class USkeletalMeshComponent* SkeletalMeshComp, class FName ParamName01, class FName ParamName02, class FName SkinColorName, int32 NumSlots, int32 MaterialIndex);
-	void 预览MorphTarget();
-	void Test(class USkeletalMeshComponent* SKMesh, class UMaterialInstance* MI);
-	void GetHeadTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
-	void SetSkeletonMeshDI(class USkeletalMeshComponent* SKMesh, class FName ParamName01, class FName ParamName02, EBodyPartName BodyType, class FName SkinColorName, TArray<class UMaterialInterface*>& Materials);
-	void AddSkeletalComponent(class FName Name_0, class USkeletalMeshComponent* SkeletalComp);
-	void SetupSkeletalMeshComponent(class USkeletalMesh* InSkeletalMesh, EBodyPartName BodyType, bool* Suc, class USkeletalMeshComponent** SkeletalComp);
+	void ResetNpcMesh();
+	void SetupSkeletalMeshComponents(bool* Suc);
+	void SetupSockets();
+	void SetupSocket(class FName SocketName, const struct FTransform& Transform, class USkeletalMesh* SkeletalMesh, bool* Suc, class USkeletalMeshComponent** SkeletalComp);
+	void GetArmTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
+	void GetWeaponTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
+	void GetLegTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
+	void GetBackTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
 	void GetWaistTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
+	void SetupSkeletalMeshComponent(class USkeletalMesh* InSkeletalMesh, EBodyPartName BodyType, bool* Suc, class USkeletalMeshComponent** SkeletalComp);
+	void AddSkeletalComponent(class FName Name_0, class USkeletalMeshComponent* SkeletalComp);
+	void SetSkeletonMeshDI(class USkeletalMeshComponent* SKMesh, class FName ParamName01, class FName ParamName02, EBodyPartName BodyType, class FName SkinColorName, TArray<class UMaterialInterface*>& Materials);
+	void GetHeadTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
+	void Test(class USkeletalMeshComponent* SKMesh, class UMaterialInstance* MI);
+	void 预览MorphTarget();
+	void SetSkeletalMeshMaterial(class UMaterialInterface* ReplaceMaterial, class USkeletalMeshComponent* SkeletalMeshComp, class FName ParamName01, class FName ParamName02, class FName SkinColorName, int32 NumSlots, int32 MaterialIndex);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BP_NpcCombinedMesh_C">();
+		BP_STATIC_CLASS_IMPL("BP_NpcCombinedMesh_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BP_NpcCombinedMesh_C")
 	}
 	static class ABP_NpcCombinedMesh_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ABP_NpcCombinedMesh_C>();
 	}
 };
-static_assert(alignof(ABP_NpcCombinedMesh_C) == 0x000008, "Wrong alignment on ABP_NpcCombinedMesh_C");
-static_assert(sizeof(ABP_NpcCombinedMesh_C) == 0x0003D0, "Wrong size on ABP_NpcCombinedMesh_C");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, Skel_Main) == 0x0002B0, "Member 'ABP_NpcCombinedMesh_C::Skel_Main' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, DefaultSceneRoot) == 0x0002B8, "Member 'ABP_NpcCombinedMesh_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, NpcData) == 0x0002C0, "Member 'ABP_NpcCombinedMesh_C::NpcData' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, OriginalSkeletalVisible) == 0x0002C8, "Member 'ABP_NpcCombinedMesh_C::OriginalSkeletalVisible' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, AllSubSkeletalComponents) == 0x0002D0, "Member 'ABP_NpcCombinedMesh_C::AllSubSkeletalComponents' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, Target) == 0x000320, "Member 'ABP_NpcCombinedMesh_C::Target' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, AllBodyPartName) == 0x000328, "Member 'ABP_NpcCombinedMesh_C::AllBodyPartName' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, ColorNPC01) == 0x000378, "Member 'ABP_NpcCombinedMesh_C::ColorNPC01' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, ColorNPC02) == 0x000388, "Member 'ABP_NpcCombinedMesh_C::ColorNPC02' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, Forced_LOD) == 0x000398, "Member 'ABP_NpcCombinedMesh_C::Forced_LOD' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, SkinColor) == 0x00039C, "Member 'ABP_NpcCombinedMesh_C::SkinColor' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, SkelMeshArray) == 0x0003B0, "Member 'ABP_NpcCombinedMesh_C::SkelMeshArray' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, MINPCs) == 0x0003C0, "Member 'ABP_NpcCombinedMesh_C::MINPCs' has a wrong offset!");
+DUMPER7_ASSERTS_ABP_NpcCombinedMesh_C;
 
 }
 

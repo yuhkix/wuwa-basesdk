@@ -10,233 +10,85 @@
 
 #include "Basic.hpp"
 
-#include "Niagara_structs.hpp"
-#include "KuroGameplay_structs.hpp"
+#include "KuroCurve_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "Niagara_structs.hpp"
+#include "KuroGameplay_structs.hpp"
+#include "KuroBuildingGridSystem_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Slate_structs.hpp"
+#include "MovieScene_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// Function KuroGameplay.KuroInputEvent.DoActionCallback
-// 0x0020 (0x0020 - 0x0000)
-struct KuroInputEvent_DoActionCallback final
+// Function KuroGameplay.KuroSplineVolumeGenerator.Generate
+// 0x0018 (0x0018 - 0x0000)
+struct KuroSplineVolumeGenerator_Generate final
 {
 public:
-	struct FKey                                   Key;                                               // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USplineComponent*                       InSplineComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class ABrush>                     InVolumeClass;                                     // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroSplineVolumeBuilder*               InSplineVolumeBuilder;                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroInputEvent_DoActionCallback) == 0x000008, "Wrong alignment on KuroInputEvent_DoActionCallback");
-static_assert(sizeof(KuroInputEvent_DoActionCallback) == 0x000020, "Wrong size on KuroInputEvent_DoActionCallback");
-static_assert(offsetof(KuroInputEvent_DoActionCallback, Key) == 0x000000, "Member 'KuroInputEvent_DoActionCallback::Key' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSplineVolumeGenerator_Generate;
 
-// Function KuroGameplay.KuroInputEvent.DoAxisCallback
-// 0x0004 (0x0004 - 0x0000)
-struct KuroInputEvent_DoAxisCallback final
+// Function KuroGameplay.KuroSplineVolumeGenerator.GeneratePolyhedron
+// 0x0018 (0x0018 - 0x0000)
+struct KuroSplineVolumeGenerator_GeneratePolyhedron final
 {
 public:
-	float                                         value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USplineComponent*                       InSplineComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class ABrush>                     InVolumeClass;                                     // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LowerBoundsHeight;                                 // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UpperBoundsHeight;                                 // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroInputEvent_DoAxisCallback) == 0x000004, "Wrong alignment on KuroInputEvent_DoAxisCallback");
-static_assert(sizeof(KuroInputEvent_DoAxisCallback) == 0x000004, "Wrong size on KuroInputEvent_DoAxisCallback");
-static_assert(offsetof(KuroInputEvent_DoAxisCallback, value) == 0x000000, "Member 'KuroInputEvent_DoAxisCallback::value' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSplineVolumeGenerator_GeneratePolyhedron;
 
-// Function KuroGameplay.KuroInputEvent.DoKeyCallback
-// 0x0020 (0x0020 - 0x0000)
-struct KuroInputEvent_DoKeyCallback final
+// Function KuroGameplay.KuroStaticMeshLibrary.MergeSimpleCollisions
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticMeshLibrary_MergeSimpleCollisions final
 {
 public:
-	struct FKey                                   Key;                                               // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMeshComponent*                   TemplateComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FTransform>                     LocalTransforms;                                   // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroInputEvent_DoKeyCallback) == 0x000008, "Wrong alignment on KuroInputEvent_DoKeyCallback");
-static_assert(sizeof(KuroInputEvent_DoKeyCallback) == 0x000020, "Wrong size on KuroInputEvent_DoKeyCallback");
-static_assert(offsetof(KuroInputEvent_DoKeyCallback, Key) == 0x000000, "Member 'KuroInputEvent_DoKeyCallback::Key' has a wrong offset!");
+DUMPER7_ASSERTS_KuroStaticMeshLibrary_MergeSimpleCollisions;
 
-// Function KuroGameplay.KuroInputEvent.DoTouchCallback
+// Function KuroGameplay.KuroTimerSystemFunctionLibrary.Initialize
+// 0x0008 (0x0008 - 0x0000)
+struct KuroTimerSystemFunctionLibrary_Initialize final
+{
+public:
+	class UGameInstance*                          World;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroTimerSystemFunctionLibrary_Initialize;
+
+// Function KuroGameplay.PerformanceStatisticsLibrary.AddStatistics
+// 0x0038 (0x0038 - 0x0000)
+struct PerformanceStatisticsLibrary_AddStatistics final
+{
+public:
+	class FName                                   SectionName;                                       // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameCount;                                        // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Tag;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MeasureMode;                                       // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Time;                                              // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 UserDefineMessage;                                 // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PerformanceStatisticsLibrary_AddStatistics;
+
+// Function KuroGameplay.PerformanceStatisticsLibrary.ReadSectionFromFile
 // 0x0010 (0x0010 - 0x0000)
-struct KuroInputEvent_DoTouchCallback final
+struct PerformanceStatisticsLibrary_ReadSectionFromFile final
 {
 public:
-	ETouchIndex                                   touchIndex;                                        // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                position;                                          // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 FilePath;                                          // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroInputEvent_DoTouchCallback) == 0x000004, "Wrong alignment on KuroInputEvent_DoTouchCallback");
-static_assert(sizeof(KuroInputEvent_DoTouchCallback) == 0x000010, "Wrong size on KuroInputEvent_DoTouchCallback");
-static_assert(offsetof(KuroInputEvent_DoTouchCallback, touchIndex) == 0x000000, "Member 'KuroInputEvent_DoTouchCallback::touchIndex' has a wrong offset!");
-static_assert(offsetof(KuroInputEvent_DoTouchCallback, position) == 0x000004, "Member 'KuroInputEvent_DoTouchCallback::position' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.FakeAddAlwaysLoadedActorsToWorld
-// 0x0008 (0x0008 - 0x0000)
-struct KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld final
-{
-public:
-	const class UWorld*                           World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld");
-static_assert(sizeof(KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld) == 0x000008, "Wrong size on KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld");
-static_assert(offsetof(KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld, World) == 0x000000, "Member 'KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld::World' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.FakeRemoveAlwaysLoadedActorsFromWorld
-// 0x0008 (0x0008 - 0x0000)
-struct KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld final
-{
-public:
-	const class UWorld*                           World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld");
-static_assert(sizeof(KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld) == 0x000008, "Wrong size on KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld");
-static_assert(offsetof(KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld, World) == 0x000000, "Member 'KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld::World' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetActorComponentsBoundingBox
-// 0x0028 (0x0028 - 0x0000)
-struct KuroLevelPlayLibrary_GetActorComponentsBoundingBox final
-{
-public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNonColliding;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIncludeFromChildActors;                           // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBox                                   ReturnValue;                                       // 0x000C(0x001C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetActorComponentsBoundingBox");
-static_assert(sizeof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox) == 0x000028, "Wrong size on KuroLevelPlayLibrary_GetActorComponentsBoundingBox");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, Actor) == 0x000000, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::Actor' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, bNonColliding) == 0x000008, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::bNonColliding' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, bIncludeFromChildActors) == 0x000009, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::bIncludeFromChildActors' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, ReturnValue) == 0x00000C, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::ReturnValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetActorScreenBoundingBox
-// 0x0028 (0x0028 - 0x0000)
-struct KuroLevelPlayLibrary_GetActorScreenBoundingBox final
-{
-public:
-	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              ScreenMin;                                         // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              ScreenMax;                                         // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetActorScreenBoundingBox) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetActorScreenBoundingBox");
-static_assert(sizeof(KuroLevelPlayLibrary_GetActorScreenBoundingBox) == 0x000028, "Wrong size on KuroLevelPlayLibrary_GetActorScreenBoundingBox");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, PlayerController) == 0x000000, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::PlayerController' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, Actor) == 0x000008, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::Actor' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, ScreenMin) == 0x000010, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::ScreenMin' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, ScreenMax) == 0x000018, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::ScreenMax' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, ReturnValue) == 0x000020, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::ReturnValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetAllActorsInPersistentLevel
-// 0x0018 (0x0018 - 0x0000)
-struct KuroLevelPlayLibrary_GetAllActorsInPersistentLevel final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class AActor*>                         OutLevelActors;                                    // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetAllActorsInPersistentLevel) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetAllActorsInPersistentLevel");
-static_assert(sizeof(KuroLevelPlayLibrary_GetAllActorsInPersistentLevel) == 0x000018, "Wrong size on KuroLevelPlayLibrary_GetAllActorsInPersistentLevel");
-static_assert(offsetof(KuroLevelPlayLibrary_GetAllActorsInPersistentLevel, WorldContextObject) == 0x000000, "Member 'KuroLevelPlayLibrary_GetAllActorsInPersistentLevel::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetAllActorsInPersistentLevel, OutLevelActors) == 0x000008, "Member 'KuroLevelPlayLibrary_GetAllActorsInPersistentLevel::OutLevelActors' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetCurrentLevelRefPath
-// 0x0018 (0x0018 - 0x0000)
-struct KuroLevelPlayLibrary_GetCurrentLevelRefPath final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetCurrentLevelRefPath) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetCurrentLevelRefPath");
-static_assert(sizeof(KuroLevelPlayLibrary_GetCurrentLevelRefPath) == 0x000018, "Wrong size on KuroLevelPlayLibrary_GetCurrentLevelRefPath");
-static_assert(offsetof(KuroLevelPlayLibrary_GetCurrentLevelRefPath, WorldContextObject) == 0x000000, "Member 'KuroLevelPlayLibrary_GetCurrentLevelRefPath::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetCurrentLevelRefPath, ReturnValue) == 0x000008, "Member 'KuroLevelPlayLibrary_GetCurrentLevelRefPath::ReturnValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetEntityIdByBaseItem
-// 0x0010 (0x0010 - 0x0000)
-struct KuroLevelPlayLibrary_GetEntityIdByBaseItem final
-{
-public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetEntityIdByBaseItem) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetEntityIdByBaseItem");
-static_assert(sizeof(KuroLevelPlayLibrary_GetEntityIdByBaseItem) == 0x000010, "Wrong size on KuroLevelPlayLibrary_GetEntityIdByBaseItem");
-static_assert(offsetof(KuroLevelPlayLibrary_GetEntityIdByBaseItem, Actor) == 0x000000, "Member 'KuroLevelPlayLibrary_GetEntityIdByBaseItem::Actor' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetEntityIdByBaseItem, ReturnValue) == 0x000008, "Member 'KuroLevelPlayLibrary_GetEntityIdByBaseItem::ReturnValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetPersistentLevelActorsInPackage
-// 0x0020 (0x0020 - 0x0000)
-struct KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage final
-{
-public:
-	class FString                                 PackageName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class AActor*>                         OutLevelActors;                                    // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage");
-static_assert(sizeof(KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage) == 0x000020, "Wrong size on KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage");
-static_assert(offsetof(KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage, PackageName) == 0x000000, "Member 'KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage::PackageName' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage, OutLevelActors) == 0x000010, "Member 'KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage::OutLevelActors' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetWorldInPackage
-// 0x0018 (0x0018 - 0x0000)
-struct KuroLevelPlayLibrary_GetWorldInPackage final
-{
-public:
-	class FString                                 PackageName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWorld*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetWorldInPackage) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetWorldInPackage");
-static_assert(sizeof(KuroLevelPlayLibrary_GetWorldInPackage) == 0x000018, "Wrong size on KuroLevelPlayLibrary_GetWorldInPackage");
-static_assert(offsetof(KuroLevelPlayLibrary_GetWorldInPackage, PackageName) == 0x000000, "Member 'KuroLevelPlayLibrary_GetWorldInPackage::PackageName' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetWorldInPackage, ReturnValue) == 0x000010, "Member 'KuroLevelPlayLibrary_GetWorldInPackage::ReturnValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.RegisterBaseItemInfo
-// 0x0018 (0x0018 - 0x0000)
-struct KuroLevelPlayLibrary_RegisterBaseItemInfo final
-{
-public:
-	class UClass*                                 BaseItemClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 EntityIdName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_RegisterBaseItemInfo) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_RegisterBaseItemInfo");
-static_assert(sizeof(KuroLevelPlayLibrary_RegisterBaseItemInfo) == 0x000018, "Wrong size on KuroLevelPlayLibrary_RegisterBaseItemInfo");
-static_assert(offsetof(KuroLevelPlayLibrary_RegisterBaseItemInfo, BaseItemClass) == 0x000000, "Member 'KuroLevelPlayLibrary_RegisterBaseItemInfo::BaseItemClass' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_RegisterBaseItemInfo, EntityIdName) == 0x000008, "Member 'KuroLevelPlayLibrary_RegisterBaseItemInfo::EntityIdName' has a wrong offset!");
-
-// Function KuroGameplay.KuroInputManager.OnActorDestroy
-// 0x0008 (0x0008 - 0x0000)
-struct KuroInputManager_OnActorDestroy final
-{
-public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroInputManager_OnActorDestroy) == 0x000008, "Wrong alignment on KuroInputManager_OnActorDestroy");
-static_assert(sizeof(KuroInputManager_OnActorDestroy) == 0x000008, "Wrong size on KuroInputManager_OnActorDestroy");
-static_assert(offsetof(KuroInputManager_OnActorDestroy, Actor) == 0x000000, "Member 'KuroInputManager_OnActorDestroy::Actor' has a wrong offset!");
-
-// Function KuroGameplay.KuroLockAxisCollisionComponent.SetAxisValue
-// 0x0004 (0x0004 - 0x0000)
-struct KuroLockAxisCollisionComponent_SetAxisValue final
-{
-public:
-	float                                         InAxisValue;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLockAxisCollisionComponent_SetAxisValue) == 0x000004, "Wrong alignment on KuroLockAxisCollisionComponent_SetAxisValue");
-static_assert(sizeof(KuroLockAxisCollisionComponent_SetAxisValue) == 0x000004, "Wrong size on KuroLockAxisCollisionComponent_SetAxisValue");
-static_assert(offsetof(KuroLockAxisCollisionComponent_SetAxisValue, InAxisValue) == 0x000000, "Member 'KuroLockAxisCollisionComponent_SetAxisValue::InAxisValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLockAxisCollisionComponent.SetLockAxis
-// 0x0001 (0x0001 - 0x0000)
-struct KuroLockAxisCollisionComponent_SetLockAxis final
-{
-public:
-	ELockAxis                                     InLockAxis;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLockAxisCollisionComponent_SetLockAxis) == 0x000001, "Wrong alignment on KuroLockAxisCollisionComponent_SetLockAxis");
-static_assert(sizeof(KuroLockAxisCollisionComponent_SetLockAxis) == 0x000001, "Wrong size on KuroLockAxisCollisionComponent_SetLockAxis");
-static_assert(offsetof(KuroLockAxisCollisionComponent_SetLockAxis, InLockAxis) == 0x000000, "Member 'KuroLockAxisCollisionComponent_SetLockAxis::InLockAxis' has a wrong offset!");
+DUMPER7_ASSERTS_PerformanceStatisticsLibrary_ReadSectionFromFile;
 
 // Function KuroGameplay.EffectSystemActor.SetOwnerEntityId
 // 0x0004 (0x0004 - 0x0000)
@@ -245,9 +97,7 @@ struct EffectSystemActor_SetOwnerEntityId final
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(EffectSystemActor_SetOwnerEntityId) == 0x000004, "Wrong alignment on EffectSystemActor_SetOwnerEntityId");
-static_assert(sizeof(EffectSystemActor_SetOwnerEntityId) == 0x000004, "Wrong size on EffectSystemActor_SetOwnerEntityId");
-static_assert(offsetof(EffectSystemActor_SetOwnerEntityId, EntityId) == 0x000000, "Member 'EffectSystemActor_SetOwnerEntityId::EntityId' has a wrong offset!");
+DUMPER7_ASSERTS_EffectSystemActor_SetOwnerEntityId;
 
 // Function KuroGameplay.EffectSystemActor.GetEffectType
 // 0x0004 (0x0004 - 0x0000)
@@ -256,9 +106,7 @@ struct EffectSystemActor_GetEffectType final
 public:
 	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(EffectSystemActor_GetEffectType) == 0x000004, "Wrong alignment on EffectSystemActor_GetEffectType");
-static_assert(sizeof(EffectSystemActor_GetEffectType) == 0x000004, "Wrong size on EffectSystemActor_GetEffectType");
-static_assert(offsetof(EffectSystemActor_GetEffectType, ReturnValue) == 0x000000, "Member 'EffectSystemActor_GetEffectType::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_EffectSystemActor_GetEffectType;
 
 // Function KuroGameplay.EffectSystemActor.GetHandle
 // 0x0004 (0x0004 - 0x0000)
@@ -267,9 +115,7 @@ struct EffectSystemActor_GetHandle final
 public:
 	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(EffectSystemActor_GetHandle) == 0x000004, "Wrong alignment on EffectSystemActor_GetHandle");
-static_assert(sizeof(EffectSystemActor_GetHandle) == 0x000004, "Wrong size on EffectSystemActor_GetHandle");
-static_assert(offsetof(EffectSystemActor_GetHandle, ReturnValue) == 0x000000, "Member 'EffectSystemActor_GetHandle::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_EffectSystemActor_GetHandle;
 
 // Function KuroGameplay.EffectSystemActor.GetOwnerEntityId
 // 0x0004 (0x0004 - 0x0000)
@@ -278,9 +124,7 @@ struct EffectSystemActor_GetOwnerEntityId final
 public:
 	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(EffectSystemActor_GetOwnerEntityId) == 0x000004, "Wrong alignment on EffectSystemActor_GetOwnerEntityId");
-static_assert(sizeof(EffectSystemActor_GetOwnerEntityId) == 0x000004, "Wrong size on EffectSystemActor_GetOwnerEntityId");
-static_assert(offsetof(EffectSystemActor_GetOwnerEntityId, ReturnValue) == 0x000000, "Member 'EffectSystemActor_GetOwnerEntityId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_EffectSystemActor_GetOwnerEntityId;
 
 // Function KuroGameplay.EffectSystemActor.GetTimeScale
 // 0x0004 (0x0004 - 0x0000)
@@ -289,9 +133,7 @@ struct EffectSystemActor_GetTimeScale final
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(EffectSystemActor_GetTimeScale) == 0x000004, "Wrong alignment on EffectSystemActor_GetTimeScale");
-static_assert(sizeof(EffectSystemActor_GetTimeScale) == 0x000004, "Wrong size on EffectSystemActor_GetTimeScale");
-static_assert(offsetof(EffectSystemActor_GetTimeScale, ReturnValue) == 0x000000, "Member 'EffectSystemActor_GetTimeScale::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_EffectSystemActor_GetTimeScale;
 
 // Function KuroGameplay.EffectSystemActor.StopEffect
 // 0x0010 (0x0010 - 0x0000)
@@ -303,129 +145,7 @@ public:
 	bool                                          DestroyActor;                                      // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(EffectSystemActor_StopEffect) == 0x000004, "Wrong alignment on EffectSystemActor_StopEffect");
-static_assert(sizeof(EffectSystemActor_StopEffect) == 0x000010, "Wrong size on EffectSystemActor_StopEffect");
-static_assert(offsetof(EffectSystemActor_StopEffect, Reason) == 0x000000, "Member 'EffectSystemActor_StopEffect::Reason' has a wrong offset!");
-static_assert(offsetof(EffectSystemActor_StopEffect, Immediately) == 0x00000C, "Member 'EffectSystemActor_StopEffect::Immediately' has a wrong offset!");
-static_assert(offsetof(EffectSystemActor_StopEffect, DestroyActor) == 0x00000D, "Member 'EffectSystemActor_StopEffect::DestroyActor' has a wrong offset!");
-
-// Function KuroGameplay.GameBudgetAllocator.AfterTickOutside
-// 0x0004 (0x0004 - 0x0000)
-struct GameBudgetAllocator_AfterTickOutside final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GameBudgetAllocator_AfterTickOutside) == 0x000004, "Wrong alignment on GameBudgetAllocator_AfterTickOutside");
-static_assert(sizeof(GameBudgetAllocator_AfterTickOutside) == 0x000004, "Wrong size on GameBudgetAllocator_AfterTickOutside");
-static_assert(offsetof(GameBudgetAllocator_AfterTickOutside, DeltaSeconds) == 0x000000, "Member 'GameBudgetAllocator_AfterTickOutside::DeltaSeconds' has a wrong offset!");
-
-// Function KuroGameplay.GameBudgetAllocator.SetCenterActor
-// 0x0008 (0x0008 - 0x0000)
-struct GameBudgetAllocator_SetCenterActor final
-{
-public:
-	class AActor*                                 CenterActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GameBudgetAllocator_SetCenterActor) == 0x000008, "Wrong alignment on GameBudgetAllocator_SetCenterActor");
-static_assert(sizeof(GameBudgetAllocator_SetCenterActor) == 0x000008, "Wrong size on GameBudgetAllocator_SetCenterActor");
-static_assert(offsetof(GameBudgetAllocator_SetCenterActor, CenterActor) == 0x000000, "Member 'GameBudgetAllocator_SetCenterActor::CenterActor' has a wrong offset!");
-
-// Function KuroGameplay.GameBudgetAllocator.SetDefaultTickIntervalDetailConfig
-// 0x0080 (0x0080 - 0x0000)
-struct GameBudgetAllocator_SetDefaultTickIntervalDetailConfig final
-{
-public:
-	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x0078)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint32                                        MaxTickInterval;                                   // 0x0078(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionStartSize;                            // 0x007C(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionIntervalSize;                         // 0x007E(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GameBudgetAllocator_SetDefaultTickIntervalDetailConfig) == 0x000004, "Wrong alignment on GameBudgetAllocator_SetDefaultTickIntervalDetailConfig");
-static_assert(sizeof(GameBudgetAllocator_SetDefaultTickIntervalDetailConfig) == 0x000080, "Wrong size on GameBudgetAllocator_SetDefaultTickIntervalDetailConfig");
-static_assert(offsetof(GameBudgetAllocator_SetDefaultTickIntervalDetailConfig, Config) == 0x000000, "Member 'GameBudgetAllocator_SetDefaultTickIntervalDetailConfig::Config' has a wrong offset!");
-static_assert(offsetof(GameBudgetAllocator_SetDefaultTickIntervalDetailConfig, MaxTickInterval) == 0x000078, "Member 'GameBudgetAllocator_SetDefaultTickIntervalDetailConfig::MaxTickInterval' has a wrong offset!");
-static_assert(offsetof(GameBudgetAllocator_SetDefaultTickIntervalDetailConfig, TickReductionStartSize) == 0x00007C, "Member 'GameBudgetAllocator_SetDefaultTickIntervalDetailConfig::TickReductionStartSize' has a wrong offset!");
-static_assert(offsetof(GameBudgetAllocator_SetDefaultTickIntervalDetailConfig, TickReductionIntervalSize) == 0x00007E, "Member 'GameBudgetAllocator_SetDefaultTickIntervalDetailConfig::TickReductionIntervalSize' has a wrong offset!");
-
-// Function KuroGameplay.GameBudgetAllocator.SetGlobalMode
-// 0x0001 (0x0001 - 0x0000)
-struct GameBudgetAllocator_SetGlobalMode final
-{
-public:
-	EGameBudgetAllocatorGlobalMode                Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GameBudgetAllocator_SetGlobalMode) == 0x000001, "Wrong alignment on GameBudgetAllocator_SetGlobalMode");
-static_assert(sizeof(GameBudgetAllocator_SetGlobalMode) == 0x000001, "Wrong size on GameBudgetAllocator_SetGlobalMode");
-static_assert(offsetof(GameBudgetAllocator_SetGlobalMode, Mode) == 0x000000, "Member 'GameBudgetAllocator_SetGlobalMode::Mode' has a wrong offset!");
-
-// Function KuroGameplay.GameBudgetAllocator.SetGroupConfig
-// 0x0084 (0x0084 - 0x0000)
-struct GameBudgetAllocator_SetGroupConfig final
-{
-public:
-	class FName                                   GroupName;                                         // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x000C(0x0078)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GameBudgetAllocator_SetGroupConfig) == 0x000004, "Wrong alignment on GameBudgetAllocator_SetGroupConfig");
-static_assert(sizeof(GameBudgetAllocator_SetGroupConfig) == 0x000084, "Wrong size on GameBudgetAllocator_SetGroupConfig");
-static_assert(offsetof(GameBudgetAllocator_SetGroupConfig, GroupName) == 0x000000, "Member 'GameBudgetAllocator_SetGroupConfig::GroupName' has a wrong offset!");
-static_assert(offsetof(GameBudgetAllocator_SetGroupConfig, Config) == 0x00000C, "Member 'GameBudgetAllocator_SetGroupConfig::Config' has a wrong offset!");
-
-// Function KuroGameplay.GameBudgetAllocator.SetMaximumFrameRate
-// 0x0004 (0x0004 - 0x0000)
-struct GameBudgetAllocator_SetMaximumFrameRate final
-{
-public:
-	uint32                                        MaxFPS;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GameBudgetAllocator_SetMaximumFrameRate) == 0x000004, "Wrong alignment on GameBudgetAllocator_SetMaximumFrameRate");
-static_assert(sizeof(GameBudgetAllocator_SetMaximumFrameRate) == 0x000004, "Wrong size on GameBudgetAllocator_SetMaximumFrameRate");
-static_assert(offsetof(GameBudgetAllocator_SetMaximumFrameRate, MaxFPS) == 0x000000, "Member 'GameBudgetAllocator_SetMaximumFrameRate::MaxFPS' has a wrong offset!");
-
-// Function KuroGameplay.GameBudgetAllocator.SetTickIntervalDetailConfig
-// 0x0084 (0x0084 - 0x0000)
-struct GameBudgetAllocator_SetTickIntervalDetailConfig final
-{
-public:
-	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x0078)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-	EGameBudgetAllocatorGlobalMode                GlobalMode;                                        // 0x0078(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGameBudgetAllocatorActorMode                 ActorMode;                                         // 0x0079(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7A[0x2];                                       // 0x007A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        MaxTickInterval;                                   // 0x007C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionStartSize;                            // 0x0080(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionIntervalSize;                         // 0x0082(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GameBudgetAllocator_SetTickIntervalDetailConfig) == 0x000004, "Wrong alignment on GameBudgetAllocator_SetTickIntervalDetailConfig");
-static_assert(sizeof(GameBudgetAllocator_SetTickIntervalDetailConfig) == 0x000084, "Wrong size on GameBudgetAllocator_SetTickIntervalDetailConfig");
-static_assert(offsetof(GameBudgetAllocator_SetTickIntervalDetailConfig, Config) == 0x000000, "Member 'GameBudgetAllocator_SetTickIntervalDetailConfig::Config' has a wrong offset!");
-static_assert(offsetof(GameBudgetAllocator_SetTickIntervalDetailConfig, GlobalMode) == 0x000078, "Member 'GameBudgetAllocator_SetTickIntervalDetailConfig::GlobalMode' has a wrong offset!");
-static_assert(offsetof(GameBudgetAllocator_SetTickIntervalDetailConfig, ActorMode) == 0x000079, "Member 'GameBudgetAllocator_SetTickIntervalDetailConfig::ActorMode' has a wrong offset!");
-static_assert(offsetof(GameBudgetAllocator_SetTickIntervalDetailConfig, MaxTickInterval) == 0x00007C, "Member 'GameBudgetAllocator_SetTickIntervalDetailConfig::MaxTickInterval' has a wrong offset!");
-static_assert(offsetof(GameBudgetAllocator_SetTickIntervalDetailConfig, TickReductionStartSize) == 0x000080, "Member 'GameBudgetAllocator_SetTickIntervalDetailConfig::TickReductionStartSize' has a wrong offset!");
-static_assert(offsetof(GameBudgetAllocator_SetTickIntervalDetailConfig, TickReductionIntervalSize) == 0x000082, "Member 'GameBudgetAllocator_SetTickIntervalDetailConfig::TickReductionIntervalSize' has a wrong offset!");
-
-// Function KuroGameplay.GameBudgetAllocator.TickOutside
-// 0x0004 (0x0004 - 0x0000)
-struct GameBudgetAllocator_TickOutside final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GameBudgetAllocator_TickOutside) == 0x000004, "Wrong alignment on GameBudgetAllocator_TickOutside");
-static_assert(sizeof(GameBudgetAllocator_TickOutside) == 0x000004, "Wrong size on GameBudgetAllocator_TickOutside");
-static_assert(offsetof(GameBudgetAllocator_TickOutside, DeltaSeconds) == 0x000000, "Member 'GameBudgetAllocator_TickOutside::DeltaSeconds' has a wrong offset!");
-
-// Function KuroGameplay.GameBudgetAllocator.UpdateMinUpdateFIFOBudgetTime
-// 0x0004 (0x0004 - 0x0000)
-struct GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime final
-{
-public:
-	float                                         Time;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime) == 0x000004, "Wrong alignment on GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime");
-static_assert(sizeof(GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime) == 0x000004, "Wrong size on GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime");
-static_assert(offsetof(GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime, Time) == 0x000000, "Member 'GameBudgetAllocator_UpdateMinUpdateFIFOBudgetTime::Time' has a wrong offset!");
+DUMPER7_ASSERTS_EffectSystemActor_StopEffect;
 
 // Function KuroGameplay.KuroEffectLibrary.AddSceneComponent
 // 0x0028 (0x0028 - 0x0000)
@@ -439,13 +159,7 @@ public:
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USceneComponent*                        ReturnValue;                                       // 0x0020(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_AddSceneComponent) == 0x000008, "Wrong alignment on KuroEffectLibrary_AddSceneComponent");
-static_assert(sizeof(KuroEffectLibrary_AddSceneComponent) == 0x000028, "Wrong size on KuroEffectLibrary_AddSceneComponent");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, Actor) == 0x000000, "Member 'KuroEffectLibrary_AddSceneComponent::Actor' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, Class_0) == 0x000008, "Member 'KuroEffectLibrary_AddSceneComponent::Class_0' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, Parent) == 0x000010, "Member 'KuroEffectLibrary_AddSceneComponent::Parent' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, bDeferredFinish) == 0x000018, "Member 'KuroEffectLibrary_AddSceneComponent::bDeferredFinish' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, ReturnValue) == 0x000020, "Member 'KuroEffectLibrary_AddSceneComponent::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_AddSceneComponent;
 
 // Function KuroGameplay.KuroEffectLibrary.AddSceneComponentWithTransform
 // 0x0060 (0x0060 - 0x0000)
@@ -461,14 +175,7 @@ public:
 	class USceneComponent*                        ReturnValue;                                       // 0x0050(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroEffectLibrary_AddSceneComponentWithTransform) == 0x000010, "Wrong alignment on KuroEffectLibrary_AddSceneComponentWithTransform");
-static_assert(sizeof(KuroEffectLibrary_AddSceneComponentWithTransform) == 0x000060, "Wrong size on KuroEffectLibrary_AddSceneComponentWithTransform");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Actor) == 0x000000, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::Actor' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Class_0) == 0x000008, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::Class_0' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Parent) == 0x000010, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::Parent' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, bDeferredFinish) == 0x000018, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::bDeferredFinish' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Transform) == 0x000020, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::Transform' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, ReturnValue) == 0x000050, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_AddSceneComponentWithTransform;
 
 // Function KuroGameplay.KuroEffectLibrary.DeactivateImmediateNiagaraComponent
 // 0x0008 (0x0008 - 0x0000)
@@ -477,9 +184,7 @@ struct KuroEffectLibrary_DeactivateImmediateNiagaraComponent final
 public:
 	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_DeactivateImmediateNiagaraComponent) == 0x000008, "Wrong alignment on KuroEffectLibrary_DeactivateImmediateNiagaraComponent");
-static_assert(sizeof(KuroEffectLibrary_DeactivateImmediateNiagaraComponent) == 0x000008, "Wrong size on KuroEffectLibrary_DeactivateImmediateNiagaraComponent");
-static_assert(offsetof(KuroEffectLibrary_DeactivateImmediateNiagaraComponent, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_DeactivateImmediateNiagaraComponent::NiagaraComponent' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_DeactivateImmediateNiagaraComponent;
 
 // Function KuroGameplay.KuroEffectLibrary.EqualWorld
 // 0x0018 (0x0018 - 0x0000)
@@ -491,11 +196,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroEffectLibrary_EqualWorld) == 0x000008, "Wrong alignment on KuroEffectLibrary_EqualWorld");
-static_assert(sizeof(KuroEffectLibrary_EqualWorld) == 0x000018, "Wrong size on KuroEffectLibrary_EqualWorld");
-static_assert(offsetof(KuroEffectLibrary_EqualWorld, World) == 0x000000, "Member 'KuroEffectLibrary_EqualWorld::World' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_EqualWorld, Other) == 0x000008, "Member 'KuroEffectLibrary_EqualWorld::Other' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_EqualWorld, ReturnValue) == 0x000010, "Member 'KuroEffectLibrary_EqualWorld::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_EqualWorld;
 
 // Function KuroGameplay.KuroEffectLibrary.GetActorDefaultAttachComponent
 // 0x0010 (0x0010 - 0x0000)
@@ -505,10 +206,7 @@ public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USceneComponent*                        ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_GetActorDefaultAttachComponent) == 0x000008, "Wrong alignment on KuroEffectLibrary_GetActorDefaultAttachComponent");
-static_assert(sizeof(KuroEffectLibrary_GetActorDefaultAttachComponent) == 0x000010, "Wrong size on KuroEffectLibrary_GetActorDefaultAttachComponent");
-static_assert(offsetof(KuroEffectLibrary_GetActorDefaultAttachComponent, Actor) == 0x000000, "Member 'KuroEffectLibrary_GetActorDefaultAttachComponent::Actor' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_GetActorDefaultAttachComponent, ReturnValue) == 0x000008, "Member 'KuroEffectLibrary_GetActorDefaultAttachComponent::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_GetActorDefaultAttachComponent;
 
 // Function KuroGameplay.KuroEffectLibrary.GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance
 // 0x0008 (0x0008 - 0x0000)
@@ -519,10 +217,7 @@ public:
 	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance) == 0x000004, "Wrong alignment on KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance");
-static_assert(sizeof(KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance) == 0x000008, "Wrong size on KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance");
-static_assert(offsetof(KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance, EffectRegularType) == 0x000000, "Member 'KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance::EffectRegularType' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance, ReturnValue) == 0x000004, "Member 'KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance;
 
 // Function KuroGameplay.KuroEffectLibrary.GetNiagaraQualityLevel
 // 0x0004 (0x0004 - 0x0000)
@@ -531,9 +226,7 @@ struct KuroEffectLibrary_GetNiagaraQualityLevel final
 public:
 	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_GetNiagaraQualityLevel) == 0x000004, "Wrong alignment on KuroEffectLibrary_GetNiagaraQualityLevel");
-static_assert(sizeof(KuroEffectLibrary_GetNiagaraQualityLevel) == 0x000004, "Wrong size on KuroEffectLibrary_GetNiagaraQualityLevel");
-static_assert(offsetof(KuroEffectLibrary_GetNiagaraQualityLevel, ReturnValue) == 0x000000, "Member 'KuroEffectLibrary_GetNiagaraQualityLevel::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_GetNiagaraQualityLevel;
 
 // Function KuroGameplay.KuroEffectLibrary.GetNiagaraSystemEffectRegularType
 // 0x0010 (0x0010 - 0x0000)
@@ -544,10 +237,7 @@ public:
 	EKuroNiagaraEffectRegularType                 ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroEffectLibrary_GetNiagaraSystemEffectRegularType) == 0x000008, "Wrong alignment on KuroEffectLibrary_GetNiagaraSystemEffectRegularType");
-static_assert(sizeof(KuroEffectLibrary_GetNiagaraSystemEffectRegularType) == 0x000010, "Wrong size on KuroEffectLibrary_GetNiagaraSystemEffectRegularType");
-static_assert(offsetof(KuroEffectLibrary_GetNiagaraSystemEffectRegularType, NiagaraSystem) == 0x000000, "Member 'KuroEffectLibrary_GetNiagaraSystemEffectRegularType::NiagaraSystem' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_GetNiagaraSystemEffectRegularType, ReturnValue) == 0x000008, "Member 'KuroEffectLibrary_GetNiagaraSystemEffectRegularType::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_GetNiagaraSystemEffectRegularType;
 
 // Function KuroGameplay.KuroEffectLibrary.GetNpcDisappearDistance
 // 0x0004 (0x0004 - 0x0000)
@@ -556,9 +246,7 @@ struct KuroEffectLibrary_GetNpcDisappearDistance final
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_GetNpcDisappearDistance) == 0x000004, "Wrong alignment on KuroEffectLibrary_GetNpcDisappearDistance");
-static_assert(sizeof(KuroEffectLibrary_GetNpcDisappearDistance) == 0x000004, "Wrong size on KuroEffectLibrary_GetNpcDisappearDistance");
-static_assert(offsetof(KuroEffectLibrary_GetNpcDisappearDistance, ReturnValue) == 0x000000, "Member 'KuroEffectLibrary_GetNpcDisappearDistance::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_GetNpcDisappearDistance;
 
 // Function KuroGameplay.KuroEffectLibrary.InitModelNiagaraSpec
 // 0x0010 (0x0010 - 0x0000)
@@ -571,12 +259,7 @@ public:
 	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         TranslucencySortPriority;                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_InitModelNiagaraSpec) == 0x000008, "Wrong alignment on KuroEffectLibrary_InitModelNiagaraSpec");
-static_assert(sizeof(KuroEffectLibrary_InitModelNiagaraSpec) == 0x000010, "Wrong size on KuroEffectLibrary_InitModelNiagaraSpec");
-static_assert(offsetof(KuroEffectLibrary_InitModelNiagaraSpec, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_InitModelNiagaraSpec::NiagaraComponent' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_InitModelNiagaraSpec, bUIScene) == 0x000008, "Member 'KuroEffectLibrary_InitModelNiagaraSpec::bUIScene' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_InitModelNiagaraSpec, bReceivesDecals) == 0x000009, "Member 'KuroEffectLibrary_InitModelNiagaraSpec::bReceivesDecals' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_InitModelNiagaraSpec, TranslucencySortPriority) == 0x00000C, "Member 'KuroEffectLibrary_InitModelNiagaraSpec::TranslucencySortPriority' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_InitModelNiagaraSpec;
 
 // Function KuroGameplay.KuroEffectLibrary.IsEffectSystemInEditorNoPIE
 // 0x0001 (0x0001 - 0x0000)
@@ -585,9 +268,7 @@ struct KuroEffectLibrary_IsEffectSystemInEditorNoPIE final
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_IsEffectSystemInEditorNoPIE) == 0x000001, "Wrong alignment on KuroEffectLibrary_IsEffectSystemInEditorNoPIE");
-static_assert(sizeof(KuroEffectLibrary_IsEffectSystemInEditorNoPIE) == 0x000001, "Wrong size on KuroEffectLibrary_IsEffectSystemInEditorNoPIE");
-static_assert(offsetof(KuroEffectLibrary_IsEffectSystemInEditorNoPIE, ReturnValue) == 0x000000, "Member 'KuroEffectLibrary_IsEffectSystemInEditorNoPIE::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_IsEffectSystemInEditorNoPIE;
 
 // Function KuroGameplay.KuroEffectLibrary.IsNiagaraComponentHasBound
 // 0x0010 (0x0010 - 0x0000)
@@ -599,11 +280,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroEffectLibrary_IsNiagaraComponentHasBound) == 0x000008, "Wrong alignment on KuroEffectLibrary_IsNiagaraComponentHasBound");
-static_assert(sizeof(KuroEffectLibrary_IsNiagaraComponentHasBound) == 0x000010, "Wrong size on KuroEffectLibrary_IsNiagaraComponentHasBound");
-static_assert(offsetof(KuroEffectLibrary_IsNiagaraComponentHasBound, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_IsNiagaraComponentHasBound::NiagaraComponent' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_IsNiagaraComponentHasBound, Threshold) == 0x000008, "Member 'KuroEffectLibrary_IsNiagaraComponentHasBound::Threshold' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_IsNiagaraComponentHasBound, ReturnValue) == 0x00000C, "Member 'KuroEffectLibrary_IsNiagaraComponentHasBound::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_IsNiagaraComponentHasBound;
 
 // Function KuroGameplay.KuroEffectLibrary.RegisterOnSystemFinished
 // 0x0008 (0x0008 - 0x0000)
@@ -612,9 +289,7 @@ struct KuroEffectLibrary_RegisterOnSystemFinished final
 public:
 	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_RegisterOnSystemFinished) == 0x000008, "Wrong alignment on KuroEffectLibrary_RegisterOnSystemFinished");
-static_assert(sizeof(KuroEffectLibrary_RegisterOnSystemFinished) == 0x000008, "Wrong size on KuroEffectLibrary_RegisterOnSystemFinished");
-static_assert(offsetof(KuroEffectLibrary_RegisterOnSystemFinished, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_RegisterOnSystemFinished::NiagaraComponent' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_RegisterOnSystemFinished;
 
 // Function KuroGameplay.KuroEffectLibrary.RegisterOnSystemPaused
 // 0x0008 (0x0008 - 0x0000)
@@ -623,9 +298,7 @@ struct KuroEffectLibrary_RegisterOnSystemPaused final
 public:
 	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_RegisterOnSystemPaused) == 0x000008, "Wrong alignment on KuroEffectLibrary_RegisterOnSystemPaused");
-static_assert(sizeof(KuroEffectLibrary_RegisterOnSystemPaused) == 0x000008, "Wrong size on KuroEffectLibrary_RegisterOnSystemPaused");
-static_assert(offsetof(KuroEffectLibrary_RegisterOnSystemPaused, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_RegisterOnSystemPaused::NiagaraComponent' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_RegisterOnSystemPaused;
 
 // Function KuroGameplay.KuroEffectLibrary.SetEffectActorSpawnInUIScene
 // 0x0010 (0x0010 - 0x0000)
@@ -637,11 +310,7 @@ public:
 	bool                                          Immediately;                                       // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroEffectLibrary_SetEffectActorSpawnInUIScene) == 0x000008, "Wrong alignment on KuroEffectLibrary_SetEffectActorSpawnInUIScene");
-static_assert(sizeof(KuroEffectLibrary_SetEffectActorSpawnInUIScene) == 0x000010, "Wrong size on KuroEffectLibrary_SetEffectActorSpawnInUIScene");
-static_assert(offsetof(KuroEffectLibrary_SetEffectActorSpawnInUIScene, Actor) == 0x000000, "Member 'KuroEffectLibrary_SetEffectActorSpawnInUIScene::Actor' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_SetEffectActorSpawnInUIScene, Value) == 0x000008, "Member 'KuroEffectLibrary_SetEffectActorSpawnInUIScene::Value' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_SetEffectActorSpawnInUIScene, Immediately) == 0x000009, "Member 'KuroEffectLibrary_SetEffectActorSpawnInUIScene::Immediately' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_SetEffectActorSpawnInUIScene;
 
 // Function KuroGameplay.KuroEffectLibrary.SetNiagaraFrameDeltaTime
 // 0x0010 (0x0010 - 0x0000)
@@ -653,11 +322,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroEffectLibrary_SetNiagaraFrameDeltaTime) == 0x000008, "Wrong alignment on KuroEffectLibrary_SetNiagaraFrameDeltaTime");
-static_assert(sizeof(KuroEffectLibrary_SetNiagaraFrameDeltaTime) == 0x000010, "Wrong size on KuroEffectLibrary_SetNiagaraFrameDeltaTime");
-static_assert(offsetof(KuroEffectLibrary_SetNiagaraFrameDeltaTime, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_SetNiagaraFrameDeltaTime::NiagaraComponent' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_SetNiagaraFrameDeltaTime, DeltaTime) == 0x000008, "Member 'KuroEffectLibrary_SetNiagaraFrameDeltaTime::DeltaTime' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_SetNiagaraFrameDeltaTime, ReturnValue) == 0x00000C, "Member 'KuroEffectLibrary_SetNiagaraFrameDeltaTime::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_SetNiagaraFrameDeltaTime;
 
 // Function KuroGameplay.KuroEffectLibrary.SetNiagaraSimulationMinDeltaTime
 // 0x0010 (0x0010 - 0x0000)
@@ -668,10 +333,7 @@ public:
 	float                                         MinDeltaTime;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime) == 0x000008, "Wrong alignment on KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime");
-static_assert(sizeof(KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime) == 0x000010, "Wrong size on KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime");
-static_assert(offsetof(KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime::NiagaraComponent' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime, MinDeltaTime) == 0x000008, "Member 'KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime::MinDeltaTime' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime;
 
 // Function KuroGameplay.KuroEffectLibrary.SetOnSystemFinishedDelegate
 // 0x0028 (0x0028 - 0x0000)
@@ -680,9 +342,7 @@ struct KuroEffectLibrary_SetOnSystemFinishedDelegate final
 public:
 	TDelegate<void(class UNiagaraComponent* NiagaraComponent)> Delegate;                             // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_SetOnSystemFinishedDelegate) == 0x000004, "Wrong alignment on KuroEffectLibrary_SetOnSystemFinishedDelegate");
-static_assert(sizeof(KuroEffectLibrary_SetOnSystemFinishedDelegate) == 0x000028, "Wrong size on KuroEffectLibrary_SetOnSystemFinishedDelegate");
-static_assert(offsetof(KuroEffectLibrary_SetOnSystemFinishedDelegate, Delegate) == 0x000000, "Member 'KuroEffectLibrary_SetOnSystemFinishedDelegate::Delegate' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_SetOnSystemFinishedDelegate;
 
 // Function KuroGameplay.KuroEffectLibrary.SetOnSystemPausedDelegate
 // 0x0028 (0x0028 - 0x0000)
@@ -691,9 +351,7 @@ struct KuroEffectLibrary_SetOnSystemPausedDelegate final
 public:
 	TDelegate<void(class UNiagaraComponent* NiagaraComponent, bool IsPaused)> Delegate;              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_SetOnSystemPausedDelegate) == 0x000004, "Wrong alignment on KuroEffectLibrary_SetOnSystemPausedDelegate");
-static_assert(sizeof(KuroEffectLibrary_SetOnSystemPausedDelegate) == 0x000028, "Wrong size on KuroEffectLibrary_SetOnSystemPausedDelegate");
-static_assert(offsetof(KuroEffectLibrary_SetOnSystemPausedDelegate, Delegate) == 0x000000, "Member 'KuroEffectLibrary_SetOnSystemPausedDelegate::Delegate' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_SetOnSystemPausedDelegate;
 
 // Function KuroGameplay.KuroEffectLibrary.UpdateEffectModelLightSpec
 // 0x0020 (0x0020 - 0x0000)
@@ -708,13 +366,7 @@ public:
 	float                                         DefaultMaxLightRadius;                             // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroEffectLibrary_UpdateEffectModelLightSpec) == 0x000008, "Wrong alignment on KuroEffectLibrary_UpdateEffectModelLightSpec");
-static_assert(sizeof(KuroEffectLibrary_UpdateEffectModelLightSpec) == 0x000020, "Wrong size on KuroEffectLibrary_UpdateEffectModelLightSpec");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelLightSpec, EffectModelLight) == 0x000000, "Member 'KuroEffectLibrary_UpdateEffectModelLightSpec::EffectModelLight' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelLightSpec, LightComponent) == 0x000008, "Member 'KuroEffectLibrary_UpdateEffectModelLightSpec::LightComponent' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelLightSpec, bForceUpdate) == 0x000010, "Member 'KuroEffectLibrary_UpdateEffectModelLightSpec::bForceUpdate' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelLightSpec, Time) == 0x000014, "Member 'KuroEffectLibrary_UpdateEffectModelLightSpec::Time' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelLightSpec, DefaultMaxLightRadius) == 0x000018, "Member 'KuroEffectLibrary_UpdateEffectModelLightSpec::DefaultMaxLightRadius' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_UpdateEffectModelLightSpec;
 
 // Function KuroGameplay.KuroEffectLibrary.UpdateEffectModelNiagaraSpec
 // 0x0020 (0x0020 - 0x0000)
@@ -729,13 +381,7 @@ public:
 	int32                                         ExtraState;                                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroEffectLibrary_UpdateEffectModelNiagaraSpec) == 0x000008, "Wrong alignment on KuroEffectLibrary_UpdateEffectModelNiagaraSpec");
-static_assert(sizeof(KuroEffectLibrary_UpdateEffectModelNiagaraSpec) == 0x000020, "Wrong size on KuroEffectLibrary_UpdateEffectModelNiagaraSpec");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelNiagaraSpec, EffectModelNiagara) == 0x000000, "Member 'KuroEffectLibrary_UpdateEffectModelNiagaraSpec::EffectModelNiagara' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelNiagaraSpec, NiagaraComponent) == 0x000008, "Member 'KuroEffectLibrary_UpdateEffectModelNiagaraSpec::NiagaraComponent' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelNiagaraSpec, bForceUpdate) == 0x000010, "Member 'KuroEffectLibrary_UpdateEffectModelNiagaraSpec::bForceUpdate' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelNiagaraSpec, Time) == 0x000014, "Member 'KuroEffectLibrary_UpdateEffectModelNiagaraSpec::Time' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelNiagaraSpec, ExtraState) == 0x000018, "Member 'KuroEffectLibrary_UpdateEffectModelNiagaraSpec::ExtraState' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_UpdateEffectModelNiagaraSpec;
 
 // Function KuroGameplay.KuroEffectLibrary.UpdateEffectModelPostProcessMaterial
 // 0x0018 (0x0018 - 0x0000)
@@ -748,12 +394,7 @@ public:
 	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Time;                                              // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_UpdateEffectModelPostProcessMaterial) == 0x000008, "Wrong alignment on KuroEffectLibrary_UpdateEffectModelPostProcessMaterial");
-static_assert(sizeof(KuroEffectLibrary_UpdateEffectModelPostProcessMaterial) == 0x000018, "Wrong size on KuroEffectLibrary_UpdateEffectModelPostProcessMaterial");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessMaterial, EffectModelPostProcess) == 0x000000, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessMaterial::EffectModelPostProcess' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessMaterial, DynMaterial) == 0x000008, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessMaterial::DynMaterial' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessMaterial, bForceUpdate) == 0x000010, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessMaterial::bForceUpdate' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessMaterial, Time) == 0x000014, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessMaterial::Time' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_UpdateEffectModelPostProcessMaterial;
 
 // Function KuroGameplay.KuroEffectLibrary.UpdateEffectModelPostProcessSpec
 // 0x0040 (0x0040 - 0x0000)
@@ -771,17 +412,1727 @@ public:
 	struct FVector2D                              LastScreenUV;                                      // 0x0030(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec) == 0x000008, "Wrong alignment on KuroEffectLibrary_UpdateEffectModelPostProcessSpec");
-static_assert(sizeof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec) == 0x000040, "Wrong size on KuroEffectLibrary_UpdateEffectModelPostProcessSpec");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, EffectModelPostProcess) == 0x000000, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::EffectModelPostProcess' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, PostProcessComponent) == 0x000008, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::PostProcessComponent' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, bForceUpdate) == 0x000010, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::bForceUpdate' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, Time) == 0x000014, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::Time' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, Controller) == 0x000018, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::Controller' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, Character) == 0x000020, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::Character' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, EffectActor) == 0x000028, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::EffectActor' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, LastScreenUV) == 0x000030, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::LastScreenUV' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, ReturnValue) == 0x000038, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEffectLibrary_UpdateEffectModelPostProcessSpec;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.AddFinishCallback
+// 0x0058 (0x0058 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_AddFinishCallback final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(int32 Handle)>                 Callback;                                          // 0x0008(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnClearCallback;                                   // 0x0030(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_AddFinishCallback;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.AttachSkeletalMesh
+// 0x0048 (0x0048 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_AttachSkeletalMesh final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroSkeletalMeshEffectContext         Context;                                           // 0x0008(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_AttachSkeletalMesh;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.AttachToEffectSkeletalMesh
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_AttachToEffectSkeletalMesh final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 AttachActor;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SocketName;                                        // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               TransformRule;                                     // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_AttachToEffectSkeletalMesh;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.ClearPool
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_ClearPool final
+{
+public:
+	bool                                          IsInternal;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_ClearPool;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.CollectMaterialFloatCurve
+// 0x00A0 (0x00A0 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_CollectMaterialFloatCurve final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Key;                                               // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        Value;                                             // 0x0010(0x0090)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_CollectMaterialFloatCurve;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.CollectMaterialLinearColorCurve
+// 0x0230 (0x0230 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_CollectMaterialLinearColorCurve final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Key;                                               // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroCurveLinearColor                  Value;                                             // 0x0010(0x0220)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_CollectMaterialLinearColorCurve;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.CollectMaterialVectorCurve
+// 0x01B8 (0x01B8 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_CollectMaterialVectorCurve final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Key;                                               // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroCurveVector                       Value;                                             // 0x0010(0x01A8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_CollectMaterialVectorCurve;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.DebugUpdate
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_DebugUpdate final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDebugUpdate;                                      // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_DebugUpdate;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.DynamicRegisterSpawnCallback
+// 0x0058 (0x0058 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_DynamicRegisterSpawnCallback final
+{
+public:
+	int32                                         EffectId;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(uint8 Result, int32 Handle)>   Callback;                                          // 0x0008(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnClearCallback;                                   // 0x0030(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_DynamicRegisterSpawnCallback;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.EffectIsLoop
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_EffectIsLoop final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_EffectIsLoop;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.ForceCheckPendingInit
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_ForceCheckPendingInit final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_ForceCheckPendingInit;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.FreezeHandle
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_FreezeHandle final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFreeze;                                           // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForce;                                            // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_FreezeHandle;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetActiveEffectCount
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetActiveEffectCount final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetActiveEffectCount;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetEffectCount
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetEffectCount final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetEffectCount;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetEffectLruCapacity
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetEffectLruCapacity final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetEffectLruCapacity;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetEffectLruCount
+// 0x0018 (0x0018 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetEffectLruCount final
+{
+public:
+	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetEffectLruCount;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetEffectLruSize
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetEffectLruSize final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetEffectLruSize;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetEffectModel
+// 0x0010 (0x0010 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetEffectModel final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelBase*                       ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetEffectModel;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetLastPlayTime
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetLastPlayTime final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetLastPlayTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetLastStopTime
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetLastStopTime final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetLastStopTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetPassTime
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetPassTime final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetPassTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetPath
+// 0x0018 (0x0018 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetPath final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetPath;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetPlayerEffectLruSize
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetPlayerEffectLruSize final
+{
+public:
+	int32                                         Pos;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetPlayerEffectLruSize;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetSeekToTargetTime
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetSeekToTargetTime final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetSeekToTargetTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetSureEffectActor
+// 0x0010 (0x0010 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetSureEffectActor final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetSureEffectActor;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetSureNiagaraComponent
+// 0x0010 (0x0010 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetSureNiagaraComponent final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetSureNiagaraComponent;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GetTotalPassTime
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GetTotalPassTime final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GetTotalPassTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GlobalStoppingPlayTime
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GlobalStoppingPlayTime final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GlobalStoppingPlayTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.GlobalStoppingTime
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_GlobalStoppingTime final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_GlobalStoppingTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.HandleSeekToTime
+// 0x000C (0x000C - 0x0000)
+struct KuroEffectSystemFunctionLibrary_HandleSeekToTime final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Time;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoLoop;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForce;                                            // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000A(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B[0x1];                                        // 0x000B(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_HandleSeekToTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.HandleSeekToTimeWithProcess
+// 0x0010 (0x0010 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_HandleSeekToTimeWithProcess final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Time;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSeekContinue;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Delta;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_HandleSeekToTimeWithProcess;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.HasEffectForSpecData
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_HasEffectForSpecData final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_HasEffectForSpecData;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.HasInitialize
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_HasInitialize final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_HasInitialize;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.Initialize
+// 0x0040 (0x0040 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_Initialize final
+{
+public:
+	class UGameInstance*                          GameInstance;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FKuroEffectSpecData>            SpecDataArray;                                     // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          InIsGameRunning;                                   // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         InBoundsVisibleThreshold;                          // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InMaxVisibleCullDeltaTime;                         // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InWasRecentlyRenderInterval;                       // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InUseVisibilityTestPass;                           // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UClass*                                 EffectViewClass;                                   // 0x0030(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsResetSpecData;                                   // 0x0038(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0039(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_Initialize;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.InitStaticGlobalData
+// 0x0003 (0x0003 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_InitStaticGlobalData final
+{
+public:
+	bool                                          bUseLog;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsInEditorTick;                                   // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseDbConfig;                                      // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_InitStaticGlobalData;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.IsEffectActorValid
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_IsEffectActorValid final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_IsEffectActorValid;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.IsEffectValid
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_IsEffectValid final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_IsEffectValid;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.IsHandleFreeze
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_IsHandleFreeze final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_IsHandleFreeze;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.IsPlaying
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_IsPlaying final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_IsPlaying;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.OnDisableOtherEffectChange
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_OnDisableOtherEffectChange final
+{
+public:
+	bool                                          bDisableOtherEffect;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_OnDisableOtherEffectChange;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.OnEffectQualityBiasRemoteChange
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_OnEffectQualityBiasRemoteChange final
+{
+public:
+	float                                         EffectQualityBiasRemote;                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_OnEffectQualityBiasRemoteChange;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.OnIsInEditorTickChange
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_OnIsInEditorTickChange final
+{
+public:
+	bool                                          bIsInEditorTick;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_OnIsInEditorTickChange;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.OnPlayerEffectContainerFormationLoaded
+// 0x0010 (0x0010 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_OnPlayerEffectContainerFormationLoaded final
+{
+public:
+	TArray<struct FKuroSceneTeamItem>             SceneTeamItems;                                    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_OnPlayerEffectContainerFormationLoaded;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.OnTickSystemPausedChange
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_OnTickSystemPausedChange final
+{
+public:
+	bool                                          bIsPaused;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_OnTickSystemPausedChange;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.OnUiSceneStateChange
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_OnUiSceneStateChange final
+{
+public:
+	EKuroUI3DState                                UiSceneState;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_OnUiSceneStateChange;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.RefreshEffectForSpecData
+// 0x0018 (0x0018 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_RefreshEffectForSpecData final
+{
+public:
+	TArray<struct FKuroEffectSpecData>            SpecDataArray;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          IsRefresh;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_RefreshEffectForSpecData;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.RegisterJsFunction
+// 0x0488 (0x0488 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_RegisterJsFunction final
+{
+public:
+	TDelegate<void(float Opacity, class UActorComponent* CharRenderingComponent, class USkeletalMeshComponent* SkeletalMeshComponent, class AActor* Owner)> InSkeletalMeshSpec_OnBodyEffectChange; // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class AActor* EffectActor, class UActorComponent* CharRenderingComponent)> InSkeletalMeshSpec_DestroyRenderingComponent; // 0x0028(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EntityId)>               InEffectHandle_GetEntityOwnerActor;                // 0x0050(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EntityId)>               InEffectHandle_GetEntityModelConfigId;             // 0x0078(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(float EffectEnableRange)>      InEffectHandle_GetOrAddEffectDynamicGroup;         // 0x00A0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(bool FromPrimaryRole, class AActor* Actor)> InAudioSystem_GetAkComponent;         // 0x00C8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EventHandle, float FadeOutTime)> InAudioSystem_ExecuteActionStop;           // 0x00F0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& EventName, const struct FTransformDouble& Transform)> InAudioSystem_PostEventTransform; // 0x0118(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& EventName, class UAkComponent* AkComponent)> InAudioSystem_PostEventAkComponent; // 0x0140(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EntityId)>               InNiagaraSpec_IsNeedQualityBias;                   // 0x0168(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EntityId, bool VisibleForProtoPlayer)> InPostProcessSpec_IsNeedPostEffect;  // 0x0190(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EntityId)>               InPostProcessSpec_IsDisableInUltraSkill;           // 0x01B8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(TSubclassOf<class AActor> Class, const struct FTransformDouble& Transform)> InActorSystem_Get; // 0x01E0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& Reason, class AActor* Actor)> InActorSystem_Put;             // 0x0208(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class AActor* Actor, int32 EffectId)> InEffectSystem_SetEffectView;               // 0x0230(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EntityId)>               InEffectSystem_CheckIsNetPlayer;                   // 0x0258(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& Path)>    InEffectSystem_CheckMobileBlackEffect;             // 0x0280(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EffectId, class AActor* EffectActor, class USkeletalMeshComponent* ContextMeshComponent, class UObject* ContextSourceObject, class UEffectModelBase* EffectModel)> InEffectSpec_RegisterBodyEffect; // 0x02A8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EffectId, class AActor* EffectActor, class USkeletalMeshComponent* ContextMeshComponent, class UObject* ContextSourceObject, class UEffectModelBase* EffectModel)> InEffectSpec_UnregisterBodyEffect; // 0x02D0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EntityId, class UObject* ContextSourceObject)> InMaterialSpec_GetRenderingComponentByContext; // 0x02F8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class USkeletalMeshComponent* SkeletalMeshComponent)> InMaterialSpec_GetRenderingComponentBySkeletal; // 0x0320(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class USkeletalMeshComponent* SkeletalMeshComponent)> InMaterialSpec_SpawnRenderActor; // 0x0348(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class AActor* Actor, class USkeletalMeshComponent* SkeletalMeshComponent)> InMaterialSpec_GetRenderingComponentByRenderActor; // 0x0370(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class UKuroCharRenderingComponent* RenderComponent, class UKuroMaterialControllerDataAsset* DataAsset)> InMaterialSpec_AddMaterialControllerData; // 0x0398(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class UKuroCharRenderingComponent* RenderComponent, int32 MaterialControllerHandle)> InMaterialSpec_RemoveMaterialControllerData; // 0x03C0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class UKuroCharRenderingComponent* RenderComponent)> InMaterialSpec_DestroyRenderingComponent; // 0x03E8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class UEffectModelAudio* EffectModel, class AActor* EffectActor, int32 EffectType)> InEffectAudioController_AddPlayEffectAudio; // 0x0410(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class UEffectModelAudio* EffectModel, class AActor* EffectActor, int32 EffectType, int32 Priority)> InEffectAudioController_AddPlayEffectAudioPriority; // 0x0438(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Uid, const class FString& Context)> InEffectAudioController_OnStopEffectAudio; // 0x0460(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_RegisterJsFunction;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.RemoveFinishCallback
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_RemoveFinishCallback final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_RemoveFinishCallback;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.ReplayEffect
+// 0x0070 (0x0070 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_ReplayEffect final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Reason;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       Transform;                                         // 0x0020(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bResetTransform;                                   // 0x0060(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0xF];                                       // 0x0061(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_ReplayEffect;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetEffectDataFloatConstParam
+// 0x0014 (0x0014 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetEffectDataFloatConstParam final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParamName;                                         // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetEffectDataFloatConstParam;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetEffectExtraState
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetEffectExtraState final
+{
+public:
+	int32                                         EffectId;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ExtraState;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetEffectExtraState;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetEffectHidden
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetEffectHidden final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHidden;                                           // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Reason;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsLogic;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetEffectHidden;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetEffectIgnoreVisibilityOptimize
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetEffectIgnoreVisibilityOptimize final
+{
+public:
+	int32                                         EffectId;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnore;                                           // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetEffectIgnoreVisibilityOptimize;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetEffectLruCapacity
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetEffectLruCapacity final
+{
+public:
+	int32                                         Capacity;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetEffectLruCapacity;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetEffectParameterNiagara
+// 0x0068 (0x0068 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetEffectParameterNiagara final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroEffectNiagaraParametersStruct     Parameter;                                         // 0x0008(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetEffectParameterNiagara;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetEffectQualityLevel
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetEffectQualityLevel final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         QualityLevel;                                      // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetEffectQualityLevel;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetEffectStoppingTime
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetEffectStoppingTime final
+{
+public:
+	int32                                         EffectId;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStoppingTime;                                     // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetEffectStoppingTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetGlobalStoppingTime
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetGlobalStoppingTime final
+{
+public:
+	bool                                          bStoppingTime;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PlayTime;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetGlobalStoppingTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetGlobalTimeScale
+// 0x0004 (0x0004 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetGlobalTimeScale final
+{
+public:
+	float                                         InGlobalTimeScale;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetGlobalTimeScale;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetHandleLifeCycle
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetHandleLifeCycle final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Time;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetHandleLifeCycle;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetThreeStageTime
+// 0x0014 (0x0014 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetThreeStageTime final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartTime;                                         // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LoopTime;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EndTime;                                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bResetPassTime;                                    // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetThreeStageTime;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetTimeScale
+// 0x000C (0x000C - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetTimeScale final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeScale;                                         // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreGlobalTimeScale;                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetTimeScale;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SetUseDebugDrawNew
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SetUseDebugDrawNew final
+{
+public:
+	bool                                          bUseDebugDrawNew;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SetUseDebugDrawNew;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnEffect
+// 0x0150 (0x0150 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnEffect final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       Transform;                                         // 0x0010(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0050(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0060(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroEffectContext                     Context;                                           // 0x0070(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforeInitCallback;                                // 0x00A0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(uint8 Result, int32 Handle)>   Callback;                                          // 0x00C8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforePlayCallback;                                // 0x00F0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnClearCallback;                                   // 0x0118(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0140(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrepare;                                          // 0x0141(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceCreateActor;                                 // 0x0142(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_143[0x1];                                      // 0x0143(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0144(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_148[0x8];                                      // 0x0148(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnEffect;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnEffectFromAudioContext
+// 0x0150 (0x0150 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnEffectFromAudioContext final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       Transform;                                         // 0x0010(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0050(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0060(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroEffectAudioContext                Context;                                           // 0x0070(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforeInitCallback;                                // 0x00A8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(uint8 Result, int32 Handle)>   Callback;                                          // 0x00D0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforePlayCallback;                                // 0x00F8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnClearCallback;                                   // 0x0120(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0148(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrepare;                                          // 0x0149(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceCreateActor;                                 // 0x014A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14B[0x1];                                      // 0x014B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x014C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnEffectFromAudioContext;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnEffectFromGhostContext
+// 0x0170 (0x0170 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnEffectFromGhostContext final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       Transform;                                         // 0x0010(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0050(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0060(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroEffectRuntimeGhostEffectContext   Context;                                           // 0x0070(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforeInitCallback;                                // 0x00C0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(uint8 Result, int32 Handle)>   Callback;                                          // 0x00E8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforePlayCallback;                                // 0x0110(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnClearCallback;                                   // 0x0138(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0160(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrepare;                                          // 0x0161(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceCreateActor;                                 // 0x0162(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_163[0x1];                                      // 0x0163(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0164(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_168[0x8];                                      // 0x0168(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnEffectFromGhostContext;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnEffectFromSkeletalContext
+// 0x0160 (0x0160 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnEffectFromSkeletalContext final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       Transform;                                         // 0x0010(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0050(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0060(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroSkeletalMeshEffectContext         Context;                                           // 0x0070(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforeInitCallback;                                // 0x00B0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(uint8 Result, int32 Handle)>   Callback;                                          // 0x00D8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforePlayCallback;                                // 0x0100(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnClearCallback;                                   // 0x0128(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0150(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrepare;                                          // 0x0151(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceCreateActor;                                 // 0x0152(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_153[0x1];                                      // 0x0153(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0154(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_158[0x8];                                      // 0x0158(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnEffectFromSkeletalContext;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnEffectWithActor
+// 0x0068 (0x0068 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnEffectWithActor final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroEffectContext                     Context;                                           // 0x0030(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bAutoPlay;                                         // 0x0060(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsExternalActor;                                  // 0x0061(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0062(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_63[0x1];                                       // 0x0063(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0064(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnEffectWithActor;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnEffectWithActorFromAudioContext
+// 0x0070 (0x0070 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnEffectWithActorFromAudioContext final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroEffectAudioContext                Context;                                           // 0x0030(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bAutoPlay;                                         // 0x0068(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsExternalActor;                                  // 0x0069(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x006A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6B[0x1];                                       // 0x006B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x006C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnEffectWithActorFromAudioContext;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnEffectWithActorFromGhostContext
+// 0x0088 (0x0088 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnEffectWithActorFromGhostContext final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroEffectRuntimeGhostEffectContext   Context;                                           // 0x0030(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bAutoPlay;                                         // 0x0080(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsExternalActor;                                  // 0x0081(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0082(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_83[0x1];                                       // 0x0083(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0084(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnEffectWithActorFromGhostContext;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnEffectWithActorFromSkeletalContext
+// 0x0078 (0x0078 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnEffectWithActorFromSkeletalContext final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroSkeletalMeshEffectContext         Context;                                           // 0x0030(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bAutoPlay;                                         // 0x0070(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsExternalActor;                                  // 0x0071(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0072(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_73[0x1];                                       // 0x0073(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0074(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnEffectWithActorFromSkeletalContext;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnUnloopedEffect
+// 0x0150 (0x0150 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnUnloopedEffect final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       Transform;                                         // 0x0010(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0050(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0060(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroEffectContext                     Context;                                           // 0x0070(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforeInitCallback;                                // 0x00A0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(uint8 Result, int32 Handle)>   Callback;                                          // 0x00C8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforePlayCallback;                                // 0x00F0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnClearCallback;                                   // 0x0118(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0140(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrepare;                                          // 0x0141(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceCreateActor;                                 // 0x0142(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_143[0x1];                                      // 0x0143(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0144(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_148[0x8];                                      // 0x0148(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnUnloopedEffect;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnUnloopedEffectFromAudioContext
+// 0x0150 (0x0150 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnUnloopedEffectFromAudioContext final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       Transform;                                         // 0x0010(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0050(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0060(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroEffectAudioContext                Context;                                           // 0x0070(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforeInitCallback;                                // 0x00A8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(uint8 Result, int32 Handle)>   Callback;                                          // 0x00D0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforePlayCallback;                                // 0x00F8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnClearCallback;                                   // 0x0120(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0148(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrepare;                                          // 0x0149(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceCreateActor;                                 // 0x014A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14B[0x1];                                      // 0x014B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x014C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnUnloopedEffectFromAudioContext;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnUnloopedEffectFromGhostContext
+// 0x0170 (0x0170 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnUnloopedEffectFromGhostContext final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       Transform;                                         // 0x0010(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0050(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0060(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroEffectRuntimeGhostEffectContext   Context;                                           // 0x0070(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforeInitCallback;                                // 0x00C0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(uint8 Result, int32 Handle)>   Callback;                                          // 0x00E8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforePlayCallback;                                // 0x0110(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnClearCallback;                                   // 0x0138(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0160(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrepare;                                          // 0x0161(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceCreateActor;                                 // 0x0162(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_163[0x1];                                      // 0x0163(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0164(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_168[0x8];                                      // 0x0168(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnUnloopedEffectFromGhostContext;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.SpawnUnloopedEffectFromSkeletalContext
+// 0x0160 (0x0160 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_SpawnUnloopedEffectFromSkeletalContext final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       Transform;                                         // 0x0010(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 Path;                                              // 0x0050(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Reason;                                            // 0x0060(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroSkeletalMeshEffectContext         Context;                                           // 0x0070(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforeInitCallback;                                // 0x00B0(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(uint8 Result, int32 Handle)>   Callback;                                          // 0x00D8(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Handle)>                 BeforePlayCallback;                                // 0x0100(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnClearCallback;                                   // 0x0128(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         EffectType;                                        // 0x0150(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPrepare;                                          // 0x0151(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceCreateActor;                                 // 0x0152(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_153[0x1];                                      // 0x0153(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0154(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_158[0x8];                                      // 0x0158(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_SpawnUnloopedEffectFromSkeletalContext;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.StopEffectById
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_StopEffectById final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Reason;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Immediately;                                       // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDestroyActor;                                     // 0x0019(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x001A(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B[0x5];                                       // 0x001B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_StopEffectById;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.TickHandleInEditor
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_TickHandleInEditor final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Delta;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_TickHandleInEditor;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.UpdateBodyEffect
+// 0x000C (0x000C - 0x0000)
+struct KuroEffectSystemFunctionLibrary_UpdateBodyEffect final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Opacity;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVisible;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCastShadow;                                       // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_UpdateBodyEffect;
+
+// Function KuroGameplay.KuroEffectSystemFunctionLibrary.UpdateIsGameRunning
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEffectSystemFunctionLibrary_UpdateIsGameRunning final
+{
+public:
+	bool                                          bIsGameRunning;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemFunctionLibrary_UpdateIsGameRunning;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_D_GetActorScale3D
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_D_GetActorScale3D final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_D_GetActorScale3D;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_D_K2_AddActorWorldOffset
+// 0x00C0 (0x00C0 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_AddActorWorldOffset final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          DeltaLocation;                                     // 0x0008(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSweep;                                            // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepHitResult;                                    // 0x0024(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bTeleport;                                         // 0x00B8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_AddActorWorldOffset;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_D_K2_GetActorLocation
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_GetActorLocation final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_GetActorLocation;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_D_K2_SetActorLocation
+// 0x00C0 (0x00C0 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_SetActorLocation final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          Location;                                          // 0x0008(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSweep;                                            // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepHitResult;                                    // 0x0024(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bTeleport;                                         // 0x00B8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00B9(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BA[0x6];                                       // 0x00BA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_SetActorLocation;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_D_K2_SetActorLocationAndRotation
+// 0x00C8 (0x00C8 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_SetActorLocationAndRotation final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          Location;                                          // 0x0008(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0020(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bSweep;                                            // 0x002C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepHitResult;                                    // 0x0030(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bTeleport;                                         // 0x00C4(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00C5(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C6[0x2];                                       // 0x00C6(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_SetActorLocationAndRotation;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_D_K2_SetActorRelativeLocation
+// 0x00C0 (0x00C0 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_SetActorRelativeLocation final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          RelativeLocation;                                  // 0x0008(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSweep;                                            // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepHitResult;                                    // 0x0024(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bTeleport;                                         // 0x00B8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_SetActorRelativeLocation;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_D_K2_SetActorRelativeTransform
+// 0x00F0 (0x00F0 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_SetActorRelativeTransform final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       RelativeTransform;                                 // 0x0010(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bSweep;                                            // 0x0050(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepHitResult;                                    // 0x0054(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bTeleport;                                         // 0x00E8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_SetActorRelativeTransform;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_D_K2_SetActorTransform
+// 0x00F0 (0x00F0 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_SetActorTransform final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       InTransform;                                       // 0x0010(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bSweep;                                            // 0x0050(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepHitResult;                                    // 0x0054(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bTeleport;                                         // 0x00E8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00E9(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_EA[0x6];                                       // 0x00EA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_D_K2_SetActorTransform;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_D_SetActorScale3D
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_D_SetActorScale3D final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          Scale;                                             // 0x0008(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_D_SetActorScale3D;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_GetActorLocation
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_GetActorLocation final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_GetActorLocation;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_IsValid
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_IsValid final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_IsValid;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_K2_AddActorLocalTransform
+// 0x00E0 (0x00E0 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_AddActorLocalTransform final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0010(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bSweep;                                            // 0x0040(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepHitResult;                                    // 0x0044(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bTeleport;                                         // 0x00D8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_AddActorLocalTransform;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_K2_AttachToActor
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_AttachToActor final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Parent;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SocketName;                                        // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               LocationRule;                                      // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               RotationRule;                                      // 0x001D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               ScaleRule;                                         // 0x001E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWeldSimulatedBodies;                              // 0x001F(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_AttachToActor;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_K2_AttachToComponent
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_AttachToComponent final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USceneComponent*                        SceneComponent;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SocketName;                                        // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               LocationRule;                                      // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               RotationRule;                                      // 0x001D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAttachmentRule                               ScaleRule;                                         // 0x001E(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWeldSimulatedBodies;                              // 0x001F(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_AttachToComponent;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_K2_GetActorRotation
+// 0x0010 (0x0010 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_GetActorRotation final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               ReturnValue;                                       // 0x0004(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_GetActorRotation;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_K2_SetActorRelativeRotation
+// 0x00AC (0x00AC - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_SetActorRelativeRotation final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               RelativeRotation;                                  // 0x0004(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bSweep;                                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepHitResult;                                    // 0x0014(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bTeleport;                                         // 0x00A8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A9[0x3];                                       // 0x00A9(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_SetActorRelativeRotation;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_K2_SetActorRotation
+// 0x0014 (0x0014 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_SetActorRotation final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0004(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bTeleportPhysics;                                  // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_K2_SetActorRotation;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.ActorHandle_SetActorHiddenInGame
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_ActorHandle_SetActorHiddenInGame final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InHiddenInGame;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_ActorHandle_SetActorHiddenInGame;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_GetForceSolo
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_GetForceSolo final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_GetForceSolo;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_IsValid
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_IsValid final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_IsValid;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetCastShadow
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetCastShadow final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InCastShadow;                                      // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetCastShadow;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetColorParameter
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetColorParameter final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParameterName;                                     // 0x0004(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Param;                                             // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetColorParameter;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetEnviInteractionComp
+// 0x0010 (0x0010 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetEnviInteractionComp final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroEnviInteractionComponent*          EIComp;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetEnviInteractionComp;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetFloatParameter
+// 0x0014 (0x0014 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetFloatParameter final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParameterName;                                     // 0x0004(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Param;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetFloatParameter;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetForceSolo
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetForceSolo final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceSolo;                                        // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetForceSolo;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetIntParameter
+// 0x0014 (0x0014 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetIntParameter final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParameterName;                                     // 0x0004(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Param;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetIntParameter;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetKuroNiagaraEmitterCustomTexture
+// 0x0030 (0x0030 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetKuroNiagaraEmitterCustomTexture final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InEmitterName;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InVariableName;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               InValue;                                           // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetKuroNiagaraEmitterCustomTexture;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetKuroNiagaraEmitterFloatParam
+// 0x0030 (0x0030 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetKuroNiagaraEmitterFloatParam final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InEmitterName;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InVariableName;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InValue;                                           // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetKuroNiagaraEmitterFloatParam;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetKuroNiagaraEmitterVectorParam
+// 0x0040 (0x0040 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetKuroNiagaraEmitterVectorParam final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InEmitterName;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InVariableName;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               InValue;                                           // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetKuroNiagaraEmitterVectorParam;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetNiagaraVariableFloat
+// 0x0020 (0x0020 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetNiagaraVariableFloat final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InVariableName;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InValue;                                           // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetNiagaraVariableFloat;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetNiagaraVariableLinearColor
+// 0x0028 (0x0028 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetNiagaraVariableLinearColor final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InVariableName;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           InValue;                                           // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetNiagaraVariableLinearColor;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetNiagaraVariableVec3
+// 0x0028 (0x0028 - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetNiagaraVariableVec3 final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InVariableName;                                    // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InValue;                                           // 0x0018(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetNiagaraVariableVec3;
+
+// Function KuroGameplay.KuroEffectSystemHandleHelperLibrary.NiagaraComponentHandle_SetVectorParameter
+// 0x001C (0x001C - 0x0000)
+struct KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetVectorParameter final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParameterName;                                     // 0x0004(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Param;                                             // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEffectSystemHandleHelperLibrary_NiagaraComponentHandle_SetVectorParameter;
+
+// Function KuroGameplay.KuroGridLevelActor.Initialize
+// 0x0038 (0x0038 - 0x0000)
+struct KuroGridLevelActor_Initialize final
+{
+public:
+	TSoftObjectPtr<class UWorld>                  InWorldAsset;                                      // 0x0000(0x0030)(Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroBuildingGridCellVector            InGridSize;                                        // 0x0030(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGridLevelActor_Initialize;
+
+// Function KuroGameplay.KuroGridLevelActor.SetDirection
+// 0x000C (0x000C - 0x0000)
+struct KuroGridLevelActor_SetDirection final
+{
+public:
+	struct FVector                                Direction;                                         // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGridLevelActor_SetDirection;
+
+// Function KuroGameplay.KuroGridLevelActor.SetLayerState
+// 0x0020 (0x0020 - 0x0000)
+struct KuroGridLevelActor_SetLayerState final
+{
+public:
+	class FName                                   LayerName;                                         // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   StateName;                                         // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InPlayRate;                                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroGridLevelActor_SetLayerState;
+
+// Function KuroGameplay.KuroGridLevelActor.SetState
+// 0x0014 (0x0014 - 0x0000)
+struct KuroGridLevelActor_SetState final
+{
+public:
+	class FName                                   StateName;                                         // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InPlayRate;                                        // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroGridLevelActor_SetState;
+
+// Function KuroGameplay.KuroGridLevelActor.GetCurrentState
+// 0x000C (0x000C - 0x0000)
+struct KuroGridLevelActor_GetCurrentState final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGridLevelActor_GetCurrentState;
+
+// Function KuroGameplay.KuroGridLevelActor.GetLayerState
+// 0x0018 (0x0018 - 0x0000)
+struct KuroGridLevelActor_GetLayerState final
+{
+public:
+	class FName                                   LayerName;                                         // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ReturnValue;                                       // 0x000C(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGridLevelActor_GetLayerState;
+
+// Function KuroGameplay.KuroGridLevelActor.GetLevelStateMachineComponent
+// 0x0008 (0x0008 - 0x0000)
+struct KuroGridLevelActor_GetLevelStateMachineComponent final
+{
+public:
+	class UKuroLevelStateMachineComponent*        ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGridLevelActor_GetLevelStateMachineComponent;
+
+// Function KuroGameplay.KuroGridLevelActor.IsLevelLoaded
+// 0x0001 (0x0001 - 0x0000)
+struct KuroGridLevelActor_IsLevelLoaded final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGridLevelActor_IsLevelLoaded;
+
+// Function KuroGameplay.KuroGridLevelActor.IsLevelShown
+// 0x0001 (0x0001 - 0x0000)
+struct KuroGridLevelActor_IsLevelShown final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGridLevelActor_IsLevelShown;
+
+// Function KuroGameplay.KuroInputActionDelegateEvent.DoActionCallback
+// 0x0020 (0x0020 - 0x0000)
+struct KuroInputActionDelegateEvent_DoActionCallback final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputActionDelegateEvent_DoActionCallback;
+
+// Function KuroGameplay.KuroInputAxisDelegateEvent.DoAxisCallback
+// 0x0004 (0x0004 - 0x0000)
+struct KuroInputAxisDelegateEvent_DoAxisCallback final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputAxisDelegateEvent_DoAxisCallback;
+
+// Function KuroGameplay.KuroInputKeyDelegateEvent.DoKeyCallback
+// 0x0020 (0x0020 - 0x0000)
+struct KuroInputKeyDelegateEvent_DoKeyCallback final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputKeyDelegateEvent_DoKeyCallback;
+
+// Function KuroGameplay.KuroInputTouchDelegateEvent.DoTouchCallback
+// 0x0010 (0x0010 - 0x0000)
+struct KuroInputTouchDelegateEvent_DoTouchCallback final
+{
+public:
+	ETouchIndex                                   TouchIndex;                                        // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Position;                                          // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputTouchDelegateEvent_DoTouchCallback;
+
+// Function KuroGameplay.KuroInputDelegateLibrary.ClearActionBinding
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputDelegateLibrary_ClearActionBinding final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputDelegateLibrary_ClearActionBinding;
+
+// Function KuroGameplay.KuroInputDelegateLibrary.ClearAxisBinding
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputDelegateLibrary_ClearAxisBinding final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputDelegateLibrary_ClearAxisBinding;
+
+// Function KuroGameplay.KuroInputDelegateLibrary.ClearInputBinding
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputDelegateLibrary_ClearInputBinding final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputDelegateLibrary_ClearInputBinding;
+
+// Function KuroGameplay.KuroInputDelegateLibrary.ClearKeyBinding
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputDelegateLibrary_ClearKeyBinding final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputDelegateLibrary_ClearKeyBinding;
+
+// Function KuroGameplay.KuroInputDelegateLibrary.ClearTouchBinding
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputDelegateLibrary_ClearTouchBinding final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputDelegateLibrary_ClearTouchBinding;
+
+// Function KuroGameplay.KuroInputDelegateLibrary.RegisterActionBinding
+// 0x0040 (0x0040 - 0x0000)
+struct KuroInputDelegateLibrary_RegisterActionBinding final
+{
+public:
+	class FName                                   ActionName;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInputEvent                                   KeyEvent;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Actor;                                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FKey& Key)>       InDelegate;                                        // 0x0018(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputDelegateLibrary_RegisterActionBinding;
+
+// Function KuroGameplay.KuroInputDelegateLibrary.RegisterAxisBinding
+// 0x0040 (0x0040 - 0x0000)
+struct KuroInputDelegateLibrary_RegisterAxisBinding final
+{
+public:
+	class FName                                   AxisName;                                          // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Actor;                                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(float Value)>                  InDelegate;                                        // 0x0018(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputDelegateLibrary_RegisterAxisBinding;
+
+// Function KuroGameplay.KuroInputDelegateLibrary.RegisterKeyBinding
+// 0x0060 (0x0060 - 0x0000)
+struct KuroInputDelegateLibrary_RegisterKeyBinding final
+{
+public:
+	struct FInputChord                            Chord;                                             // 0x0000(0x0028)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInputEvent                                   KeyEvent;                                          // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Actor;                                             // 0x0030(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FKey& Key)>       InDelegate;                                        // 0x0038(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputDelegateLibrary_RegisterKeyBinding;
+
+// Function KuroGameplay.KuroInputDelegateLibrary.RegisterTouchBinding
+// 0x0038 (0x0038 - 0x0000)
+struct KuroInputDelegateLibrary_RegisterTouchBinding final
+{
+public:
+	EInputEvent                                   KeyEvent;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(ETouchIndex TouchIndex, const struct FVector& Position)> InDelegate;              // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputDelegateLibrary_RegisterTouchBinding;
+
+// Function KuroGameplay.KuroInputDelegateManager.OnActorDestroy
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputDelegateManager_OnActorDestroy final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputDelegateManager_OnActorDestroy;
+
+// Function KuroGameplay.KuroInputEvent.DoActionCallback
+// 0x0020 (0x0020 - 0x0000)
+struct KuroInputEvent_DoActionCallback final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputEvent_DoActionCallback;
+
+// Function KuroGameplay.KuroInputEvent.DoAxisCallback
+// 0x0004 (0x0004 - 0x0000)
+struct KuroInputEvent_DoAxisCallback final
+{
+public:
+	float                                         value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputEvent_DoAxisCallback;
+
+// Function KuroGameplay.KuroInputEvent.DoKeyCallback
+// 0x0020 (0x0020 - 0x0000)
+struct KuroInputEvent_DoKeyCallback final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputEvent_DoKeyCallback;
+
+// Function KuroGameplay.KuroInputEvent.DoTouchCallback
+// 0x0010 (0x0010 - 0x0000)
+struct KuroInputEvent_DoTouchCallback final
+{
+public:
+	ETouchIndex                                   touchIndex;                                        // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                position;                                          // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputEvent_DoTouchCallback;
+
+// Function KuroGameplay.KuroInputManager.OnActorDestroy
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputManager_OnActorDestroy final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputManager_OnActorDestroy;
 
 // Function KuroGameplay.KuroLevelPlayCustomCollisionComponent.CanEnableCollision
 // 0x0001 (0x0001 - 0x0000)
@@ -790,9 +2141,7 @@ struct KuroLevelPlayCustomCollisionComponent_CanEnableCollision final
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroLevelPlayCustomCollisionComponent_CanEnableCollision) == 0x000001, "Wrong alignment on KuroLevelPlayCustomCollisionComponent_CanEnableCollision");
-static_assert(sizeof(KuroLevelPlayCustomCollisionComponent_CanEnableCollision) == 0x000001, "Wrong size on KuroLevelPlayCustomCollisionComponent_CanEnableCollision");
-static_assert(offsetof(KuroLevelPlayCustomCollisionComponent_CanEnableCollision, ReturnValue) == 0x000000, "Member 'KuroLevelPlayCustomCollisionComponent_CanEnableCollision::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroLevelPlayCustomCollisionComponent_CanEnableCollision;
 
 // Function KuroGameplay.KuroLevelPlayInterface.ProcessPhysics
 // 0x0001 (0x0001 - 0x0000)
@@ -801,9 +2150,113 @@ struct KuroLevelPlayInterface_ProcessPhysics final
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroLevelPlayInterface_ProcessPhysics) == 0x000001, "Wrong alignment on KuroLevelPlayInterface_ProcessPhysics");
-static_assert(sizeof(KuroLevelPlayInterface_ProcessPhysics) == 0x000001, "Wrong size on KuroLevelPlayInterface_ProcessPhysics");
-static_assert(offsetof(KuroLevelPlayInterface_ProcessPhysics, ReturnValue) == 0x000000, "Member 'KuroLevelPlayInterface_ProcessPhysics::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroLevelPlayInterface_ProcessPhysics;
+
+// Function KuroGameplay.KuroLevelPlayLibrary.FakeAddAlwaysLoadedActorsToWorld
+// 0x0008 (0x0008 - 0x0000)
+struct KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld final
+{
+public:
+	const class UWorld*                           World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld;
+
+// Function KuroGameplay.KuroLevelPlayLibrary.FakeRemoveAlwaysLoadedActorsFromWorld
+// 0x0008 (0x0008 - 0x0000)
+struct KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld final
+{
+public:
+	const class UWorld*                           World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld;
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetActorComponentsBoundingBox
+// 0x0028 (0x0028 - 0x0000)
+struct KuroLevelPlayLibrary_GetActorComponentsBoundingBox final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNonColliding;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeFromChildActors;                           // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBox                                   ReturnValue;                                       // 0x000C(0x001C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLevelPlayLibrary_GetActorComponentsBoundingBox;
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetActorScreenBoundingBox
+// 0x0028 (0x0028 - 0x0000)
+struct KuroLevelPlayLibrary_GetActorScreenBoundingBox final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              ScreenMin;                                         // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              ScreenMax;                                         // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroLevelPlayLibrary_GetActorScreenBoundingBox;
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetAllActorsInPersistentLevel
+// 0x0018 (0x0018 - 0x0000)
+struct KuroLevelPlayLibrary_GetAllActorsInPersistentLevel final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                         OutLevelActors;                                    // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLevelPlayLibrary_GetAllActorsInPersistentLevel;
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetCurrentLevelRefPath
+// 0x0018 (0x0018 - 0x0000)
+struct KuroLevelPlayLibrary_GetCurrentLevelRefPath final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLevelPlayLibrary_GetCurrentLevelRefPath;
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetEntityIdByBaseItem
+// 0x0010 (0x0010 - 0x0000)
+struct KuroLevelPlayLibrary_GetEntityIdByBaseItem final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroLevelPlayLibrary_GetEntityIdByBaseItem;
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetPersistentLevelActorsInPackage
+// 0x0020 (0x0020 - 0x0000)
+struct KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage final
+{
+public:
+	class FString                                 PackageName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                         OutLevelActors;                                    // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage;
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetWorldInPackage
+// 0x0018 (0x0018 - 0x0000)
+struct KuroLevelPlayLibrary_GetWorldInPackage final
+{
+public:
+	class FString                                 PackageName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWorld*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLevelPlayLibrary_GetWorldInPackage;
+
+// Function KuroGameplay.KuroLevelPlayLibrary.RegisterBaseItemInfo
+// 0x0018 (0x0018 - 0x0000)
+struct KuroLevelPlayLibrary_RegisterBaseItemInfo final
+{
+public:
+	class UClass*                                 BaseItemClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 EntityIdName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLevelPlayLibrary_RegisterBaseItemInfo;
 
 // Function KuroGameplay.KuroLevelPlaySubsystem.RegisterObject
 // 0x0008 (0x0008 - 0x0000)
@@ -812,9 +2265,7 @@ struct KuroLevelPlaySubsystem_RegisterObject final
 public:
 	class UObject*                                InKuroLevelPlayObject;                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroLevelPlaySubsystem_RegisterObject) == 0x000008, "Wrong alignment on KuroLevelPlaySubsystem_RegisterObject");
-static_assert(sizeof(KuroLevelPlaySubsystem_RegisterObject) == 0x000008, "Wrong size on KuroLevelPlaySubsystem_RegisterObject");
-static_assert(offsetof(KuroLevelPlaySubsystem_RegisterObject, InKuroLevelPlayObject) == 0x000000, "Member 'KuroLevelPlaySubsystem_RegisterObject::InKuroLevelPlayObject' has a wrong offset!");
+DUMPER7_ASSERTS_KuroLevelPlaySubsystem_RegisterObject;
 
 // Function KuroGameplay.KuroLevelPlaySubsystem.UnregisterObject
 // 0x0008 (0x0008 - 0x0000)
@@ -823,9 +2274,25 @@ struct KuroLevelPlaySubsystem_UnregisterObject final
 public:
 	class UObject*                                InKuroLevelPlayObject;                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroLevelPlaySubsystem_UnregisterObject) == 0x000008, "Wrong alignment on KuroLevelPlaySubsystem_UnregisterObject");
-static_assert(sizeof(KuroLevelPlaySubsystem_UnregisterObject) == 0x000008, "Wrong size on KuroLevelPlaySubsystem_UnregisterObject");
-static_assert(offsetof(KuroLevelPlaySubsystem_UnregisterObject, InKuroLevelPlayObject) == 0x000000, "Member 'KuroLevelPlaySubsystem_UnregisterObject::InKuroLevelPlayObject' has a wrong offset!");
+DUMPER7_ASSERTS_KuroLevelPlaySubsystem_UnregisterObject;
+
+// Function KuroGameplay.KuroLockAxisCollisionComponent.SetAxisValue
+// 0x0004 (0x0004 - 0x0000)
+struct KuroLockAxisCollisionComponent_SetAxisValue final
+{
+public:
+	float                                         InAxisValue;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLockAxisCollisionComponent_SetAxisValue;
+
+// Function KuroGameplay.KuroLockAxisCollisionComponent.SetLockAxis
+// 0x0001 (0x0001 - 0x0000)
+struct KuroLockAxisCollisionComponent_SetLockAxis final
+{
+public:
+	ELockAxis                                     InLockAxis;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLockAxisCollisionComponent_SetLockAxis;
 
 // Function KuroGameplay.KuroMultilBgProgressBar.SetFillColorAndOpacity
 // 0x0010 (0x0010 - 0x0000)
@@ -834,9 +2301,7 @@ struct KuroMultilBgProgressBar_SetFillColorAndOpacity final
 public:
 	struct FLinearColor                           InColor;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroMultilBgProgressBar_SetFillColorAndOpacity) == 0x000004, "Wrong alignment on KuroMultilBgProgressBar_SetFillColorAndOpacity");
-static_assert(sizeof(KuroMultilBgProgressBar_SetFillColorAndOpacity) == 0x000010, "Wrong size on KuroMultilBgProgressBar_SetFillColorAndOpacity");
-static_assert(offsetof(KuroMultilBgProgressBar_SetFillColorAndOpacity, InColor) == 0x000000, "Member 'KuroMultilBgProgressBar_SetFillColorAndOpacity::InColor' has a wrong offset!");
+DUMPER7_ASSERTS_KuroMultilBgProgressBar_SetFillColorAndOpacity;
 
 // Function KuroGameplay.KuroMultilBgProgressBar.SetIsMarquee
 // 0x0001 (0x0001 - 0x0000)
@@ -845,9 +2310,7 @@ struct KuroMultilBgProgressBar_SetIsMarquee final
 public:
 	bool                                          InbIsMarquee;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroMultilBgProgressBar_SetIsMarquee) == 0x000001, "Wrong alignment on KuroMultilBgProgressBar_SetIsMarquee");
-static_assert(sizeof(KuroMultilBgProgressBar_SetIsMarquee) == 0x000001, "Wrong size on KuroMultilBgProgressBar_SetIsMarquee");
-static_assert(offsetof(KuroMultilBgProgressBar_SetIsMarquee, InbIsMarquee) == 0x000000, "Member 'KuroMultilBgProgressBar_SetIsMarquee::InbIsMarquee' has a wrong offset!");
+DUMPER7_ASSERTS_KuroMultilBgProgressBar_SetIsMarquee;
 
 // Function KuroGameplay.KuroMultilBgProgressBar.SetMiddlePercent
 // 0x0004 (0x0004 - 0x0000)
@@ -856,9 +2319,7 @@ struct KuroMultilBgProgressBar_SetMiddlePercent final
 public:
 	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroMultilBgProgressBar_SetMiddlePercent) == 0x000004, "Wrong alignment on KuroMultilBgProgressBar_SetMiddlePercent");
-static_assert(sizeof(KuroMultilBgProgressBar_SetMiddlePercent) == 0x000004, "Wrong size on KuroMultilBgProgressBar_SetMiddlePercent");
-static_assert(offsetof(KuroMultilBgProgressBar_SetMiddlePercent, InPercent) == 0x000000, "Member 'KuroMultilBgProgressBar_SetMiddlePercent::InPercent' has a wrong offset!");
+DUMPER7_ASSERTS_KuroMultilBgProgressBar_SetMiddlePercent;
 
 // Function KuroGameplay.KuroMultilBgProgressBar.SetPercent
 // 0x0004 (0x0004 - 0x0000)
@@ -867,9 +2328,7 @@ struct KuroMultilBgProgressBar_SetPercent final
 public:
 	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroMultilBgProgressBar_SetPercent) == 0x000004, "Wrong alignment on KuroMultilBgProgressBar_SetPercent");
-static_assert(sizeof(KuroMultilBgProgressBar_SetPercent) == 0x000004, "Wrong size on KuroMultilBgProgressBar_SetPercent");
-static_assert(offsetof(KuroMultilBgProgressBar_SetPercent, InPercent) == 0x000000, "Member 'KuroMultilBgProgressBar_SetPercent::InPercent' has a wrong offset!");
+DUMPER7_ASSERTS_KuroMultilBgProgressBar_SetPercent;
 
 // Function KuroGameplay.KuroResourceManager.GetAsset
 // 0x0010 (0x0010 - 0x0000)
@@ -880,10 +2339,7 @@ public:
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroResourceManager_GetAsset) == 0x000008, "Wrong alignment on KuroResourceManager_GetAsset");
-static_assert(sizeof(KuroResourceManager_GetAsset) == 0x000010, "Wrong size on KuroResourceManager_GetAsset");
-static_assert(offsetof(KuroResourceManager_GetAsset, HandleId) == 0x000000, "Member 'KuroResourceManager_GetAsset::HandleId' has a wrong offset!");
-static_assert(offsetof(KuroResourceManager_GetAsset, ReturnValue) == 0x000008, "Member 'KuroResourceManager_GetAsset::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroResourceManager_GetAsset;
 
 // Function KuroGameplay.KuroResourceManager.LoadAsyncWithId
 // 0x0020 (0x0020 - 0x0000)
@@ -896,12 +2352,7 @@ public:
 	int32                                         ReturnValue;                                       // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroResourceManager_LoadAsyncWithId) == 0x000008, "Wrong alignment on KuroResourceManager_LoadAsyncWithId");
-static_assert(sizeof(KuroResourceManager_LoadAsyncWithId) == 0x000020, "Wrong size on KuroResourceManager_LoadAsyncWithId");
-static_assert(offsetof(KuroResourceManager_LoadAsyncWithId, Path) == 0x000000, "Member 'KuroResourceManager_LoadAsyncWithId::Path' has a wrong offset!");
-static_assert(offsetof(KuroResourceManager_LoadAsyncWithId, HandleId) == 0x000010, "Member 'KuroResourceManager_LoadAsyncWithId::HandleId' has a wrong offset!");
-static_assert(offsetof(KuroResourceManager_LoadAsyncWithId, Priority) == 0x000014, "Member 'KuroResourceManager_LoadAsyncWithId::Priority' has a wrong offset!");
-static_assert(offsetof(KuroResourceManager_LoadAsyncWithId, ReturnValue) == 0x000018, "Member 'KuroResourceManager_LoadAsyncWithId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroResourceManager_LoadAsyncWithId;
 
 // Function KuroGameplay.KuroResourceManager.LoadWithId
 // 0x0018 (0x0018 - 0x0000)
@@ -912,11 +2363,7 @@ public:
 	int32                                         HandleId;                                          // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroResourceManager_LoadWithId) == 0x000008, "Wrong alignment on KuroResourceManager_LoadWithId");
-static_assert(sizeof(KuroResourceManager_LoadWithId) == 0x000018, "Wrong size on KuroResourceManager_LoadWithId");
-static_assert(offsetof(KuroResourceManager_LoadWithId, Path) == 0x000000, "Member 'KuroResourceManager_LoadWithId::Path' has a wrong offset!");
-static_assert(offsetof(KuroResourceManager_LoadWithId, HandleId) == 0x000010, "Member 'KuroResourceManager_LoadWithId::HandleId' has a wrong offset!");
-static_assert(offsetof(KuroResourceManager_LoadWithId, ReturnValue) == 0x000014, "Member 'KuroResourceManager_LoadWithId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroResourceManager_LoadWithId;
 
 // Function KuroGameplay.KuroResourceManager.Release
 // 0x0004 (0x0004 - 0x0000)
@@ -925,9 +2372,7 @@ struct KuroResourceManager_Release final
 public:
 	int32                                         HandleId;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroResourceManager_Release) == 0x000004, "Wrong alignment on KuroResourceManager_Release");
-static_assert(sizeof(KuroResourceManager_Release) == 0x000004, "Wrong size on KuroResourceManager_Release");
-static_assert(offsetof(KuroResourceManager_Release, HandleId) == 0x000000, "Member 'KuroResourceManager_Release::HandleId' has a wrong offset!");
+DUMPER7_ASSERTS_KuroResourceManager_Release;
 
 // Function KuroGameplay.KuroResourceManager.WaitComplete
 // 0x000C (0x000C - 0x0000)
@@ -939,11 +2384,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroResourceManager_WaitComplete) == 0x000004, "Wrong alignment on KuroResourceManager_WaitComplete");
-static_assert(sizeof(KuroResourceManager_WaitComplete) == 0x00000C, "Wrong size on KuroResourceManager_WaitComplete");
-static_assert(offsetof(KuroResourceManager_WaitComplete, HandleId) == 0x000000, "Member 'KuroResourceManager_WaitComplete::HandleId' has a wrong offset!");
-static_assert(offsetof(KuroResourceManager_WaitComplete, Timeout) == 0x000004, "Member 'KuroResourceManager_WaitComplete::Timeout' has a wrong offset!");
-static_assert(offsetof(KuroResourceManager_WaitComplete, ReturnValue) == 0x000008, "Member 'KuroResourceManager_WaitComplete::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroResourceManager_WaitComplete;
 
 // Function KuroGameplay.KuroResourceManager.GetLoadedAsset
 // 0x0018 (0x0018 - 0x0000)
@@ -953,10 +2394,27 @@ public:
 	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UObject*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroResourceManager_GetLoadedAsset) == 0x000008, "Wrong alignment on KuroResourceManager_GetLoadedAsset");
-static_assert(sizeof(KuroResourceManager_GetLoadedAsset) == 0x000018, "Wrong size on KuroResourceManager_GetLoadedAsset");
-static_assert(offsetof(KuroResourceManager_GetLoadedAsset, Path) == 0x000000, "Member 'KuroResourceManager_GetLoadedAsset::Path' has a wrong offset!");
-static_assert(offsetof(KuroResourceManager_GetLoadedAsset, ReturnValue) == 0x000010, "Member 'KuroResourceManager_GetLoadedAsset::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroResourceManager_GetLoadedAsset;
+
+// Function KuroGameplay.KuroResourceSystemFunctionLibrary.Initialize
+// 0x0010 (0x0010 - 0x0000)
+struct KuroResourceSystemFunctionLibrary_Initialize final
+{
+public:
+	class UWorld*                                 World;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeLimit;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroResourceSystemFunctionLibrary_Initialize;
+
+// Function KuroGameplay.KuroResourceSystemFunctionLibrary.SetCallbackTimeLimit
+// 0x0004 (0x0004 - 0x0000)
+struct KuroResourceSystemFunctionLibrary_SetCallbackTimeLimit final
+{
+public:
+	float                                         TimeLimit;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroResourceSystemFunctionLibrary_SetCallbackTimeLimit;
 
 // Function KuroGameplay.KuroSequenceEaseExecutor.UpdateEase
 // 0x0008 (0x0008 - 0x0000)
@@ -967,10 +2425,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceEaseExecutor_UpdateEase) == 0x000004, "Wrong alignment on KuroSequenceEaseExecutor_UpdateEase");
-static_assert(sizeof(KuroSequenceEaseExecutor_UpdateEase) == 0x000008, "Wrong size on KuroSequenceEaseExecutor_UpdateEase");
-static_assert(offsetof(KuroSequenceEaseExecutor_UpdateEase, DeltaTime) == 0x000000, "Member 'KuroSequenceEaseExecutor_UpdateEase::DeltaTime' has a wrong offset!");
-static_assert(offsetof(KuroSequenceEaseExecutor_UpdateEase, ReturnValue) == 0x000004, "Member 'KuroSequenceEaseExecutor_UpdateEase::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceEaseExecutor_UpdateEase;
 
 // Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetDuration
 // 0x0004 (0x0004 - 0x0000)
@@ -979,9 +2434,7 @@ struct KuroSequenceEaseFloatExecutor_GetDuration final
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceEaseFloatExecutor_GetDuration) == 0x000004, "Wrong alignment on KuroSequenceEaseFloatExecutor_GetDuration");
-static_assert(sizeof(KuroSequenceEaseFloatExecutor_GetDuration) == 0x000004, "Wrong size on KuroSequenceEaseFloatExecutor_GetDuration");
-static_assert(offsetof(KuroSequenceEaseFloatExecutor_GetDuration, ReturnValue) == 0x000000, "Member 'KuroSequenceEaseFloatExecutor_GetDuration::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceEaseFloatExecutor_GetDuration;
 
 // Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetStartValue
 // 0x0004 (0x0004 - 0x0000)
@@ -990,9 +2443,7 @@ struct KuroSequenceEaseFloatExecutor_GetStartValue final
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceEaseFloatExecutor_GetStartValue) == 0x000004, "Wrong alignment on KuroSequenceEaseFloatExecutor_GetStartValue");
-static_assert(sizeof(KuroSequenceEaseFloatExecutor_GetStartValue) == 0x000004, "Wrong size on KuroSequenceEaseFloatExecutor_GetStartValue");
-static_assert(offsetof(KuroSequenceEaseFloatExecutor_GetStartValue, ReturnValue) == 0x000000, "Member 'KuroSequenceEaseFloatExecutor_GetStartValue::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceEaseFloatExecutor_GetStartValue;
 
 // Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetTargetValue
 // 0x0004 (0x0004 - 0x0000)
@@ -1001,9 +2452,7 @@ struct KuroSequenceEaseFloatExecutor_GetTargetValue final
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceEaseFloatExecutor_GetTargetValue) == 0x000004, "Wrong alignment on KuroSequenceEaseFloatExecutor_GetTargetValue");
-static_assert(sizeof(KuroSequenceEaseFloatExecutor_GetTargetValue) == 0x000004, "Wrong size on KuroSequenceEaseFloatExecutor_GetTargetValue");
-static_assert(offsetof(KuroSequenceEaseFloatExecutor_GetTargetValue, ReturnValue) == 0x000000, "Member 'KuroSequenceEaseFloatExecutor_GetTargetValue::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceEaseFloatExecutor_GetTargetValue;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.EasePlayRateTo
 // 0x0020 (0x0020 - 0x0000)
@@ -1019,14 +2468,7 @@ public:
 	int32                                         ReturnValue;                                       // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo) == 0x000020, "Wrong size on KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo, SequenceActor) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo::SequenceActor' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo, TargetPlayRate) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo::TargetPlayRate' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo, EaseType) == 0x00000C, "Member 'KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo::EaseType' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo, Duration) == 0x000010, "Member 'KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo::Duration' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo, Exp) == 0x000014, "Member 'KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo::Exp' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo, ReturnValue) == 0x000018, "Member 'KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.FindBindingById
 // 0x0030 (0x0030 - 0x0000)
@@ -1037,11 +2479,7 @@ public:
 	struct FGuid                                  BindingId;                                         // 0x0008(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSequencerBindingRuntimeProxy          ReturnValue;                                       // 0x0018(0x0018)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_FindBindingById) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_FindBindingById");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_FindBindingById) == 0x000030, "Wrong size on KuroSequenceRuntimeFunctionLibrary_FindBindingById");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_FindBindingById, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_FindBindingById::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_FindBindingById, BindingId) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_FindBindingById::BindingId' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_FindBindingById, ReturnValue) == 0x000018, "Member 'KuroSequenceRuntimeFunctionLibrary_FindBindingById::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_FindBindingById;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.FindMasterTracksByType
 // 0x0020 (0x0020 - 0x0000)
@@ -1052,11 +2490,18 @@ public:
 	TSubclassOf<class UMovieSceneTrack>           TrackType;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UMovieSceneTrack*>               ReturnValue;                                       // 0x0010(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType) == 0x000020, "Wrong size on KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType, TrackType) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType::TrackType' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType, ReturnValue) == 0x000010, "Member 'KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_FindMasterTracksByType;
+
+// Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.FindMatchAllTagsBinding
+// 0x0028 (0x0028 - 0x0000)
+struct KuroSequenceRuntimeFunctionLibrary_FindMatchAllTagsBinding final
+{
+public:
+	TArray<class FName>                           Tags;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	class ULevelSequence*                         LevelSequence;                                     // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FMovieSceneObjectBindingID>     ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_FindMatchAllTagsBinding;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.FindTracksByType
 // 0x0030 (0x0030 - 0x0000)
@@ -1067,11 +2512,7 @@ public:
 	TSubclassOf<class UMovieSceneTrack>           TrackType;                                         // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UMovieSceneTrack*>               ReturnValue;                                       // 0x0020(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_FindTracksByType) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_FindTracksByType");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_FindTracksByType) == 0x000030, "Wrong size on KuroSequenceRuntimeFunctionLibrary_FindTracksByType");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_FindTracksByType, InBinding) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_FindTracksByType::InBinding' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_FindTracksByType, TrackType) == 0x000018, "Member 'KuroSequenceRuntimeFunctionLibrary_FindTracksByType::TrackType' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_FindTracksByType, ReturnValue) == 0x000020, "Member 'KuroSequenceRuntimeFunctionLibrary_FindTracksByType::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_FindTracksByType;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetEndFrame
 // 0x0010 (0x0010 - 0x0000)
@@ -1082,10 +2523,7 @@ public:
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetEndFrame) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetEndFrame");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetEndFrame) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetEndFrame");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetEndFrame, Section) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetEndFrame::Section' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetEndFrame, ReturnValue) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_GetEndFrame::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetEndFrame;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetFadeAmountAt
 // 0x0018 (0x0018 - 0x0000)
@@ -1097,11 +2535,7 @@ public:
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt) == 0x000018, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt, Section) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt::Section' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt, Frame) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt::Frame' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt, ReturnValue) == 0x000010, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetFrameTransform
 // 0x0040 (0x0040 - 0x0000)
@@ -1112,11 +2546,7 @@ public:
 	struct FFrameTime                             Frame;                                             // 0x0008(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FTransform                             ReturnValue;                                       // 0x0010(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransform) == 0x000010, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetFrameTransform");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransform) == 0x000040, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetFrameTransform");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransform, Track) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFrameTransform::Track' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransform, Frame) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFrameTransform::Frame' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransform, ReturnValue) == 0x000010, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFrameTransform::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetFrameTransform;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetFrameTransformByTag
 // 0x0060 (0x0060 - 0x0000)
@@ -1131,13 +2561,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_51[0xF];                                       // 0x0051(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag) == 0x000010, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag) == 0x000060, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag, Tag) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag::Tag' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag, OutsideFrame) == 0x000014, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag::OutsideFrame' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag, OutTransfom) == 0x000020, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag::OutTransfom' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag, ReturnValue) == 0x000050, "Member 'KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetMasterTracks
 // 0x0018 (0x0018 - 0x0000)
@@ -1147,10 +2571,7 @@ public:
 	class UMovieSceneSequence*                    Sequence;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UMovieSceneTrack*>               ReturnValue;                                       // 0x0008(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetMasterTracks) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetMasterTracks");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetMasterTracks) == 0x000018, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetMasterTracks");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetMasterTracks, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetMasterTracks::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetMasterTracks, ReturnValue) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_GetMasterTracks::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetMasterTracks;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetObjectTemplate
 // 0x0020 (0x0020 - 0x0000)
@@ -1160,10 +2581,7 @@ public:
 	struct FSequencerBindingRuntimeProxy          InBinding;                                         // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	class UObject*                                ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetObjectTemplate) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetObjectTemplate");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetObjectTemplate) == 0x000020, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetObjectTemplate");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetObjectTemplate, InBinding) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetObjectTemplate::InBinding' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetObjectTemplate, ReturnValue) == 0x000018, "Member 'KuroSequenceRuntimeFunctionLibrary_GetObjectTemplate::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetObjectTemplate;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetPlaybackEnd
 // 0x0010 (0x0010 - 0x0000)
@@ -1174,10 +2592,7 @@ public:
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd, ReturnValue) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetPlaybackStart
 // 0x0010 (0x0010 - 0x0000)
@@ -1188,10 +2603,7 @@ public:
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart, ReturnValue) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetSections
 // 0x0018 (0x0018 - 0x0000)
@@ -1201,10 +2613,7 @@ public:
 	class UMovieSceneTrack*                       Track;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UMovieSceneSection*>             ReturnValue;                                       // 0x0008(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetSections) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetSections");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetSections) == 0x000018, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetSections");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetSections, Track) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetSections::Track' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetSections, ReturnValue) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_GetSections::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetSections;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetSpawnables
 // 0x0018 (0x0018 - 0x0000)
@@ -1214,10 +2623,7 @@ public:
 	class UMovieSceneSequence*                    Sequence;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FSequencerBindingRuntimeProxy>  ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetSpawnables) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetSpawnables");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetSpawnables) == 0x000018, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetSpawnables");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetSpawnables, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetSpawnables::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetSpawnables, ReturnValue) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_GetSpawnables::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetSpawnables;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetStartFrame
 // 0x0010 (0x0010 - 0x0000)
@@ -1228,10 +2634,7 @@ public:
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetStartFrame) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetStartFrame");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetStartFrame) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetStartFrame");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetStartFrame, Section) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetStartFrame::Section' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetStartFrame, ReturnValue) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_GetStartFrame::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetStartFrame;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.GetTracks
 // 0x0028 (0x0028 - 0x0000)
@@ -1241,10 +2644,7 @@ public:
 	struct FSequencerBindingRuntimeProxy          InBinding;                                         // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	TArray<class UMovieSceneTrack*>               ReturnValue;                                       // 0x0018(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetTracks) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetTracks");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetTracks) == 0x000028, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetTracks");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetTracks, InBinding) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_GetTracks::InBinding' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_GetTracks, ReturnValue) == 0x000018, "Member 'KuroSequenceRuntimeFunctionLibrary_GetTracks::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_GetTracks;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.HandleSeqTexStreaming
 // 0x0010 (0x0010 - 0x0000)
@@ -1256,11 +2656,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming, LevelSequences) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming::LevelSequences' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming, bStartForceStreamIn) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming::bStartForceStreamIn' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming, ReturnValue) == 0x000009, "Member 'KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.MuteTrackByName
 // 0x0018 (0x0018 - 0x0000)
@@ -1272,11 +2668,7 @@ public:
 	bool                                          bIsMuted;                                          // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByName) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_MuteTrackByName");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByName) == 0x000018, "Wrong size on KuroSequenceRuntimeFunctionLibrary_MuteTrackByName");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByName, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_MuteTrackByName::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByName, Name_0) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_MuteTrackByName::Name_0' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByName, bIsMuted) == 0x000014, "Member 'KuroSequenceRuntimeFunctionLibrary_MuteTrackByName::bIsMuted' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_MuteTrackByName;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.MuteTrackByTag
 // 0x0018 (0x0018 - 0x0000)
@@ -1288,11 +2680,7 @@ public:
 	bool                                          bIsMuted;                                          // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag) == 0x000018, "Wrong size on KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag, Tag) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag::Tag' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag, bIsMuted) == 0x000014, "Member 'KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag::bIsMuted' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.ResetMovieSceneCompiledData
 // 0x0008 (0x0008 - 0x0000)
@@ -1301,9 +2689,7 @@ struct KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData final
 public:
 	class UMovieSceneSequence*                    Sequence;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData) == 0x000008, "Wrong size on KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData::Sequence' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.SearchAttachAndReattach
 // 0x0028 (0x0028 - 0x0000)
@@ -1315,11 +2701,7 @@ public:
 	class FName                                   Tag;                                               // 0x0018(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach) == 0x000028, "Wrong size on KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach, InBindingNames) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach::InBindingNames' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach, Tag) == 0x000018, "Member 'KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach::Tag' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.SectionContains
 // 0x0018 (0x0018 - 0x0000)
@@ -1331,11 +2713,20 @@ public:
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_SectionContains) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_SectionContains");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_SectionContains) == 0x000018, "Wrong size on KuroSequenceRuntimeFunctionLibrary_SectionContains");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SectionContains, Section) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_SectionContains::Section' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SectionContains, Frame) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_SectionContains::Frame' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SectionContains, ReturnValue) == 0x000010, "Member 'KuroSequenceRuntimeFunctionLibrary_SectionContains::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_SectionContains;
+
+// Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.SetBindings
+// 0x0030 (0x0030 - 0x0000)
+struct KuroSequenceRuntimeFunctionLibrary_SetBindings final
+{
+public:
+	class ALevelSequenceActor*                    SequenceActor;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FMovieSceneObjectBindingID>     Bindings;                                          // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                         Actors;                                            // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bAllowBindingsFromAsset;                           // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_SetBindings;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.SetSequenceInUiScene
 // 0x0010 (0x0010 - 0x0000)
@@ -1347,11 +2738,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene::Sequence' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene, IsEnable) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene::IsEnable' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene, ReturnValue) == 0x000009, "Member 'KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene;
 
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.StopEasingPlayRate
 // 0x0010 (0x0010 - 0x0000)
@@ -1364,12 +2751,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x000D(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate");
-static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate, SequenceActor) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate::SequenceActor' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate, HandleId) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate::HandleId' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate, JumpToTarget) == 0x00000C, "Member 'KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate::JumpToTarget' has a wrong offset!");
-static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate, ReturnValue) == 0x00000D, "Member 'KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate;
 
 // Function KuroGameplay.KuroSplineCylinderTriggerActor.GenerateMesh
 // 0x0010 (0x0010 - 0x0000)
@@ -1380,87 +2762,7 @@ public:
 	float                                         CircleRadius;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroSplineCylinderTriggerActor_GenerateMesh) == 0x000008, "Wrong alignment on KuroSplineCylinderTriggerActor_GenerateMesh");
-static_assert(sizeof(KuroSplineCylinderTriggerActor_GenerateMesh) == 0x000010, "Wrong size on KuroSplineCylinderTriggerActor_GenerateMesh");
-static_assert(offsetof(KuroSplineCylinderTriggerActor_GenerateMesh, Spline) == 0x000000, "Member 'KuroSplineCylinderTriggerActor_GenerateMesh::Spline' has a wrong offset!");
-static_assert(offsetof(KuroSplineCylinderTriggerActor_GenerateMesh, CircleRadius) == 0x000008, "Member 'KuroSplineCylinderTriggerActor_GenerateMesh::CircleRadius' has a wrong offset!");
-
-// Function KuroGameplay.KuroSplineVolumeGenerator.Generate
-// 0x0018 (0x0018 - 0x0000)
-struct KuroSplineVolumeGenerator_Generate final
-{
-public:
-	class USplineComponent*                       InSplineComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class ABrush>                     InVolumeClass;                                     // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroSplineVolumeBuilder*               InSplineVolumeBuilder;                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroSplineVolumeGenerator_Generate) == 0x000008, "Wrong alignment on KuroSplineVolumeGenerator_Generate");
-static_assert(sizeof(KuroSplineVolumeGenerator_Generate) == 0x000018, "Wrong size on KuroSplineVolumeGenerator_Generate");
-static_assert(offsetof(KuroSplineVolumeGenerator_Generate, InSplineComponent) == 0x000000, "Member 'KuroSplineVolumeGenerator_Generate::InSplineComponent' has a wrong offset!");
-static_assert(offsetof(KuroSplineVolumeGenerator_Generate, InVolumeClass) == 0x000008, "Member 'KuroSplineVolumeGenerator_Generate::InVolumeClass' has a wrong offset!");
-static_assert(offsetof(KuroSplineVolumeGenerator_Generate, InSplineVolumeBuilder) == 0x000010, "Member 'KuroSplineVolumeGenerator_Generate::InSplineVolumeBuilder' has a wrong offset!");
-
-// Function KuroGameplay.KuroSplineVolumeGenerator.GeneratePolyhedron
-// 0x0018 (0x0018 - 0x0000)
-struct KuroSplineVolumeGenerator_GeneratePolyhedron final
-{
-public:
-	class USplineComponent*                       InSplineComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class ABrush>                     InVolumeClass;                                     // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LowerBoundsHeight;                                 // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UpperBoundsHeight;                                 // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroSplineVolumeGenerator_GeneratePolyhedron) == 0x000008, "Wrong alignment on KuroSplineVolumeGenerator_GeneratePolyhedron");
-static_assert(sizeof(KuroSplineVolumeGenerator_GeneratePolyhedron) == 0x000018, "Wrong size on KuroSplineVolumeGenerator_GeneratePolyhedron");
-static_assert(offsetof(KuroSplineVolumeGenerator_GeneratePolyhedron, InSplineComponent) == 0x000000, "Member 'KuroSplineVolumeGenerator_GeneratePolyhedron::InSplineComponent' has a wrong offset!");
-static_assert(offsetof(KuroSplineVolumeGenerator_GeneratePolyhedron, InVolumeClass) == 0x000008, "Member 'KuroSplineVolumeGenerator_GeneratePolyhedron::InVolumeClass' has a wrong offset!");
-static_assert(offsetof(KuroSplineVolumeGenerator_GeneratePolyhedron, LowerBoundsHeight) == 0x000010, "Member 'KuroSplineVolumeGenerator_GeneratePolyhedron::LowerBoundsHeight' has a wrong offset!");
-static_assert(offsetof(KuroSplineVolumeGenerator_GeneratePolyhedron, UpperBoundsHeight) == 0x000014, "Member 'KuroSplineVolumeGenerator_GeneratePolyhedron::UpperBoundsHeight' has a wrong offset!");
-
-// Function KuroGameplay.KuroStaticMeshLibrary.MergeSimpleCollisions
-// 0x0018 (0x0018 - 0x0000)
-struct KuroStaticMeshLibrary_MergeSimpleCollisions final
-{
-public:
-	class UStaticMeshComponent*                   TemplateComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FTransform>                     LocalTransforms;                                   // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroStaticMeshLibrary_MergeSimpleCollisions) == 0x000008, "Wrong alignment on KuroStaticMeshLibrary_MergeSimpleCollisions");
-static_assert(sizeof(KuroStaticMeshLibrary_MergeSimpleCollisions) == 0x000018, "Wrong size on KuroStaticMeshLibrary_MergeSimpleCollisions");
-static_assert(offsetof(KuroStaticMeshLibrary_MergeSimpleCollisions, TemplateComponent) == 0x000000, "Member 'KuroStaticMeshLibrary_MergeSimpleCollisions::TemplateComponent' has a wrong offset!");
-static_assert(offsetof(KuroStaticMeshLibrary_MergeSimpleCollisions, LocalTransforms) == 0x000008, "Member 'KuroStaticMeshLibrary_MergeSimpleCollisions::LocalTransforms' has a wrong offset!");
-
-// Function KuroGameplay.PerformanceStatisticsLibrary.AddStatistics
-// 0x0038 (0x0038 - 0x0000)
-struct PerformanceStatisticsLibrary_AddStatistics final
-{
-public:
-	class FName                                   SectionName;                                       // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameCount;                                        // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Tag;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MeasureMode;                                       // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Time;                                              // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 UserDefineMessage;                                 // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PerformanceStatisticsLibrary_AddStatistics) == 0x000008, "Wrong alignment on PerformanceStatisticsLibrary_AddStatistics");
-static_assert(sizeof(PerformanceStatisticsLibrary_AddStatistics) == 0x000038, "Wrong size on PerformanceStatisticsLibrary_AddStatistics");
-static_assert(offsetof(PerformanceStatisticsLibrary_AddStatistics, SectionName) == 0x000000, "Member 'PerformanceStatisticsLibrary_AddStatistics::SectionName' has a wrong offset!");
-static_assert(offsetof(PerformanceStatisticsLibrary_AddStatistics, FrameCount) == 0x00000C, "Member 'PerformanceStatisticsLibrary_AddStatistics::FrameCount' has a wrong offset!");
-static_assert(offsetof(PerformanceStatisticsLibrary_AddStatistics, Tag) == 0x000010, "Member 'PerformanceStatisticsLibrary_AddStatistics::Tag' has a wrong offset!");
-static_assert(offsetof(PerformanceStatisticsLibrary_AddStatistics, MeasureMode) == 0x000020, "Member 'PerformanceStatisticsLibrary_AddStatistics::MeasureMode' has a wrong offset!");
-static_assert(offsetof(PerformanceStatisticsLibrary_AddStatistics, Time) == 0x000024, "Member 'PerformanceStatisticsLibrary_AddStatistics::Time' has a wrong offset!");
-static_assert(offsetof(PerformanceStatisticsLibrary_AddStatistics, UserDefineMessage) == 0x000028, "Member 'PerformanceStatisticsLibrary_AddStatistics::UserDefineMessage' has a wrong offset!");
-
-// Function KuroGameplay.PerformanceStatisticsLibrary.ReadSectionFromFile
-// 0x0010 (0x0010 - 0x0000)
-struct PerformanceStatisticsLibrary_ReadSectionFromFile final
-{
-public:
-	class FString                                 FilePath;                                          // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PerformanceStatisticsLibrary_ReadSectionFromFile) == 0x000008, "Wrong alignment on PerformanceStatisticsLibrary_ReadSectionFromFile");
-static_assert(sizeof(PerformanceStatisticsLibrary_ReadSectionFromFile) == 0x000010, "Wrong size on PerformanceStatisticsLibrary_ReadSectionFromFile");
-static_assert(offsetof(PerformanceStatisticsLibrary_ReadSectionFromFile, FilePath) == 0x000000, "Member 'PerformanceStatisticsLibrary_ReadSectionFromFile::FilePath' has a wrong offset!");
+DUMPER7_ASSERTS_KuroSplineCylinderTriggerActor_GenerateMesh;
 
 }
 

@@ -35,18 +35,7 @@ public:
 	struct FRotator                               CallFunc_GetAddSpineHeadValue_AddSpineHead;        // 0x0044(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FRotator                               CallFunc_GetAddSpineValue_AddSpine;                // 0x0050(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq) == 0x000008, "Wrong alignment on ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq");
-static_assert(sizeof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq) == 0x000060, "Wrong size on ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq");
-static_assert(offsetof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq, EntryPoint) == 0x000000, "Member 'ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq::EntryPoint' has a wrong offset!");
-static_assert(offsetof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq, K2Node_Event_DeltaTimeX) == 0x000004, "Member 'ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq::K2Node_Event_DeltaTimeX' has a wrong offset!");
-static_assert(offsetof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq, CallFunc_GetOuterObject_ReturnValue) == 0x000008, "Member 'ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq::CallFunc_GetOuterObject_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq, CallFunc_GetOuterObject_ReturnValue_1) == 0x000010, "Member 'ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq::CallFunc_GetOuterObject_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq, K2Node_DynamicCast_AsABPC_Seq_Mascot_Interface) == 0x000018, "Member 'ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq::K2Node_DynamicCast_AsABPC_Seq_Mascot_Interface' has a wrong offset!");
-static_assert(offsetof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq, K2Node_DynamicCast_bSuccess) == 0x000028, "Member 'ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq, K2Node_DynamicCast_AsABPC_Seq_Mascot_Interface_1) == 0x000030, "Member 'ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq::K2Node_DynamicCast_AsABPC_Seq_Mascot_Interface_1' has a wrong offset!");
-static_assert(offsetof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq, K2Node_DynamicCast_bSuccess_1) == 0x000040, "Member 'ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq, CallFunc_GetAddSpineHeadValue_AddSpineHead) == 0x000044, "Member 'ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq::CallFunc_GetAddSpineHeadValue_AddSpineHead' has a wrong offset!");
-static_assert(offsetof(ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq, CallFunc_GetAddSpineValue_AddSpine) == 0x000050, "Member 'ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq::CallFunc_GetAddSpineValue_AddSpine' has a wrong offset!");
+DUMPER7_ASSERTS_ABP_Mascot_Seq_C_ExecuteUbergraph_ABP_Mascot_Seq;
 
 // Function ABP_Mascot_Seq.ABP_Mascot_Seq_C.BlueprintUpdateAnimation
 // 0x0004 (0x0004 - 0x0000)
@@ -55,9 +44,7 @@ struct ABP_Mascot_Seq_C_BlueprintUpdateAnimation final
 public:
 	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(ABP_Mascot_Seq_C_BlueprintUpdateAnimation) == 0x000004, "Wrong alignment on ABP_Mascot_Seq_C_BlueprintUpdateAnimation");
-static_assert(sizeof(ABP_Mascot_Seq_C_BlueprintUpdateAnimation) == 0x000004, "Wrong size on ABP_Mascot_Seq_C_BlueprintUpdateAnimation");
-static_assert(offsetof(ABP_Mascot_Seq_C_BlueprintUpdateAnimation, DeltaTimeX) == 0x000000, "Member 'ABP_Mascot_Seq_C_BlueprintUpdateAnimation::DeltaTimeX' has a wrong offset!");
+DUMPER7_ASSERTS_ABP_Mascot_Seq_C_BlueprintUpdateAnimation;
 
 // Function ABP_Mascot_Seq.ABP_Mascot_Seq_C.AnimGraph
 // 0x0020 (0x0020 - 0x0000)
@@ -67,10 +54,7 @@ public:
 	struct FPoseLink                              InPose;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 	struct FPoseLink                              AnimGraph_0;                                       // 0x0010(0x0010)(Parm, OutParm, NoDestructor)
 };
-static_assert(alignof(ABP_Mascot_Seq_C_AnimGraph) == 0x000008, "Wrong alignment on ABP_Mascot_Seq_C_AnimGraph");
-static_assert(sizeof(ABP_Mascot_Seq_C_AnimGraph) == 0x000020, "Wrong size on ABP_Mascot_Seq_C_AnimGraph");
-static_assert(offsetof(ABP_Mascot_Seq_C_AnimGraph, InPose) == 0x000000, "Member 'ABP_Mascot_Seq_C_AnimGraph::InPose' has a wrong offset!");
-static_assert(offsetof(ABP_Mascot_Seq_C_AnimGraph, AnimGraph_0) == 0x000010, "Member 'ABP_Mascot_Seq_C_AnimGraph::AnimGraph_0' has a wrong offset!");
+DUMPER7_ASSERTS_ABP_Mascot_Seq_C_AnimGraph;
 
 }
 

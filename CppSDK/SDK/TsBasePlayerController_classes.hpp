@@ -30,45 +30,43 @@ public:
 	TMap<class FString, class UTsAxisHandle_C*>   AxisHandleMap;                                     // 0x0728(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void InitInputHandle();
-	void SetIsPrintKeyName(bool bPrintKeyName);
-	void OnReleaseAnyKey(const struct FKey& key);
-	void AddInputBinding();
-	void ClearInputBinding();
-	bool IsInTouch(float touchId);
-	void OnPressAnyKey(const struct FKey& key);
-	void OnSetupInputComponent();
-	void OnTouchMove(ETouchIndex touchIndex, const struct FVector& position);
-	void OnTouchEnd(ETouchIndex touchIndex, const struct FVector& position);
-	void OnTouchBegin(ETouchIndex touchIndex, const struct FVector& position);
-	void BindTouchHandle();
-	class UTsAxisHandle_C* GetAxisHandle(const class FString& actionName);
-	void RemoveAxisHandle(const class FString& axisName);
-	void RemoveActionHandle(const class FString& actionName);
-	class UTsActionHandle_C* GetActionHandle(const class FString& actionName);
-	void ReceiveSetupInputComponent();
-	void ReceiveDestroyed();
-	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_TsBasePlayerController(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveBeginPlay();
+	void ReceiveDestroyed();
+	void ReceiveSetupInputComponent();
+	class UTsActionHandle_C* GetActionHandle(const class FString& actionName);
+	void RemoveActionHandle(const class FString& actionName);
+	void RemoveAxisHandle(const class FString& axisName);
+	class UTsAxisHandle_C* GetAxisHandle(const class FString& actionName);
+	void BindTouchHandle();
+	void OnTouchBegin(ETouchIndex touchIndex, const struct FVector& position);
+	void OnTouchEnd(ETouchIndex touchIndex, const struct FVector& position);
+	void OnTouchMove(ETouchIndex touchIndex, const struct FVector& position);
+	void OnSetupInputComponent();
+	void OnPressAnyKey(const struct FKey& key);
+	bool IsInTouch(float touchId);
+	void ClearInputBinding();
+	void AddInputBinding();
+	void OnReleaseAnyKey(const struct FKey& key);
+	void SetIsPrintKeyName(bool bPrintKeyName);
+	void InitInputHandle();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"TsBasePlayerController_C">();
+		BP_STATIC_CLASS_IMPL("TsBasePlayerController_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TsBasePlayerController_C")
 	}
 	static class ATsBasePlayerController_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ATsBasePlayerController_C>();
 	}
 };
-static_assert(alignof(ATsBasePlayerController_C) == 0x000008, "Wrong alignment on ATsBasePlayerController_C");
-static_assert(sizeof(ATsBasePlayerController_C) == 0x000778, "Wrong size on ATsBasePlayerController_C");
-static_assert(offsetof(ATsBasePlayerController_C, UberGraphFrame) == 0x0006C0, "Member 'ATsBasePlayerController_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsBasePlayerController_C, ActionHandleClass) == 0x0006C8, "Member 'ATsBasePlayerController_C::ActionHandleClass' has a wrong offset!");
-static_assert(offsetof(ATsBasePlayerController_C, ActionHandleMap) == 0x0006D0, "Member 'ATsBasePlayerController_C::ActionHandleMap' has a wrong offset!");
-static_assert(offsetof(ATsBasePlayerController_C, AxisHandleClass) == 0x000720, "Member 'ATsBasePlayerController_C::AxisHandleClass' has a wrong offset!");
-static_assert(offsetof(ATsBasePlayerController_C, AxisHandleMap) == 0x000728, "Member 'ATsBasePlayerController_C::AxisHandleMap' has a wrong offset!");
+DUMPER7_ASSERTS_ATsBasePlayerController_C;
 
 }
 

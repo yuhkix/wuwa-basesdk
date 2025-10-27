@@ -251,7 +251,7 @@ void ABP_BaseRole_Seq_V2_C::添加扫描效果()
 }
 
 
-// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.BeginSwitchPose_ToSeq
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.Begin Switch Pose to Seq
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           From                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -259,14 +259,14 @@ void ABP_BaseRole_Seq_V2_C::添加扫描效果()
 // float                                   SwitchTime                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ErrorLog                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_BaseRole_Seq_V2_C::BeginSwitchPose_ToSeq(class AActor* From, class AActor* To, float SwitchTime, bool ErrorLog)
+void ABP_BaseRole_Seq_V2_C::Begin_Switch_Pose_to_Seq(class AActor* From, class AActor* To, float SwitchTime, bool ErrorLog)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "BeginSwitchPose_ToSeq");
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "Begin Switch Pose to Seq");
 
-	Params::BP_BaseRole_Seq_V2_C_BeginSwitchPose_ToSeq Parms{};
+	Params::BP_BaseRole_Seq_V2_C_Begin_Switch_Pose_to_Seq Parms{};
 
 	Parms.From = From;
 	Parms.To = To;
@@ -344,6 +344,20 @@ void ABP_BaseRole_Seq_V2_C::EndSwitchPose_ToBP(class AActor* To, bool Log)
 	Parms.Log = Log;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.LightChanel
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_BaseRole_Seq_V2_C::LightChanel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "LightChanel");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -479,6 +493,27 @@ TArray<class FName> ABP_BaseRole_Seq_V2_C::GetSupportGroupNames()
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqAudio
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USeqAudio_Seq_V2_C**              SeqAudio                                               (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseRole_Seq_V2_C::GetSeqAudio(class USeqAudio_Seq_V2_C** SeqAudio)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "GetSeqAudio");
+
+	Params::BP_BaseRole_Seq_V2_C_GetSeqAudio Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (SeqAudio != nullptr)
+		*SeqAudio = Parms.SeqAudio;
 }
 
 }

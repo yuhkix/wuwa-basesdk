@@ -27,16 +27,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"PD_SE_ControllerCommonData_C">();
+		BP_STATIC_CLASS_IMPL("PD_SE_ControllerCommonData_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PD_SE_ControllerCommonData_C")
 	}
 	static class UPD_SE_ControllerCommonData_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPD_SE_ControllerCommonData_C>();
 	}
 };
-static_assert(alignof(UPD_SE_ControllerCommonData_C) == 0x000008, "Wrong alignment on UPD_SE_ControllerCommonData_C");
-static_assert(sizeof(UPD_SE_ControllerCommonData_C) == 0x000060, "Wrong size on UPD_SE_ControllerCommonData_C");
-static_assert(offsetof(UPD_SE_ControllerCommonData_C, Data) == 0x000038, "Member 'UPD_SE_ControllerCommonData_C::Data' has a wrong offset!");
+DUMPER7_ASSERTS_UPD_SE_ControllerCommonData_C;
 
 }
 

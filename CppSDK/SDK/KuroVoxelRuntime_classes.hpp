@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "KuroWorldPartition_classes.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroWorldPartition_classes.hpp"
 
 
 namespace SDK
@@ -28,16 +28,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroVoxelGlobalActor">();
+		STATIC_CLASS_IMPL("KuroVoxelGlobalActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroVoxelGlobalActor")
 	}
 	static class AKuroVoxelGlobalActor* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<AKuroVoxelGlobalActor>();
 	}
 };
-static_assert(alignof(AKuroVoxelGlobalActor) == 0x000008, "Wrong alignment on AKuroVoxelGlobalActor");
-static_assert(sizeof(AKuroVoxelGlobalActor) == 0x0002B8, "Wrong size on AKuroVoxelGlobalActor");
-static_assert(offsetof(AKuroVoxelGlobalActor, KuroVoxelGlobalComp) == 0x0002B0, "Member 'AKuroVoxelGlobalActor::KuroVoxelGlobalComp' has a wrong offset!");
+DUMPER7_ASSERTS_AKuroVoxelGlobalActor;
 
 // Class KuroVoxelRuntime.KuroVoxelGlobalComponent
 // 0x0070 (0x0290 - 0x0220)
@@ -50,16 +52,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroVoxelGlobalComponent">();
+		STATIC_CLASS_IMPL("KuroVoxelGlobalComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroVoxelGlobalComponent")
 	}
 	static class UKuroVoxelGlobalComponent* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroVoxelGlobalComponent>();
 	}
 };
-static_assert(alignof(UKuroVoxelGlobalComponent) == 0x000010, "Wrong alignment on UKuroVoxelGlobalComponent");
-static_assert(sizeof(UKuroVoxelGlobalComponent) == 0x000290, "Wrong size on UKuroVoxelGlobalComponent");
-static_assert(offsetof(UKuroVoxelGlobalComponent, Version) == 0x00028C, "Member 'UKuroVoxelGlobalComponent::Version' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroVoxelGlobalComponent;
 
 // Class KuroVoxelRuntime.KuroVoxelPartitionActor
 // 0x0010 (0x02C8 - 0x02B8)
@@ -73,17 +77,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroVoxelPartitionActor">();
+		STATIC_CLASS_IMPL("KuroVoxelPartitionActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroVoxelPartitionActor")
 	}
 	static class AKuroVoxelPartitionActor* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<AKuroVoxelPartitionActor>();
 	}
 };
-static_assert(alignof(AKuroVoxelPartitionActor) == 0x000008, "Wrong alignment on AKuroVoxelPartitionActor");
-static_assert(sizeof(AKuroVoxelPartitionActor) == 0x0002C8, "Wrong size on AKuroVoxelPartitionActor");
-static_assert(offsetof(AKuroVoxelPartitionActor, KuroVoxelPartitionComp) == 0x0002B8, "Member 'AKuroVoxelPartitionActor::KuroVoxelPartitionComp' has a wrong offset!");
-static_assert(offsetof(AKuroVoxelPartitionActor, bCanAddToMgrWhenChunkIDCollision) == 0x0002C0, "Member 'AKuroVoxelPartitionActor::bCanAddToMgrWhenChunkIDCollision' has a wrong offset!");
+DUMPER7_ASSERTS_AKuroVoxelPartitionActor;
 
 // Class KuroVoxelRuntime.KuroVoxelPartitionComponent
 // 0x0018 (0x00D8 - 0x00C0)
@@ -97,17 +102,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroVoxelPartitionComponent">();
+		STATIC_CLASS_IMPL("KuroVoxelPartitionComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroVoxelPartitionComponent")
 	}
 	static class UKuroVoxelPartitionComponent* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroVoxelPartitionComponent>();
 	}
 };
-static_assert(alignof(UKuroVoxelPartitionComponent) == 0x000008, "Wrong alignment on UKuroVoxelPartitionComponent");
-static_assert(sizeof(UKuroVoxelPartitionComponent) == 0x0000D8, "Wrong size on UKuroVoxelPartitionComponent");
-static_assert(offsetof(UKuroVoxelPartitionComponent, Priority) == 0x0000D0, "Member 'UKuroVoxelPartitionComponent::Priority' has a wrong offset!");
-static_assert(offsetof(UKuroVoxelPartitionComponent, Version) == 0x0000D4, "Member 'UKuroVoxelPartitionComponent::Version' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroVoxelPartitionComponent;
 
 // Class KuroVoxelRuntime.KuroVoxelSystem
 // 0x00F8 (0x0130 - 0x0038)
@@ -134,17 +140,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroVoxelSystem">();
+		STATIC_CLASS_IMPL("KuroVoxelSystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroVoxelSystem")
 	}
 	static class UKuroVoxelSystem* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroVoxelSystem>();
 	}
 };
-static_assert(alignof(UKuroVoxelSystem) == 0x000008, "Wrong alignment on UKuroVoxelSystem");
-static_assert(sizeof(UKuroVoxelSystem) == 0x000130, "Wrong size on UKuroVoxelSystem");
-static_assert(offsetof(UKuroVoxelSystem, LoadedPartitionActorsMap) == 0x000040, "Member 'UKuroVoxelSystem::LoadedPartitionActorsMap' has a wrong offset!");
-static_assert(offsetof(UKuroVoxelSystem, ToAddActorSet) == 0x000090, "Member 'UKuroVoxelSystem::ToAddActorSet' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroVoxelSystem;
 
 }
 

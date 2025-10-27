@@ -471,5 +471,25 @@ void ABP_ScreenEffectSystem_C::SetEffectExtraStateDebug()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
+
+// Function BP_ScreenEffectSystem.BP_ScreenEffectSystem_C.SetNiagaraFrameDeltaTime
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ScreenEffectSystem_C::SetNiagaraFrameDeltaTime(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ScreenEffectSystem_C", "SetNiagaraFrameDeltaTime");
+
+	Params::BP_ScreenEffectSystem_C_SetNiagaraFrameDeltaTime Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
 }
 

@@ -35,15 +35,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"TsVehicleBlueprintFunctionLibrary_C">();
+		BP_STATIC_CLASS_IMPL("TsVehicleBlueprintFunctionLibrary_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TsVehicleBlueprintFunctionLibrary_C")
 	}
 	static class UTsVehicleBlueprintFunctionLibrary_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UTsVehicleBlueprintFunctionLibrary_C>();
 	}
 };
-static_assert(alignof(UTsVehicleBlueprintFunctionLibrary_C) == 0x000008, "Wrong alignment on UTsVehicleBlueprintFunctionLibrary_C");
-static_assert(sizeof(UTsVehicleBlueprintFunctionLibrary_C) == 0x000030, "Wrong size on UTsVehicleBlueprintFunctionLibrary_C");
+DUMPER7_ASSERTS_UTsVehicleBlueprintFunctionLibrary_C;
 
 }
 

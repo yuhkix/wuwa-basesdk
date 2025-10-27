@@ -26,25 +26,24 @@ public:
 	int32                                         PageCacheSizeEach;                                 // 0x0038(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         PageCacheNumber;                                   // 0x003C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          EnableTrace;                                       // 0x0040(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          EnableDBFilePakInfo;                               // 0x0041(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_42[0x6];                                       // 0x0042(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"SQLiteSettings">();
+		STATIC_CLASS_IMPL("SQLiteSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SQLiteSettings")
 	}
 	static class USQLiteSettings* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<USQLiteSettings>();
 	}
 };
-static_assert(alignof(USQLiteSettings) == 0x000008, "Wrong alignment on USQLiteSettings");
-static_assert(sizeof(USQLiteSettings) == 0x000048, "Wrong size on USQLiteSettings");
-static_assert(offsetof(USQLiteSettings, LookAsideSizeEach) == 0x000030, "Member 'USQLiteSettings::LookAsideSizeEach' has a wrong offset!");
-static_assert(offsetof(USQLiteSettings, LookAsideNumber) == 0x000034, "Member 'USQLiteSettings::LookAsideNumber' has a wrong offset!");
-static_assert(offsetof(USQLiteSettings, PageCacheSizeEach) == 0x000038, "Member 'USQLiteSettings::PageCacheSizeEach' has a wrong offset!");
-static_assert(offsetof(USQLiteSettings, PageCacheNumber) == 0x00003C, "Member 'USQLiteSettings::PageCacheNumber' has a wrong offset!");
-static_assert(offsetof(USQLiteSettings, EnableTrace) == 0x000040, "Member 'USQLiteSettings::EnableTrace' has a wrong offset!");
+DUMPER7_ASSERTS_USQLiteSettings;
 
 }
 

@@ -17,155 +17,131 @@
 namespace SDK
 {
 
-// Function BP_CloudPrefab.BP_CloudPrefab_C.OverrideBigShapeMaterial
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_CloudPrefab.BP_CloudPrefab_C.ExecuteUbergraph_BP_CloudPrefab
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class UMaterialInstance*                MaterialInstance                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CloudPrefab_C::OverrideBigShapeMaterial(class UMaterialInstance* MaterialInstance)
+void ABP_CloudPrefab_C::ExecuteUbergraph_BP_CloudPrefab(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "OverrideBigShapeMaterial");
+		Func = Class->GetFunction("BP_CloudPrefab_C", "ExecuteUbergraph_BP_CloudPrefab");
 
-	Params::BP_CloudPrefab_C_OverrideBigShapeMaterial Parms{};
+	Params::BP_CloudPrefab_C_ExecuteUbergraph_BP_CloudPrefab Parms{};
 
-	Parms.MaterialInstance = MaterialInstance;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_CloudPrefab.BP_CloudPrefab_C.ShouldCloudMove
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function BP_CloudPrefab.BP_CloudPrefab_C.EditorTick
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// const struct FVectorDouble&             InLocation                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   bMove                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FVectorDouble*                   NewLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CloudPrefab_C::ShouldCloudMove(const struct FVectorDouble& InLocation, bool* bMove, struct FVectorDouble* NewLocation)
+void ABP_CloudPrefab_C::EditorTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "ShouldCloudMove");
+		Func = Class->GetFunction("BP_CloudPrefab_C", "EditorTick");
 
-	Params::BP_CloudPrefab_C_ShouldCloudMove Parms{};
+	Params::BP_CloudPrefab_C_EditorTick Parms{};
 
-	Parms.InLocation = std::move(InLocation);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (bMove != nullptr)
-		*bMove = Parms.bMove;
-
-	if (NewLocation != nullptr)
-		*NewLocation = std::move(Parms.NewLocation);
-}
-
-
-// Function BP_CloudPrefab.BP_CloudPrefab_C.Single POICloud Parameters Initial
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UMaterialInstanceDynamic*         DMI_0                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UStaticMeshComponent*             Mesh                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FPOICloudParameters&       CloudStructParameter                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// int32                                   TransSortNumber_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_CloudPrefab_C::Single_POICloud_Parameters_Initial(class UMaterialInstanceDynamic* DMI_0, class UStaticMeshComponent* Mesh, const struct FPOICloudParameters& CloudStructParameter, int32 TransSortNumber_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "Single POICloud Parameters Initial");
-
-	Params::BP_CloudPrefab_C_Single_POICloud_Parameters_Initial Parms{};
-
-	Parms.DMI_0 = DMI_0;
-	Parms.Mesh = Mesh;
-	Parms.CloudStructParameter = std::move(CloudStructParameter);
-	Parms.TransSortNumber_0 = TransSortNumber_0;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_CloudPrefab.BP_CloudPrefab_C.Single Building Parameters Initial
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_CloudPrefab.BP_CloudPrefab_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic*         DMI_0                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UStaticMeshComponent*             Mesh                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FAnomaliesParameters&      CloudStructParameter                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// int32                                   TransSortNumber_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CloudPrefab_C::Single_Building_Parameters_Initial(class UMaterialInstanceDynamic* DMI_0, class UStaticMeshComponent* Mesh, const struct FAnomaliesParameters& CloudStructParameter, int32 TransSortNumber_0)
+void ABP_CloudPrefab_C::ReceiveTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "Single Building Parameters Initial");
+		Func = Class->GetFunction("BP_CloudPrefab_C", "ReceiveTick");
 
-	Params::BP_CloudPrefab_C_Single_Building_Parameters_Initial Parms{};
+	Params::BP_CloudPrefab_C_ReceiveTick Parms{};
 
-	Parms.DMI_0 = DMI_0;
-	Parms.Mesh = Mesh;
-	Parms.CloudStructParameter = std::move(CloudStructParameter);
-	Parms.TransSortNumber_0 = TransSortNumber_0;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_CloudPrefab.BP_CloudPrefab_C.UpdatePerFourFrame
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_CloudPrefab.BP_CloudPrefab_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_CloudPrefab_C::UpdatePerFourFrame()
+void ABP_CloudPrefab_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "UpdatePerFourFrame");
+		Func = Class->GetFunction("BP_CloudPrefab_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_CloudPrefab.BP_CloudPrefab_C.Single Cloud Parameters Initial
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UMaterialInstanceDynamic*         DMI_0                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UStaticMeshComponent*             Mesh                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FCloudParameters&          CloudStructParameter                                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// int32                                   TransSortNumber_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_CloudPrefab.BP_CloudPrefab_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_CloudPrefab_C::Single_Cloud_Parameters_Initial(class UMaterialInstanceDynamic* DMI_0, class UStaticMeshComponent* Mesh, const struct FCloudParameters& CloudStructParameter, int32 TransSortNumber_0)
+void ABP_CloudPrefab_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "Single Cloud Parameters Initial");
+		Func = Class->GetFunction("BP_CloudPrefab_C", "UserConstructionScript");
 
-	Params::BP_CloudPrefab_C_Single_Cloud_Parameters_Initial Parms{};
-
-	Parms.DMI_0 = DMI_0;
-	Parms.Mesh = Mesh;
-	Parms.CloudStructParameter = std::move(CloudStructParameter);
-	Parms.TransSortNumber_0 = TransSortNumber_0;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_CloudPrefab.BP_CloudPrefab_C.Cloud Initial
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_CloudPrefab.BP_CloudPrefab_C.Active
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_CloudPrefab_C::Cloud_Initial()
+void ABP_CloudPrefab_C::Active()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "Cloud Initial");
+		Func = Class->GetFunction("BP_CloudPrefab_C", "Active");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_CloudPrefab.BP_CloudPrefab_C.Hidden
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_CloudPrefab_C::Hidden()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CloudPrefab_C", "Hidden");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_CloudPrefab.BP_CloudPrefab_C.AddCloudRotation
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_CloudPrefab_C::AddCloudRotation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CloudPrefab_C", "AddCloudRotation");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -203,131 +179,155 @@ void ABP_CloudPrefab_C::Timer(bool Forward, float DeltaTime, float Speed, float*
 }
 
 
-// Function BP_CloudPrefab.BP_CloudPrefab_C.AddCloudRotation
+// Function BP_CloudPrefab.BP_CloudPrefab_C.Cloud Initial
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_CloudPrefab_C::AddCloudRotation()
+void ABP_CloudPrefab_C::Cloud_Initial()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "AddCloudRotation");
+		Func = Class->GetFunction("BP_CloudPrefab_C", "Cloud Initial");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_CloudPrefab.BP_CloudPrefab_C.Hidden
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_CloudPrefab_C::Hidden()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "Hidden");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_CloudPrefab.BP_CloudPrefab_C.Active
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_CloudPrefab_C::Active()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "Active");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_CloudPrefab.BP_CloudPrefab_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_CloudPrefab_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_CloudPrefab.BP_CloudPrefab_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_CloudPrefab_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_CloudPrefab.BP_CloudPrefab_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
+// Function BP_CloudPrefab.BP_CloudPrefab_C.Single Cloud Parameters Initial
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialInstanceDynamic*         DMI_0                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UStaticMeshComponent*             Mesh                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCloudParameters&          CloudStructParameter                                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// int32                                   TransSortNumber_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CloudPrefab_C::ReceiveTick(float DeltaSeconds)
+void ABP_CloudPrefab_C::Single_Cloud_Parameters_Initial(class UMaterialInstanceDynamic* DMI_0, class UStaticMeshComponent* Mesh, const struct FCloudParameters& CloudStructParameter, int32 TransSortNumber_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "ReceiveTick");
+		Func = Class->GetFunction("BP_CloudPrefab_C", "Single Cloud Parameters Initial");
 
-	Params::BP_CloudPrefab_C_ReceiveTick Parms{};
+	Params::BP_CloudPrefab_C_Single_Cloud_Parameters_Initial Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.DMI_0 = DMI_0;
+	Parms.Mesh = Mesh;
+	Parms.CloudStructParameter = std::move(CloudStructParameter);
+	Parms.TransSortNumber_0 = TransSortNumber_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_CloudPrefab.BP_CloudPrefab_C.EditorTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_CloudPrefab.BP_CloudPrefab_C.UpdatePerFourFrame
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_CloudPrefab_C::EditorTick(float DeltaSeconds)
+void ABP_CloudPrefab_C::UpdatePerFourFrame()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "EditorTick");
+		Func = Class->GetFunction("BP_CloudPrefab_C", "UpdatePerFourFrame");
 
-	Params::BP_CloudPrefab_C_EditorTick Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.DeltaSeconds = DeltaSeconds;
+
+// Function BP_CloudPrefab.BP_CloudPrefab_C.Single Building Parameters Initial
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UMaterialInstanceDynamic*         DMI_0                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UStaticMeshComponent*             Mesh                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FAnomaliesParameters&      CloudStructParameter                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// int32                                   TransSortNumber_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CloudPrefab_C::Single_Building_Parameters_Initial(class UMaterialInstanceDynamic* DMI_0, class UStaticMeshComponent* Mesh, const struct FAnomaliesParameters& CloudStructParameter, int32 TransSortNumber_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CloudPrefab_C", "Single Building Parameters Initial");
+
+	Params::BP_CloudPrefab_C_Single_Building_Parameters_Initial Parms{};
+
+	Parms.DMI_0 = DMI_0;
+	Parms.Mesh = Mesh;
+	Parms.CloudStructParameter = std::move(CloudStructParameter);
+	Parms.TransSortNumber_0 = TransSortNumber_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_CloudPrefab.BP_CloudPrefab_C.ExecuteUbergraph_BP_CloudPrefab
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_CloudPrefab.BP_CloudPrefab_C.Single POICloud Parameters Initial
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialInstanceDynamic*         DMI_0                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UStaticMeshComponent*             Mesh                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FPOICloudParameters&       CloudStructParameter                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// int32                                   TransSortNumber_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CloudPrefab_C::ExecuteUbergraph_BP_CloudPrefab(int32 EntryPoint)
+void ABP_CloudPrefab_C::Single_POICloud_Parameters_Initial(class UMaterialInstanceDynamic* DMI_0, class UStaticMeshComponent* Mesh, const struct FPOICloudParameters& CloudStructParameter, int32 TransSortNumber_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudPrefab_C", "ExecuteUbergraph_BP_CloudPrefab");
+		Func = Class->GetFunction("BP_CloudPrefab_C", "Single POICloud Parameters Initial");
 
-	Params::BP_CloudPrefab_C_ExecuteUbergraph_BP_CloudPrefab Parms{};
+	Params::BP_CloudPrefab_C_Single_POICloud_Parameters_Initial Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.DMI_0 = DMI_0;
+	Parms.Mesh = Mesh;
+	Parms.CloudStructParameter = std::move(CloudStructParameter);
+	Parms.TransSortNumber_0 = TransSortNumber_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_CloudPrefab.BP_CloudPrefab_C.ShouldCloudMove
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVectorDouble&             InLocation                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   bMove                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVectorDouble*                   NewLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CloudPrefab_C::ShouldCloudMove(const struct FVectorDouble& InLocation, bool* bMove, struct FVectorDouble* NewLocation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CloudPrefab_C", "ShouldCloudMove");
+
+	Params::BP_CloudPrefab_C_ShouldCloudMove Parms{};
+
+	Parms.InLocation = std::move(InLocation);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bMove != nullptr)
+		*bMove = Parms.bMove;
+
+	if (NewLocation != nullptr)
+		*NewLocation = std::move(Parms.NewLocation);
+}
+
+
+// Function BP_CloudPrefab.BP_CloudPrefab_C.OverrideBigShapeMaterial
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UMaterialInstance*                MaterialInstance                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CloudPrefab_C::OverrideBigShapeMaterial(class UMaterialInstance* MaterialInstance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CloudPrefab_C", "OverrideBigShapeMaterial");
+
+	Params::BP_CloudPrefab_C_OverrideBigShapeMaterial Parms{};
+
+	Parms.MaterialInstance = MaterialInstance;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

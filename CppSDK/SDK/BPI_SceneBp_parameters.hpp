@@ -21,9 +21,7 @@ struct BPI_SceneBp_C_GetAoiRange final
 public:
 	int32                                         ret;                                               // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(BPI_SceneBp_C_GetAoiRange) == 0x000004, "Wrong alignment on BPI_SceneBp_C_GetAoiRange");
-static_assert(sizeof(BPI_SceneBp_C_GetAoiRange) == 0x000004, "Wrong size on BPI_SceneBp_C_GetAoiRange");
-static_assert(offsetof(BPI_SceneBp_C_GetAoiRange, ret) == 0x000000, "Member 'BPI_SceneBp_C_GetAoiRange::ret' has a wrong offset!");
+DUMPER7_ASSERTS_BPI_SceneBp_C_GetAoiRange;
 
 }
 

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SHolographicMaterialsCache_structs.hpp"
+#include "EHolographicState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "EHolographicState_structs.hpp"
+#include "SHolographicMaterialsCache_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
@@ -36,37 +36,32 @@ public:
 	TMap<class USkeletalMeshComponent*, struct FSHolographicMaterialsCache> ComponentMaterialsCache; // 0x00F8(0x0050)(Edit, BlueprintVisible, ContainsInstancedReference)
 
 public:
-	void StartEffect();
-	void EndEffect();
-	void UpdateMaterialsWithDa(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData);
-	void RemoveNpcEffect();
-	void Clear();
-	void RevertMaterialParamters(const struct FSMaterialParamCache& MaterialCache, class UMaterialInstanceDynamic** result);
-	class UMaterialInstanceDynamic* CacheAndReplace(const struct FSHolographicData& SHolographicData, class UPrimitiveComponent* self2, int32 ElementIndex, class UMaterialInstanceDynamic* material, struct FSMaterialParamCache* CacheResult);
-	void CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& floats, TArray<struct FSMaterialControllerColorParameter>& colors, class UMaterialInstanceDynamic* material, bool bReplaceMaterial, int32 index, struct FSMaterialParamCache* result);
-	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_SimpleHolographicComponent(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds);
+	void CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& floats, TArray<struct FSMaterialControllerColorParameter>& colors, class UMaterialInstanceDynamic* material, bool bReplaceMaterial, int32 index, struct FSMaterialParamCache* result);
+	class UMaterialInstanceDynamic* CacheAndReplace(const struct FSHolographicData& SHolographicData, class UPrimitiveComponent* self2, int32 ElementIndex, class UMaterialInstanceDynamic* material, struct FSMaterialParamCache* CacheResult);
+	void RevertMaterialParamters(const struct FSMaterialParamCache& MaterialCache, class UMaterialInstanceDynamic** result);
+	void Clear();
+	void RemoveNpcEffect();
+	void UpdateMaterialsWithDa(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData);
+	void EndEffect();
+	void StartEffect();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"SimpleHolographicComponent_C">();
+		BP_STATIC_CLASS_IMPL("SimpleHolographicComponent_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SimpleHolographicComponent_C")
 	}
 	static class USimpleHolographicComponent_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<USimpleHolographicComponent_C>();
 	}
 };
-static_assert(alignof(USimpleHolographicComponent_C) == 0x000008, "Wrong alignment on USimpleHolographicComponent_C");
-static_assert(sizeof(USimpleHolographicComponent_C) == 0x000148, "Wrong size on USimpleHolographicComponent_C");
-static_assert(offsetof(USimpleHolographicComponent_C, UberGraphFrame) == 0x0000C0, "Member 'USimpleHolographicComponent_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(USimpleHolographicComponent_C, OL_Materials) == 0x0000C8, "Member 'USimpleHolographicComponent_C::OL_Materials' has a wrong offset!");
-static_assert(offsetof(USimpleHolographicComponent_C, Other_Materials) == 0x0000D8, "Member 'USimpleHolographicComponent_C::Other_Materials' has a wrong offset!");
-static_assert(offsetof(USimpleHolographicComponent_C, DATA) == 0x0000E8, "Member 'USimpleHolographicComponent_C::DATA' has a wrong offset!");
-static_assert(offsetof(USimpleHolographicComponent_C, TimeCounter) == 0x0000F0, "Member 'USimpleHolographicComponent_C::TimeCounter' has a wrong offset!");
-static_assert(offsetof(USimpleHolographicComponent_C, State) == 0x0000F4, "Member 'USimpleHolographicComponent_C::State' has a wrong offset!");
-static_assert(offsetof(USimpleHolographicComponent_C, bCached) == 0x0000F5, "Member 'USimpleHolographicComponent_C::bCached' has a wrong offset!");
-static_assert(offsetof(USimpleHolographicComponent_C, ComponentMaterialsCache) == 0x0000F8, "Member 'USimpleHolographicComponent_C::ComponentMaterialsCache' has a wrong offset!");
+DUMPER7_ASSERTS_USimpleHolographicComponent_C;
 
 }
 

@@ -10,21 +10,22 @@
 
 #include "Basic.hpp"
 
-#include "EHitAnim_structs.hpp"
+#include "SClimbInfo_structs.hpp"
 #include "SClimbState_structs.hpp"
+#include "EHitAnim_structs.hpp"
 #include "ECharParentMoveState_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "SClimbInfo_structs.hpp"
 #include "ECharState_structs.hpp"
 #include "ECharViewDirectionState_structs.hpp"
+#include "KuroAnim_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ABPLogicParams.BP_ABPLogicParams_C
-// 0x00C0 (0x00F0 - 0x0030)
+// 0x0130 (0x0160 - 0x0030)
 class UBP_ABPLogicParams_C final : public UObject
 {
 public:
@@ -70,54 +71,33 @@ public:
 	struct FVector2D                              LookAtRef;                                         // 0x00E4(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          EnableBlendSpaceLookAtRef;                         // 0x00EC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          IsOnVehicle;                                       // 0x00ED(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_EE[0x2];                                       // 0x00EE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FIKTarget                              LeftHandIKTargetCS;                                // 0x00F0(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	struct FIKTarget                              RightHandIKTargetCS;                               // 0x0120(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	bool                                          StateLowerBlend;                                   // 0x0150(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          StateLeftArmBlend;                                 // 0x0151(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          StateRightArmBlend;                                // 0x0152(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          IsHoldingHands;                                    // 0x0153(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          IsBeHoldingHands;                                  // 0x0154(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          IsHoldingHandsReachable;                           // 0x0155(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          IsAcceptingInvitation;                             // 0x0156(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          DisableBlinkRef;                                   // 0x0157(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BP_ABPLogicParams_C">();
+		BP_STATIC_CLASS_IMPL("BP_ABPLogicParams_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BP_ABPLogicParams_C")
 	}
 	static class UBP_ABPLogicParams_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UBP_ABPLogicParams_C>();
 	}
 };
-static_assert(alignof(UBP_ABPLogicParams_C) == 0x000008, "Wrong alignment on UBP_ABPLogicParams_C");
-static_assert(sizeof(UBP_ABPLogicParams_C) == 0x0000F0, "Wrong size on UBP_ABPLogicParams_C");
-static_assert(offsetof(UBP_ABPLogicParams_C, AcceptedNewBeHitRef) == 0x000030, "Member 'UBP_ABPLogicParams_C::AcceptedNewBeHitRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, BeHitAnimRef) == 0x000031, "Member 'UBP_ABPLogicParams_C::BeHitAnimRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, EnterFkRef) == 0x000032, "Member 'UBP_ABPLogicParams_C::EnterFkRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, DoubleHitInAirRef) == 0x000033, "Member 'UBP_ABPLogicParams_C::DoubleHitInAirRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, BeHitDirectRef) == 0x000034, "Member 'UBP_ABPLogicParams_C::BeHitDirectRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, BeHitLocationRef) == 0x000040, "Member 'UBP_ABPLogicParams_C::BeHitLocationRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, CharMoveStateRef) == 0x00004C, "Member 'UBP_ABPLogicParams_C::CharMoveStateRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, CharPositionStateRef) == 0x00004D, "Member 'UBP_ABPLogicParams_C::CharPositionStateRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, CharCameraStateRef) == 0x00004E, "Member 'UBP_ABPLogicParams_C::CharCameraStateRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, BattleIdleTimeRef) == 0x000050, "Member 'UBP_ABPLogicParams_C::BattleIdleTimeRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, DegMovementSlopeRef) == 0x000054, "Member 'UBP_ABPLogicParams_C::DegMovementSlopeRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, SightDirectRef) == 0x000058, "Member 'UBP_ABPLogicParams_C::SightDirectRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, RagQuitStateRef) == 0x000064, "Member 'UBP_ABPLogicParams_C::RagQuitStateRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, IsJumpRef) == 0x000065, "Member 'UBP_ABPLogicParams_C::IsJumpRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, AccelerationRef) == 0x000068, "Member 'UBP_ABPLogicParams_C::AccelerationRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, IsMovingRef) == 0x000074, "Member 'UBP_ABPLogicParams_C::IsMovingRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, SpeedRef) == 0x000078, "Member 'UBP_ABPLogicParams_C::SpeedRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, InputDirectRef) == 0x00007C, "Member 'UBP_ABPLogicParams_C::InputDirectRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, IsFallingIntoWaterRef) == 0x000088, "Member 'UBP_ABPLogicParams_C::IsFallingIntoWaterRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, GroundedTimeRef) == 0x00008C, "Member 'UBP_ABPLogicParams_C::GroundedTimeRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, HasMoveInputRef) == 0x000090, "Member 'UBP_ABPLogicParams_C::HasMoveInputRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, ClimbInfoRef) == 0x000094, "Member 'UBP_ABPLogicParams_C::ClimbInfoRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, ClimbStateRef) == 0x0000B0, "Member 'UBP_ABPLogicParams_C::ClimbStateRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, ClimbRadiusRef) == 0x0000B4, "Member 'UBP_ABPLogicParams_C::ClimbRadiusRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, InputRotatorRef) == 0x0000B8, "Member 'UBP_ABPLogicParams_C::InputRotatorRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, ClimbOnWallAngleRef) == 0x0000C4, "Member 'UBP_ABPLogicParams_C::ClimbOnWallAngleRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, SprintSwimOffsetRef) == 0x0000C8, "Member 'UBP_ABPLogicParams_C::SprintSwimOffsetRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, SprintSwimOffsetLerpSpeedRef) == 0x0000CC, "Member 'UBP_ABPLogicParams_C::SprintSwimOffsetLerpSpeedRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, SlideForwardRef) == 0x0000D0, "Member 'UBP_ABPLogicParams_C::SlideForwardRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, SlideSwitchThisFrameRef) == 0x0000DC, "Member 'UBP_ABPLogicParams_C::SlideSwitchThisFrameRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, SlideStandModeRef) == 0x0000DD, "Member 'UBP_ABPLogicParams_C::SlideStandModeRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, JumpUpRateRef) == 0x0000E0, "Member 'UBP_ABPLogicParams_C::JumpUpRateRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, LookAtRef) == 0x0000E4, "Member 'UBP_ABPLogicParams_C::LookAtRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, EnableBlendSpaceLookAtRef) == 0x0000EC, "Member 'UBP_ABPLogicParams_C::EnableBlendSpaceLookAtRef' has a wrong offset!");
-static_assert(offsetof(UBP_ABPLogicParams_C, IsOnVehicle) == 0x0000ED, "Member 'UBP_ABPLogicParams_C::IsOnVehicle' has a wrong offset!");
+DUMPER7_ASSERTS_UBP_ABPLogicParams_C;
 
 }
 

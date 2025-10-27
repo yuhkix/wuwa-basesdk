@@ -1547,5 +1547,141 @@ void UCharRenderingComponent_C::RemoveExternalMaterialReplaceV2(EKuroCharBodySpe
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function CharRenderingComponent.CharRenderingComponent_C.GetSkeletalMeshComponentBodyName
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USkeletalMeshComponent*           skeletalComp                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class FName UCharRenderingComponent_C::GetSkeletalMeshComponentBodyName(class USkeletalMeshComponent* skeletalComp)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "GetSkeletalMeshComponentBodyName");
+
+	Params::CharRenderingComponent_C_GetSkeletalMeshComponentBodyName Parms{};
+
+	Parms.skeletalComp = skeletalComp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.AddFloatUpdateParamPermanentByIndexV2
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             name                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             bodyName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   materialIndex                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCharRenderingComponent_C::AddFloatUpdateParamPermanentByIndexV2(class FName name, float value, class FName bodyName, float materialIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "AddFloatUpdateParamPermanentByIndexV2");
+
+	Params::CharRenderingComponent_C_AddFloatUpdateParamPermanentByIndexV2 Parms{};
+
+	Parms.name = name;
+	Parms.value = value;
+	Parms.bodyName = bodyName;
+	Parms.materialIndex = materialIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetEffectGroupProgress
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   progress                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   groupHandleId                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCharRenderingComponent_C::SetEffectGroupProgress(float progress, int32 groupHandleId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "SetEffectGroupProgress");
+
+	Params::CharRenderingComponent_C_SetEffectGroupProgress Parms{};
+
+	Parms.progress = progress;
+	Parms.groupHandleId = groupHandleId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.GetOpacityConsiderVisibility
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UCharRenderingComponent_C::GetOpacityConsiderVisibility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "GetOpacityConsiderVisibility");
+
+	Params::CharRenderingComponent_C_GetOpacityConsiderVisibility Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetShouldCastShadow
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    castShadow                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UCharRenderingComponent_C::SetShouldCastShadow(bool castShadow)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "SetShouldCastShadow");
+
+	Params::CharRenderingComponent_C_SetShouldCastShadow Parms{};
+
+	Parms.castShadow = castShadow;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

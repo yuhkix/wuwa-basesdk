@@ -114,6 +114,29 @@ enum class ESimpleRunState : uint8
 	ESimpleRunState_MAX                      = 3,
 };
 
+// ScriptStruct KuroComponent.GpuNpcTransition
+// 0x0050 (0x0050 - 0x0000)
+struct FGpuNpcTransition final
+{
+public:
+	TMap<int32, int32>                            Transitions;                                       // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGpuNpcTransition;
+
+// ScriptStruct KuroComponent.GpuNpcConfig
+// 0x0058 (0x0058 - 0x0000)
+struct FGpuNpcConfig final
+{
+public:
+	int32                                         MaxState;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StartAngle;                                        // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<float>                                 AnimEndTimes;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 StateAnimMap;                                      // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FGpuNpcTransition>              TransitionStateMaps;                               // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_38[0x20];                                      // 0x0038(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGpuNpcConfig;
+
 // ScriptStruct KuroComponent.RotateStepInfo
 // 0x0030 (0x0030 - 0x0000)
 struct alignas(0x10) FRotateStepInfo final
@@ -122,9 +145,7 @@ public:
 	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCurveFloat*                            RotateCurve;                                       // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FRotateStepInfo) == 0x000010, "Wrong alignment on FRotateStepInfo");
-static_assert(sizeof(FRotateStepInfo) == 0x000030, "Wrong size on FRotateStepInfo");
-static_assert(offsetof(FRotateStepInfo, RotateCurve) == 0x000028, "Member 'FRotateStepInfo::RotateCurve' has a wrong offset!");
+DUMPER7_ASSERTS_FRotateStepInfo;
 
 // ScriptStruct KuroComponent.TargetRotationData
 // 0x0038 (0x0038 - 0x0000)
@@ -136,10 +157,7 @@ public:
 	TArray<struct FRotateStepInfo>                StepInfos;                                         // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_20[0x18];                                      // 0x0020(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FTargetRotationData) == 0x000008, "Wrong alignment on FTargetRotationData");
-static_assert(sizeof(FTargetRotationData) == 0x000038, "Wrong size on FTargetRotationData");
-static_assert(offsetof(FTargetRotationData, TargetActor) == 0x000000, "Member 'FTargetRotationData::TargetActor' has a wrong offset!");
-static_assert(offsetof(FTargetRotationData, StepInfos) == 0x000010, "Member 'FTargetRotationData::StepInfos' has a wrong offset!");
+DUMPER7_ASSERTS_FTargetRotationData;
 
 // ScriptStruct KuroComponent.SplineMoveStaticTimeDisData
 // 0x0020 (0x0020 - 0x0000)
@@ -150,9 +168,7 @@ public:
 	class UCurveFloat*                            TimeDisCurve;                                      // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_10[0x10];                                      // 0x0010(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FSplineMoveStaticTimeDisData) == 0x000008, "Wrong alignment on FSplineMoveStaticTimeDisData");
-static_assert(sizeof(FSplineMoveStaticTimeDisData) == 0x000020, "Wrong size on FSplineMoveStaticTimeDisData");
-static_assert(offsetof(FSplineMoveStaticTimeDisData, TimeDisCurve) == 0x000008, "Member 'FSplineMoveStaticTimeDisData::TimeDisCurve' has a wrong offset!");
+DUMPER7_ASSERTS_FSplineMoveStaticTimeDisData;
 
 // ScriptStruct KuroComponent.SplineMoveDynamicSpeedData
 // 0x0010 (0x0010 - 0x0000)
@@ -164,12 +180,7 @@ public:
 	float                                         CurrentSpeed;                                      // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         EndDis;                                            // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSplineMoveDynamicSpeedData) == 0x000004, "Wrong alignment on FSplineMoveDynamicSpeedData");
-static_assert(sizeof(FSplineMoveDynamicSpeedData) == 0x000010, "Wrong size on FSplineMoveDynamicSpeedData");
-static_assert(offsetof(FSplineMoveDynamicSpeedData, TargetSpeed) == 0x000000, "Member 'FSplineMoveDynamicSpeedData::TargetSpeed' has a wrong offset!");
-static_assert(offsetof(FSplineMoveDynamicSpeedData, Acceleration) == 0x000004, "Member 'FSplineMoveDynamicSpeedData::Acceleration' has a wrong offset!");
-static_assert(offsetof(FSplineMoveDynamicSpeedData, CurrentSpeed) == 0x000008, "Member 'FSplineMoveDynamicSpeedData::CurrentSpeed' has a wrong offset!");
-static_assert(offsetof(FSplineMoveDynamicSpeedData, EndDis) == 0x00000C, "Member 'FSplineMoveDynamicSpeedData::EndDis' has a wrong offset!");
+DUMPER7_ASSERTS_FSplineMoveDynamicSpeedData;
 
 // ScriptStruct KuroComponent.SplineMoveData
 // 0x0068 (0x0068 - 0x0000)
@@ -181,21 +192,16 @@ public:
 	struct FSplineMoveStaticTimeDisData           StaticTimeDisData;                                 // 0x0038(0x0020)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSplineMoveDynamicSpeedData            DynamicSpeedData;                                  // 0x0058(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSplineMoveData) == 0x000008, "Wrong alignment on FSplineMoveData");
-static_assert(sizeof(FSplineMoveData) == 0x000068, "Wrong size on FSplineMoveData");
-static_assert(offsetof(FSplineMoveData, Spline) == 0x000000, "Member 'FSplineMoveData::Spline' has a wrong offset!");
-static_assert(offsetof(FSplineMoveData, StaticTimeDisData) == 0x000038, "Member 'FSplineMoveData::StaticTimeDisData' has a wrong offset!");
-static_assert(offsetof(FSplineMoveData, DynamicSpeedData) == 0x000058, "Member 'FSplineMoveData::DynamicSpeedData' has a wrong offset!");
+DUMPER7_ASSERTS_FSplineMoveData;
 
 // ScriptStruct KuroComponent.SimpleMoveData
-// 0x0090 (0x0090 - 0x0000)
+// 0x0098 (0x0098 - 0x0000)
 struct alignas(0x08) FSimpleMoveData final
 {
 public:
-	uint8                                         Pad_0[0x90];                                       // 0x0000(0x0090)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x98];                                       // 0x0000(0x0098)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FSimpleMoveData) == 0x000008, "Wrong alignment on FSimpleMoveData");
-static_assert(sizeof(FSimpleMoveData) == 0x000090, "Wrong size on FSimpleMoveData");
+DUMPER7_ASSERTS_FSimpleMoveData;
 
 }
 

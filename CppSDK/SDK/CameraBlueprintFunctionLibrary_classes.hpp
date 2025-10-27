@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ECameraAnsEffectiveClientType_structs.hpp"
 #include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "ECameraGravityMode_structs.hpp"
 #include "EAimAssistMode_structs.hpp"
+#include "ECameraAnsEffectiveClientType_structs.hpp"
 #include "ECustomCameraMode_structs.hpp"
 
 
@@ -27,16 +27,16 @@ namespace SDK
 class UCameraBlueprintFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void OnPossess(class APawn* pawn, class UObject* __WorldContext);
-	static ECustomCameraMode GetCameraMode(class UObject* __WorldContext);
-	static void SetCameraRotation(const struct FRotator& rotator, class UObject* __WorldContext);
-	static struct FVectorDouble GetTargetSocketLocation(class UObject* __WorldContext);
-	static void SetWidgetCameraBlendParams(float blendTime, EViewTargetBlendFunction blendFunction, float blendExp, bool blendLocation, bool isRelativeLocation, bool overrideLocation, const struct FVector& newLocation, bool blendRotation, bool isRelativeRotation, bool overrideRotation, const struct FRotator& newRotation, class UObject* __WorldContext);
-	static struct FVectorDouble GetFightCameraLocation(class UObject* __WorldContext);
-	static void SetFightCameraFollow(bool follow, class UObject* __WorldContext);
-	static void ResetFightCameraPitchAndArmLength(class UObject* __WorldContext);
-	static void EnterCameraExplore(int32 id, const struct FVector& lookAt1, const struct FVector& lookAt2, float prepTime, float fadeDistance, float armLengthMin, float armLengthMax, class UObject* __WorldContext);
 	static void ExitCameraExplore(int32 id, class UObject* __WorldContext);
+	static void ResetFightCameraPitchAndArmLength(class UObject* __WorldContext);
+	static void SetFightCameraFollow(bool follow, class UObject* __WorldContext);
+	static struct FVectorDouble GetFightCameraLocation(class UObject* __WorldContext);
+	static void SetWidgetCameraBlendParams(float blendTime, EViewTargetBlendFunction blendFunction, float blendExp, bool blendLocation, bool isRelativeLocation, bool overrideLocation, const struct FVector& newLocation, bool blendRotation, bool isRelativeRotation, bool overrideRotation, const struct FRotator& newRotation, class UObject* __WorldContext);
+	static struct FVectorDouble GetTargetSocketLocation(class UObject* __WorldContext);
+	static void SetCameraRotation(const struct FRotator& rotator, class UObject* __WorldContext);
+	static ECustomCameraMode GetCameraMode(class UObject* __WorldContext);
+	static void OnPossess(class APawn* pawn, class UObject* __WorldContext);
+	static void EnterCameraExplore(int32 id, const struct FVector& lookAt1, const struct FVector& lookAt2, float prepTime, float fadeDistance, float armLengthMin, float armLengthMax, class UObject* __WorldContext);
 	static void EnterSequenceDialogue(class AActor* target, class UObject* __WorldContext);
 	static void ExitSequenceDialogue(class UObject* __WorldContext);
 	static void EnterCameraMode(ECustomCameraMode cameraMode, float blendTime, EViewTargetBlendFunction blendFunction, float blendExp, class UObject* __WorldContext);
@@ -89,19 +89,26 @@ public:
 	static void SwitchCameraDebugRotatorEnabled(class UObject* __WorldContext);
 	static void ApplyCameraGuide(const struct FVector& lookAt, float fadeInTime, float stayTime, float fadeOutTime, bool lockCameraInput, const struct FVector& endPosition, float fov, bool ignoreAdjustYaw, bool staticCamera, class UObject* __WorldContext);
 	static void ExitCameraGuide(class UObject* __WorldContext);
+	static int32 EnableCameraSpecificLockTarget(int32 entityId, float priority, class UObject* __WorldContext);
+	static void DisableCameraSpecificLockOnTarget(int32 id, class UObject* __WorldContext);
+	static bool IsCameraSpecificLockEnable(class UObject* __WorldContext);
+	static int32 GetCameraSpecificLockEntityId(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"CameraBlueprintFunctionLibrary_C">();
+		BP_STATIC_CLASS_IMPL("CameraBlueprintFunctionLibrary_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CameraBlueprintFunctionLibrary_C")
 	}
 	static class UCameraBlueprintFunctionLibrary_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UCameraBlueprintFunctionLibrary_C>();
 	}
 };
-static_assert(alignof(UCameraBlueprintFunctionLibrary_C) == 0x000008, "Wrong alignment on UCameraBlueprintFunctionLibrary_C");
-static_assert(sizeof(UCameraBlueprintFunctionLibrary_C) == 0x000030, "Wrong size on UCameraBlueprintFunctionLibrary_C");
+DUMPER7_ASSERTS_UCameraBlueprintFunctionLibrary_C;
 
 }
 

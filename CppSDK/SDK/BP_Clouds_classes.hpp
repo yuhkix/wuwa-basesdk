@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "E_Cloud_Presents_structs.hpp"
+#include "Engine_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "AkAudio_structs.hpp"
@@ -21,35 +21,35 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Clouds.BP_Clouds_C
-// 0x00B0 (0x0370 - 0x02C0)
+// 0x00B0 (0x0450 - 0x03A0)
 class ABP_Clouds_C final : public AKuroCloudsActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UChildActorComponent*                   Cloud02;                                           // 0x02C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UChildActorComponent*                   Cloud01;                                           // 0x02D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	E_Cloud_Presents                              当前云预设_不要改_;                                // 0x02E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E1[0x7];                                      // 0x02E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPD_CloudPreset_C*                      CloudData;                                         // 0x02E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Counting;                                          // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	E_Cloud_Presents                              默认进入云预设;                                    // 0x02F1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2F2[0x6];                                      // 0x02F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UPD_CloudPrefab_C>       CloudAsset;                                        // 0x02F8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	TArray<int32>                                 SortNumber;                                        // 0x0328(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class UPD_CloudPrefab_C*                      As_PD_Cloud_Prefab;                                // 0x0338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAkAudioEvent*                          CachedAudioEvent2D;                                // 0x0340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsSkyOcean;                                        // 0x0348(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_349[0x7];                                      // 0x0349(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkAudioEvent*                          SkyOceanAudio;                                     // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Override_Cloud_Rotation;                           // 0x0358(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_359[0x3];                                      // 0x0359(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Cloud_Speed;                                       // 0x035C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Cloud_Offset;                                      // 0x0360(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsReversed_;                                       // 0x0364(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_365[0x3];                                      // 0x0365(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ReversedZHeightBias;                               // 0x0368(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EKuroFeatureLevel                             FeatureLevel;                                      // 0x036C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UChildActorComponent*                   Cloud02;                                           // 0x03A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UChildActorComponent*                   Cloud01;                                           // 0x03B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x03B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	E_Cloud_Presents                              当前云预设_不要改_;                                // 0x03C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3C1[0x7];                                      // 0x03C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPD_CloudPreset_C*                      CloudData;                                         // 0x03C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Counting;                                          // 0x03D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	E_Cloud_Presents                              默认进入云预设;                                    // 0x03D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3D2[0x6];                                      // 0x03D2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       CloudAsset;                                        // 0x03D8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TArray<int32>                                 SortNumber;                                        // 0x0408(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UPD_CloudPrefab_C*                      As_PD_Cloud_Prefab;                                // 0x0418(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAkAudioEvent*                          CachedAudioEvent2D;                                // 0x0420(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsSkyOcean;                                        // 0x0428(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_429[0x7];                                      // 0x0429(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAkAudioEvent*                          SkyOceanAudio;                                     // 0x0430(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Override_Cloud_Rotation;                           // 0x0438(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_439[0x3];                                      // 0x0439(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Cloud_Speed;                                       // 0x043C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Cloud_Offset;                                      // 0x0440(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsReversed_;                                       // 0x0444(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_445[0x3];                                      // 0x0445(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReversedZHeightBias;                               // 0x0448(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroFeatureLevel                             FeatureLevel;                                      // 0x044C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Clouds(int32 EntryPoint);
@@ -103,58 +103,63 @@ public:
 	void 开启云跟随摄像机移动();
 	void 关闭云跟随摄像机移动();
 	void 显示云移动范围();
-	void 狂欢节();
-	void 槲生半岛解密后();
-	void 云海区();
-	void 黎娜夕塔阴();
-	void 罗墓岛夜晚();
-	void 金库上解密后();
-	void 费洛洛出场();
+	void Zero5_狂欢节();
+	void Zero3_槲生半岛解密后();
+	void Zero4_云海区();
+	void Zero6_黎娜夕塔阴();
+	void Zero5_罗墓岛夜晚();
+	void Zero6_金库上解密后();
+	void Zero7_费洛洛出场();
 	void CloudMainParamsUpdate();
-	void 彩虹天气();
-	void 颠倒塔白天();
-	void 颠倒塔夜晚();
-	void 颠倒塔流星();
-	void 七丘();
-	void 七丘阴天();
-	void 残破竞技场();
-	void 尖刺山();
-	void 观测塔();
-	void 初见七丘();
-	void 七丘夜晚();
+	void Zero8_彩虹天气();
+	void Zero9_颠倒塔白天();
+	void One0_颠倒塔夜晚();
+	void One1_颠倒塔流星();
+	void Zero7_七丘();
+	void Zero8_初见七丘();
+	void Zero9_七丘阴天();
+	void One0_残破竞技场();
+	void One1_尖刺山();
+	void One2_观测塔();
+	void One3_七丘夜晚();
+	void One4_狄斯台地白天();
+	void One5_狄斯台地夜晚();
+	void One6_狄斯台地日月同辉();
+	void One7_狄斯台地烈日天空();
+	void One8_狄斯台地受蚀地();
+	void One9_狄斯台地月相();
+	void One2_黑潮侵蚀();
+	void One3_黑潮内表世界();
+	void One4_黑潮内里世界();
+	void One5_光路幻境();
+	void One6_巡游天国();
+	void One7_隐海试验场();
+	void One8_失亡彼岸();
+	void One9_黑潮风暴();
+	void Two0_黑潮风暴加强();
+	void Two1_烈阳天气();
+	void Two1_总督日月同辉();
+	void Two0_穗波白天();
+	void Two1_穗波夜晚();
+	void Two2_穗波枯山水();
+	void Two3_穗波阴天();
+	void Two2_不渲染BP_Cloud控制的云();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BP_Clouds_C">();
+		BP_STATIC_CLASS_IMPL("BP_Clouds_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BP_Clouds_C")
 	}
 	static class ABP_Clouds_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ABP_Clouds_C>();
 	}
 };
-static_assert(alignof(ABP_Clouds_C) == 0x000008, "Wrong alignment on ABP_Clouds_C");
-static_assert(sizeof(ABP_Clouds_C) == 0x000370, "Wrong size on ABP_Clouds_C");
-static_assert(offsetof(ABP_Clouds_C, UberGraphFrame) == 0x0002C0, "Member 'ABP_Clouds_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, Cloud02) == 0x0002C8, "Member 'ABP_Clouds_C::Cloud02' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, Cloud01) == 0x0002D0, "Member 'ABP_Clouds_C::Cloud01' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, DefaultSceneRoot) == 0x0002D8, "Member 'ABP_Clouds_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, 当前云预设_不要改_) == 0x0002E0, "Member 'ABP_Clouds_C::当前云预设_不要改_' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, CloudData) == 0x0002E8, "Member 'ABP_Clouds_C::CloudData' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, Counting) == 0x0002F0, "Member 'ABP_Clouds_C::Counting' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, 默认进入云预设) == 0x0002F1, "Member 'ABP_Clouds_C::默认进入云预设' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, CloudAsset) == 0x0002F8, "Member 'ABP_Clouds_C::CloudAsset' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, SortNumber) == 0x000328, "Member 'ABP_Clouds_C::SortNumber' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, As_PD_Cloud_Prefab) == 0x000338, "Member 'ABP_Clouds_C::As_PD_Cloud_Prefab' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, CachedAudioEvent2D) == 0x000340, "Member 'ABP_Clouds_C::CachedAudioEvent2D' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, IsSkyOcean) == 0x000348, "Member 'ABP_Clouds_C::IsSkyOcean' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, SkyOceanAudio) == 0x000350, "Member 'ABP_Clouds_C::SkyOceanAudio' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, Override_Cloud_Rotation) == 0x000358, "Member 'ABP_Clouds_C::Override_Cloud_Rotation' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, Cloud_Speed) == 0x00035C, "Member 'ABP_Clouds_C::Cloud_Speed' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, Cloud_Offset) == 0x000360, "Member 'ABP_Clouds_C::Cloud_Offset' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, IsReversed_) == 0x000364, "Member 'ABP_Clouds_C::IsReversed_' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, ReversedZHeightBias) == 0x000368, "Member 'ABP_Clouds_C::ReversedZHeightBias' has a wrong offset!");
-static_assert(offsetof(ABP_Clouds_C, FeatureLevel) == 0x00036C, "Member 'ABP_Clouds_C::FeatureLevel' has a wrong offset!");
+DUMPER7_ASSERTS_ABP_Clouds_C;
 
 }
 

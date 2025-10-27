@@ -28,32 +28,32 @@ public:
 	TArray<class UMaterialInstanceDynamic*>       CachedMaterial;                                    // 0x00D8(0x0010)(Edit, BlueprintVisible)
 
 public:
-	void UpdateComponentAlpha(float Alpha);
-	void UpdateComponent(E_SE_PlayState State, float Time);
-	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
-	void Start(float time);
-	void End(float time);
-	void Loop(float time);
-	void ApplyAlpha(float alpha);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ExecuteUbergraph_SE_UISpriteController(int32 EntryPoint);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ApplyAlpha(float alpha);
+	void Loop(float time);
+	void End(float time);
+	void Start(float time);
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveBeginPlay();
+	void UpdateComponent(E_SE_PlayState State, float Time);
+	void UpdateComponentAlpha(float Alpha);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"SE_UISpriteController_C">();
+		BP_STATIC_CLASS_IMPL("SE_UISpriteController_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SE_UISpriteController_C")
 	}
 	static class USE_UISpriteController_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<USE_UISpriteController_C>();
 	}
 };
-static_assert(alignof(USE_UISpriteController_C) == 0x000008, "Wrong alignment on USE_UISpriteController_C");
-static_assert(sizeof(USE_UISpriteController_C) == 0x0000E8, "Wrong size on USE_UISpriteController_C");
-static_assert(offsetof(USE_UISpriteController_C, UberGraphFrame_SE_UISpriteController_C) == 0x0000C8, "Member 'USE_UISpriteController_C::UberGraphFrame_SE_UISpriteController_C' has a wrong offset!");
-static_assert(offsetof(USE_UISpriteController_C, Data) == 0x0000D0, "Member 'USE_UISpriteController_C::Data' has a wrong offset!");
-static_assert(offsetof(USE_UISpriteController_C, CachedMaterial) == 0x0000D8, "Member 'USE_UISpriteController_C::CachedMaterial' has a wrong offset!");
+DUMPER7_ASSERTS_USE_UISpriteController_C;
 
 }
 

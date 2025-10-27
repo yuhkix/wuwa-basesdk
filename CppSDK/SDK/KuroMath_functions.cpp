@@ -1210,5 +1210,497 @@ float UKuroEasingLibrary::GetEasedValue(const EEasingType EaseType, const float 
 	return Parms.ReturnValue;
 }
 
+
+// Function KuroMath.KuroSimplePolygonLibrary.Conv_ArrayToKuroGeometrySimplePolygon
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const TArray<struct FVectorDouble>&     PathVertices                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FKuroGeometrySimplePolygon       ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FKuroGeometrySimplePolygon UKuroSimplePolygonLibrary::Conv_ArrayToKuroGeometrySimplePolygon(const TArray<struct FVectorDouble>& PathVertices)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroSimplePolygonLibrary", "Conv_ArrayToKuroGeometrySimplePolygon");
+
+	Params::KuroSimplePolygonLibrary_Conv_ArrayToKuroGeometrySimplePolygon Parms{};
+
+	Parms.PathVertices = std::move(PathVertices);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroSimplePolygonLibrary.Conv_KuroGeometrySimplePolygonToArray
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FKuroGeometrySimplePolygon&Polygon                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FVectorDouble>            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FVectorDouble> UKuroSimplePolygonLibrary::Conv_KuroGeometrySimplePolygonToArray(const struct FKuroGeometrySimplePolygon& Polygon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroSimplePolygonLibrary", "Conv_KuroGeometrySimplePolygonToArray");
+
+	Params::KuroSimplePolygonLibrary_Conv_KuroGeometrySimplePolygonToArray Parms{};
+
+	Parms.Polygon = std::move(Polygon);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroSimplePolygonLibrary.SampleSplineToPolygon
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class USplineComponent*           Spline                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroGeometrySimplePolygon*      Polygon                                                (Parm, OutParm, NativeAccessSpecifierPublic)
+// const struct FKuroSplineSamplingOptions&SamplingOptions                                        (Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UKuroSimplePolygonLibrary::SampleSplineToPolygon(const class USplineComponent* Spline, struct FKuroGeometrySimplePolygon* Polygon, const struct FKuroSplineSamplingOptions& SamplingOptions)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroSimplePolygonLibrary", "SampleSplineToPolygon");
+
+	Params::KuroSimplePolygonLibrary_SampleSplineToPolygon Parms{};
+
+	Parms.Spline = Spline;
+	Parms.SamplingOptions = std::move(SamplingOptions);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Polygon != nullptr)
+		*Polygon = std::move(Parms.Polygon);
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.AddPolygonToList
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FKuroGeometryGeneralPolygonList& PolygonList                                            (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroGeometrySimplePolygon&OuterPolygon                                           (Parm, NativeAccessSpecifierPublic)
+// const TArray<struct FKuroGeometrySimplePolygon>&HolePolygons                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bFixHoleOrientations                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPolygonListLibrary::AddPolygonToList(struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometrySimplePolygon& OuterPolygon, const TArray<struct FKuroGeometrySimplePolygon>& HolePolygons, bool bFixHoleOrientations)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "AddPolygonToList");
+
+	Params::KuroPolygonListLibrary_AddPolygonToList Parms{};
+
+	Parms.PolygonList = std::move(PolygonList);
+	Parms.OuterPolygon = std::move(OuterPolygon);
+	Parms.HolePolygons = std::move(HolePolygons);
+	Parms.bFixHoleOrientations = bFixHoleOrientations;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	PolygonList = std::move(Parms.PolygonList);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.AppendPolygonList
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FKuroGeometryGeneralPolygonList& PolygonList                                            (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroGeometryGeneralPolygonList&PolygonsToAppend                                       (Parm, NativeAccessSpecifierPublic)
+
+void UKuroPolygonListLibrary::AppendPolygonList(struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometryGeneralPolygonList& PolygonsToAppend)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "AppendPolygonList");
+
+	Params::KuroPolygonListLibrary_AppendPolygonList Parms{};
+
+	Parms.PolygonList = std::move(PolygonList);
+	Parms.PolygonsToAppend = std::move(PolygonsToAppend);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	PolygonList = std::move(Parms.PolygonList);
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.CreatePolygonListFromSimplePolygons
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<struct FKuroGeometrySimplePolygon>&OuterPolygons                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FKuroGeometryGeneralPolygonList  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FKuroGeometryGeneralPolygonList UKuroPolygonListLibrary::CreatePolygonListFromSimplePolygons(const TArray<struct FKuroGeometrySimplePolygon>& OuterPolygons)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "CreatePolygonListFromSimplePolygons");
+
+	Params::KuroPolygonListLibrary_CreatePolygonListFromSimplePolygons Parms{};
+
+	Parms.OuterPolygons = std::move(OuterPolygons);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.CreatePolygonListFromSinglePolygon
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FKuroGeometrySimplePolygon&OuterPolygon                                           (Parm, NativeAccessSpecifierPublic)
+// const TArray<struct FKuroGeometrySimplePolygon>&HolePolygons                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bFixHoleOrientations                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroGeometryGeneralPolygonList  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FKuroGeometryGeneralPolygonList UKuroPolygonListLibrary::CreatePolygonListFromSinglePolygon(const struct FKuroGeometrySimplePolygon& OuterPolygon, const TArray<struct FKuroGeometrySimplePolygon>& HolePolygons, bool bFixHoleOrientations)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "CreatePolygonListFromSinglePolygon");
+
+	Params::KuroPolygonListLibrary_CreatePolygonListFromSinglePolygon Parms{};
+
+	Parms.OuterPolygon = std::move(OuterPolygon);
+	Parms.HolePolygons = std::move(HolePolygons);
+	Parms.bFixHoleOrientations = bFixHoleOrientations;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.GetPolygonCount
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const struct FKuroGeometryGeneralPolygonList&PolygonList                                            (ConstParm, Parm, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPolygonListLibrary::GetPolygonCount(const struct FKuroGeometryGeneralPolygonList& PolygonList)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "GetPolygonCount");
+
+	Params::KuroPolygonListLibrary_GetPolygonCount Parms{};
+
+	Parms.PolygonList = std::move(PolygonList);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.GetSimplePolygon
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FKuroGeometryGeneralPolygonList&PolygonList                                            (Parm, NativeAccessSpecifierPublic)
+// bool*                                   bValidIndices                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   PolygonIndex                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   HoleIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroGeometrySimplePolygon       ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FKuroGeometrySimplePolygon UKuroPolygonListLibrary::GetSimplePolygon(const struct FKuroGeometryGeneralPolygonList& PolygonList, bool* bValidIndices, int32 PolygonIndex, int32 HoleIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "GetSimplePolygon");
+
+	Params::KuroPolygonListLibrary_GetSimplePolygon Parms{};
+
+	Parms.PolygonList = std::move(PolygonList);
+	Parms.PolygonIndex = PolygonIndex;
+	Parms.HoleIndex = HoleIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (bValidIndices != nullptr)
+		*bValidIndices = Parms.bValidIndices;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.PolygonsDifference
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const struct FKuroGeometryGeneralPolygonList&PolygonList                                            (Parm, NativeAccessSpecifierPublic)
+// const struct FKuroGeometryGeneralPolygonList&PolygonsToSubtract                                     (Parm, NativeAccessSpecifierPublic)
+// struct FKuroGeometryGeneralPolygonList  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FKuroGeometryGeneralPolygonList UKuroPolygonListLibrary::PolygonsDifference(const struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometryGeneralPolygonList& PolygonsToSubtract)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "PolygonsDifference");
+
+	Params::KuroPolygonListLibrary_PolygonsDifference Parms{};
+
+	Parms.PolygonList = std::move(PolygonList);
+	Parms.PolygonsToSubtract = std::move(PolygonsToSubtract);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.PolygonsExclusiveOr
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const struct FKuroGeometryGeneralPolygonList&PolygonList                                            (Parm, NativeAccessSpecifierPublic)
+// const struct FKuroGeometryGeneralPolygonList&PolygonsToExclusiveOr                                  (Parm, NativeAccessSpecifierPublic)
+// struct FKuroGeometryGeneralPolygonList  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FKuroGeometryGeneralPolygonList UKuroPolygonListLibrary::PolygonsExclusiveOr(const struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometryGeneralPolygonList& PolygonsToExclusiveOr)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "PolygonsExclusiveOr");
+
+	Params::KuroPolygonListLibrary_PolygonsExclusiveOr Parms{};
+
+	Parms.PolygonList = std::move(PolygonList);
+	Parms.PolygonsToExclusiveOr = std::move(PolygonsToExclusiveOr);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.PolygonsIntersection
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const struct FKuroGeometryGeneralPolygonList&PolygonList                                            (Parm, NativeAccessSpecifierPublic)
+// const struct FKuroGeometryGeneralPolygonList&PolygonsToIntersect                                    (Parm, NativeAccessSpecifierPublic)
+// struct FKuroGeometryGeneralPolygonList  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FKuroGeometryGeneralPolygonList UKuroPolygonListLibrary::PolygonsIntersection(const struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometryGeneralPolygonList& PolygonsToIntersect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "PolygonsIntersection");
+
+	Params::KuroPolygonListLibrary_PolygonsIntersection Parms{};
+
+	Parms.PolygonList = std::move(PolygonList);
+	Parms.PolygonsToIntersect = std::move(PolygonsToIntersect);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.PolygonsOpenPathsDifference
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const struct FKuroGeometryGeneralPolygonList&PolygonList                                            (Parm, NativeAccessSpecifierPublic)
+// const struct FKuroGeometryGeneralPolygonList&PolygonsToSubtract                                     (Parm, NativeAccessSpecifierPublic)
+// double                                  StrokeWidth                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EJoinType                               JoinType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEndType                                EndType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroGeometryGeneralPolygonList  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FKuroGeometryGeneralPolygonList UKuroPolygonListLibrary::PolygonsOpenPathsDifference(const struct FKuroGeometryGeneralPolygonList& PolygonList, const struct FKuroGeometryGeneralPolygonList& PolygonsToSubtract, double StrokeWidth, EJoinType JoinType, EEndType EndType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "PolygonsOpenPathsDifference");
+
+	Params::KuroPolygonListLibrary_PolygonsOpenPathsDifference Parms{};
+
+	Parms.PolygonList = std::move(PolygonList);
+	Parms.PolygonsToSubtract = std::move(PolygonsToSubtract);
+	Parms.StrokeWidth = StrokeWidth;
+	Parms.JoinType = JoinType;
+	Parms.EndType = EndType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonListLibrary.PolygonsUnion
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const struct FKuroGeometryGeneralPolygonList&PolygonList                                            (Parm, NativeAccessSpecifierPublic)
+// bool                                    bCopyInputOnFailure                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroGeometryGeneralPolygonList  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FKuroGeometryGeneralPolygonList UKuroPolygonListLibrary::PolygonsUnion(const struct FKuroGeometryGeneralPolygonList& PolygonList, bool bCopyInputOnFailure)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonListLibrary", "PolygonsUnion");
+
+	Params::KuroPolygonListLibrary_PolygonsUnion Parms{};
+
+	Parms.PolygonList = std::move(PolygonList);
+	Parms.bCopyInputOnFailure = bCopyInputOnFailure;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonLibrary.ClipPolygonByWeilerAtherton
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<struct FVector2D>*               Polygon                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FVector2D>*               Window                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FVector2D>                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FVector2D> UKuroPolygonLibrary::ClipPolygonByWeilerAtherton(TArray<struct FVector2D>* Polygon, TArray<struct FVector2D>* Window)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonLibrary", "ClipPolygonByWeilerAtherton");
+
+	Params::KuroPolygonLibrary_ClipPolygonByWeilerAtherton Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Polygon != nullptr)
+		*Polygon = std::move(Parms.Polygon);
+
+	if (Window != nullptr)
+		*Window = std::move(Parms.Window);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMath.KuroPolygonLibrary.EliminateSplineGaps
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const TArray<class USplineComponent*>&  Splines                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const float                             Tolerance                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroPolygonLibrary::EliminateSplineGaps(const TArray<class USplineComponent*>& Splines, const float Tolerance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPolygonLibrary", "EliminateSplineGaps");
+
+	Params::KuroPolygonLibrary_EliminateSplineGaps Parms{};
+
+	Parms.Splines = std::move(Splines);
+	Parms.Tolerance = Tolerance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

@@ -34,22 +34,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BP_VehicleConfig_C">();
+		BP_STATIC_CLASS_IMPL("BP_VehicleConfig_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BP_VehicleConfig_C")
 	}
 	static class UBP_VehicleConfig_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UBP_VehicleConfig_C>();
 	}
 };
-static_assert(alignof(UBP_VehicleConfig_C) == 0x000008, "Wrong alignment on UBP_VehicleConfig_C");
-static_assert(sizeof(UBP_VehicleConfig_C) == 0x0000D8, "Wrong size on UBP_VehicleConfig_C");
-static_assert(offsetof(UBP_VehicleConfig_C, 载具出生Tag) == 0x000038, "Member 'UBP_VehicleConfig_C::载具出生Tag' has a wrong offset!");
-static_assert(offsetof(UBP_VehicleConfig_C, 载具乘坐期间Tag) == 0x000058, "Member 'UBP_VehicleConfig_C::载具乘坐期间Tag' has a wrong offset!");
-static_assert(offsetof(UBP_VehicleConfig_C, 角色乘坐期间Tag) == 0x000078, "Member 'UBP_VehicleConfig_C::角色乘坐期间Tag' has a wrong offset!");
-static_assert(offsetof(UBP_VehicleConfig_C, 弹射时间) == 0x000098, "Member 'UBP_VehicleConfig_C::弹射时间' has a wrong offset!");
-static_assert(offsetof(UBP_VehicleConfig_C, 弹射高度) == 0x00009C, "Member 'UBP_VehicleConfig_C::弹射高度' has a wrong offset!");
-static_assert(offsetof(UBP_VehicleConfig_C, 打开滑翔伞延迟时间) == 0x0000A0, "Member 'UBP_VehicleConfig_C::打开滑翔伞延迟时间' has a wrong offset!");
-static_assert(offsetof(UBP_VehicleConfig_C, 弹射时间路径曲线) == 0x0000A8, "Member 'UBP_VehicleConfig_C::弹射时间路径曲线' has a wrong offset!");
+DUMPER7_ASSERTS_UBP_VehicleConfig_C;
 
 }
 

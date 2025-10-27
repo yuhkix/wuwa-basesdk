@@ -28,20 +28,22 @@ public:
 	static bool GetXeSSQualityModeInformation(EXeSSQualityMode QualityMode, float* ScreenPercentage);
 	static bool IsXeSSSupported();
 	static void SetXeSSQualityMode(EXeSSQualityMode QualityMode);
-	static bool ShouldXeSSWarningOldDriver();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"XeSSBlueprintLibrary">();
+		STATIC_CLASS_IMPL("XeSSBlueprintLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"XeSSBlueprintLibrary")
 	}
 	static class UXeSSBlueprintLibrary* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UXeSSBlueprintLibrary>();
 	}
 };
-static_assert(alignof(UXeSSBlueprintLibrary) == 0x000008, "Wrong alignment on UXeSSBlueprintLibrary");
-static_assert(sizeof(UXeSSBlueprintLibrary) == 0x000030, "Wrong size on UXeSSBlueprintLibrary");
+DUMPER7_ASSERTS_UXeSSBlueprintLibrary;
 
 }
 

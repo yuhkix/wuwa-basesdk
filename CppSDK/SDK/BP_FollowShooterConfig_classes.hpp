@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "SInputAction_structs.hpp"
 #include "SLockOnFollowShooter_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "SBornTransform_structs.hpp"
 #include "Engine_classes.hpp"
 
@@ -41,26 +41,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BP_FollowShooterConfig_C">();
+		BP_STATIC_CLASS_IMPL("BP_FollowShooterConfig_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BP_FollowShooterConfig_C")
 	}
 	static class UBP_FollowShooterConfig_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UBP_FollowShooterConfig_C>();
 	}
 };
-static_assert(alignof(UBP_FollowShooterConfig_C) == 0x000008, "Wrong alignment on UBP_FollowShooterConfig_C");
-static_assert(sizeof(UBP_FollowShooterConfig_C) == 0x000120, "Wrong size on UBP_FollowShooterConfig_C");
-static_assert(offsetof(UBP_FollowShooterConfig_C, AutoEnable) == 0x000038, "Member 'UBP_FollowShooterConfig_C::AutoEnable' has a wrong offset!");
-static_assert(offsetof(UBP_FollowShooterConfig_C, NeedUploadData) == 0x000039, "Member 'UBP_FollowShooterConfig_C::NeedUploadData' has a wrong offset!");
-static_assert(offsetof(UBP_FollowShooterConfig_C, NeedInputActions) == 0x000040, "Member 'UBP_FollowShooterConfig_C::NeedInputActions' has a wrong offset!");
-static_assert(offsetof(UBP_FollowShooterConfig_C, AddTagsWhenEnable) == 0x000050, "Member 'UBP_FollowShooterConfig_C::AddTagsWhenEnable' has a wrong offset!");
-static_assert(offsetof(UBP_FollowShooterConfig_C, AddTagsToPlayerWhenPossess) == 0x000060, "Member 'UBP_FollowShooterConfig_C::AddTagsToPlayerWhenPossess' has a wrong offset!");
-static_assert(offsetof(UBP_FollowShooterConfig_C, DisableWhenCurrentRoleHasTags) == 0x000070, "Member 'UBP_FollowShooterConfig_C::DisableWhenCurrentRoleHasTags' has a wrong offset!");
-static_assert(offsetof(UBP_FollowShooterConfig_C, AddTagsWhenCurrentRoleHasAnyTags) == 0x000080, "Member 'UBP_FollowShooterConfig_C::AddTagsWhenCurrentRoleHasAnyTags' has a wrong offset!");
-static_assert(offsetof(UBP_FollowShooterConfig_C, DelayDisappearMillisecond) == 0x0000D0, "Member 'UBP_FollowShooterConfig_C::DelayDisappearMillisecond' has a wrong offset!");
-static_assert(offsetof(UBP_FollowShooterConfig_C, LockOnConfig) == 0x0000D4, "Member 'UBP_FollowShooterConfig_C::LockOnConfig' has a wrong offset!");
-static_assert(offsetof(UBP_FollowShooterConfig_C, AimType) == 0x0000F4, "Member 'UBP_FollowShooterConfig_C::AimType' has a wrong offset!");
-static_assert(offsetof(UBP_FollowShooterConfig_C, BornTransform) == 0x0000F8, "Member 'UBP_FollowShooterConfig_C::BornTransform' has a wrong offset!");
+DUMPER7_ASSERTS_UBP_FollowShooterConfig_C;
 
 }
 

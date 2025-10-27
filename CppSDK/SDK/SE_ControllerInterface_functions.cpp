@@ -17,93 +17,19 @@
 namespace SDK
 {
 
-// Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyEnvironmentFactor
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   EnvironmentFactor                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ISE_ControllerInterface_C::ApplyEnvironmentFactor(float EnvironmentFactor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "ApplyEnvironmentFactor");
-
-	Params::SE_ControllerInterface_C_ApplyEnvironmentFactor Parms{};
-
-	Parms.EnvironmentFactor = EnvironmentFactor;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function SE_ControllerInterface.SE_ControllerInterface_C.BeforeStart
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ISE_ControllerInterface_C::BeforeStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "BeforeStart");
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-}
-
-
-// Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyVisibility
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    visibility                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ISE_ControllerInterface_C::ApplyVisibility(bool visibility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "ApplyVisibility");
-
-	Params::SE_ControllerInterface_C_ApplyVisibility Parms{};
-
-	Parms.visibility = visibility;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyAlpha
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   alpha                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ISE_ControllerInterface_C::ApplyAlpha(float alpha)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "ApplyAlpha");
-
-	Params::SE_ControllerInterface_C_ApplyAlpha Parms{};
-
-	Parms.alpha = alpha;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function SE_ControllerInterface.SE_ControllerInterface_C.End
+// Function SE_ControllerInterface.SE_ControllerInterface_C.Start
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ISE_ControllerInterface_C::End(float time)
+void ISE_ControllerInterface_C::Start(float time)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "End");
+		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "Start");
 
-	Params::SE_ControllerInterface_C_End Parms{};
+	Params::SE_ControllerInterface_C_Start Parms{};
 
 	Parms.time = time;
 
@@ -131,21 +57,95 @@ void ISE_ControllerInterface_C::Loop(float time)
 }
 
 
-// Function SE_ControllerInterface.SE_ControllerInterface_C.Start
+// Function SE_ControllerInterface.SE_ControllerInterface_C.End
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ISE_ControllerInterface_C::Start(float time)
+void ISE_ControllerInterface_C::End(float time)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "Start");
+		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "End");
 
-	Params::SE_ControllerInterface_C_Start Parms{};
+	Params::SE_ControllerInterface_C_End Parms{};
 
 	Parms.time = time;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyAlpha
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   alpha                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ISE_ControllerInterface_C::ApplyAlpha(float alpha)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "ApplyAlpha");
+
+	Params::SE_ControllerInterface_C_ApplyAlpha Parms{};
+
+	Parms.alpha = alpha;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    visibility                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ISE_ControllerInterface_C::ApplyVisibility(bool visibility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "ApplyVisibility");
+
+	Params::SE_ControllerInterface_C_ApplyVisibility Parms{};
+
+	Parms.visibility = visibility;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function SE_ControllerInterface.SE_ControllerInterface_C.BeforeStart
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ISE_ControllerInterface_C::BeforeStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "BeforeStart");
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+}
+
+
+// Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyEnvironmentFactor
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   EnvironmentFactor                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ISE_ControllerInterface_C::ApplyEnvironmentFactor(float EnvironmentFactor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("SE_ControllerInterface_C", "ApplyEnvironmentFactor");
+
+	Params::SE_ControllerInterface_C_ApplyEnvironmentFactor Parms{};
+
+	Parms.EnvironmentFactor = EnvironmentFactor;
 
 	AsUObject()->ProcessEvent(Func, &Parms);
 }

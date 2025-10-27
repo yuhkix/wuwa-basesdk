@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function AnimNotifyStateGhost.AnimNotifyStateGhost_C.K2_NotifyBegin
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -38,19 +38,14 @@ bool UAnimNotifyStateGhost_C::K2_NotifyBegin(class USkeletalMeshComponent* MeshC
 	Parms.Animation = Animation;
 	Parms.TotalDuration = TotalDuration;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function AnimNotifyStateGhost.AnimNotifyStateGhost_C.K2_NotifyEnd
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -68,19 +63,14 @@ bool UAnimNotifyStateGhost_C::K2_NotifyEnd(class USkeletalMeshComponent* MeshCom
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function AnimNotifyStateGhost.AnimNotifyStateGhost_C.K2_ValidateAssets
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -93,19 +83,14 @@ bool UAnimNotifyStateGhost_C::K2_ValidateAssets()
 
 	Params::AnimNotifyStateGhost_C_K2_ValidateAssets Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function AnimNotifyStateGhost.AnimNotifyStateGhost_C.GetNotifyName
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
@@ -118,12 +103,7 @@ class FString UAnimNotifyStateGhost_C::GetNotifyName() const
 
 	Params::AnimNotifyStateGhost_C_GetNotifyName Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }

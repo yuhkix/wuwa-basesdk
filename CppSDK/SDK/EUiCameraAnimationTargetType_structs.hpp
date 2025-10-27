@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EUiCameraAnimationTargetType.EUiCameraAnimationTargetType
-// NumValues: 0x0009
+// NumValues: 0x000A
 enum class EUiCameraAnimationTargetType : uint8
 {
 	NewEnumerator0                           = 0,
@@ -26,7 +26,8 @@ enum class EUiCameraAnimationTargetType : uint8
 	NewEnumerator6                           = 5,
 	NewEnumerator7                           = 6,
 	NewEnumerator8                           = 7,
-	EUiCameraAnimationTargetType_MAX         = 8,
+	NewEnumerator9                           = 8,
+	EUiCameraAnimationTargetType_MAX         = 9,
 };
 
 }

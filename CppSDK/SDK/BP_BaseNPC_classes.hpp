@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "TsBaseCharacter_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "TsBaseCharacter_classes.hpp"
 
 
 namespace SDK
@@ -56,29 +56,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BP_BaseNPC_C">();
+		BP_STATIC_CLASS_IMPL("BP_BaseNPC_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BP_BaseNPC_C")
 	}
 	static class ABP_BaseNPC_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ABP_BaseNPC_C>();
 	}
 };
-static_assert(alignof(ABP_BaseNPC_C) == 0x000010, "Wrong alignment on ABP_BaseNPC_C");
-static_assert(sizeof(ABP_BaseNPC_C) == 0x0007B0, "Wrong size on ABP_BaseNPC_C");
-static_assert(offsetof(ABP_BaseNPC_C, UberGraphFrame_BP_BaseNPC_C) == 0x000750, "Member 'ABP_BaseNPC_C::UberGraphFrame_BP_BaseNPC_C' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, HitCollision) == 0x000758, "Member 'ABP_BaseNPC_C::HitCollision' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, NavigationInvoker_0) == 0x000760, "Member 'ABP_BaseNPC_C::NavigationInvoker_0' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, IsBeingImpacted) == 0x000768, "Member 'ABP_BaseNPC_C::IsBeingImpacted' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, Direction) == 0x00076C, "Member 'ABP_BaseNPC_C::Direction' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, Strength) == 0x000770, "Member 'ABP_BaseNPC_C::Strength' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, IsBeingAttacked) == 0x000774, "Member 'ABP_BaseNPC_C::IsBeingAttacked' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, CanPlayerImpact) == 0x000775, "Member 'ABP_BaseNPC_C::CanPlayerImpact' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, CanPlayerAttack) == 0x000776, "Member 'ABP_BaseNPC_C::CanPlayerAttack' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, CanLookAtPlayer) == 0x000777, "Member 'ABP_BaseNPC_C::CanLookAtPlayer' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, BornEffect) == 0x000778, "Member 'ABP_BaseNPC_C::BornEffect' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, CombineFaceMesh) == 0x000798, "Member 'ABP_BaseNPC_C::CombineFaceMesh' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, CanUpdateTextureFace) == 0x0007A0, "Member 'ABP_BaseNPC_C::CanUpdateTextureFace' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, IsEnableIK) == 0x0007A1, "Member 'ABP_BaseNPC_C::IsEnableIK' has a wrong offset!");
+DUMPER7_ASSERTS_ABP_BaseNPC_C;
 
 }
 

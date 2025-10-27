@@ -39,19 +39,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BP_CharacterController_C">();
+		BP_STATIC_CLASS_IMPL("BP_CharacterController_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BP_CharacterController_C")
 	}
 	static class ABP_CharacterController_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ABP_CharacterController_C>();
 	}
 };
-static_assert(alignof(ABP_CharacterController_C) == 0x000008, "Wrong alignment on ABP_CharacterController_C");
-static_assert(sizeof(ABP_CharacterController_C) == 0x0007A0, "Wrong size on ABP_CharacterController_C");
-static_assert(offsetof(ABP_CharacterController_C, UberGraphFrame_BP_CharacterController_C) == 0x000780, "Member 'ABP_CharacterController_C::UberGraphFrame_BP_CharacterController_C' has a wrong offset!");
-static_assert(offsetof(ABP_CharacterController_C, 当前操作角色) == 0x000788, "Member 'ABP_CharacterController_C::当前操作角色' has a wrong offset!");
-static_assert(offsetof(ABP_CharacterController_C, GmIsOpen) == 0x000790, "Member 'ABP_CharacterController_C::GmIsOpen' has a wrong offset!");
-static_assert(offsetof(ABP_CharacterController_C, KuroCheatManager) == 0x000798, "Member 'ABP_CharacterController_C::KuroCheatManager' has a wrong offset!");
+DUMPER7_ASSERTS_ABP_CharacterController_C;
 
 }
 

@@ -1160,14 +1160,16 @@ void UKuroAnimInstance::UpdateABP(float DeltaSeconds)
 // const bool&                             bUsingAdditiveBlend                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const bool&                             bUsingWholeBodyBlend                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float&                                  AdditiveBlendAlpha                                     (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAdditiveBlendAlpha&             Plevis                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FAdditiveBlendAlpha&             Pelvis                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FAdditiveBlendAlpha&             Spine                                                  (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FAdditiveBlendAlpha&             Spine1                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FAdditiveBlendAlpha&             Spine2                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FAdditiveBlendAlpha&             Head                                                   (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FAdditiveBlendAlpha&             ArmL                                                   (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FAdditiveBlendAlpha&             ArmR                                                   (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FAdditiveBlendAlpha&             Leg                                                    (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UKuroAnimInstance::UpdateAdditiveBlendInfo(class UAnimInstance* AnimInstance, const bool& bUsingAdditiveBlend, const bool& bUsingWholeBodyBlend, float& AdditiveBlendAlpha, struct FAdditiveBlendAlpha& Plevis, struct FAdditiveBlendAlpha& Spine, struct FAdditiveBlendAlpha& Head, struct FAdditiveBlendAlpha& ArmL, struct FAdditiveBlendAlpha& ArmR, struct FAdditiveBlendAlpha& Leg)
+void UKuroAnimInstance::UpdateAdditiveBlendInfo(class UAnimInstance* AnimInstance, const bool& bUsingAdditiveBlend, const bool& bUsingWholeBodyBlend, float& AdditiveBlendAlpha, struct FAdditiveBlendAlpha& Pelvis, struct FAdditiveBlendAlpha& Spine, struct FAdditiveBlendAlpha& Spine1, struct FAdditiveBlendAlpha& Spine2, struct FAdditiveBlendAlpha& Head, struct FAdditiveBlendAlpha& ArmL, struct FAdditiveBlendAlpha& ArmR, struct FAdditiveBlendAlpha& Leg)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1180,8 +1182,10 @@ void UKuroAnimInstance::UpdateAdditiveBlendInfo(class UAnimInstance* AnimInstanc
 	Parms.bUsingAdditiveBlend = bUsingAdditiveBlend;
 	Parms.bUsingWholeBodyBlend = bUsingWholeBodyBlend;
 	Parms.AdditiveBlendAlpha = AdditiveBlendAlpha;
-	Parms.Plevis = std::move(Plevis);
+	Parms.Pelvis = std::move(Pelvis);
 	Parms.Spine = std::move(Spine);
+	Parms.Spine1 = std::move(Spine1);
+	Parms.Spine2 = std::move(Spine2);
 	Parms.Head = std::move(Head);
 	Parms.ArmL = std::move(ArmL);
 	Parms.ArmR = std::move(ArmR);
@@ -1195,8 +1199,10 @@ void UKuroAnimInstance::UpdateAdditiveBlendInfo(class UAnimInstance* AnimInstanc
 	Func->FunctionFlags = Flgs;
 
 	AdditiveBlendAlpha = Parms.AdditiveBlendAlpha;
-	Plevis = std::move(Parms.Plevis);
+	Pelvis = std::move(Parms.Pelvis);
 	Spine = std::move(Parms.Spine);
+	Spine1 = std::move(Parms.Spine1);
+	Spine2 = std::move(Parms.Spine2);
 	Head = std::move(Parms.Head);
 	ArmL = std::move(Parms.ArmL);
 	ArmR = std::move(Parms.ArmR);
@@ -1842,6 +1848,66 @@ void UKuroAnimLibrary::EndAnimNotifyStates(class UAnimInstance* AnimInstance)
 }
 
 
+// Function KuroAnim.KuroAnimLibrary.GetDefaultBoneComponentPoseByName
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const class USkeletalMeshComponent*     SkelMeshComp                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      BoneName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FTransform UKuroAnimLibrary::GetDefaultBoneComponentPoseByName(const class USkeletalMeshComponent* SkelMeshComp, const class FName& BoneName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroAnimLibrary", "GetDefaultBoneComponentPoseByName");
+
+	Params::KuroAnimLibrary_GetDefaultBoneComponentPoseByName Parms{};
+
+	Parms.SkelMeshComp = SkelMeshComp;
+	Parms.BoneName = BoneName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroAnim.KuroAnimLibrary.GetDefaultBoneLocalPoseByName
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const class USkeletalMeshComponent*     SkelMeshComp                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      BoneName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FTransform UKuroAnimLibrary::GetDefaultBoneLocalPoseByName(const class USkeletalMeshComponent* SkelMeshComp, const class FName& BoneName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroAnimLibrary", "GetDefaultBoneLocalPoseByName");
+
+	Params::KuroAnimLibrary_GetDefaultBoneLocalPoseByName Parms{};
+
+	Parms.SkelMeshComp = SkelMeshComp;
+	Parms.BoneName = BoneName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroAnim.KuroAnimMathLibrary.LookRotation_ForwardFirst
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -2043,6 +2109,37 @@ void AKuroRecordEffect::Stop()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroAnim.KuroRecorderLibrary.ChangeAttachTrack
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class ULevelSequence*                   TargetSequence                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     From                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     To                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroRecorderLibrary::ChangeAttachTrack(class ULevelSequence* TargetSequence, const struct FGuid& From, const struct FGuid& To, float Time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroRecorderLibrary", "ChangeAttachTrack");
+
+	Params::KuroRecorderLibrary_ChangeAttachTrack Parms{};
+
+	Parms.TargetSequence = TargetSequence;
+	Parms.From = std::move(From);
+	Parms.To = std::move(To);
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

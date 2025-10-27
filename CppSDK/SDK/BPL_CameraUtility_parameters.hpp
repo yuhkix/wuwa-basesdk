@@ -41,23 +41,7 @@ public:
 	uint8                                         Pad_109[0x3];                                      // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x010C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(BPL_CameraUtility_C_DtGetCameraConfigs) == 0x000008, "Wrong alignment on BPL_CameraUtility_C_DtGetCameraConfigs");
-static_assert(sizeof(BPL_CameraUtility_C_DtGetCameraConfigs) == 0x000110, "Wrong size on BPL_CameraUtility_C_DtGetCameraConfigs");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CameraSettings) == 0x000000, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CameraSettings' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, DataTable) == 0x000010, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::DataTable' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, __WorldContext) == 0x000018, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::__WorldContext' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CameraConfigs) == 0x000020, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CameraConfigs' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CallFunc_IsValid_ReturnValue) == 0x000028, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, ___int_Array_Index_Variable) == 0x00002C, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, ___int_Loop_Counter_Variable) == 0x000030, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CallFunc_Add_IntInt_ReturnValue) == 0x000034, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CallFunc_GetDataTableRowNames_OutRowNames) == 0x000038, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CallFunc_GetDataTableRowNames_OutRowNames' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CallFunc_Array_Length_ReturnValue) == 0x000048, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CallFunc_Array_Get_Item) == 0x00004C, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CallFunc_Less_IntInt_ReturnValue) == 0x000058, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CallFunc_GetDataTableRowFromName_OutRow) == 0x000060, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000108, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigs, CallFunc_Array_Add_ReturnValue) == 0x00010C, "Member 'BPL_CameraUtility_C_DtGetCameraConfigs::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_BPL_CameraUtility_C_DtGetCameraConfigs;
 
 // Function BPL_CameraUtility.BPL_CameraUtility_C.DtGetCameraConfigList
 // 0x07A8 (0x07A8 - 0x0000)
@@ -83,23 +67,7 @@ public:
 	uint8                                         Pad_7A1[0x3];                                      // 0x07A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x07A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(BPL_CameraUtility_C_DtGetCameraConfigList) == 0x000008, "Wrong alignment on BPL_CameraUtility_C_DtGetCameraConfigList");
-static_assert(sizeof(BPL_CameraUtility_C_DtGetCameraConfigList) == 0x0007A8, "Wrong size on BPL_CameraUtility_C_DtGetCameraConfigList");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CameraSettings) == 0x000000, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CameraSettings' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, DataTable) == 0x000010, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::DataTable' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, __WorldContext) == 0x000018, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::__WorldContext' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CameraConfigList) == 0x000020, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CameraConfigList' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, ___int_Array_Index_Variable) == 0x000028, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CallFunc_IsValid_ReturnValue) == 0x00002C, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, ___int_Loop_Counter_Variable) == 0x000030, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CallFunc_Add_IntInt_ReturnValue) == 0x000034, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CallFunc_GetDataTableRowNames_OutRowNames) == 0x000038, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CallFunc_GetDataTableRowNames_OutRowNames' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CallFunc_Array_Length_ReturnValue) == 0x000048, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CallFunc_Array_Get_Item) == 0x00004C, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CallFunc_Less_IntInt_ReturnValue) == 0x000058, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CallFunc_GetDataTableRowFromName_OutRow) == 0x000060, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x0007A0, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CameraUtility_C_DtGetCameraConfigList, CallFunc_Array_Add_ReturnValue) == 0x0007A4, "Member 'BPL_CameraUtility_C_DtGetCameraConfigList::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_BPL_CameraUtility_C_DtGetCameraConfigList;
 
 }
 

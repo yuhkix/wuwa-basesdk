@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "KuroMath_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
@@ -26,11 +27,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_BitwiseLeftShift) == 0x000008, "Wrong alignment on KuroBitwiseLibrary_BitwiseLeftShift");
-static_assert(sizeof(KuroBitwiseLibrary_BitwiseLeftShift) == 0x000018, "Wrong size on KuroBitwiseLibrary_BitwiseLeftShift");
-static_assert(offsetof(KuroBitwiseLibrary_BitwiseLeftShift, Source) == 0x000000, "Member 'KuroBitwiseLibrary_BitwiseLeftShift::Source' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_BitwiseLeftShift, Bit) == 0x000008, "Member 'KuroBitwiseLibrary_BitwiseLeftShift::Bit' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_BitwiseLeftShift, ReturnValue) == 0x000010, "Member 'KuroBitwiseLibrary_BitwiseLeftShift::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_BitwiseLeftShift;
 
 // Function KuroMath.KuroBitwiseLibrary.BitwiseRightShift
 // 0x0018 (0x0018 - 0x0000)
@@ -42,11 +39,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_BitwiseRightShift) == 0x000008, "Wrong alignment on KuroBitwiseLibrary_BitwiseRightShift");
-static_assert(sizeof(KuroBitwiseLibrary_BitwiseRightShift) == 0x000018, "Wrong size on KuroBitwiseLibrary_BitwiseRightShift");
-static_assert(offsetof(KuroBitwiseLibrary_BitwiseRightShift, Source) == 0x000000, "Member 'KuroBitwiseLibrary_BitwiseRightShift::Source' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_BitwiseRightShift, Bit) == 0x000008, "Member 'KuroBitwiseLibrary_BitwiseRightShift::Bit' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_BitwiseRightShift, ReturnValue) == 0x000010, "Member 'KuroBitwiseLibrary_BitwiseRightShift::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_BitwiseRightShift;
 
 // Function KuroMath.KuroBitwiseLibrary.IntBitwiseAnd
 // 0x000C (0x000C - 0x0000)
@@ -57,11 +50,7 @@ public:
 	int32                                         Num2;                                              // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_IntBitwiseAnd) == 0x000004, "Wrong alignment on KuroBitwiseLibrary_IntBitwiseAnd");
-static_assert(sizeof(KuroBitwiseLibrary_IntBitwiseAnd) == 0x00000C, "Wrong size on KuroBitwiseLibrary_IntBitwiseAnd");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseAnd, Num1) == 0x000000, "Member 'KuroBitwiseLibrary_IntBitwiseAnd::Num1' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseAnd, Num2) == 0x000004, "Member 'KuroBitwiseLibrary_IntBitwiseAnd::Num2' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseAnd, ReturnValue) == 0x000008, "Member 'KuroBitwiseLibrary_IntBitwiseAnd::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_IntBitwiseAnd;
 
 // Function KuroMath.KuroBitwiseLibrary.IntBitwiseNot
 // 0x0008 (0x0008 - 0x0000)
@@ -71,10 +60,7 @@ public:
 	int32                                         Num;                                               // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_IntBitwiseNot) == 0x000004, "Wrong alignment on KuroBitwiseLibrary_IntBitwiseNot");
-static_assert(sizeof(KuroBitwiseLibrary_IntBitwiseNot) == 0x000008, "Wrong size on KuroBitwiseLibrary_IntBitwiseNot");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseNot, Num) == 0x000000, "Member 'KuroBitwiseLibrary_IntBitwiseNot::Num' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseNot, ReturnValue) == 0x000004, "Member 'KuroBitwiseLibrary_IntBitwiseNot::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_IntBitwiseNot;
 
 // Function KuroMath.KuroBitwiseLibrary.IntBitwiseOr
 // 0x000C (0x000C - 0x0000)
@@ -85,11 +71,7 @@ public:
 	int32                                         Num2;                                              // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_IntBitwiseOr) == 0x000004, "Wrong alignment on KuroBitwiseLibrary_IntBitwiseOr");
-static_assert(sizeof(KuroBitwiseLibrary_IntBitwiseOr) == 0x00000C, "Wrong size on KuroBitwiseLibrary_IntBitwiseOr");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseOr, Num1) == 0x000000, "Member 'KuroBitwiseLibrary_IntBitwiseOr::Num1' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseOr, Num2) == 0x000004, "Member 'KuroBitwiseLibrary_IntBitwiseOr::Num2' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseOr, ReturnValue) == 0x000008, "Member 'KuroBitwiseLibrary_IntBitwiseOr::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_IntBitwiseOr;
 
 // Function KuroMath.KuroBitwiseLibrary.IntBitwiseXOr
 // 0x000C (0x000C - 0x0000)
@@ -100,11 +82,7 @@ public:
 	int32                                         Num2;                                              // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_IntBitwiseXOr) == 0x000004, "Wrong alignment on KuroBitwiseLibrary_IntBitwiseXOr");
-static_assert(sizeof(KuroBitwiseLibrary_IntBitwiseXOr) == 0x00000C, "Wrong size on KuroBitwiseLibrary_IntBitwiseXOr");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseXOr, Num1) == 0x000000, "Member 'KuroBitwiseLibrary_IntBitwiseXOr::Num1' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseXOr, Num2) == 0x000004, "Member 'KuroBitwiseLibrary_IntBitwiseXOr::Num2' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_IntBitwiseXOr, ReturnValue) == 0x000008, "Member 'KuroBitwiseLibrary_IntBitwiseXOr::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_IntBitwiseXOr;
 
 // Function KuroMath.KuroBitwiseLibrary.KuroStringToInt64
 // 0x0018 (0x0018 - 0x0000)
@@ -114,10 +92,7 @@ public:
 	class FString                                 StringNum;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_KuroStringToInt64) == 0x000008, "Wrong alignment on KuroBitwiseLibrary_KuroStringToInt64");
-static_assert(sizeof(KuroBitwiseLibrary_KuroStringToInt64) == 0x000018, "Wrong size on KuroBitwiseLibrary_KuroStringToInt64");
-static_assert(offsetof(KuroBitwiseLibrary_KuroStringToInt64, StringNum) == 0x000000, "Member 'KuroBitwiseLibrary_KuroStringToInt64::StringNum' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_KuroStringToInt64, ReturnValue) == 0x000010, "Member 'KuroBitwiseLibrary_KuroStringToInt64::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_KuroStringToInt64;
 
 // Function KuroMath.KuroBitwiseLibrary.LongBitwiseAnd
 // 0x0018 (0x0018 - 0x0000)
@@ -128,11 +103,7 @@ public:
 	int64                                         Num2;                                              // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_LongBitwiseAnd) == 0x000008, "Wrong alignment on KuroBitwiseLibrary_LongBitwiseAnd");
-static_assert(sizeof(KuroBitwiseLibrary_LongBitwiseAnd) == 0x000018, "Wrong size on KuroBitwiseLibrary_LongBitwiseAnd");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseAnd, Num1) == 0x000000, "Member 'KuroBitwiseLibrary_LongBitwiseAnd::Num1' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseAnd, Num2) == 0x000008, "Member 'KuroBitwiseLibrary_LongBitwiseAnd::Num2' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseAnd, ReturnValue) == 0x000010, "Member 'KuroBitwiseLibrary_LongBitwiseAnd::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_LongBitwiseAnd;
 
 // Function KuroMath.KuroBitwiseLibrary.LongBitwiseNot
 // 0x0010 (0x0010 - 0x0000)
@@ -142,10 +113,7 @@ public:
 	int64                                         Num;                                               // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                         ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_LongBitwiseNot) == 0x000008, "Wrong alignment on KuroBitwiseLibrary_LongBitwiseNot");
-static_assert(sizeof(KuroBitwiseLibrary_LongBitwiseNot) == 0x000010, "Wrong size on KuroBitwiseLibrary_LongBitwiseNot");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseNot, Num) == 0x000000, "Member 'KuroBitwiseLibrary_LongBitwiseNot::Num' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseNot, ReturnValue) == 0x000008, "Member 'KuroBitwiseLibrary_LongBitwiseNot::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_LongBitwiseNot;
 
 // Function KuroMath.KuroBitwiseLibrary.LongBitwiseOr
 // 0x0018 (0x0018 - 0x0000)
@@ -156,11 +124,7 @@ public:
 	int64                                         Num2;                                              // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_LongBitwiseOr) == 0x000008, "Wrong alignment on KuroBitwiseLibrary_LongBitwiseOr");
-static_assert(sizeof(KuroBitwiseLibrary_LongBitwiseOr) == 0x000018, "Wrong size on KuroBitwiseLibrary_LongBitwiseOr");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseOr, Num1) == 0x000000, "Member 'KuroBitwiseLibrary_LongBitwiseOr::Num1' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseOr, Num2) == 0x000008, "Member 'KuroBitwiseLibrary_LongBitwiseOr::Num2' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseOr, ReturnValue) == 0x000010, "Member 'KuroBitwiseLibrary_LongBitwiseOr::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_LongBitwiseOr;
 
 // Function KuroMath.KuroBitwiseLibrary.LongBitwiseXOr
 // 0x0018 (0x0018 - 0x0000)
@@ -171,11 +135,7 @@ public:
 	int64                                         Num2;                                              // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroBitwiseLibrary_LongBitwiseXOr) == 0x000008, "Wrong alignment on KuroBitwiseLibrary_LongBitwiseXOr");
-static_assert(sizeof(KuroBitwiseLibrary_LongBitwiseXOr) == 0x000018, "Wrong size on KuroBitwiseLibrary_LongBitwiseXOr");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseXOr, Num1) == 0x000000, "Member 'KuroBitwiseLibrary_LongBitwiseXOr::Num1' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseXOr, Num2) == 0x000008, "Member 'KuroBitwiseLibrary_LongBitwiseXOr::Num2' has a wrong offset!");
-static_assert(offsetof(KuroBitwiseLibrary_LongBitwiseXOr, ReturnValue) == 0x000010, "Member 'KuroBitwiseLibrary_LongBitwiseXOr::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroBitwiseLibrary_LongBitwiseXOr;
 
 // Function KuroMath.KuroEasingLibrary.EaseInBack
 // 0x0008 (0x0008 - 0x0000)
@@ -185,10 +145,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInBack) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInBack");
-static_assert(sizeof(KuroEasingLibrary_EaseInBack) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInBack");
-static_assert(offsetof(KuroEasingLibrary_EaseInBack, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInBack::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInBack, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInBack::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInBack;
 
 // Function KuroMath.KuroEasingLibrary.EaseInBounce
 // 0x0008 (0x0008 - 0x0000)
@@ -198,10 +155,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInBounce) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInBounce");
-static_assert(sizeof(KuroEasingLibrary_EaseInBounce) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInBounce");
-static_assert(offsetof(KuroEasingLibrary_EaseInBounce, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInBounce::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInBounce, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInBounce::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInBounce;
 
 // Function KuroMath.KuroEasingLibrary.EaseInCirc
 // 0x0008 (0x0008 - 0x0000)
@@ -211,10 +165,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInCirc) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInCirc");
-static_assert(sizeof(KuroEasingLibrary_EaseInCirc) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInCirc");
-static_assert(offsetof(KuroEasingLibrary_EaseInCirc, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInCirc::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInCirc, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInCirc::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInCirc;
 
 // Function KuroMath.KuroEasingLibrary.EaseInCubic
 // 0x0008 (0x0008 - 0x0000)
@@ -224,10 +175,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInCubic) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInCubic");
-static_assert(sizeof(KuroEasingLibrary_EaseInCubic) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInCubic");
-static_assert(offsetof(KuroEasingLibrary_EaseInCubic, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInCubic::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInCubic, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInCubic::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInCubic;
 
 // Function KuroMath.KuroEasingLibrary.EaseInElastic
 // 0x0008 (0x0008 - 0x0000)
@@ -237,10 +185,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInElastic) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInElastic");
-static_assert(sizeof(KuroEasingLibrary_EaseInElastic) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInElastic");
-static_assert(offsetof(KuroEasingLibrary_EaseInElastic, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInElastic::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInElastic, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInElastic::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInElastic;
 
 // Function KuroMath.KuroEasingLibrary.EaseInExpo
 // 0x0008 (0x0008 - 0x0000)
@@ -250,10 +195,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInExpo) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInExpo");
-static_assert(sizeof(KuroEasingLibrary_EaseInExpo) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInExpo");
-static_assert(offsetof(KuroEasingLibrary_EaseInExpo, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInExpo::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInExpo, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInExpo::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInExpo;
 
 // Function KuroMath.KuroEasingLibrary.EaseInOutBack
 // 0x0008 (0x0008 - 0x0000)
@@ -263,10 +205,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInOutBack) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInOutBack");
-static_assert(sizeof(KuroEasingLibrary_EaseInOutBack) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInOutBack");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutBack, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInOutBack::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutBack, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInOutBack::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInOutBack;
 
 // Function KuroMath.KuroEasingLibrary.EaseInOutBounce
 // 0x0008 (0x0008 - 0x0000)
@@ -276,10 +215,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInOutBounce) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInOutBounce");
-static_assert(sizeof(KuroEasingLibrary_EaseInOutBounce) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInOutBounce");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutBounce, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInOutBounce::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutBounce, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInOutBounce::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInOutBounce;
 
 // Function KuroMath.KuroEasingLibrary.EaseInOutCirc
 // 0x0008 (0x0008 - 0x0000)
@@ -289,10 +225,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInOutCirc) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInOutCirc");
-static_assert(sizeof(KuroEasingLibrary_EaseInOutCirc) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInOutCirc");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutCirc, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInOutCirc::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutCirc, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInOutCirc::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInOutCirc;
 
 // Function KuroMath.KuroEasingLibrary.EaseInOutCubic
 // 0x0008 (0x0008 - 0x0000)
@@ -302,10 +235,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInOutCubic) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInOutCubic");
-static_assert(sizeof(KuroEasingLibrary_EaseInOutCubic) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInOutCubic");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutCubic, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInOutCubic::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutCubic, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInOutCubic::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInOutCubic;
 
 // Function KuroMath.KuroEasingLibrary.EaseInOutElastic
 // 0x0008 (0x0008 - 0x0000)
@@ -315,10 +245,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInOutElastic) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInOutElastic");
-static_assert(sizeof(KuroEasingLibrary_EaseInOutElastic) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInOutElastic");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutElastic, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInOutElastic::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutElastic, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInOutElastic::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInOutElastic;
 
 // Function KuroMath.KuroEasingLibrary.EaseInOutExpo
 // 0x0008 (0x0008 - 0x0000)
@@ -328,10 +255,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInOutExpo) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInOutExpo");
-static_assert(sizeof(KuroEasingLibrary_EaseInOutExpo) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInOutExpo");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutExpo, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInOutExpo::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutExpo, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInOutExpo::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInOutExpo;
 
 // Function KuroMath.KuroEasingLibrary.EaseInOutQuad
 // 0x0008 (0x0008 - 0x0000)
@@ -341,10 +265,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInOutQuad) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInOutQuad");
-static_assert(sizeof(KuroEasingLibrary_EaseInOutQuad) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInOutQuad");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutQuad, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInOutQuad::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutQuad, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInOutQuad::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInOutQuad;
 
 // Function KuroMath.KuroEasingLibrary.EaseInOutQuart
 // 0x0008 (0x0008 - 0x0000)
@@ -354,10 +275,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInOutQuart) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInOutQuart");
-static_assert(sizeof(KuroEasingLibrary_EaseInOutQuart) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInOutQuart");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutQuart, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInOutQuart::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutQuart, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInOutQuart::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInOutQuart;
 
 // Function KuroMath.KuroEasingLibrary.EaseInOutQuint
 // 0x0008 (0x0008 - 0x0000)
@@ -367,10 +285,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInOutQuint) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInOutQuint");
-static_assert(sizeof(KuroEasingLibrary_EaseInOutQuint) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInOutQuint");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutQuint, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInOutQuint::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutQuint, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInOutQuint::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInOutQuint;
 
 // Function KuroMath.KuroEasingLibrary.EaseInOutSine
 // 0x0008 (0x0008 - 0x0000)
@@ -380,10 +295,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInOutSine) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInOutSine");
-static_assert(sizeof(KuroEasingLibrary_EaseInOutSine) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInOutSine");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutSine, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInOutSine::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInOutSine, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInOutSine::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInOutSine;
 
 // Function KuroMath.KuroEasingLibrary.EaseInQuad
 // 0x0008 (0x0008 - 0x0000)
@@ -393,10 +305,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInQuad) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInQuad");
-static_assert(sizeof(KuroEasingLibrary_EaseInQuad) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInQuad");
-static_assert(offsetof(KuroEasingLibrary_EaseInQuad, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInQuad::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInQuad, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInQuad::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInQuad;
 
 // Function KuroMath.KuroEasingLibrary.EaseInQuart
 // 0x0008 (0x0008 - 0x0000)
@@ -406,10 +315,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInQuart) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInQuart");
-static_assert(sizeof(KuroEasingLibrary_EaseInQuart) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInQuart");
-static_assert(offsetof(KuroEasingLibrary_EaseInQuart, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInQuart::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInQuart, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInQuart::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInQuart;
 
 // Function KuroMath.KuroEasingLibrary.EaseInQuint
 // 0x0008 (0x0008 - 0x0000)
@@ -419,10 +325,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInQuint) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInQuint");
-static_assert(sizeof(KuroEasingLibrary_EaseInQuint) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInQuint");
-static_assert(offsetof(KuroEasingLibrary_EaseInQuint, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInQuint::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInQuint, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInQuint::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInQuint;
 
 // Function KuroMath.KuroEasingLibrary.EaseInSine
 // 0x0008 (0x0008 - 0x0000)
@@ -432,10 +335,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseInSine) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseInSine");
-static_assert(sizeof(KuroEasingLibrary_EaseInSine) == 0x000008, "Wrong size on KuroEasingLibrary_EaseInSine");
-static_assert(offsetof(KuroEasingLibrary_EaseInSine, X) == 0x000000, "Member 'KuroEasingLibrary_EaseInSine::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseInSine, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseInSine::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseInSine;
 
 // Function KuroMath.KuroEasingLibrary.EaseOutBack
 // 0x0008 (0x0008 - 0x0000)
@@ -445,10 +345,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseOutBack) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseOutBack");
-static_assert(sizeof(KuroEasingLibrary_EaseOutBack) == 0x000008, "Wrong size on KuroEasingLibrary_EaseOutBack");
-static_assert(offsetof(KuroEasingLibrary_EaseOutBack, X) == 0x000000, "Member 'KuroEasingLibrary_EaseOutBack::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseOutBack, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseOutBack::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseOutBack;
 
 // Function KuroMath.KuroEasingLibrary.EaseOutBounce
 // 0x0008 (0x0008 - 0x0000)
@@ -458,10 +355,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseOutBounce) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseOutBounce");
-static_assert(sizeof(KuroEasingLibrary_EaseOutBounce) == 0x000008, "Wrong size on KuroEasingLibrary_EaseOutBounce");
-static_assert(offsetof(KuroEasingLibrary_EaseOutBounce, X) == 0x000000, "Member 'KuroEasingLibrary_EaseOutBounce::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseOutBounce, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseOutBounce::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseOutBounce;
 
 // Function KuroMath.KuroEasingLibrary.EaseOutCirc
 // 0x0008 (0x0008 - 0x0000)
@@ -471,10 +365,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseOutCirc) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseOutCirc");
-static_assert(sizeof(KuroEasingLibrary_EaseOutCirc) == 0x000008, "Wrong size on KuroEasingLibrary_EaseOutCirc");
-static_assert(offsetof(KuroEasingLibrary_EaseOutCirc, X) == 0x000000, "Member 'KuroEasingLibrary_EaseOutCirc::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseOutCirc, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseOutCirc::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseOutCirc;
 
 // Function KuroMath.KuroEasingLibrary.EaseOutCubic
 // 0x0008 (0x0008 - 0x0000)
@@ -484,10 +375,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseOutCubic) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseOutCubic");
-static_assert(sizeof(KuroEasingLibrary_EaseOutCubic) == 0x000008, "Wrong size on KuroEasingLibrary_EaseOutCubic");
-static_assert(offsetof(KuroEasingLibrary_EaseOutCubic, X) == 0x000000, "Member 'KuroEasingLibrary_EaseOutCubic::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseOutCubic, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseOutCubic::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseOutCubic;
 
 // Function KuroMath.KuroEasingLibrary.EaseOutElastic
 // 0x0008 (0x0008 - 0x0000)
@@ -497,10 +385,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseOutElastic) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseOutElastic");
-static_assert(sizeof(KuroEasingLibrary_EaseOutElastic) == 0x000008, "Wrong size on KuroEasingLibrary_EaseOutElastic");
-static_assert(offsetof(KuroEasingLibrary_EaseOutElastic, X) == 0x000000, "Member 'KuroEasingLibrary_EaseOutElastic::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseOutElastic, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseOutElastic::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseOutElastic;
 
 // Function KuroMath.KuroEasingLibrary.EaseOutExpo
 // 0x0008 (0x0008 - 0x0000)
@@ -510,10 +395,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseOutExpo) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseOutExpo");
-static_assert(sizeof(KuroEasingLibrary_EaseOutExpo) == 0x000008, "Wrong size on KuroEasingLibrary_EaseOutExpo");
-static_assert(offsetof(KuroEasingLibrary_EaseOutExpo, X) == 0x000000, "Member 'KuroEasingLibrary_EaseOutExpo::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseOutExpo, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseOutExpo::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseOutExpo;
 
 // Function KuroMath.KuroEasingLibrary.EaseOutQuad
 // 0x0008 (0x0008 - 0x0000)
@@ -523,10 +405,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseOutQuad) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseOutQuad");
-static_assert(sizeof(KuroEasingLibrary_EaseOutQuad) == 0x000008, "Wrong size on KuroEasingLibrary_EaseOutQuad");
-static_assert(offsetof(KuroEasingLibrary_EaseOutQuad, X) == 0x000000, "Member 'KuroEasingLibrary_EaseOutQuad::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseOutQuad, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseOutQuad::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseOutQuad;
 
 // Function KuroMath.KuroEasingLibrary.EaseOutQuart
 // 0x0008 (0x0008 - 0x0000)
@@ -536,10 +415,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseOutQuart) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseOutQuart");
-static_assert(sizeof(KuroEasingLibrary_EaseOutQuart) == 0x000008, "Wrong size on KuroEasingLibrary_EaseOutQuart");
-static_assert(offsetof(KuroEasingLibrary_EaseOutQuart, X) == 0x000000, "Member 'KuroEasingLibrary_EaseOutQuart::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseOutQuart, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseOutQuart::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseOutQuart;
 
 // Function KuroMath.KuroEasingLibrary.EaseOutQuint
 // 0x0008 (0x0008 - 0x0000)
@@ -549,10 +425,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseOutQuint) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseOutQuint");
-static_assert(sizeof(KuroEasingLibrary_EaseOutQuint) == 0x000008, "Wrong size on KuroEasingLibrary_EaseOutQuint");
-static_assert(offsetof(KuroEasingLibrary_EaseOutQuint, X) == 0x000000, "Member 'KuroEasingLibrary_EaseOutQuint::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseOutQuint, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseOutQuint::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseOutQuint;
 
 // Function KuroMath.KuroEasingLibrary.EaseOutSine
 // 0x0008 (0x0008 - 0x0000)
@@ -562,10 +435,7 @@ public:
 	float                                         X;                                                 // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_EaseOutSine) == 0x000004, "Wrong alignment on KuroEasingLibrary_EaseOutSine");
-static_assert(sizeof(KuroEasingLibrary_EaseOutSine) == 0x000008, "Wrong size on KuroEasingLibrary_EaseOutSine");
-static_assert(offsetof(KuroEasingLibrary_EaseOutSine, X) == 0x000000, "Member 'KuroEasingLibrary_EaseOutSine::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_EaseOutSine, ReturnValue) == 0x000004, "Member 'KuroEasingLibrary_EaseOutSine::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_EaseOutSine;
 
 // Function KuroMath.KuroEasingLibrary.GetEasedValue
 // 0x000C (0x000C - 0x0000)
@@ -577,11 +447,194 @@ public:
 	float                                         X;                                                 // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroEasingLibrary_GetEasedValue) == 0x000004, "Wrong alignment on KuroEasingLibrary_GetEasedValue");
-static_assert(sizeof(KuroEasingLibrary_GetEasedValue) == 0x00000C, "Wrong size on KuroEasingLibrary_GetEasedValue");
-static_assert(offsetof(KuroEasingLibrary_GetEasedValue, EaseType) == 0x000000, "Member 'KuroEasingLibrary_GetEasedValue::EaseType' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_GetEasedValue, X) == 0x000004, "Member 'KuroEasingLibrary_GetEasedValue::X' has a wrong offset!");
-static_assert(offsetof(KuroEasingLibrary_GetEasedValue, ReturnValue) == 0x000008, "Member 'KuroEasingLibrary_GetEasedValue::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroEasingLibrary_GetEasedValue;
+
+// Function KuroMath.KuroSimplePolygonLibrary.Conv_ArrayToKuroGeometrySimplePolygon
+// 0x0020 (0x0020 - 0x0000)
+struct KuroSimplePolygonLibrary_Conv_ArrayToKuroGeometrySimplePolygon final
+{
+public:
+	TArray<struct FVectorDouble>                  PathVertices;                                      // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FKuroGeometrySimplePolygon             ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroSimplePolygonLibrary_Conv_ArrayToKuroGeometrySimplePolygon;
+
+// Function KuroMath.KuroSimplePolygonLibrary.Conv_KuroGeometrySimplePolygonToArray
+// 0x0020 (0x0020 - 0x0000)
+struct KuroSimplePolygonLibrary_Conv_KuroGeometrySimplePolygonToArray final
+{
+public:
+	struct FKuroGeometrySimplePolygon             Polygon;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FVectorDouble>                  ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroSimplePolygonLibrary_Conv_KuroGeometrySimplePolygonToArray;
+
+// Function KuroMath.KuroSimplePolygonLibrary.SampleSplineToPolygon
+// 0x0028 (0x0028 - 0x0000)
+struct KuroSimplePolygonLibrary_SampleSplineToPolygon final
+{
+public:
+	const class USplineComponent*                 Spline;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroGeometrySimplePolygon             Polygon;                                           // 0x0008(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
+	struct FKuroSplineSamplingOptions             SamplingOptions;                                   // 0x0018(0x000C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroSimplePolygonLibrary_SampleSplineToPolygon;
+
+// Function KuroMath.KuroPolygonListLibrary.AddPolygonToList
+// 0x0038 (0x0038 - 0x0000)
+struct KuroPolygonListLibrary_AddPolygonToList final
+{
+public:
+	struct FKuroGeometryGeneralPolygonList        PolygonList;                                       // 0x0000(0x0010)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FKuroGeometrySimplePolygon             OuterPolygon;                                      // 0x0010(0x0010)(Parm, NativeAccessSpecifierPublic)
+	TArray<struct FKuroGeometrySimplePolygon>     HolePolygons;                                      // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bFixHoleOrientations;                              // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0034(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_AddPolygonToList;
+
+// Function KuroMath.KuroPolygonListLibrary.AppendPolygonList
+// 0x0020 (0x0020 - 0x0000)
+struct KuroPolygonListLibrary_AppendPolygonList final
+{
+public:
+	struct FKuroGeometryGeneralPolygonList        PolygonList;                                       // 0x0000(0x0010)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FKuroGeometryGeneralPolygonList        PolygonsToAppend;                                  // 0x0010(0x0010)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_AppendPolygonList;
+
+// Function KuroMath.KuroPolygonListLibrary.CreatePolygonListFromSimplePolygons
+// 0x0020 (0x0020 - 0x0000)
+struct KuroPolygonListLibrary_CreatePolygonListFromSimplePolygons final
+{
+public:
+	TArray<struct FKuroGeometrySimplePolygon>     OuterPolygons;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FKuroGeometryGeneralPolygonList        ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_CreatePolygonListFromSimplePolygons;
+
+// Function KuroMath.KuroPolygonListLibrary.CreatePolygonListFromSinglePolygon
+// 0x0038 (0x0038 - 0x0000)
+struct KuroPolygonListLibrary_CreatePolygonListFromSinglePolygon final
+{
+public:
+	struct FKuroGeometrySimplePolygon             OuterPolygon;                                      // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
+	TArray<struct FKuroGeometrySimplePolygon>     HolePolygons;                                      // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bFixHoleOrientations;                              // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroGeometryGeneralPolygonList        ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_CreatePolygonListFromSinglePolygon;
+
+// Function KuroMath.KuroPolygonListLibrary.GetPolygonCount
+// 0x0018 (0x0018 - 0x0000)
+struct KuroPolygonListLibrary_GetPolygonCount final
+{
+public:
+	struct FKuroGeometryGeneralPolygonList        PolygonList;                                       // 0x0000(0x0010)(ConstParm, Parm, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_GetPolygonCount;
+
+// Function KuroMath.KuroPolygonListLibrary.GetSimplePolygon
+// 0x0030 (0x0030 - 0x0000)
+struct KuroPolygonListLibrary_GetSimplePolygon final
+{
+public:
+	struct FKuroGeometryGeneralPolygonList        PolygonList;                                       // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
+	bool                                          bValidIndices;                                     // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PolygonIndex;                                      // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HoleIndex;                                         // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroGeometrySimplePolygon             ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_GetSimplePolygon;
+
+// Function KuroMath.KuroPolygonListLibrary.PolygonsDifference
+// 0x0030 (0x0030 - 0x0000)
+struct KuroPolygonListLibrary_PolygonsDifference final
+{
+public:
+	struct FKuroGeometryGeneralPolygonList        PolygonList;                                       // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
+	struct FKuroGeometryGeneralPolygonList        PolygonsToSubtract;                                // 0x0010(0x0010)(Parm, NativeAccessSpecifierPublic)
+	struct FKuroGeometryGeneralPolygonList        ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_PolygonsDifference;
+
+// Function KuroMath.KuroPolygonListLibrary.PolygonsExclusiveOr
+// 0x0030 (0x0030 - 0x0000)
+struct KuroPolygonListLibrary_PolygonsExclusiveOr final
+{
+public:
+	struct FKuroGeometryGeneralPolygonList        PolygonList;                                       // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
+	struct FKuroGeometryGeneralPolygonList        PolygonsToExclusiveOr;                             // 0x0010(0x0010)(Parm, NativeAccessSpecifierPublic)
+	struct FKuroGeometryGeneralPolygonList        ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_PolygonsExclusiveOr;
+
+// Function KuroMath.KuroPolygonListLibrary.PolygonsIntersection
+// 0x0030 (0x0030 - 0x0000)
+struct KuroPolygonListLibrary_PolygonsIntersection final
+{
+public:
+	struct FKuroGeometryGeneralPolygonList        PolygonList;                                       // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
+	struct FKuroGeometryGeneralPolygonList        PolygonsToIntersect;                               // 0x0010(0x0010)(Parm, NativeAccessSpecifierPublic)
+	struct FKuroGeometryGeneralPolygonList        ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_PolygonsIntersection;
+
+// Function KuroMath.KuroPolygonListLibrary.PolygonsOpenPathsDifference
+// 0x0040 (0x0040 - 0x0000)
+struct KuroPolygonListLibrary_PolygonsOpenPathsDifference final
+{
+public:
+	struct FKuroGeometryGeneralPolygonList        PolygonList;                                       // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
+	struct FKuroGeometryGeneralPolygonList        PolygonsToSubtract;                                // 0x0010(0x0010)(Parm, NativeAccessSpecifierPublic)
+	double                                        StrokeWidth;                                       // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EJoinType                                     JoinType;                                          // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEndType                                      EndType;                                           // 0x0029(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroGeometryGeneralPolygonList        ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_PolygonsOpenPathsDifference;
+
+// Function KuroMath.KuroPolygonListLibrary.PolygonsUnion
+// 0x0028 (0x0028 - 0x0000)
+struct KuroPolygonListLibrary_PolygonsUnion final
+{
+public:
+	struct FKuroGeometryGeneralPolygonList        PolygonList;                                       // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
+	bool                                          bCopyInputOnFailure;                               // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroGeometryGeneralPolygonList        ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonListLibrary_PolygonsUnion;
+
+// Function KuroMath.KuroPolygonLibrary.ClipPolygonByWeilerAtherton
+// 0x0030 (0x0030 - 0x0000)
+struct KuroPolygonLibrary_ClipPolygonByWeilerAtherton final
+{
+public:
+	TArray<struct FVector2D>                      Polygon;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      Window;                                            // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPolygonLibrary_ClipPolygonByWeilerAtherton;
+
+// Function KuroMath.KuroPolygonLibrary.EliminateSplineGaps
+// 0x0018 (0x0018 - 0x0000)
+struct KuroPolygonLibrary_EliminateSplineGaps final
+{
+public:
+	TArray<class USplineComponent*>               Splines;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	float                                         Tolerance;                                         // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroPolygonLibrary_EliminateSplineGaps;
 
 }
 

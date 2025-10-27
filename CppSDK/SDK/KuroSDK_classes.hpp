@@ -55,16 +55,23 @@ public:
 
 public:
 	static void BindAccount();
+	static class FString CallPlugin(const class FString& data);
+	static bool CallPluginAsync(const class FString& data, const TDelegate<void(const class FString& Result)>& callback);
 	static void CheckApplinksActivation();
 	static bool CheckPhotoPermission();
 	static void ClearLoginInfo();
+	static void ClosePostWebView();
+	static void CloseWebView(const class FString& identifier);
+	static void DoEngineExit();
+	static bool DoInitSdkProcedure();
 	static void ExitGame();
+	static void FreePlugin(const class FString& data);
 	static class UKuroSDKManager* Get();
 	static void GetAdsValue(const class FString& income, const class FString& data);
 	static class FString GetAgreementUrl();
 	static class FString GetAppChannelId();
 	static struct FBasicInfo GetBasicInfo();
-	static int32 GetChannelId();
+	static class FString GetChannelId();
 	static class FString GetChannelName();
 	static struct FLoginStruct GetCurrentLoginInfo();
 	static class FString GetDeepLinkStr();
@@ -87,7 +94,7 @@ public:
 	static void OpenCustomerService(const class FString& data);
 	static void OpenDefaultWebView(const class FString& url);
 	static void OpenSdkQRScan();
-	static void OpenWebView(const class FString& title, const class FString& url, bool isLandscape, bool transparent, bool webAccelerated, const class FString& data);
+	static void OpenWebView(const class FString& title, const class FString& url, bool isLandscape, bool transparent, bool webAccelerated, const class FString& identifier, const class FString& data);
 	static void PostSplashScreenEndSuccess();
 	static void QueryProductInfo(const class FString& data);
 	static void RequestPhotoPermission();
@@ -99,46 +106,25 @@ public:
 	static void SetWindowsMode(bool mode);
 	static void Share(const TArray<uint8>& imageData, const class FString& sKuroSDKEventParameter);
 	static void ShowExitGameDialog();
+	static void ShowVirtualKeyboard(bool state);
 	static void Start();
+	static void UpdateChannelEvent(const class FString& data);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroSDKManager">();
+		STATIC_CLASS_IMPL("KuroSDKManager")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroSDKManager")
 	}
 	static class UKuroSDKManager* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroSDKManager>();
 	}
 };
-static_assert(alignof(UKuroSDKManager) == 0x000008, "Wrong alignment on UKuroSDKManager");
-static_assert(sizeof(UKuroSDKManager) == 0x000238, "Wrong size on UKuroSDKManager");
-static_assert(offsetof(UKuroSDKManager, InitDelegate) == 0x000038, "Member 'UKuroSDKManager::InitDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, LoginSuccessDelegate) == 0x000048, "Member 'UKuroSDKManager::LoginSuccessDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, LoginDelegate) == 0x000058, "Member 'UKuroSDKManager::LoginDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, KickDelegate) == 0x000068, "Member 'UKuroSDKManager::KickDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, LogoutDelegate) == 0x000078, "Member 'UKuroSDKManager::LogoutDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, ExitDelegate) == 0x000088, "Member 'UKuroSDKManager::ExitDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, HasExitDelegate) == 0x000098, "Member 'UKuroSDKManager::HasExitDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, PaymentDelegate) == 0x0000A8, "Member 'UKuroSDKManager::PaymentDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, PostRedPointDelegate) == 0x0000B8, "Member 'UKuroSDKManager::PostRedPointDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, PostProductDelegate) == 0x0000C8, "Member 'UKuroSDKManager::PostProductDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, ProtocolCallBack) == 0x0000D8, "Member 'UKuroSDKManager::ProtocolCallBack' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, GameStateChangeCallBack) == 0x0000E8, "Member 'UKuroSDKManager::GameStateChangeCallBack' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, RequestPhotoPermissionDelegate) == 0x0000F8, "Member 'UKuroSDKManager::RequestPhotoPermissionDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, AnnounceInitDelegate) == 0x000110, "Member 'UKuroSDKManager::AnnounceInitDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, AnnounceOpenDelegate) == 0x000120, "Member 'UKuroSDKManager::AnnounceOpenDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, AnnounceRedPointDelegate) == 0x000130, "Member 'UKuroSDKManager::AnnounceRedPointDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, CustomerServiceResultDelegate) == 0x000140, "Member 'UKuroSDKManager::CustomerServiceResultDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, GetParamsDelegate) == 0x000150, "Member 'UKuroSDKManager::GetParamsDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, OnLoginDelegate) == 0x000160, "Member 'UKuroSDKManager::OnLoginDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, DeepLinkDelegate) == 0x000170, "Member 'UKuroSDKManager::DeepLinkDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, GetAdsValueDelegate) == 0x000180, "Member 'UKuroSDKManager::GetAdsValueDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, GetSharePlatformDelegate) == 0x000190, "Member 'UKuroSDKManager::GetSharePlatformDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, ShareResultDelegate) == 0x0001A0, "Member 'UKuroSDKManager::ShareResultDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, LogDelegate) == 0x0001B0, "Member 'UKuroSDKManager::LogDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, WebViewCloseDelegate) == 0x0001C0, "Member 'UKuroSDKManager::WebViewCloseDelegate' has a wrong offset!");
-static_assert(offsetof(UKuroSDKManager, OnActivatedByApplinksDelegate) == 0x0001D0, "Member 'UKuroSDKManager::OnActivatedByApplinksDelegate' has a wrong offset!");
+DUMPER7_ASSERTS_UKuroSDKManager;
 
 // Class KuroSDK.KuroSDKStaticLibrary
 // 0x0000 (0x0030 - 0x0030)
@@ -152,7 +138,7 @@ public:
 	static class FString GetAndroidGalleryExternalFilePath();
 	static void GetAppChannelId();
 	static void GetBaseDeviceInfo();
-	static void GetChannelId();
+	static class FString GetChannelId();
 	static void GetChannelName();
 	static struct FLoginStruct GetCurrentLoginInfo();
 	static bool GetIsAgreeProtocol();
@@ -167,25 +153,29 @@ public:
 	static void OpenCustomerService(const class FString& data);
 	static void OpenDefaultWebView(const class FString& url);
 	static void OpenQRScan();
-	static void OpenWebView(const class FString& title, const class FString& url, bool isLandScape, bool transparent, bool webAccelerated, const class FString& data);
+	static void OpenWebView(const class FString& title, const class FString& url, bool isLandScape, bool transparent, bool webAccelerated, const class FString& identifier, const class FString& data);
 	static void PostSplashSuccess();
 	static void SetIfGlobalSdk(bool ifGlobal);
 	static void Share(const class FString& imagePath, const class FString& sKuroSDKEventParameter);
 	static void ShareTexture(const class FString& texturePath, const class FString& sKuroSDKEventParameter);
 	static void ShowExitGameDialog();
+	static void ShowVirtualKeyboard(bool state);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroSDKStaticLibrary">();
+		STATIC_CLASS_IMPL("KuroSDKStaticLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroSDKStaticLibrary")
 	}
 	static class UKuroSDKStaticLibrary* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UKuroSDKStaticLibrary>();
 	}
 };
-static_assert(alignof(UKuroSDKStaticLibrary) == 0x000008, "Wrong alignment on UKuroSDKStaticLibrary");
-static_assert(sizeof(UKuroSDKStaticLibrary) == 0x000030, "Wrong size on UKuroSDKStaticLibrary");
+DUMPER7_ASSERTS_UKuroSDKStaticLibrary;
 
 }
 

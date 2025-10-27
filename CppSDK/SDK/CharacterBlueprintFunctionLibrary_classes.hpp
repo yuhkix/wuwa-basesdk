@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
+#include "ESelfCenteredMode_structs.hpp"
 
 
 namespace SDK
@@ -48,19 +49,31 @@ public:
 	static struct FVectorDouble GetCharacterGravityDirect(class UObject* __WorldContext);
 	static struct FVectorDouble GetCharacterGravityUp(class UObject* __WorldContext);
 	static void SetGravityDirect(int32 entityId, const struct FVectorDouble& gravityDirect, class UObject* __WorldContext);
+	static void EnableSelfCentered(ESelfCenteredMode selfCenteredMode, float timeDilation, float duration1, class UObject* __WorldContext);
+	static void DisableSelfCentered(ESelfCenteredMode selfCenteredMode, class UObject* __WorldContext);
+	static struct FSEntityTimeDilation GetEntityForeverTimeDilation(int32 entityId, class UObject* __WorldContext);
+	static ESelfCenteredMode GetSelfCenteredMode(class UObject* __WorldContext);
+	static float GetSelfCenteredTimeDilation(class UObject* __WorldContext);
+	static float GetInverseSelfCenteredTimeDilation(class UObject* __WorldContext);
+	static bool IsSelfCenteredModeEnabled(ESelfCenteredMode selfCenteredMode, class UObject* __WorldContext);
+	static bool IsAnySelfCenteredModeEnabled(class UObject* __WorldContext);
+	static void SetPlanarReflectionShowPlayers(class UPlanarReflectionComponent* comp, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"CharacterBlueprintFunctionLibrary_C">();
+		BP_STATIC_CLASS_IMPL("CharacterBlueprintFunctionLibrary_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CharacterBlueprintFunctionLibrary_C")
 	}
 	static class UCharacterBlueprintFunctionLibrary_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UCharacterBlueprintFunctionLibrary_C>();
 	}
 };
-static_assert(alignof(UCharacterBlueprintFunctionLibrary_C) == 0x000008, "Wrong alignment on UCharacterBlueprintFunctionLibrary_C");
-static_assert(sizeof(UCharacterBlueprintFunctionLibrary_C) == 0x000030, "Wrong size on UCharacterBlueprintFunctionLibrary_C");
+DUMPER7_ASSERTS_UCharacterBlueprintFunctionLibrary_C;
 
 }
 

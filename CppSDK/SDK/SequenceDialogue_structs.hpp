@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "MovieScene_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MovieScene_structs.hpp"
 
 
 namespace SDK
@@ -59,21 +59,150 @@ enum class ETranslateCountry : uint8
 	ETranslateCountry_MAX                    = 14,
 };
 
+// ScriptStruct SequenceDialogue.DialogueStateStruct
+// 0x0001 (0x0001 - 0x0000)
+struct FDialogueStateStruct final
+{
+public:
+	EDialogueStateEnum                            State;                                             // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDialogueStateStruct;
+
+// ScriptStruct SequenceDialogue.SpineData
+// 0x0018 (0x0018 - 0x0000)
+struct FSpineData final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          NeedLoop;                                          // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSpineData;
+
+// ScriptStruct SequenceDialogue.QteSpineInfo
+// 0x0048 (0x0048 - 0x0000)
+struct FQteSpineInfo final
+{
+public:
+	TArray<struct FSpineData>                     StartLoopSpines;                                   // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSpineData>                     ProgressSpine;                                     // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSpineData>                     EndSpine;                                          // 0x0020(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          WaitEndSpineFinish;                                // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         NiagaraParamNames;                                 // 0x0038(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FQteSpineInfo;
+
+// ScriptStruct SequenceDialogue.MovieSceneSubQteParams
+// 0x0050 (0x0050 - 0x0000)
+struct FMovieSceneSubQteParams final
+{
+public:
+	int32                                         SubQteId;                                          // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQteSpineInfo                          SpineInfo;                                         // 0x0008(0x0048)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieSceneSubQteParams;
+
+// ScriptStruct SequenceDialogue.MovieSceneQteEventParam
+// 0x0080 (0x0080 - 0x0000)
+struct FMovieSceneQteEventParam final
+{
+public:
+	int32                                         QteId;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SubtitleId;                                        // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 AttachActor;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsGroupQte;                                        // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsTriggerType;                                     // 0x0011(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FFrameTime                             StartFrame;                                        // 0x0014(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFrameTime                             EndFrame;                                          // 0x001C(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQteSpineInfo                          SpineInfo;                                         // 0x0028(0x0048)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TArray<struct FMovieSceneSubQteParams>        SubQteParams;                                      // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieSceneQteEventParam;
+
+// ScriptStruct SequenceDialogue.MovieSceneQteAnimExtraParams
+// 0x0028 (0x0028 - 0x0000)
+struct FMovieSceneQteAnimExtraParams final
+{
+public:
+	bool                                          bReverseProgressAnimWhenRegress;                   // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimSequence*                          ProgressAnim;                                      // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimSequence*                          RegressAnim;                                       // 0x0010(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            ProgressMapCurve;                                  // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BlendTime;                                         // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMovieSceneQteAnimExtraParams;
+
+// ScriptStruct SequenceDialogue.MovieSceneQteAnimParams
+// 0x0058 (0x0058 - 0x0000)
+struct FMovieSceneQteAnimParams final
+{
+public:
+	struct FMovieSceneObjectBindingID             ConstraintBindingID;                               // 0x0000(0x0018)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimSequence*                          StartStateLoop;                                    // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimSequence*                          EndStateLoop;                                      // 0x0020(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseExtraAnimParams;                               // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMovieSceneQteAnimExtraParams          ExtraParams;                                       // 0x0030(0x0028)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieSceneQteAnimParams;
+
+// ScriptStruct SequenceDialogue.MovieSceneQteParams
+// 0x0098 (0x0098 - 0x0000)
+struct FMovieSceneQteParams
+{
+public:
+	int32                                         QteId;                                             // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsGroupQte;                                        // 0x0004(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SubtitleId;                                        // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMovieSceneObjectBindingID             AttachActor;                                       // 0x000C(0x0018)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FMovieSceneQteAnimParams>       Anims;                                             // 0x0028(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	class ULevelSequence*                         LevelSequence;                                     // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FQteSpineInfo                          SpineInfo;                                         // 0x0040(0x0048)(Edit, NativeAccessSpecifierPublic)
+	TArray<struct FMovieSceneSubQteParams>        SubQteParams;                                      // 0x0088(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieSceneQteParams;
+
+// ScriptStruct SequenceDialogue.MovieSceneQteTriggerChannel
+// 0x0080 (0x0088 - 0x0008)
+struct FMovieSceneQteTriggerChannel final : public FMovieSceneChannel
+{
+public:
+	TArray<struct FFrameNumber>                   KeyTimes;                                          // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FMovieSceneQteParams>           KeyValues;                                         // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_28[0x60];                                      // 0x0028(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMovieSceneQteTriggerChannel;
+
+// ScriptStruct SequenceDialogue.MovieSceneQteTriggerTemplate
+// 0x0088 (0x00A8 - 0x0020)
+struct FMovieSceneQteTriggerTemplate final : public FMovieSceneEvalTemplate
+{
+public:
+	struct FMovieSceneQteTriggerChannel           EventData;                                         // 0x0020(0x0088)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieSceneQteTriggerTemplate;
+
 // ScriptStruct SequenceDialogue.MovieSceneAutoTransformSectionTemplate
 // 0x0000 (0x0020 - 0x0020)
 struct FMovieSceneAutoTransformSectionTemplate final : public FMovieSceneEvalTemplate
 {
 };
-static_assert(alignof(FMovieSceneAutoTransformSectionTemplate) == 0x000008, "Wrong alignment on FMovieSceneAutoTransformSectionTemplate");
-static_assert(sizeof(FMovieSceneAutoTransformSectionTemplate) == 0x000020, "Wrong size on FMovieSceneAutoTransformSectionTemplate");
+DUMPER7_ASSERTS_FMovieSceneAutoTransformSectionTemplate;
 
 // ScriptStruct SequenceDialogue.MovieSceneDialogueAudioSharedTrack
 // 0x0000 (0x0020 - 0x0020)
 struct FMovieSceneDialogueAudioSharedTrack final : public FMovieSceneEvalTemplate
 {
 };
-static_assert(alignof(FMovieSceneDialogueAudioSharedTrack) == 0x000008, "Wrong alignment on FMovieSceneDialogueAudioSharedTrack");
-static_assert(sizeof(FMovieSceneDialogueAudioSharedTrack) == 0x000020, "Wrong size on FMovieSceneDialogueAudioSharedTrack");
+DUMPER7_ASSERTS_FMovieSceneDialogueAudioSharedTrack;
 
 // ScriptStruct SequenceDialogue.MovieSceneDialogueAudioSectionTemplate
 // 0x0018 (0x0038 - 0x0020)
@@ -84,29 +213,14 @@ public:
 	int32                                         AudioTransitionDuration;                           // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FMovieSceneDialogueAudioSectionTemplate) == 0x000008, "Wrong alignment on FMovieSceneDialogueAudioSectionTemplate");
-static_assert(sizeof(FMovieSceneDialogueAudioSectionTemplate) == 0x000038, "Wrong size on FMovieSceneDialogueAudioSectionTemplate");
-static_assert(offsetof(FMovieSceneDialogueAudioSectionTemplate, AudioKey) == 0x000020, "Member 'FMovieSceneDialogueAudioSectionTemplate::AudioKey' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueAudioSectionTemplate, AudioTransitionDuration) == 0x000030, "Member 'FMovieSceneDialogueAudioSectionTemplate::AudioTransitionDuration' has a wrong offset!");
-
-// ScriptStruct SequenceDialogue.DialogueStateStruct
-// 0x0001 (0x0001 - 0x0000)
-struct FDialogueStateStruct final
-{
-public:
-	EDialogueStateEnum                            State;                                             // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FDialogueStateStruct) == 0x000001, "Wrong alignment on FDialogueStateStruct");
-static_assert(sizeof(FDialogueStateStruct) == 0x000001, "Wrong size on FDialogueStateStruct");
-static_assert(offsetof(FDialogueStateStruct, State) == 0x000000, "Member 'FDialogueStateStruct::State' has a wrong offset!");
+DUMPER7_ASSERTS_FMovieSceneDialogueAudioSectionTemplate;
 
 // ScriptStruct SequenceDialogue.MovieSceneDialogueStateTemplate
 // 0x0000 (0x0020 - 0x0020)
 struct FMovieSceneDialogueStateTemplate final : public FMovieSceneEvalTemplate
 {
 };
-static_assert(alignof(FMovieSceneDialogueStateTemplate) == 0x000008, "Wrong alignment on FMovieSceneDialogueStateTemplate");
-static_assert(sizeof(FMovieSceneDialogueStateTemplate) == 0x000020, "Wrong size on FMovieSceneDialogueStateTemplate");
+DUMPER7_ASSERTS_FMovieSceneDialogueStateTemplate;
 
 // ScriptStruct SequenceDialogue.Translate
 // 0x00D0 (0x00D0 - 0x0000)
@@ -115,16 +229,14 @@ struct alignas(0x08) FTranslate final
 public:
 	uint8                                         Pad_0[0xD0];                                       // 0x0000(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FTranslate) == 0x000008, "Wrong alignment on FTranslate");
-static_assert(sizeof(FTranslate) == 0x0000D0, "Wrong size on FTranslate");
+DUMPER7_ASSERTS_FTranslate;
 
 // ScriptStruct SequenceDialogue.MovieSceneDialogueSharedTrack
 // 0x0000 (0x0020 - 0x0020)
 struct FMovieSceneDialogueSharedTrack final : public FMovieSceneEvalTemplate
 {
 };
-static_assert(alignof(FMovieSceneDialogueSharedTrack) == 0x000008, "Wrong alignment on FMovieSceneDialogueSharedTrack");
-static_assert(sizeof(FMovieSceneDialogueSharedTrack) == 0x000020, "Wrong size on FMovieSceneDialogueSharedTrack");
+DUMPER7_ASSERTS_FMovieSceneDialogueSharedTrack;
 
 // ScriptStruct SequenceDialogue.MovieSceneDialogueSectionTemplate
 // 0x0090 (0x00B0 - 0x0020)
@@ -144,21 +256,28 @@ public:
 	ELanguageAudio                                LanguageType;                                      // 0x00A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         QteId;                                             // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         AutoPlayDelay;                                     // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
-static_assert(alignof(FMovieSceneDialogueSectionTemplate) == 0x000008, "Wrong alignment on FMovieSceneDialogueSectionTemplate");
-static_assert(sizeof(FMovieSceneDialogueSectionTemplate) == 0x0000B0, "Wrong size on FMovieSceneDialogueSectionTemplate");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, DialogueInfo) == 0x000020, "Member 'FMovieSceneDialogueSectionTemplate::DialogueInfo' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, SpeakerName) == 0x000038, "Member 'FMovieSceneDialogueSectionTemplate::SpeakerName' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, DialogueID) == 0x000050, "Member 'FMovieSceneDialogueSectionTemplate::DialogueID' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, GuardTime) == 0x000068, "Member 'FMovieSceneDialogueSectionTemplate::GuardTime' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, AudioDelay) == 0x00006C, "Member 'FMovieSceneDialogueSectionTemplate::AudioDelay' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, AudioTransitionDuration) == 0x000070, "Member 'FMovieSceneDialogueSectionTemplate::AudioTransitionDuration' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, Options) == 0x000078, "Member 'FMovieSceneDialogueSectionTemplate::Options' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, DialogueKey) == 0x000088, "Member 'FMovieSceneDialogueSectionTemplate::DialogueKey' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, SpeakerID) == 0x0000A0, "Member 'FMovieSceneDialogueSectionTemplate::SpeakerID' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, LanguageType) == 0x0000A4, "Member 'FMovieSceneDialogueSectionTemplate::LanguageType' has a wrong offset!");
-static_assert(offsetof(FMovieSceneDialogueSectionTemplate, QteId) == 0x0000A8, "Member 'FMovieSceneDialogueSectionTemplate::QteId' has a wrong offset!");
+DUMPER7_ASSERTS_FMovieSceneDialogueSectionTemplate;
+
+// ScriptStruct SequenceDialogue.MovieSceneQteTemplate
+// 0x00A0 (0x00C0 - 0x0020)
+struct FMovieSceneQteTemplate final : public FMovieSceneEvalTemplate
+{
+public:
+	uint8                                         Pad_20[0xA0];                                      // 0x0020(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMovieSceneQteTemplate;
+
+// ScriptStruct SequenceDialogue.MovieSceneQteTemplateParams
+// 0x0008 (0x00A0 - 0x0098)
+struct FMovieSceneQteTemplateParams final : public FMovieSceneQteParams
+{
+public:
+	struct FFrameNumber                           SectionStartTime;                                  // 0x0098(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFrameNumber                           SectionEndTime;                                    // 0x009C(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieSceneQteTemplateParams;
 
 // ScriptStruct SequenceDialogue.VectorNameAndCurve
 // 0x0208 (0x0208 - 0x0000)
@@ -173,14 +292,7 @@ public:
 	struct FMovieSceneFloatChannel                YCurve;                                            // 0x00C8(0x00A0)(NativeAccessSpecifierPublic)
 	struct FMovieSceneFloatChannel                ZCurve;                                            // 0x0168(0x00A0)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FVectorNameAndCurve) == 0x000008, "Wrong alignment on FVectorNameAndCurve");
-static_assert(sizeof(FVectorNameAndCurve) == 0x000208, "Wrong size on FVectorNameAndCurve");
-static_assert(offsetof(FVectorNameAndCurve, Group) == 0x000000, "Member 'FVectorNameAndCurve::Group' has a wrong offset!");
-static_assert(offsetof(FVectorNameAndCurve, DisplayName) == 0x00000C, "Member 'FVectorNameAndCurve::DisplayName' has a wrong offset!");
-static_assert(offsetof(FVectorNameAndCurve, ParameterName) == 0x000018, "Member 'FVectorNameAndCurve::ParameterName' has a wrong offset!");
-static_assert(offsetof(FVectorNameAndCurve, XCurve) == 0x000028, "Member 'FVectorNameAndCurve::XCurve' has a wrong offset!");
-static_assert(offsetof(FVectorNameAndCurve, YCurve) == 0x0000C8, "Member 'FVectorNameAndCurve::YCurve' has a wrong offset!");
-static_assert(offsetof(FVectorNameAndCurve, ZCurve) == 0x000168, "Member 'FVectorNameAndCurve::ZCurve' has a wrong offset!");
+DUMPER7_ASSERTS_FVectorNameAndCurve;
 
 // ScriptStruct SequenceDialogue.FloatNameAndCurve
 // 0x00C8 (0x00C8 - 0x0000)
@@ -193,12 +305,7 @@ public:
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMovieSceneFloatChannel                ParameterCurve;                                    // 0x0028(0x00A0)(NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FFloatNameAndCurve) == 0x000008, "Wrong alignment on FFloatNameAndCurve");
-static_assert(sizeof(FFloatNameAndCurve) == 0x0000C8, "Wrong size on FFloatNameAndCurve");
-static_assert(offsetof(FFloatNameAndCurve, Group) == 0x000000, "Member 'FFloatNameAndCurve::Group' has a wrong offset!");
-static_assert(offsetof(FFloatNameAndCurve, DisplayName) == 0x00000C, "Member 'FFloatNameAndCurve::DisplayName' has a wrong offset!");
-static_assert(offsetof(FFloatNameAndCurve, ParameterName) == 0x000018, "Member 'FFloatNameAndCurve::ParameterName' has a wrong offset!");
-static_assert(offsetof(FFloatNameAndCurve, ParameterCurve) == 0x000028, "Member 'FFloatNameAndCurve::ParameterCurve' has a wrong offset!");
+DUMPER7_ASSERTS_FFloatNameAndCurve;
 
 // ScriptStruct SequenceDialogue.MovieSceneSeqAnimDataSectionTemplate
 // 0x0020 (0x0040 - 0x0020)
@@ -208,10 +315,7 @@ public:
 	TArray<struct FFloatNameAndCurve>             FloatCurves;                                       // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FVectorNameAndCurve>            VectorCurves;                                      // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FMovieSceneSeqAnimDataSectionTemplate) == 0x000008, "Wrong alignment on FMovieSceneSeqAnimDataSectionTemplate");
-static_assert(sizeof(FMovieSceneSeqAnimDataSectionTemplate) == 0x000040, "Wrong size on FMovieSceneSeqAnimDataSectionTemplate");
-static_assert(offsetof(FMovieSceneSeqAnimDataSectionTemplate, FloatCurves) == 0x000020, "Member 'FMovieSceneSeqAnimDataSectionTemplate::FloatCurves' has a wrong offset!");
-static_assert(offsetof(FMovieSceneSeqAnimDataSectionTemplate, VectorCurves) == 0x000030, "Member 'FMovieSceneSeqAnimDataSectionTemplate::VectorCurves' has a wrong offset!");
+DUMPER7_ASSERTS_FMovieSceneSeqAnimDataSectionTemplate;
 
 // ScriptStruct SequenceDialogue.SeqAnimCurveVectorDesc
 // 0x0040 (0x0040 - 0x0000)
@@ -226,14 +330,7 @@ public:
 	bool                                          EnableVirtualBoneRot;                              // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FSeqAnimCurveVectorDesc) == 0x000004, "Wrong alignment on FSeqAnimCurveVectorDesc");
-static_assert(sizeof(FSeqAnimCurveVectorDesc) == 0x000040, "Wrong size on FSeqAnimCurveVectorDesc");
-static_assert(offsetof(FSeqAnimCurveVectorDesc, Group) == 0x000000, "Member 'FSeqAnimCurveVectorDesc::Group' has a wrong offset!");
-static_assert(offsetof(FSeqAnimCurveVectorDesc, DisplayName) == 0x00000C, "Member 'FSeqAnimCurveVectorDesc::DisplayName' has a wrong offset!");
-static_assert(offsetof(FSeqAnimCurveVectorDesc, CurveName) == 0x000018, "Member 'FSeqAnimCurveVectorDesc::CurveName' has a wrong offset!");
-static_assert(offsetof(FSeqAnimCurveVectorDesc, GizmoBaseBone) == 0x000024, "Member 'FSeqAnimCurveVectorDesc::GizmoBaseBone' has a wrong offset!");
-static_assert(offsetof(FSeqAnimCurveVectorDesc, GizmoOffset) == 0x000030, "Member 'FSeqAnimCurveVectorDesc::GizmoOffset' has a wrong offset!");
-static_assert(offsetof(FSeqAnimCurveVectorDesc, EnableVirtualBoneRot) == 0x00003C, "Member 'FSeqAnimCurveVectorDesc::EnableVirtualBoneRot' has a wrong offset!");
+DUMPER7_ASSERTS_FSeqAnimCurveVectorDesc;
 
 // ScriptStruct SequenceDialogue.SeqAnimCurveFloatDesc
 // 0x0024 (0x0024 - 0x0000)
@@ -244,11 +341,7 @@ public:
 	class FName                                   DisplayName;                                       // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   CurveName;                                         // 0x0018(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSeqAnimCurveFloatDesc) == 0x000004, "Wrong alignment on FSeqAnimCurveFloatDesc");
-static_assert(sizeof(FSeqAnimCurveFloatDesc) == 0x000024, "Wrong size on FSeqAnimCurveFloatDesc");
-static_assert(offsetof(FSeqAnimCurveFloatDesc, Group) == 0x000000, "Member 'FSeqAnimCurveFloatDesc::Group' has a wrong offset!");
-static_assert(offsetof(FSeqAnimCurveFloatDesc, DisplayName) == 0x00000C, "Member 'FSeqAnimCurveFloatDesc::DisplayName' has a wrong offset!");
-static_assert(offsetof(FSeqAnimCurveFloatDesc, CurveName) == 0x000018, "Member 'FSeqAnimCurveFloatDesc::CurveName' has a wrong offset!");
+DUMPER7_ASSERTS_FSeqAnimCurveFloatDesc;
 
 }
 

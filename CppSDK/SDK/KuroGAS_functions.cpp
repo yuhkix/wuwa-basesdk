@@ -480,6 +480,44 @@ class UAsyncTaskPlayMontageAndWait* UAsyncTaskPlayMontageAndWait::ListenForPlayM
 }
 
 
+// Function KuroGAS.AsyncTaskPlayMontageAndWait.ListenRemainForPlayMontage
+// (Final, Native, Static, Private)
+// Parameters:
+// class UAnimInstance*                    AnimInstance_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAnimMontage*                     MontageToPlay_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   PlayRate                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   StartingPosition                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             StartingSection                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   RemainedTrigger                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAsyncTaskPlayMontageAndWait*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAsyncTaskPlayMontageAndWait* UAsyncTaskPlayMontageAndWait::ListenRemainForPlayMontage(class UAnimInstance* AnimInstance_0, class UAnimMontage* MontageToPlay_0, float PlayRate, float StartingPosition, class FName StartingSection, float RemainedTrigger)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AsyncTaskPlayMontageAndWait", "ListenRemainForPlayMontage");
+
+	Params::AsyncTaskPlayMontageAndWait_ListenRemainForPlayMontage Parms{};
+
+	Parms.AnimInstance_0 = AnimInstance_0;
+	Parms.MontageToPlay_0 = MontageToPlay_0;
+	Parms.PlayRate = PlayRate;
+	Parms.StartingPosition = StartingPosition;
+	Parms.StartingSection = StartingSection;
+	Parms.RemainedTrigger = RemainedTrigger;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroGAS.AsyncTaskPlayMontageAndWait.EndTask
 // (Final, Native, Private, BlueprintCallable)
 

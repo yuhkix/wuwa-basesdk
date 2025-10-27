@@ -197,5 +197,50 @@ class AActor* UTsEntityDebugInfoManager_C::GetDebugEntityActor(int32 entityId)
 	return Parms.ReturnValue;
 }
 
+
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.SetEntityTimeScale
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   timeScale                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsEntityDebugInfoManager_C::SetEntityTimeScale(int32 entityId, float timeScale)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "SetEntityTimeScale");
+
+	Params::TsEntityDebugInfoManager_C_SetEntityTimeScale Parms{};
+
+	Parms.entityId = entityId;
+	Parms.timeScale = timeScale;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetEntityTimeScale
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UTsEntityDebugInfoManager_C::GetEntityTimeScale(int32 entityId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetEntityTimeScale");
+
+	Params::TsEntityDebugInfoManager_C_GetEntityTimeScale Parms{};
+
+	Parms.entityId = entityId;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
 }
 

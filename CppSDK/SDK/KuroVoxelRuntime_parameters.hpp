@@ -27,11 +27,7 @@ public:
 	uint8                                         ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroVoxelSystem_D_GetMaterialIDAtPos) == 0x000008, "Wrong alignment on KuroVoxelSystem_D_GetMaterialIDAtPos");
-static_assert(sizeof(KuroVoxelSystem_D_GetMaterialIDAtPos) == 0x000028, "Wrong size on KuroVoxelSystem_D_GetMaterialIDAtPos");
-static_assert(offsetof(KuroVoxelSystem_D_GetMaterialIDAtPos, World) == 0x000000, "Member 'KuroVoxelSystem_D_GetMaterialIDAtPos::World' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_GetMaterialIDAtPos, UEPos) == 0x000008, "Member 'KuroVoxelSystem_D_GetMaterialIDAtPos::UEPos' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_GetMaterialIDAtPos, ReturnValue) == 0x000020, "Member 'KuroVoxelSystem_D_GetMaterialIDAtPos::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroVoxelSystem_D_GetMaterialIDAtPos;
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.D_GetVoxelInfoAtPos
 // 0x0038 (0x0038 - 0x0000)
@@ -43,16 +39,10 @@ public:
 	int32                                         ErrorCode;                                         // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        SearchStep;                                        // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroVoxelInfo                         ReturnValue;                                       // 0x0030(0x0004)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FKuroVoxelInfo                         ReturnValue;                                       // 0x0030(0x0002)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroVoxelSystem_D_GetVoxelInfoAtPos) == 0x000008, "Wrong alignment on KuroVoxelSystem_D_GetVoxelInfoAtPos");
-static_assert(sizeof(KuroVoxelSystem_D_GetVoxelInfoAtPos) == 0x000038, "Wrong size on KuroVoxelSystem_D_GetVoxelInfoAtPos");
-static_assert(offsetof(KuroVoxelSystem_D_GetVoxelInfoAtPos, World) == 0x000000, "Member 'KuroVoxelSystem_D_GetVoxelInfoAtPos::World' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_GetVoxelInfoAtPos, UEPos) == 0x000008, "Member 'KuroVoxelSystem_D_GetVoxelInfoAtPos::UEPos' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_GetVoxelInfoAtPos, ErrorCode) == 0x000020, "Member 'KuroVoxelSystem_D_GetVoxelInfoAtPos::ErrorCode' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_GetVoxelInfoAtPos, SearchStep) == 0x000028, "Member 'KuroVoxelSystem_D_GetVoxelInfoAtPos::SearchStep' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_GetVoxelInfoAtPos, ReturnValue) == 0x000030, "Member 'KuroVoxelSystem_D_GetVoxelInfoAtPos::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroVoxelSystem_D_GetVoxelInfoAtPos;
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.D_IsCavernAtPos
 // 0x0028 (0x0028 - 0x0000)
@@ -64,11 +54,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroVoxelSystem_D_IsCavernAtPos) == 0x000008, "Wrong alignment on KuroVoxelSystem_D_IsCavernAtPos");
-static_assert(sizeof(KuroVoxelSystem_D_IsCavernAtPos) == 0x000028, "Wrong size on KuroVoxelSystem_D_IsCavernAtPos");
-static_assert(offsetof(KuroVoxelSystem_D_IsCavernAtPos, World) == 0x000000, "Member 'KuroVoxelSystem_D_IsCavernAtPos::World' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_IsCavernAtPos, UEPos) == 0x000008, "Member 'KuroVoxelSystem_D_IsCavernAtPos::UEPos' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_IsCavernAtPos, ReturnValue) == 0x000020, "Member 'KuroVoxelSystem_D_IsCavernAtPos::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroVoxelSystem_D_IsCavernAtPos;
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.D_TryGetVoxelInfoAtPos
 // 0x0038 (0x0038 - 0x0000)
@@ -77,20 +63,14 @@ struct KuroVoxelSystem_D_TryGetVoxelInfoAtPos final
 public:
 	class UWorld*                                 World;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVectorDouble                          UEPos;                                             // 0x0008(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroVoxelInfo                         OutVoxelInfo;                                      // 0x0020(0x0004)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroVoxelInfo                         OutVoxelInfo;                                      // 0x0020(0x0002)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_22[0x2];                                       // 0x0022(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ErrorCode;                                         // 0x0024(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        SearchStep;                                        // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroVoxelSystem_D_TryGetVoxelInfoAtPos) == 0x000008, "Wrong alignment on KuroVoxelSystem_D_TryGetVoxelInfoAtPos");
-static_assert(sizeof(KuroVoxelSystem_D_TryGetVoxelInfoAtPos) == 0x000038, "Wrong size on KuroVoxelSystem_D_TryGetVoxelInfoAtPos");
-static_assert(offsetof(KuroVoxelSystem_D_TryGetVoxelInfoAtPos, World) == 0x000000, "Member 'KuroVoxelSystem_D_TryGetVoxelInfoAtPos::World' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_TryGetVoxelInfoAtPos, UEPos) == 0x000008, "Member 'KuroVoxelSystem_D_TryGetVoxelInfoAtPos::UEPos' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_TryGetVoxelInfoAtPos, OutVoxelInfo) == 0x000020, "Member 'KuroVoxelSystem_D_TryGetVoxelInfoAtPos::OutVoxelInfo' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_TryGetVoxelInfoAtPos, ErrorCode) == 0x000024, "Member 'KuroVoxelSystem_D_TryGetVoxelInfoAtPos::ErrorCode' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_TryGetVoxelInfoAtPos, SearchStep) == 0x000028, "Member 'KuroVoxelSystem_D_TryGetVoxelInfoAtPos::SearchStep' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_D_TryGetVoxelInfoAtPos, ReturnValue) == 0x000030, "Member 'KuroVoxelSystem_D_TryGetVoxelInfoAtPos::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroVoxelSystem_D_TryGetVoxelInfoAtPos;
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.GetMaterialIDAtPos
 // 0x0018 (0x0018 - 0x0000)
@@ -102,11 +82,7 @@ public:
 	uint8                                         ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroVoxelSystem_GetMaterialIDAtPos) == 0x000008, "Wrong alignment on KuroVoxelSystem_GetMaterialIDAtPos");
-static_assert(sizeof(KuroVoxelSystem_GetMaterialIDAtPos) == 0x000018, "Wrong size on KuroVoxelSystem_GetMaterialIDAtPos");
-static_assert(offsetof(KuroVoxelSystem_GetMaterialIDAtPos, World) == 0x000000, "Member 'KuroVoxelSystem_GetMaterialIDAtPos::World' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_GetMaterialIDAtPos, UEPos) == 0x000008, "Member 'KuroVoxelSystem_GetMaterialIDAtPos::UEPos' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_GetMaterialIDAtPos, ReturnValue) == 0x000014, "Member 'KuroVoxelSystem_GetMaterialIDAtPos::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroVoxelSystem_GetMaterialIDAtPos;
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.GetMtlNameByID
 // 0x0018 (0x0018 - 0x0000)
@@ -117,10 +93,7 @@ public:
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroVoxelSystem_GetMtlNameByID) == 0x000008, "Wrong alignment on KuroVoxelSystem_GetMtlNameByID");
-static_assert(sizeof(KuroVoxelSystem_GetMtlNameByID) == 0x000018, "Wrong size on KuroVoxelSystem_GetMtlNameByID");
-static_assert(offsetof(KuroVoxelSystem_GetMtlNameByID, MtlID) == 0x000000, "Member 'KuroVoxelSystem_GetMtlNameByID::MtlID' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_GetMtlNameByID, ReturnValue) == 0x000008, "Member 'KuroVoxelSystem_GetMtlNameByID::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroVoxelSystem_GetMtlNameByID;
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.GetVoxelInfoAtPos
 // 0x0020 (0x0020 - 0x0000)
@@ -131,15 +104,10 @@ public:
 	struct FVector                                UEPos;                                             // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ErrorCode;                                         // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SearchStep;                                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroVoxelInfo                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroVoxelInfo                         ReturnValue;                                       // 0x001C(0x0002)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroVoxelSystem_GetVoxelInfoAtPos) == 0x000008, "Wrong alignment on KuroVoxelSystem_GetVoxelInfoAtPos");
-static_assert(sizeof(KuroVoxelSystem_GetVoxelInfoAtPos) == 0x000020, "Wrong size on KuroVoxelSystem_GetVoxelInfoAtPos");
-static_assert(offsetof(KuroVoxelSystem_GetVoxelInfoAtPos, World) == 0x000000, "Member 'KuroVoxelSystem_GetVoxelInfoAtPos::World' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_GetVoxelInfoAtPos, UEPos) == 0x000008, "Member 'KuroVoxelSystem_GetVoxelInfoAtPos::UEPos' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_GetVoxelInfoAtPos, ErrorCode) == 0x000014, "Member 'KuroVoxelSystem_GetVoxelInfoAtPos::ErrorCode' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_GetVoxelInfoAtPos, SearchStep) == 0x000018, "Member 'KuroVoxelSystem_GetVoxelInfoAtPos::SearchStep' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_GetVoxelInfoAtPos, ReturnValue) == 0x00001C, "Member 'KuroVoxelSystem_GetVoxelInfoAtPos::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroVoxelSystem_GetVoxelInfoAtPos;
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.IsCavernAtPos
 // 0x0018 (0x0018 - 0x0000)
@@ -151,11 +119,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroVoxelSystem_IsCavernAtPos) == 0x000008, "Wrong alignment on KuroVoxelSystem_IsCavernAtPos");
-static_assert(sizeof(KuroVoxelSystem_IsCavernAtPos) == 0x000018, "Wrong size on KuroVoxelSystem_IsCavernAtPos");
-static_assert(offsetof(KuroVoxelSystem_IsCavernAtPos, World) == 0x000000, "Member 'KuroVoxelSystem_IsCavernAtPos::World' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_IsCavernAtPos, UEPos) == 0x000008, "Member 'KuroVoxelSystem_IsCavernAtPos::UEPos' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_IsCavernAtPos, ReturnValue) == 0x000014, "Member 'KuroVoxelSystem_IsCavernAtPos::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroVoxelSystem_IsCavernAtPos;
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.IsVoxelSystemInitialized
 // 0x0010 (0x0010 - 0x0000)
@@ -166,10 +130,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroVoxelSystem_IsVoxelSystemInitialized) == 0x000008, "Wrong alignment on KuroVoxelSystem_IsVoxelSystemInitialized");
-static_assert(sizeof(KuroVoxelSystem_IsVoxelSystemInitialized) == 0x000010, "Wrong size on KuroVoxelSystem_IsVoxelSystemInitialized");
-static_assert(offsetof(KuroVoxelSystem_IsVoxelSystemInitialized, World) == 0x000000, "Member 'KuroVoxelSystem_IsVoxelSystemInitialized::World' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_IsVoxelSystemInitialized, ReturnValue) == 0x000008, "Member 'KuroVoxelSystem_IsVoxelSystemInitialized::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroVoxelSystem_IsVoxelSystemInitialized;
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.TryGetVoxelInfoAtPos
 // 0x0028 (0x0028 - 0x0000)
@@ -178,20 +139,14 @@ struct KuroVoxelSystem_TryGetVoxelInfoAtPos final
 public:
 	class UWorld*                                 World;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                UEPos;                                             // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroVoxelInfo                         OutVoxelInfo;                                      // 0x0014(0x0004)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroVoxelInfo                         OutVoxelInfo;                                      // 0x0014(0x0002)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ErrorCode;                                         // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SearchStep;                                        // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(KuroVoxelSystem_TryGetVoxelInfoAtPos) == 0x000008, "Wrong alignment on KuroVoxelSystem_TryGetVoxelInfoAtPos");
-static_assert(sizeof(KuroVoxelSystem_TryGetVoxelInfoAtPos) == 0x000028, "Wrong size on KuroVoxelSystem_TryGetVoxelInfoAtPos");
-static_assert(offsetof(KuroVoxelSystem_TryGetVoxelInfoAtPos, World) == 0x000000, "Member 'KuroVoxelSystem_TryGetVoxelInfoAtPos::World' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_TryGetVoxelInfoAtPos, UEPos) == 0x000008, "Member 'KuroVoxelSystem_TryGetVoxelInfoAtPos::UEPos' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_TryGetVoxelInfoAtPos, OutVoxelInfo) == 0x000014, "Member 'KuroVoxelSystem_TryGetVoxelInfoAtPos::OutVoxelInfo' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_TryGetVoxelInfoAtPos, ErrorCode) == 0x000018, "Member 'KuroVoxelSystem_TryGetVoxelInfoAtPos::ErrorCode' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_TryGetVoxelInfoAtPos, SearchStep) == 0x00001C, "Member 'KuroVoxelSystem_TryGetVoxelInfoAtPos::SearchStep' has a wrong offset!");
-static_assert(offsetof(KuroVoxelSystem_TryGetVoxelInfoAtPos, ReturnValue) == 0x000020, "Member 'KuroVoxelSystem_TryGetVoxelInfoAtPos::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_KuroVoxelSystem_TryGetVoxelInfoAtPos;
 
 }
 

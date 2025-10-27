@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "EEnterClimb_structs.hpp"
+#include "EClimbState_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EMovementDirection_structs.hpp"
 #include "EExitClimb_structs.hpp"
-#include "EClimbState_structs.hpp"
+#include "EEnterClimb_structs.hpp"
 
 
 namespace SDK
@@ -123,19 +123,24 @@ public:
 	static void TurnOnCameraDrivenAutoFlightMode(int32 entityId, class UBP_CameraDrivenAutoFlightData_C* dataAsset, class UObject* __WorldContext);
 	static void AddActorWorldOffsetWithContextAndReset(int32 entityId, const struct FVectorDouble& offset, bool sweep, const class FString& context, class UObject* __WorldContext);
 	static bool SetActorLookAtWithContext(int32 entityId, const struct FVectorDouble& targetPoint, const class FString& context, class UObject* __WorldContext);
+	static bool MoveCharacter(int32 entityId, const struct FVectorDouble& targetLocation, float speed, int32 arriveDist, class UObject* __WorldContext);
+	static struct FVeloctiyBlend LerpVelocityBlend(const struct FVeloctiyBlend& out, const struct FVeloctiyBlend& to, float alpha, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"TsMoveBlueprintFunctionLibrary_C">();
+		BP_STATIC_CLASS_IMPL("TsMoveBlueprintFunctionLibrary_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TsMoveBlueprintFunctionLibrary_C")
 	}
 	static class UTsMoveBlueprintFunctionLibrary_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UTsMoveBlueprintFunctionLibrary_C>();
 	}
 };
-static_assert(alignof(UTsMoveBlueprintFunctionLibrary_C) == 0x000008, "Wrong alignment on UTsMoveBlueprintFunctionLibrary_C");
-static_assert(sizeof(UTsMoveBlueprintFunctionLibrary_C) == 0x000030, "Wrong size on UTsMoveBlueprintFunctionLibrary_C");
+DUMPER7_ASSERTS_UTsMoveBlueprintFunctionLibrary_C;
 
 }
 

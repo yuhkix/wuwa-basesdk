@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "GameplayAbilities_structs.hpp"
-#include "SSkillInfo_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SSkillInfo_structs.hpp"
 #include "EPawnChannel_structs.hpp"
 #include "EAimViewState_structs.hpp"
 
@@ -34,13 +34,7 @@ public:
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_OnActivateAbility_ReturnValue;            // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_ExecuteUbergraph_GA_Base) == 0x000008, "Wrong alignment on GA_Base_C_ExecuteUbergraph_GA_Base");
-static_assert(sizeof(GA_Base_C_ExecuteUbergraph_GA_Base) == 0x000018, "Wrong size on GA_Base_C_ExecuteUbergraph_GA_Base");
-static_assert(offsetof(GA_Base_C_ExecuteUbergraph_GA_Base, EntryPoint) == 0x000000, "Member 'GA_Base_C_ExecuteUbergraph_GA_Base::EntryPoint' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_ExecuteUbergraph_GA_Base, K2Node_Event_bWasCancelled) == 0x000004, "Member 'GA_Base_C_ExecuteUbergraph_GA_Base::K2Node_Event_bWasCancelled' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_ExecuteUbergraph_GA_Base, CallFunc_K2_CommitAbility_ReturnValue) == 0x000005, "Member 'GA_Base_C_ExecuteUbergraph_GA_Base::CallFunc_K2_CommitAbility_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_ExecuteUbergraph_GA_Base, CallFunc__________) == 0x000008, "Member 'GA_Base_C_ExecuteUbergraph_GA_Base::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_ExecuteUbergraph_GA_Base, CallFunc_OnActivateAbility_ReturnValue) == 0x000010, "Member 'GA_Base_C_ExecuteUbergraph_GA_Base::CallFunc_OnActivateAbility_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_ExecuteUbergraph_GA_Base;
 
 // Function GA_Base.GA_Base_C.K2_OnEndAbility
 // 0x0001 (0x0001 - 0x0000)
@@ -49,9 +43,7 @@ struct GA_Base_C_K2_OnEndAbility final
 public:
 	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Base_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Base_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Base_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Base_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Base_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_K2_OnEndAbility;
 
 // Function GA_Base.GA_Base_C.获取施法者
 // 0x0020 (0x0020 - 0x0000)
@@ -63,12 +55,7 @@ public:
 	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_获取施法者) == 0x000008, "Wrong alignment on GA_Base_C_获取施法者");
-static_assert(sizeof(GA_Base_C_获取施法者) == 0x000020, "Wrong size on GA_Base_C_获取施法者");
-static_assert(offsetof(GA_Base_C_获取施法者, 施法者) == 0x000000, "Member 'GA_Base_C_获取施法者::施法者' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取施法者, CallFunc_GetOwningActorFromActorInfo_ReturnValue) == 0x000008, "Member 'GA_Base_C_获取施法者::CallFunc_GetOwningActorFromActorInfo_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取施法者, K2Node_DynamicCast_AsTs_Base_Character) == 0x000010, "Member 'GA_Base_C_获取施法者::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取施法者, K2Node_DynamicCast_bSuccess) == 0x000018, "Member 'GA_Base_C_获取施法者::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取施法者;
 
 // Function GA_Base.GA_Base_C.获取当前技能配置Id
 // 0x0010 (0x0010 - 0x0000)
@@ -77,49 +64,35 @@ struct GA_Base_C_获取当前技能配置Id final
 public:
 	class FString                                 当前技能数据名_0;                                  // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取当前技能配置Id) == 0x000008, "Wrong alignment on GA_Base_C_获取当前技能配置Id");
-static_assert(sizeof(GA_Base_C_获取当前技能配置Id) == 0x000010, "Wrong size on GA_Base_C_获取当前技能配置Id");
-static_assert(offsetof(GA_Base_C_获取当前技能配置Id, 当前技能数据名_0) == 0x000000, "Member 'GA_Base_C_获取当前技能配置Id::当前技能数据名_0' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取当前技能配置Id;
 
 // Function GA_Base.GA_Base_C.获取当前技能配置
-// 0x0180 (0x0180 - 0x0000)
+// 0x01A0 (0x01A0 - 0x0000)
 struct GA_Base_C_获取当前技能配置 final
 {
 public:
-	struct FSSkillInfo                            当前技能数据_0;                                    // 0x0000(0x0180)(Parm, OutParm, HasGetValueTypeHash)
+	struct FSSkillInfo                            当前技能数据_0;                                    // 0x0000(0x01A0)(Parm, OutParm, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取当前技能配置) == 0x000008, "Wrong alignment on GA_Base_C_获取当前技能配置");
-static_assert(sizeof(GA_Base_C_获取当前技能配置) == 0x000180, "Wrong size on GA_Base_C_获取当前技能配置");
-static_assert(offsetof(GA_Base_C_获取当前技能配置, 当前技能数据_0) == 0x000000, "Member 'GA_Base_C_获取当前技能配置::当前技能数据_0' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取当前技能配置;
 
 // Function GA_Base.GA_Base_C.获取技能动画
-// 0x0338 (0x0338 - 0x0000)
+// 0x0378 (0x0378 - 0x0000)
 struct GA_Base_C_获取技能动画 final
 {
 public:
 	int32                                         编号;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAnimMontage*                           动画;                                              // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSkillInfo                            SkillInfo;                                         // 0x0010(0x0180)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	class UAnimMontage*                           Montage;                                           // 0x0190(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSkillInfo                            CallFunc________________;                          // 0x0198(0x0180)(HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetOwningActorFromActorInfo_ReturnValue;  // 0x0318(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0320(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0328(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_329[0x7];                                      // 0x0329(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimMontage*                           CallFunc_GetSkillMontageInstance_ReturnValue;      // 0x0330(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillInfo                            SkillInfo;                                         // 0x0010(0x01A0)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	class UAnimMontage*                           Montage;                                           // 0x01B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillInfo                            CallFunc________________;                          // 0x01B8(0x01A0)(HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetOwningActorFromActorInfo_ReturnValue;  // 0x0358(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0360(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0368(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_369[0x7];                                      // 0x0369(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimMontage*                           CallFunc_GetSkillMontageInstance_ReturnValue;      // 0x0370(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取技能动画) == 0x000008, "Wrong alignment on GA_Base_C_获取技能动画");
-static_assert(sizeof(GA_Base_C_获取技能动画) == 0x000338, "Wrong size on GA_Base_C_获取技能动画");
-static_assert(offsetof(GA_Base_C_获取技能动画, 编号) == 0x000000, "Member 'GA_Base_C_获取技能动画::编号' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, 动画) == 0x000008, "Member 'GA_Base_C_获取技能动画::动画' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, SkillInfo) == 0x000010, "Member 'GA_Base_C_获取技能动画::SkillInfo' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, Montage) == 0x000190, "Member 'GA_Base_C_获取技能动画::Montage' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, CallFunc________________) == 0x000198, "Member 'GA_Base_C_获取技能动画::CallFunc________________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, CallFunc_GetOwningActorFromActorInfo_ReturnValue) == 0x000318, "Member 'GA_Base_C_获取技能动画::CallFunc_GetOwningActorFromActorInfo_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, K2Node_DynamicCast_AsTs_Base_Character) == 0x000320, "Member 'GA_Base_C_获取技能动画::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, K2Node_DynamicCast_bSuccess) == 0x000328, "Member 'GA_Base_C_获取技能动画::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, CallFunc_GetSkillMontageInstance_ReturnValue) == 0x000330, "Member 'GA_Base_C_获取技能动画::CallFunc_GetSkillMontageInstance_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取技能动画;
 
 // Function GA_Base.GA_Base_C.获取技能所有动画
 // 0x0040 (0x0040 - 0x0000)
@@ -139,30 +112,17 @@ public:
 	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取技能所有动画) == 0x000008, "Wrong alignment on GA_Base_C_获取技能所有动画");
-static_assert(sizeof(GA_Base_C_获取技能所有动画) == 0x000040, "Wrong size on GA_Base_C_获取技能所有动画");
-static_assert(offsetof(GA_Base_C_获取技能所有动画, 技能动画数组) == 0x000000, "Member 'GA_Base_C_获取技能所有动画::技能动画数组' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能所有动画, LoopCondition) == 0x000010, "Member 'GA_Base_C_获取技能所有动画::LoopCondition' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能所有动画, TempInt) == 0x000014, "Member 'GA_Base_C_获取技能所有动画::TempInt' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能所有动画, MontageArray) == 0x000018, "Member 'GA_Base_C_获取技能所有动画::MontageArray' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能所有动画, CallFunc_Greater_IntInt_ReturnValue) == 0x000028, "Member 'GA_Base_C_获取技能所有动画::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能所有动画, CallFunc_Add_IntInt_ReturnValue) == 0x00002C, "Member 'GA_Base_C_获取技能所有动画::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能所有动画, CallFunc__________) == 0x000030, "Member 'GA_Base_C_获取技能所有动画::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能所有动画, CallFunc_IsValid_ReturnValue) == 0x000038, "Member 'GA_Base_C_获取技能所有动画::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能所有动画, CallFunc_Array_Add_ReturnValue) == 0x00003C, "Member 'GA_Base_C_获取技能所有动画::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取技能所有动画;
 
 // Function GA_Base.GA_Base_C.获取技能标签
-// 0x0190 (0x0190 - 0x0000)
+// 0x01B0 (0x01B0 - 0x0000)
 struct GA_Base_C_获取技能标签 final
 {
 public:
 	TArray<struct FGameplayTag>                   技能标签;                                          // 0x0000(0x0010)(Parm, OutParm)
-	struct FSSkillInfo                            CallFunc________________;                          // 0x0010(0x0180)(HasGetValueTypeHash)
+	struct FSSkillInfo                            CallFunc________________;                          // 0x0010(0x01A0)(HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取技能标签) == 0x000008, "Wrong alignment on GA_Base_C_获取技能标签");
-static_assert(sizeof(GA_Base_C_获取技能标签) == 0x000190, "Wrong size on GA_Base_C_获取技能标签");
-static_assert(offsetof(GA_Base_C_获取技能标签, 技能标签) == 0x000000, "Member 'GA_Base_C_获取技能标签::技能标签' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能标签, CallFunc________________) == 0x000010, "Member 'GA_Base_C_获取技能标签::CallFunc________________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取技能标签;
 
 // Function GA_Base.GA_Base_C.获取AbilitySystemComponent
 // 0x0010 (0x0010 - 0x0000)
@@ -172,10 +132,7 @@ public:
 	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取AbilitySystemComponent) == 0x000008, "Wrong alignment on GA_Base_C_获取AbilitySystemComponent");
-static_assert(sizeof(GA_Base_C_获取AbilitySystemComponent) == 0x000010, "Wrong size on GA_Base_C_获取AbilitySystemComponent");
-static_assert(offsetof(GA_Base_C_获取AbilitySystemComponent, AbilitySystemComponent) == 0x000000, "Member 'GA_Base_C_获取AbilitySystemComponent::AbilitySystemComponent' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取AbilitySystemComponent, CallFunc__________) == 0x000008, "Member 'GA_Base_C_获取AbilitySystemComponent::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取AbilitySystemComponent;
 
 // Function GA_Base.GA_Base_C.获取技能目标
 // 0x0018 (0x0018 - 0x0000)
@@ -186,11 +143,7 @@ public:
 	class AActor*                                 技能目标;                                          // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 CallFunc_GetSkillTarget_ReturnValue;               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取技能目标) == 0x000008, "Wrong alignment on GA_Base_C_获取技能目标");
-static_assert(sizeof(GA_Base_C_获取技能目标) == 0x000018, "Wrong size on GA_Base_C_获取技能目标");
-static_assert(offsetof(GA_Base_C_获取技能目标, 目标) == 0x000000, "Member 'GA_Base_C_获取技能目标::目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标, 技能目标) == 0x000008, "Member 'GA_Base_C_获取技能目标::技能目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标, CallFunc_GetSkillTarget_ReturnValue) == 0x000010, "Member 'GA_Base_C_获取技能目标::CallFunc_GetSkillTarget_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取技能目标;
 
 // Function GA_Base.GA_Base_C.获取技能目标距离
 // 0x0060 (0x0060 - 0x0000)
@@ -209,18 +162,7 @@ public:
 	float                                         CallFunc_Conv_DoubleToFloat_ReturnValue;           // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Conv_DoubleToFloat_ReturnValue_1;         // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取技能目标距离) == 0x000008, "Wrong alignment on GA_Base_C_获取技能目标距离");
-static_assert(sizeof(GA_Base_C_获取技能目标距离) == 0x000060, "Wrong size on GA_Base_C_获取技能目标距离");
-static_assert(offsetof(GA_Base_C_获取技能目标距离, 平面2D) == 0x000000, "Member 'GA_Base_C_获取技能目标距离::平面2D' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标距离, 距离) == 0x000004, "Member 'GA_Base_C_获取技能目标距离::距离' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标距离, CallFunc__________) == 0x000008, "Member 'GA_Base_C_获取技能目标距离::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标距离, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x000010, "Member 'GA_Base_C_获取技能目标距离::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标距离, CallFunc____________) == 0x000028, "Member 'GA_Base_C_获取技能目标距离::CallFunc____________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标距离, CallFunc_D_K2_GetActorLocation_ReturnValue_1) == 0x000030, "Member 'GA_Base_C_获取技能目标距离::CallFunc_D_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标距离, CallFunc_D_Vector_Distance_ReturnValue) == 0x000048, "Member 'GA_Base_C_获取技能目标距离::CallFunc_D_Vector_Distance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标距离, CallFunc_D_Vector_Distance2D_ReturnValue) == 0x000050, "Member 'GA_Base_C_获取技能目标距离::CallFunc_D_Vector_Distance2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标距离, CallFunc_Conv_DoubleToFloat_ReturnValue) == 0x000058, "Member 'GA_Base_C_获取技能目标距离::CallFunc_Conv_DoubleToFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能目标距离, CallFunc_Conv_DoubleToFloat_ReturnValue_1) == 0x00005C, "Member 'GA_Base_C_获取技能目标距离::CallFunc_Conv_DoubleToFloat_ReturnValue_1' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取技能目标距离;
 
 // Function GA_Base.GA_Base_C.是否拥有任意标签
 // 0x0068 (0x0068 - 0x0000)
@@ -235,14 +177,7 @@ public:
 	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput; // 0x0050(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue;   // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_是否拥有任意标签) == 0x000008, "Wrong alignment on GA_Base_C_是否拥有任意标签");
-static_assert(sizeof(GA_Base_C_是否拥有任意标签) == 0x000068, "Wrong size on GA_Base_C_是否拥有任意标签");
-static_assert(offsetof(GA_Base_C_是否拥有任意标签, 目标) == 0x000000, "Member 'GA_Base_C_是否拥有任意标签::目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_是否拥有任意标签, 标签) == 0x000008, "Member 'GA_Base_C_是否拥有任意标签::标签' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_是否拥有任意标签, 是否存在) == 0x000028, "Member 'GA_Base_C_是否拥有任意标签::是否存在' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_是否拥有任意标签, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue) == 0x000030, "Member 'GA_Base_C_是否拥有任意标签::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_是否拥有任意标签, CallFunc_HasAnyMatchingGameplayTags_self_CastInput) == 0x000050, "Member 'GA_Base_C_是否拥有任意标签::CallFunc_HasAnyMatchingGameplayTags_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_是否拥有任意标签, CallFunc_HasAnyMatchingGameplayTags_ReturnValue) == 0x000060, "Member 'GA_Base_C_是否拥有任意标签::CallFunc_HasAnyMatchingGameplayTags_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_是否拥有任意标签;
 
 // Function GA_Base.GA_Base_C.设置强制速度
 // 0x0020 (0x0020 - 0x0000)
@@ -252,10 +187,7 @@ public:
 	struct FVectorDouble                          速度;                                              // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置强制速度) == 0x000008, "Wrong alignment on GA_Base_C_设置强制速度");
-static_assert(sizeof(GA_Base_C_设置强制速度) == 0x000020, "Wrong size on GA_Base_C_设置强制速度");
-static_assert(offsetof(GA_Base_C_设置强制速度, 速度) == 0x000000, "Member 'GA_Base_C_设置强制速度::速度' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置强制速度, CallFunc__________) == 0x000018, "Member 'GA_Base_C_设置强制速度::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置强制速度;
 
 // Function GA_Base.GA_Base_C.设置通道的碰撞响应
 // 0x0010 (0x0010 - 0x0000)
@@ -266,11 +198,7 @@ public:
 	ECollisionChannel                             Channel;                                           // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECollisionResponse                            NewResponse;                                       // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置通道的碰撞响应) == 0x000008, "Wrong alignment on GA_Base_C_设置通道的碰撞响应");
-static_assert(sizeof(GA_Base_C_设置通道的碰撞响应) == 0x000010, "Wrong size on GA_Base_C_设置通道的碰撞响应");
-static_assert(offsetof(GA_Base_C_设置通道的碰撞响应, 目标) == 0x000000, "Member 'GA_Base_C_设置通道的碰撞响应::目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置通道的碰撞响应, Channel) == 0x000008, "Member 'GA_Base_C_设置通道的碰撞响应::Channel' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置通道的碰撞响应, NewResponse) == 0x000009, "Member 'GA_Base_C_设置通道的碰撞响应::NewResponse' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置通道的碰撞响应;
 
 // Function GA_Base.GA_Base_C.通过Tag移除自身Buff
 // 0x0018 (0x0018 - 0x0000)
@@ -281,10 +209,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_通过Tag移除自身Buff) == 0x000008, "Wrong alignment on GA_Base_C_通过Tag移除自身Buff");
-static_assert(sizeof(GA_Base_C_通过Tag移除自身Buff) == 0x000018, "Wrong size on GA_Base_C_通过Tag移除自身Buff");
-static_assert(offsetof(GA_Base_C_通过Tag移除自身Buff, tag) == 0x000000, "Member 'GA_Base_C_通过Tag移除自身Buff::tag' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过Tag移除自身Buff, CallFunc__________) == 0x000010, "Member 'GA_Base_C_通过Tag移除自身Buff::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_通过Tag移除自身Buff;
 
 // Function GA_Base.GA_Base_C.通过 ID给对象添加Buff
 // 0x0030 (0x0030 - 0x0000)
@@ -298,13 +223,7 @@ public:
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_通过_ID给对象添加Buff) == 0x000008, "Wrong alignment on GA_Base_C_通过_ID给对象添加Buff");
-static_assert(sizeof(GA_Base_C_通过_ID给对象添加Buff) == 0x000030, "Wrong size on GA_Base_C_通过_ID给对象添加Buff");
-static_assert(offsetof(GA_Base_C_通过_ID给对象添加Buff, Buff对象) == 0x000000, "Member 'GA_Base_C_通过_ID给对象添加Buff::Buff对象' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过_ID给对象添加Buff, BuffId) == 0x000008, "Member 'GA_Base_C_通过_ID给对象添加Buff::BuffId' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过_ID给对象添加Buff, Buff层数) == 0x000010, "Member 'GA_Base_C_通过_ID给对象添加Buff::Buff层数' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过_ID给对象添加Buff, CallFunc__________) == 0x000018, "Member 'GA_Base_C_通过_ID给对象添加Buff::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过_ID给对象添加Buff, CallFunc_Conv_IntToString_ReturnValue) == 0x000020, "Member 'GA_Base_C_通过_ID给对象添加Buff::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_通过_ID给对象添加Buff;
 
 // Function GA_Base.GA_Base_C.获取Base属性值
 // 0x0018 (0x0018 - 0x0000)
@@ -316,12 +235,7 @@ public:
 	float                                         属性值;                                            // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetAttributeBaseValue_ReturnValue;        // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取Base属性值) == 0x000008, "Wrong alignment on GA_Base_C_获取Base属性值");
-static_assert(sizeof(GA_Base_C_获取Base属性值) == 0x000018, "Wrong size on GA_Base_C_获取Base属性值");
-static_assert(offsetof(GA_Base_C_获取Base属性值, 目标) == 0x000000, "Member 'GA_Base_C_获取Base属性值::目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取Base属性值, 属性id) == 0x000008, "Member 'GA_Base_C_获取Base属性值::属性id' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取Base属性值, 属性值) == 0x00000C, "Member 'GA_Base_C_获取Base属性值::属性值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取Base属性值, CallFunc_GetAttributeBaseValue_ReturnValue) == 0x000010, "Member 'GA_Base_C_获取Base属性值::CallFunc_GetAttributeBaseValue_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取Base属性值;
 
 // Function GA_Base.GA_Base_C.获取Current属性值
 // 0x0018 (0x0018 - 0x0000)
@@ -333,12 +247,7 @@ public:
 	float                                         属性值;                                            // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetAttributeCurrentValue_ReturnValue;     // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取Current属性值) == 0x000008, "Wrong alignment on GA_Base_C_获取Current属性值");
-static_assert(sizeof(GA_Base_C_获取Current属性值) == 0x000018, "Wrong size on GA_Base_C_获取Current属性值");
-static_assert(offsetof(GA_Base_C_获取Current属性值, 目标) == 0x000000, "Member 'GA_Base_C_获取Current属性值::目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取Current属性值, 属性id) == 0x000008, "Member 'GA_Base_C_获取Current属性值::属性id' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取Current属性值, 属性值) == 0x00000C, "Member 'GA_Base_C_获取Current属性值::属性值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取Current属性值, CallFunc_GetAttributeCurrentValue_ReturnValue) == 0x000010, "Member 'GA_Base_C_获取Current属性值::CallFunc_GetAttributeCurrentValue_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取Current属性值;
 
 // Function GA_Base.GA_Base_C.通过 ID移除目标Buff
 // 0x0028 (0x0028 - 0x0000)
@@ -352,13 +261,7 @@ public:
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_通过_ID移除目标Buff) == 0x000008, "Wrong alignment on GA_Base_C_通过_ID移除目标Buff");
-static_assert(sizeof(GA_Base_C_通过_ID移除目标Buff) == 0x000028, "Wrong size on GA_Base_C_通过_ID移除目标Buff");
-static_assert(offsetof(GA_Base_C_通过_ID移除目标Buff, BuffId) == 0x000000, "Member 'GA_Base_C_通过_ID移除目标Buff::BuffId' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过_ID移除目标Buff, 移除层数) == 0x000008, "Member 'GA_Base_C_通过_ID移除目标Buff::移除层数' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过_ID移除目标Buff, 目标) == 0x000010, "Member 'GA_Base_C_通过_ID移除目标Buff::目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过_ID移除目标Buff, CallFunc__________) == 0x000018, "Member 'GA_Base_C_通过_ID移除目标Buff::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过_ID移除目标Buff, CallFunc_IsValid_ReturnValue) == 0x000020, "Member 'GA_Base_C_通过_ID移除目标Buff::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_通过_ID移除目标Buff;
 
 // Function GA_Base.GA_Base_C.设置材质效果
 // 0x0018 (0x0018 - 0x0000)
@@ -370,12 +273,7 @@ public:
 	int32                                         Handle;                                            // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_AddMaterialControllerData_ReturnValue;    // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置材质效果) == 0x000008, "Wrong alignment on GA_Base_C_设置材质效果");
-static_assert(sizeof(GA_Base_C_设置材质效果) == 0x000018, "Wrong size on GA_Base_C_设置材质效果");
-static_assert(offsetof(GA_Base_C_设置材质效果, 设置对象) == 0x000000, "Member 'GA_Base_C_设置材质效果::设置对象' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置材质效果, 材质配置) == 0x000008, "Member 'GA_Base_C_设置材质效果::材质配置' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置材质效果, Handle) == 0x000010, "Member 'GA_Base_C_设置材质效果::Handle' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置材质效果, CallFunc_AddMaterialControllerData_ReturnValue) == 0x000014, "Member 'GA_Base_C_设置材质效果::CallFunc_AddMaterialControllerData_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置材质效果;
 
 // Function GA_Base.GA_Base_C.创建子弹
 // 0x0080 (0x0080 - 0x0000)
@@ -390,14 +288,7 @@ public:
 	int32                                         子弹;                                              // 0x0078(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_CreateBulletFromGA_ReturnValue;           // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_创建子弹) == 0x000010, "Wrong alignment on GA_Base_C_创建子弹");
-static_assert(sizeof(GA_Base_C_创建子弹) == 0x000080, "Wrong size on GA_Base_C_创建子弹");
-static_assert(offsetof(GA_Base_C_创建子弹, 施法者) == 0x000000, "Member 'GA_Base_C_创建子弹::施法者' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建子弹, 子弹ID) == 0x000008, "Member 'GA_Base_C_创建子弹::子弹ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建子弹, 初始变换) == 0x000020, "Member 'GA_Base_C_创建子弹::初始变换' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建子弹, 目标点) == 0x000060, "Member 'GA_Base_C_创建子弹::目标点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建子弹, 子弹) == 0x000078, "Member 'GA_Base_C_创建子弹::子弹' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建子弹, CallFunc_CreateBulletFromGA_ReturnValue) == 0x00007C, "Member 'GA_Base_C_创建子弹::CallFunc_CreateBulletFromGA_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_创建子弹;
 
 // Function GA_Base.GA_Base_C.使用技能
 // 0x0030 (0x0030 - 0x0000)
@@ -412,14 +303,7 @@ public:
 	bool                                          是否成功释放;                                      // 0x002C(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          CallFunc_BeginSkill_ReturnValue;                   // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_使用技能) == 0x000008, "Wrong alignment on GA_Base_C_使用技能");
-static_assert(sizeof(GA_Base_C_使用技能) == 0x000030, "Wrong size on GA_Base_C_使用技能");
-static_assert(offsetof(GA_Base_C_使用技能, 释放者) == 0x000000, "Member 'GA_Base_C_使用技能::释放者' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_使用技能, 技能ID) == 0x000008, "Member 'GA_Base_C_使用技能::技能ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_使用技能, 技能目标) == 0x000018, "Member 'GA_Base_C_使用技能::技能目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_使用技能, Socket) == 0x000020, "Member 'GA_Base_C_使用技能::Socket' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_使用技能, 是否成功释放) == 0x00002C, "Member 'GA_Base_C_使用技能::是否成功释放' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_使用技能, CallFunc_BeginSkill_ReturnValue) == 0x00002D, "Member 'GA_Base_C_使用技能::CallFunc_BeginSkill_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_使用技能;
 
 // Function GA_Base.GA_Base_C.召唤
 // 0x0080 (0x0080 - 0x0000)
@@ -437,15 +321,7 @@ public:
 	int64                                         CreatureDataId;                                    // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         EntityID;                                          // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_召唤) == 0x000010, "Wrong alignment on GA_Base_C_召唤");
-static_assert(sizeof(GA_Base_C_召唤) == 0x000080, "Wrong size on GA_Base_C_召唤");
-static_assert(offsetof(GA_Base_C_召唤, 配置表ID) == 0x000000, "Member 'GA_Base_C_召唤::配置表ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_召唤, 出生位置) == 0x000010, "Member 'GA_Base_C_召唤::出生位置' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_召唤, 是否成功) == 0x000050, "Member 'GA_Base_C_召唤::是否成功' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_召唤, 召唤物) == 0x000058, "Member 'GA_Base_C_召唤::召唤物' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_召唤, 实体ID) == 0x000060, "Member 'GA_Base_C_召唤::实体ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_召唤, CreatureDataId) == 0x000068, "Member 'GA_Base_C_召唤::CreatureDataId' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_召唤, EntityID) == 0x000070, "Member 'GA_Base_C_召唤::EntityID' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_召唤;
 
 // Function GA_Base.GA_Base_C.是否联网
 // 0x0003 (0x0003 - 0x0000)
@@ -456,11 +332,7 @@ public:
 	EKuroNetMode                                  CallFunc_GetKuroNetMode_ReturnValue;               // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_是否联网) == 0x000001, "Wrong alignment on GA_Base_C_是否联网");
-static_assert(sizeof(GA_Base_C_是否联网) == 0x000003, "Wrong size on GA_Base_C_是否联网");
-static_assert(offsetof(GA_Base_C_是否联网, 联网) == 0x000000, "Member 'GA_Base_C_是否联网::联网' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_是否联网, CallFunc_GetKuroNetMode_ReturnValue) == 0x000001, "Member 'GA_Base_C_是否联网::CallFunc_GetKuroNetMode_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_是否联网, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000002, "Member 'GA_Base_C_是否联网::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_是否联网;
 
 // Function GA_Base.GA_Base_C.获取黑板 Int
 // 0x0038 (0x0038 - 0x0000)
@@ -475,14 +347,7 @@ public:
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetIntValueByEntity_ReturnValue;          // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取黑板_Int) == 0x000008, "Wrong alignment on GA_Base_C_获取黑板_Int");
-static_assert(sizeof(GA_Base_C_获取黑板_Int) == 0x000038, "Wrong size on GA_Base_C_获取黑板_Int");
-static_assert(offsetof(GA_Base_C_获取黑板_Int, 角色) == 0x000000, "Member 'GA_Base_C_获取黑板_Int::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板_Int, key) == 0x000008, "Member 'GA_Base_C_获取黑板_Int::key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板_Int, 值) == 0x000018, "Member 'GA_Base_C_获取黑板_Int::值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板_Int, CallFunc_GetEntityId_self_CastInput) == 0x000020, "Member 'GA_Base_C_获取黑板_Int::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板_Int, CallFunc_GetEntityId_ReturnValue) == 0x000030, "Member 'GA_Base_C_获取黑板_Int::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板_Int, CallFunc_GetIntValueByEntity_ReturnValue) == 0x000034, "Member 'GA_Base_C_获取黑板_Int::CallFunc_GetIntValueByEntity_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取黑板_Int;
 
 // Function GA_Base.GA_Base_C.设置黑板Int
 // 0x0038 (0x0038 - 0x0000)
@@ -496,13 +361,7 @@ public:
 	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置黑板Int) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板Int");
-static_assert(sizeof(GA_Base_C_设置黑板Int) == 0x000038, "Wrong size on GA_Base_C_设置黑板Int");
-static_assert(offsetof(GA_Base_C_设置黑板Int, 角色) == 0x000000, "Member 'GA_Base_C_设置黑板Int::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Int, key) == 0x000008, "Member 'GA_Base_C_设置黑板Int::key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Int, 值) == 0x000018, "Member 'GA_Base_C_设置黑板Int::值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Int, CallFunc_GetEntityId_self_CastInput) == 0x000020, "Member 'GA_Base_C_设置黑板Int::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Int, CallFunc_GetEntityId_ReturnValue) == 0x000030, "Member 'GA_Base_C_设置黑板Int::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置黑板Int;
 
 // Function GA_Base.GA_Base_C.获取黑板Long
 // 0x0040 (0x0040 - 0x0000)
@@ -517,14 +376,7 @@ public:
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	int64                                         CallFunc_GetLongValueByEntity_ReturnValue;         // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取黑板Long) == 0x000008, "Wrong alignment on GA_Base_C_获取黑板Long");
-static_assert(sizeof(GA_Base_C_获取黑板Long) == 0x000040, "Wrong size on GA_Base_C_获取黑板Long");
-static_assert(offsetof(GA_Base_C_获取黑板Long, 角色) == 0x000000, "Member 'GA_Base_C_获取黑板Long::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板Long, key) == 0x000008, "Member 'GA_Base_C_获取黑板Long::key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板Long, 值) == 0x000018, "Member 'GA_Base_C_获取黑板Long::值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板Long, CallFunc_GetEntityId_self_CastInput) == 0x000020, "Member 'GA_Base_C_获取黑板Long::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板Long, CallFunc_GetEntityId_ReturnValue) == 0x000030, "Member 'GA_Base_C_获取黑板Long::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板Long, CallFunc_GetLongValueByEntity_ReturnValue) == 0x000038, "Member 'GA_Base_C_获取黑板Long::CallFunc_GetLongValueByEntity_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取黑板Long;
 
 // Function GA_Base.GA_Base_C.设置黑板Long
 // 0x0038 (0x0038 - 0x0000)
@@ -537,13 +389,7 @@ public:
 	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置黑板Long) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板Long");
-static_assert(sizeof(GA_Base_C_设置黑板Long) == 0x000038, "Wrong size on GA_Base_C_设置黑板Long");
-static_assert(offsetof(GA_Base_C_设置黑板Long, 角色) == 0x000000, "Member 'GA_Base_C_设置黑板Long::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Long, key) == 0x000008, "Member 'GA_Base_C_设置黑板Long::key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Long, 值) == 0x000018, "Member 'GA_Base_C_设置黑板Long::值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Long, CallFunc_GetEntityId_self_CastInput) == 0x000020, "Member 'GA_Base_C_设置黑板Long::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Long, CallFunc_GetEntityId_ReturnValue) == 0x000030, "Member 'GA_Base_C_设置黑板Long::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置黑板Long;
 
 // Function GA_Base.GA_Base_C.获取实体ID
 // 0x0028 (0x0028 - 0x0000)
@@ -556,12 +402,7 @@ public:
 	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取实体ID) == 0x000008, "Wrong alignment on GA_Base_C_获取实体ID");
-static_assert(sizeof(GA_Base_C_获取实体ID) == 0x000028, "Wrong size on GA_Base_C_获取实体ID");
-static_assert(offsetof(GA_Base_C_获取实体ID, 对象) == 0x000000, "Member 'GA_Base_C_获取实体ID::对象' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取实体ID, 实体ID) == 0x000008, "Member 'GA_Base_C_获取实体ID::实体ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取实体ID, CallFunc_GetEntityId_self_CastInput) == 0x000010, "Member 'GA_Base_C_获取实体ID::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取实体ID, CallFunc_GetEntityId_ReturnValue) == 0x000020, "Member 'GA_Base_C_获取实体ID::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取实体ID;
 
 // Function GA_Base.GA_Base_C.根据实体ID获取对象
 // 0x0030 (0x0030 - 0x0000)
@@ -577,14 +418,7 @@ public:
 	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_根据实体ID获取对象) == 0x000008, "Wrong alignment on GA_Base_C_根据实体ID获取对象");
-static_assert(sizeof(GA_Base_C_根据实体ID获取对象) == 0x000030, "Wrong size on GA_Base_C_根据实体ID获取对象");
-static_assert(offsetof(GA_Base_C_根据实体ID获取对象, 实体ID) == 0x000000, "Member 'GA_Base_C_根据实体ID获取对象::实体ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_根据实体ID获取对象, 对象) == 0x000008, "Member 'GA_Base_C_根据实体ID获取对象::对象' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_根据实体ID获取对象, 是否找到对象) == 0x000010, "Member 'GA_Base_C_根据实体ID获取对象::是否找到对象' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_根据实体ID获取对象, CallFunc_GetDynamicEntity_ReturnValue) == 0x000018, "Member 'GA_Base_C_根据实体ID获取对象::CallFunc_GetDynamicEntity_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_根据实体ID获取对象, K2Node_DynamicCast_AsTs_Base_Character) == 0x000020, "Member 'GA_Base_C_根据实体ID获取对象::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_根据实体ID获取对象, K2Node_DynamicCast_bSuccess) == 0x000028, "Member 'GA_Base_C_根据实体ID获取对象::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_根据实体ID获取对象;
 
 // Function GA_Base.GA_Base_C.获取黑板指定Key值关联对象
 // 0x0038 (0x0038 - 0x0000)
@@ -600,15 +434,7 @@ public:
 	class ATsBaseCharacter_C*                     CallFunc_____ID_______;                            // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_____ID___________;                        // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_获取黑板指定Key值关联对象) == 0x000008, "Wrong alignment on GA_Base_C_获取黑板指定Key值关联对象");
-static_assert(sizeof(GA_Base_C_获取黑板指定Key值关联对象) == 0x000038, "Wrong size on GA_Base_C_获取黑板指定Key值关联对象");
-static_assert(offsetof(GA_Base_C_获取黑板指定Key值关联对象, 角色) == 0x000000, "Member 'GA_Base_C_获取黑板指定Key值关联对象::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板指定Key值关联对象, key) == 0x000008, "Member 'GA_Base_C_获取黑板指定Key值关联对象::key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板指定Key值关联对象, 对象) == 0x000018, "Member 'GA_Base_C_获取黑板指定Key值关联对象::对象' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板指定Key值关联对象, 是否找到对象) == 0x000020, "Member 'GA_Base_C_获取黑板指定Key值关联对象::是否找到对象' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板指定Key值关联对象, CallFunc_____EntityId__) == 0x000024, "Member 'GA_Base_C_获取黑板指定Key值关联对象::CallFunc_____EntityId__' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板指定Key值关联对象, CallFunc_____ID_______) == 0x000028, "Member 'GA_Base_C_获取黑板指定Key值关联对象::CallFunc_____ID_______' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板指定Key值关联对象, CallFunc_____ID___________) == 0x000030, "Member 'GA_Base_C_获取黑板指定Key值关联对象::CallFunc_____ID___________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取黑板指定Key值关联对象;
 
 // Function GA_Base.GA_Base_C.设置技能目标
 // 0x0010 (0x0010 - 0x0000)
@@ -618,38 +444,27 @@ public:
 	class AActor*                                 SkillTarget;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置技能目标) == 0x000008, "Wrong alignment on GA_Base_C_设置技能目标");
-static_assert(sizeof(GA_Base_C_设置技能目标) == 0x000010, "Wrong size on GA_Base_C_设置技能目标");
-static_assert(offsetof(GA_Base_C_设置技能目标, SkillTarget) == 0x000000, "Member 'GA_Base_C_设置技能目标::SkillTarget' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置技能目标, CallFunc__________) == 0x000008, "Member 'GA_Base_C_设置技能目标::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置技能目标;
 
 // Function GA_Base.GA_Base_C.面向目标
-// 0x0088 (0x0088 - 0x0000)
+// 0x0090 (0x0090 - 0x0000)
 struct GA_Base_C_面向目标 final
 {
 public:
 	class ATsBaseCharacter_C*                     目标;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 面向目标_0;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue;        // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetActorUpVector_ReturnValue;             // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue_1;      // 0x0038(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_Subtract_VectorVector_ReturnValue;      // 0x0050(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x0068(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_LookRotation_UpFirst_ReturnValue;         // 0x0074(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetActorRotationWithContext_ReturnValue;  // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue;        // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetActorUpVector_ReturnValue;             // 0x0030(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue_1;      // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_Subtract_VectorVector_ReturnValue;      // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x0070(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_LookRotation_UpFirst_ReturnValue;         // 0x007C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SetActorRotationWithContext_ReturnValue;  // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_面向目标) == 0x000008, "Wrong alignment on GA_Base_C_面向目标");
-static_assert(sizeof(GA_Base_C_面向目标) == 0x000088, "Wrong size on GA_Base_C_面向目标");
-static_assert(offsetof(GA_Base_C_面向目标, 目标) == 0x000000, "Member 'GA_Base_C_面向目标::目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, 面向目标_0) == 0x000008, "Member 'GA_Base_C_面向目标::面向目标_0' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x000010, "Member 'GA_Base_C_面向目标::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_GetActorUpVector_ReturnValue) == 0x000028, "Member 'GA_Base_C_面向目标::CallFunc_GetActorUpVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_D_K2_GetActorLocation_ReturnValue_1) == 0x000038, "Member 'GA_Base_C_面向目标::CallFunc_D_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_D_Subtract_VectorVector_ReturnValue) == 0x000050, "Member 'GA_Base_C_面向目标::CallFunc_D_Subtract_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_Conv_VectorDoubleToVector_ReturnValue) == 0x000068, "Member 'GA_Base_C_面向目标::CallFunc_Conv_VectorDoubleToVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_LookRotation_UpFirst_ReturnValue) == 0x000074, "Member 'GA_Base_C_面向目标::CallFunc_LookRotation_UpFirst_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_SetActorRotationWithContext_ReturnValue) == 0x000080, "Member 'GA_Base_C_面向目标::CallFunc_SetActorRotationWithContext_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_面向目标;
 
 // Function GA_Base.GA_Base_C.销毁特定子弹
 // 0x00C0 (0x00C0 - 0x0000)
@@ -691,38 +506,7 @@ public:
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int32>                                 CallFunc_GetCharacterLaunchedBulletIds_ReturnValue; // 0x00B0(0x0010)(ReferenceParm)
 };
-static_assert(alignof(GA_Base_C_销毁特定子弹) == 0x000008, "Wrong alignment on GA_Base_C_销毁特定子弹");
-static_assert(sizeof(GA_Base_C_销毁特定子弹) == 0x0000C0, "Wrong size on GA_Base_C_销毁特定子弹");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, 子弹名字) == 0x000000, "Member 'GA_Base_C_销毁特定子弹::子弹名字' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, 是否召唤子子弹) == 0x00000C, "Member 'GA_Base_C_销毁特定子弹::是否召唤子子弹' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, TmpBulletIds) == 0x000010, "Member 'GA_Base_C_销毁特定子弹::TmpBulletIds' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, tmpBullet) == 0x000020, "Member 'GA_Base_C_销毁特定子弹::tmpBullet' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, Array_Index) == 0x000030, "Member 'GA_Base_C_销毁特定子弹::Array_Index' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, ___int_Array_Index_Variable) == 0x000040, "Member 'GA_Base_C_销毁特定子弹::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, ___int_Loop_Counter_Variable) == 0x000044, "Member 'GA_Base_C_销毁特定子弹::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Subtract_IntInt_ReturnValue) == 0x000048, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Subtract_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_GreaterEqual_IntInt_ReturnValue) == 0x00004C, "Member 'GA_Base_C_销毁特定子弹::CallFunc_GreaterEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, ___int_Array_Index_Variable_1) == 0x000050, "Member 'GA_Base_C_销毁特定子弹::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, ___int_Loop_Counter_Variable_1) == 0x000054, "Member 'GA_Base_C_销毁特定子弹::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Add_IntInt_ReturnValue) == 0x000058, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Array_Get_Item) == 0x00005C, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Array_Length_ReturnValue) == 0x000060, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Greater_IntInt_ReturnValue) == 0x000064, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_DestroyBullet_ReturnValue) == 0x000065, "Member 'GA_Base_C_销毁特定子弹::CallFunc_DestroyBullet_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_DestroyBullet_ReturnValue_1) == 0x000066, "Member 'GA_Base_C_销毁特定子弹::CallFunc_DestroyBullet_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Array_Length_ReturnValue_1) == 0x000068, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Subtract_IntInt_ReturnValue_1) == 0x00006C, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Subtract_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Array_Get_Item_1) == 0x000070, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Max_ReturnValue) == 0x000074, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Max_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_GetBulletName_ReturnValue) == 0x000078, "Member 'GA_Base_C_销毁特定子弹::CallFunc_GetBulletName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Conv_StringToName_ReturnValue) == 0x000088, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Array_Length_ReturnValue_2) == 0x000094, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Less_IntInt_ReturnValue) == 0x000098, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_EqualEqual_NameName_ReturnValue) == 0x000099, "Member 'GA_Base_C_销毁特定子弹::CallFunc_EqualEqual_NameName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc__________) == 0x0000A0, "Member 'GA_Base_C_销毁特定子弹::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_____ID___ID) == 0x0000A8, "Member 'GA_Base_C_销毁特定子弹::CallFunc_____ID___ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_Array_Add_ReturnValue) == 0x0000AC, "Member 'GA_Base_C_销毁特定子弹::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_销毁特定子弹, CallFunc_GetCharacterLaunchedBulletIds_ReturnValue) == 0x0000B0, "Member 'GA_Base_C_销毁特定子弹::CallFunc_GetCharacterLaunchedBulletIds_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_销毁特定子弹;
 
 // Function GA_Base.GA_Base_C.获取目标Tag层数
 // 0x0020 (0x0020 - 0x0000)
@@ -734,12 +518,7 @@ public:
 	int32                                         层数;                                              // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetTagCount_ReturnValue;                  // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取目标Tag层数) == 0x000008, "Wrong alignment on GA_Base_C_获取目标Tag层数");
-static_assert(sizeof(GA_Base_C_获取目标Tag层数) == 0x000020, "Wrong size on GA_Base_C_获取目标Tag层数");
-static_assert(offsetof(GA_Base_C_获取目标Tag层数, 目标) == 0x000000, "Member 'GA_Base_C_获取目标Tag层数::目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标Tag层数, Tag) == 0x000008, "Member 'GA_Base_C_获取目标Tag层数::Tag' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标Tag层数, 层数) == 0x000014, "Member 'GA_Base_C_获取目标Tag层数::层数' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标Tag层数, CallFunc_GetTagCount_ReturnValue) == 0x000018, "Member 'GA_Base_C_获取目标Tag层数::CallFunc_GetTagCount_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取目标Tag层数;
 
 // Function GA_Base.GA_Base_C.获取地面坐标点
 // 0x01C0 (0x01C0 - 0x0000)
@@ -781,38 +560,7 @@ public:
 	uint8                                         Pad_1A4[0x4];                                      // 0x01A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVectorDouble                          CallFunc_Conv_VectorToVectorDouble_ReturnValue;    // 0x01A8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取地面坐标点) == 0x000008, "Wrong alignment on GA_Base_C_获取地面坐标点");
-static_assert(sizeof(GA_Base_C_获取地面坐标点) == 0x0001C0, "Wrong size on GA_Base_C_获取地面坐标点");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, 指定点) == 0x000000, "Member 'GA_Base_C_获取地面坐标点::指定点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, 深度) == 0x000018, "Member 'GA_Base_C_获取地面坐标点::深度' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, 地面坐标) == 0x000020, "Member 'GA_Base_C_获取地面坐标点::地面坐标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, 是否存在) == 0x000038, "Member 'GA_Base_C_获取地面坐标点::是否存在' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, ___object_Variable) == 0x000040, "Member 'GA_Base_C_获取地面坐标点::___object_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakVectorDouble_X) == 0x000050, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakVectorDouble_X' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakVectorDouble_Y) == 0x000058, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakVectorDouble_Y' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakVectorDouble_Z) == 0x000060, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakVectorDouble_Z' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_Conv_FloatToDouble_ReturnValue) == 0x000068, "Member 'GA_Base_C_获取地面坐标点::CallFunc_Conv_FloatToDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_D_Subtract_FloatFloat_ReturnValue) == 0x000070, "Member 'GA_Base_C_获取地面坐标点::CallFunc_D_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_MakeVectorDouble_ReturnValue) == 0x000078, "Member 'GA_Base_C_获取地面坐标点::CallFunc_MakeVectorDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_D_LineTraceSingle_OutHit) == 0x000090, "Member 'GA_Base_C_获取地面坐标点::CallFunc_D_LineTraceSingle_OutHit' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_D_LineTraceSingle_ReturnValue) == 0x000124, "Member 'GA_Base_C_获取地面坐标点::CallFunc_D_LineTraceSingle_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_bBlockingHit) == 0x000125, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_bBlockingHit' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_bInitialOverlap) == 0x000126, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_bInitialOverlap' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_Time) == 0x000128, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_Time' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_Distance) == 0x00012C, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_Distance' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_Location) == 0x000130, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_Location' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_ImpactPoint) == 0x00013C, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_ImpactPoint' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_Normal) == 0x000148, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_Normal' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_ImpactNormal) == 0x000154, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_ImpactNormal' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_PhysMat) == 0x000160, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_PhysMat' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_HitActor) == 0x000168, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_HitActor' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_HitComponent) == 0x000170, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_HitComponent' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_HitBoneName) == 0x000178, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_HitBoneName' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_HitItem) == 0x000184, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_HitItem' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_FaceIndex) == 0x000188, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_FaceIndex' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_TraceStart) == 0x00018C, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_TraceStart' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_BreakHitResult_TraceEnd) == 0x000198, "Member 'GA_Base_C_获取地面坐标点::CallFunc_BreakHitResult_TraceEnd' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取地面坐标点, CallFunc_Conv_VectorToVectorDouble_ReturnValue) == 0x0001A8, "Member 'GA_Base_C_获取地面坐标点::CallFunc_Conv_VectorToVectorDouble_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取地面坐标点;
 
 // Function GA_Base.GA_Base_C.设置当前技能打断等级
 // 0x0010 (0x0010 - 0x0000)
@@ -823,11 +571,7 @@ public:
 	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置当前技能打断等级) == 0x000008, "Wrong alignment on GA_Base_C_设置当前技能打断等级");
-static_assert(sizeof(GA_Base_C_设置当前技能打断等级) == 0x000010, "Wrong size on GA_Base_C_设置当前技能打断等级");
-static_assert(offsetof(GA_Base_C_设置当前技能打断等级, 打断等级) == 0x000000, "Member 'GA_Base_C_设置当前技能打断等级::打断等级' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置当前技能打断等级, CallFunc_Conv_IntToFloat_ReturnValue) == 0x000004, "Member 'GA_Base_C_设置当前技能打断等级::CallFunc_Conv_IntToFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置当前技能打断等级, CallFunc__________) == 0x000008, "Member 'GA_Base_C_设置当前技能打断等级::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置当前技能打断等级;
 
 // Function GA_Base.GA_Base_C.结束异步任务
 // 0x0010 (0x0010 - 0x0000)
@@ -838,11 +582,7 @@ public:
 	bool                                          有效;                                              // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_结束异步任务) == 0x000008, "Wrong alignment on GA_Base_C_结束异步任务");
-static_assert(sizeof(GA_Base_C_结束异步任务) == 0x000010, "Wrong size on GA_Base_C_结束异步任务");
-static_assert(offsetof(GA_Base_C_结束异步任务, 任务) == 0x000000, "Member 'GA_Base_C_结束异步任务::任务' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_结束异步任务, 有效) == 0x000008, "Member 'GA_Base_C_结束异步任务::有效' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_结束异步任务, CallFunc_IsValid_ReturnValue) == 0x000009, "Member 'GA_Base_C_结束异步任务::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_结束异步任务;
 
 // Function GA_Base.GA_Base_C.发送事件
 // 0x0018 (0x0018 - 0x0000)
@@ -852,10 +592,7 @@ public:
 	class AActor*                                 发送目标;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           事件Tag;                                           // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_发送事件) == 0x000008, "Wrong alignment on GA_Base_C_发送事件");
-static_assert(sizeof(GA_Base_C_发送事件) == 0x000018, "Wrong size on GA_Base_C_发送事件");
-static_assert(offsetof(GA_Base_C_发送事件, 发送目标) == 0x000000, "Member 'GA_Base_C_发送事件::发送目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_发送事件, 事件Tag) == 0x000008, "Member 'GA_Base_C_发送事件::事件Tag' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_发送事件;
 
 // Function GA_Base.GA_Base_C.获取两者距离
 // 0x0068 (0x0068 - 0x0000)
@@ -877,18 +614,7 @@ public:
 	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Conv_DoubleToFloat_ReturnValue;           // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取两者距离) == 0x000008, "Wrong alignment on GA_Base_C_获取两者距离");
-static_assert(sizeof(GA_Base_C_获取两者距离) == 0x000068, "Wrong size on GA_Base_C_获取两者距离");
-static_assert(offsetof(GA_Base_C_获取两者距离, 目标A) == 0x000000, "Member 'GA_Base_C_获取两者距离::目标A' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取两者距离, 目标B) == 0x000008, "Member 'GA_Base_C_获取两者距离::目标B' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取两者距离, ReturnValue) == 0x000010, "Member 'GA_Base_C_获取两者距离::ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取两者距离, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x000018, "Member 'GA_Base_C_获取两者距离::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取两者距离, CallFunc_IsValid_ReturnValue) == 0x000030, "Member 'GA_Base_C_获取两者距离::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取两者距离, CallFunc_D_K2_GetActorLocation_ReturnValue_1) == 0x000038, "Member 'GA_Base_C_获取两者距离::CallFunc_D_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取两者距离, CallFunc_IsValid_ReturnValue_1) == 0x000050, "Member 'GA_Base_C_获取两者距离::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取两者距离, CallFunc_D_Vector_Distance_ReturnValue) == 0x000058, "Member 'GA_Base_C_获取两者距离::CallFunc_D_Vector_Distance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取两者距离, CallFunc_BooleanAND_ReturnValue) == 0x000060, "Member 'GA_Base_C_获取两者距离::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取两者距离, CallFunc_Conv_DoubleToFloat_ReturnValue) == 0x000064, "Member 'GA_Base_C_获取两者距离::CallFunc_Conv_DoubleToFloat_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取两者距离;
 
 // Function GA_Base.GA_Base_C.创建并播放特效
 // 0x0080 (0x0080 - 0x0000)
@@ -908,17 +634,7 @@ public:
 	uint8                                         Pad_72[0x2];                                       // 0x0072(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_SpawnEffect_ReturnValue;                  // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_创建并播放特效) == 0x000010, "Wrong alignment on GA_Base_C_创建并播放特效");
-static_assert(sizeof(GA_Base_C_创建并播放特效) == 0x000080, "Wrong size on GA_Base_C_创建并播放特效");
-static_assert(offsetof(GA_Base_C_创建并播放特效, DA文件名) == 0x000000, "Member 'GA_Base_C_创建并播放特效::DA文件名' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建并播放特效, transform) == 0x000010, "Member 'GA_Base_C_创建并播放特效::transform' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建并播放特效, AttachToCharacter) == 0x000050, "Member 'GA_Base_C_创建并播放特效::AttachToCharacter' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建并播放特效, ReturnValue) == 0x000054, "Member 'GA_Base_C_创建并播放特效::ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建并播放特效, CallFunc_GetPathName_ReturnValue) == 0x000058, "Member 'GA_Base_C_创建并播放特效::CallFunc_GetPathName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建并播放特效, CallFunc__________) == 0x000068, "Member 'GA_Base_C_创建并播放特效::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建并播放特效, CallFunc_CanCharacterMonsterOrSummonedDisplayEffect_ReturnValue) == 0x000070, "Member 'GA_Base_C_创建并播放特效::CallFunc_CanCharacterMonsterOrSummonedDisplayEffect_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建并播放特效, CallFunc_Not_PreBool_ReturnValue) == 0x000071, "Member 'GA_Base_C_创建并播放特效::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_创建并播放特效, CallFunc_SpawnEffect_ReturnValue) == 0x000074, "Member 'GA_Base_C_创建并播放特效::CallFunc_SpawnEffect_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_创建并播放特效;
 
 // Function GA_Base.GA_Base_C.施法者添加标签
 // 0x0018 (0x0018 - 0x0000)
@@ -929,10 +645,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_施法者添加标签) == 0x000008, "Wrong alignment on GA_Base_C_施法者添加标签");
-static_assert(sizeof(GA_Base_C_施法者添加标签) == 0x000018, "Wrong size on GA_Base_C_施法者添加标签");
-static_assert(offsetof(GA_Base_C_施法者添加标签, Tag) == 0x000000, "Member 'GA_Base_C_施法者添加标签::Tag' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_施法者添加标签, CallFunc__________) == 0x000010, "Member 'GA_Base_C_施法者添加标签::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_施法者添加标签;
 
 // Function GA_Base.GA_Base_C.施法者移除标签
 // 0x0018 (0x0018 - 0x0000)
@@ -943,10 +656,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_施法者移除标签) == 0x000008, "Wrong alignment on GA_Base_C_施法者移除标签");
-static_assert(sizeof(GA_Base_C_施法者移除标签) == 0x000018, "Wrong size on GA_Base_C_施法者移除标签");
-static_assert(offsetof(GA_Base_C_施法者移除标签, tag) == 0x000000, "Member 'GA_Base_C_施法者移除标签::tag' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_施法者移除标签, CallFunc__________) == 0x000010, "Member 'GA_Base_C_施法者移除标签::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_施法者移除标签;
 
 // Function GA_Base.GA_Base_C.通过ID获取对象Buff层数
 // 0x0020 (0x0020 - 0x0000)
@@ -960,16 +670,10 @@ public:
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetBuffCountById_ReturnValue;             // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_通过ID获取对象Buff层数) == 0x000008, "Wrong alignment on GA_Base_C_通过ID获取对象Buff层数");
-static_assert(sizeof(GA_Base_C_通过ID获取对象Buff层数) == 0x000020, "Wrong size on GA_Base_C_通过ID获取对象Buff层数");
-static_assert(offsetof(GA_Base_C_通过ID获取对象Buff层数, buffId) == 0x000000, "Member 'GA_Base_C_通过ID获取对象Buff层数::buffId' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过ID获取对象Buff层数, enforceOnGoingCheck) == 0x000008, "Member 'GA_Base_C_通过ID获取对象Buff层数::enforceOnGoingCheck' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过ID获取对象Buff层数, 层数) == 0x00000C, "Member 'GA_Base_C_通过ID获取对象Buff层数::层数' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过ID获取对象Buff层数, CallFunc__________) == 0x000010, "Member 'GA_Base_C_通过ID获取对象Buff层数::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过ID获取对象Buff层数, CallFunc_GetBuffCountById_ReturnValue) == 0x000018, "Member 'GA_Base_C_通过ID获取对象Buff层数::CallFunc_GetBuffCountById_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_通过ID获取对象Buff层数;
 
 // Function GA_Base.GA_Base_C.获取当前技能攻速
-// 0x01A8 (0x01A8 - 0x0000)
+// 0x01C8 (0x01C8 - 0x0000)
 struct GA_Base_C_获取当前技能攻速 final
 {
 public:
@@ -978,24 +682,14 @@ public:
 	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSkillInfo                            CallFunc________________;                          // 0x0018(0x0180)(HasGetValueTypeHash)
-	float                                         CallFunc___Current_______;                         // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x019C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x019D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_19E[0x2];                                      // 0x019E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc___Current________1;                       // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillInfo                            CallFunc________________;                          // 0x0018(0x01A0)(HasGetValueTypeHash)
+	float                                         CallFunc___Current_______;                         // 0x01B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x01BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x01BD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1BE[0x2];                                      // 0x01BE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc___Current________1;                       // 0x01C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取当前技能攻速) == 0x000008, "Wrong alignment on GA_Base_C_获取当前技能攻速");
-static_assert(sizeof(GA_Base_C_获取当前技能攻速) == 0x0001A8, "Wrong size on GA_Base_C_获取当前技能攻速");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, SpeedRatio) == 0x000000, "Member 'GA_Base_C_获取当前技能攻速::SpeedRatio' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, speed) == 0x000004, "Member 'GA_Base_C_获取当前技能攻速::speed' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000008, "Member 'GA_Base_C_获取当前技能攻速::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc__________) == 0x000010, "Member 'GA_Base_C_获取当前技能攻速::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc________________) == 0x000018, "Member 'GA_Base_C_获取当前技能攻速::CallFunc________________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc___Current_______) == 0x000198, "Member 'GA_Base_C_获取当前技能攻速::CallFunc___Current_______' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x00019C, "Member 'GA_Base_C_获取当前技能攻速::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x00019D, "Member 'GA_Base_C_获取当前技能攻速::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc___Current________1) == 0x0001A0, "Member 'GA_Base_C_获取当前技能攻速::CallFunc___Current________1' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取当前技能攻速;
 
 // Function GA_Base.GA_Base_C.查询特定子弹数量
 // 0x0088 (0x0088 - 0x0000)
@@ -1023,26 +717,7 @@ public:
 	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0078(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_NameName_ReturnValue;          // 0x0084(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_查询特定子弹数量) == 0x000008, "Wrong alignment on GA_Base_C_查询特定子弹数量");
-static_assert(sizeof(GA_Base_C_查询特定子弹数量) == 0x000088, "Wrong size on GA_Base_C_查询特定子弹数量");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, 子弹名字) == 0x000000, "Member 'GA_Base_C_查询特定子弹数量::子弹名字' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, 子弹数量) == 0x00000C, "Member 'GA_Base_C_查询特定子弹数量::子弹数量' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, BulletCount) == 0x000010, "Member 'GA_Base_C_查询特定子弹数量::BulletCount' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, ___int_Array_Index_Variable) == 0x000014, "Member 'GA_Base_C_查询特定子弹数量::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, ___int_Loop_Counter_Variable) == 0x000018, "Member 'GA_Base_C_查询特定子弹数量::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_Add_IntInt_ReturnValue) == 0x00001C, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, ___int_Variable) == 0x000020, "Member 'GA_Base_C_查询特定子弹数量::___int_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_Add_IntInt_ReturnValue_1) == 0x000024, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc__________) == 0x000028, "Member 'GA_Base_C_查询特定子弹数量::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_GetEntityId_self_CastInput) == 0x000030, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_GetEntityId_ReturnValue) == 0x000040, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_GetCharacterLaunchedBulletIds_ReturnValue) == 0x000048, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_GetCharacterLaunchedBulletIds_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_Array_Length_ReturnValue) == 0x000058, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_Array_Get_Item) == 0x00005C, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_Less_IntInt_ReturnValue) == 0x000060, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_GetBulletName_ReturnValue) == 0x000068, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_GetBulletName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_Conv_StringToName_ReturnValue) == 0x000078, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_查询特定子弹数量, CallFunc_EqualEqual_NameName_ReturnValue) == 0x000084, "Member 'GA_Base_C_查询特定子弹数量::CallFunc_EqualEqual_NameName_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_查询特定子弹数量;
 
 // Function GA_Base.GA_Base_C.获取黑板EntityId
 // 0x0038 (0x0038 - 0x0000)
@@ -1057,14 +732,7 @@ public:
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetEntityIdByEntity_ReturnValue;          // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取黑板EntityId) == 0x000008, "Wrong alignment on GA_Base_C_获取黑板EntityId");
-static_assert(sizeof(GA_Base_C_获取黑板EntityId) == 0x000038, "Wrong size on GA_Base_C_获取黑板EntityId");
-static_assert(offsetof(GA_Base_C_获取黑板EntityId, 角色) == 0x000000, "Member 'GA_Base_C_获取黑板EntityId::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板EntityId, key) == 0x000008, "Member 'GA_Base_C_获取黑板EntityId::key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板EntityId, 值) == 0x000018, "Member 'GA_Base_C_获取黑板EntityId::值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板EntityId, CallFunc_GetEntityId_self_CastInput) == 0x000020, "Member 'GA_Base_C_获取黑板EntityId::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板EntityId, CallFunc_GetEntityId_ReturnValue) == 0x000030, "Member 'GA_Base_C_获取黑板EntityId::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板EntityId, CallFunc_GetEntityIdByEntity_ReturnValue) == 0x000034, "Member 'GA_Base_C_获取黑板EntityId::CallFunc_GetEntityIdByEntity_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取黑板EntityId;
 
 // Function GA_Base.GA_Base_C.设置黑板EntityId
 // 0x0038 (0x0038 - 0x0000)
@@ -1078,13 +746,7 @@ public:
 	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置黑板EntityId) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板EntityId");
-static_assert(sizeof(GA_Base_C_设置黑板EntityId) == 0x000038, "Wrong size on GA_Base_C_设置黑板EntityId");
-static_assert(offsetof(GA_Base_C_设置黑板EntityId, 角色) == 0x000000, "Member 'GA_Base_C_设置黑板EntityId::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板EntityId, key) == 0x000008, "Member 'GA_Base_C_设置黑板EntityId::key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板EntityId, 值) == 0x000018, "Member 'GA_Base_C_设置黑板EntityId::值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板EntityId, CallFunc_GetEntityId_self_CastInput) == 0x000020, "Member 'GA_Base_C_设置黑板EntityId::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板EntityId, CallFunc_GetEntityId_ReturnValue) == 0x000030, "Member 'GA_Base_C_设置黑板EntityId::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置黑板EntityId;
 
 // Function GA_Base.GA_Base_C.获取黑板Vector
 // 0x0060 (0x0060 - 0x0000)
@@ -1099,14 +761,7 @@ public:
 	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVectorDouble                          CallFunc_GetVectorValueByEntity_ReturnValue;       // 0x0048(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取黑板Vector) == 0x000008, "Wrong alignment on GA_Base_C_获取黑板Vector");
-static_assert(sizeof(GA_Base_C_获取黑板Vector) == 0x000060, "Wrong size on GA_Base_C_获取黑板Vector");
-static_assert(offsetof(GA_Base_C_获取黑板Vector, 角色) == 0x000000, "Member 'GA_Base_C_获取黑板Vector::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板Vector, key) == 0x000008, "Member 'GA_Base_C_获取黑板Vector::key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板Vector, 值) == 0x000018, "Member 'GA_Base_C_获取黑板Vector::值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板Vector, CallFunc_GetEntityId_self_CastInput) == 0x000030, "Member 'GA_Base_C_获取黑板Vector::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板Vector, CallFunc_GetEntityId_ReturnValue) == 0x000040, "Member 'GA_Base_C_获取黑板Vector::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板Vector, CallFunc_GetVectorValueByEntity_ReturnValue) == 0x000048, "Member 'GA_Base_C_获取黑板Vector::CallFunc_GetVectorValueByEntity_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取黑板Vector;
 
 // Function GA_Base.GA_Base_C.设置黑板Vector
 // 0x0048 (0x0048 - 0x0000)
@@ -1119,13 +774,7 @@ public:
 	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置黑板Vector) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板Vector");
-static_assert(sizeof(GA_Base_C_设置黑板Vector) == 0x000048, "Wrong size on GA_Base_C_设置黑板Vector");
-static_assert(offsetof(GA_Base_C_设置黑板Vector, 角色) == 0x000000, "Member 'GA_Base_C_设置黑板Vector::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Vector, key) == 0x000008, "Member 'GA_Base_C_设置黑板Vector::key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Vector, 值) == 0x000018, "Member 'GA_Base_C_设置黑板Vector::值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Vector, CallFunc_GetEntityId_self_CastInput) == 0x000030, "Member 'GA_Base_C_设置黑板Vector::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Vector, CallFunc_GetEntityId_ReturnValue) == 0x000040, "Member 'GA_Base_C_设置黑板Vector::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置黑板Vector;
 
 // Function GA_Base.GA_Base_C.获取当前操作角色Actor
 // 0x0020 (0x0020 - 0x0000)
@@ -1137,12 +786,7 @@ public:
 	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_获取当前操作角色Actor) == 0x000008, "Wrong alignment on GA_Base_C_获取当前操作角色Actor");
-static_assert(sizeof(GA_Base_C_获取当前操作角色Actor) == 0x000020, "Wrong size on GA_Base_C_获取当前操作角色Actor");
-static_assert(offsetof(GA_Base_C_获取当前操作角色Actor, 当前角色) == 0x000000, "Member 'GA_Base_C_获取当前操作角色Actor::当前角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前操作角色Actor, CallFunc_GetPlayerCharacter_ReturnValue) == 0x000008, "Member 'GA_Base_C_获取当前操作角色Actor::CallFunc_GetPlayerCharacter_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前操作角色Actor, K2Node_DynamicCast_AsTs_Base_Character) == 0x000010, "Member 'GA_Base_C_获取当前操作角色Actor::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前操作角色Actor, K2Node_DynamicCast_bSuccess) == 0x000018, "Member 'GA_Base_C_获取当前操作角色Actor::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取当前操作角色Actor;
 
 // Function GA_Base.GA_Base_C.获取当前GA的技能数据名
 // 0x0010 (0x0010 - 0x0000)
@@ -1151,9 +795,7 @@ struct GA_Base_C_获取当前GA的技能数据名 final
 public:
 	class FString                                 当前技能数据名_0;                                  // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取当前GA的技能数据名) == 0x000008, "Wrong alignment on GA_Base_C_获取当前GA的技能数据名");
-static_assert(sizeof(GA_Base_C_获取当前GA的技能数据名) == 0x000010, "Wrong size on GA_Base_C_获取当前GA的技能数据名");
-static_assert(offsetof(GA_Base_C_获取当前GA的技能数据名, 当前技能数据名_0) == 0x000000, "Member 'GA_Base_C_获取当前GA的技能数据名::当前技能数据名_0' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取当前GA的技能数据名;
 
 // Function GA_Base.GA_Base_C.子弹冻结
 // 0x0020 (0x0020 - 0x0000)
@@ -1165,11 +807,7 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_子弹冻结) == 0x000008, "Wrong alignment on GA_Base_C_子弹冻结");
-static_assert(sizeof(GA_Base_C_子弹冻结) == 0x000020, "Wrong size on GA_Base_C_子弹冻结");
-static_assert(offsetof(GA_Base_C_子弹冻结, 子弹Id) == 0x000000, "Member 'GA_Base_C_子弹冻结::子弹Id' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_子弹冻结, 冻结时间) == 0x000010, "Member 'GA_Base_C_子弹冻结::冻结时间' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_子弹冻结, CallFunc__________) == 0x000018, "Member 'GA_Base_C_子弹冻结::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_子弹冻结;
 
 // Function GA_Base.GA_Base_C.设置黑板String
 // 0x0040 (0x0040 - 0x0000)
@@ -1182,13 +820,7 @@ public:
 	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置黑板String) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板String");
-static_assert(sizeof(GA_Base_C_设置黑板String) == 0x000040, "Wrong size on GA_Base_C_设置黑板String");
-static_assert(offsetof(GA_Base_C_设置黑板String, 角色) == 0x000000, "Member 'GA_Base_C_设置黑板String::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板String, Key) == 0x000008, "Member 'GA_Base_C_设置黑板String::Key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板String, 值) == 0x000018, "Member 'GA_Base_C_设置黑板String::值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板String, CallFunc_GetEntityId_self_CastInput) == 0x000028, "Member 'GA_Base_C_设置黑板String::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板String, CallFunc_GetEntityId_ReturnValue) == 0x000038, "Member 'GA_Base_C_设置黑板String::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置黑板String;
 
 // Function GA_Base.GA_Base_C.获取黑板String
 // 0x0050 (0x0050 - 0x0000)
@@ -1203,14 +835,7 @@ public:
 	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetStringValueByEntity_ReturnValue;       // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取黑板String) == 0x000008, "Wrong alignment on GA_Base_C_获取黑板String");
-static_assert(sizeof(GA_Base_C_获取黑板String) == 0x000050, "Wrong size on GA_Base_C_获取黑板String");
-static_assert(offsetof(GA_Base_C_获取黑板String, 角色) == 0x000000, "Member 'GA_Base_C_获取黑板String::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板String, Key) == 0x000008, "Member 'GA_Base_C_获取黑板String::Key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板String, String) == 0x000018, "Member 'GA_Base_C_获取黑板String::String' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板String, CallFunc_GetEntityId_self_CastInput) == 0x000028, "Member 'GA_Base_C_获取黑板String::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板String, CallFunc_GetEntityId_ReturnValue) == 0x000038, "Member 'GA_Base_C_获取黑板String::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取黑板String, CallFunc_GetStringValueByEntity_ReturnValue) == 0x000040, "Member 'GA_Base_C_获取黑板String::CallFunc_GetStringValueByEntity_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取黑板String;
 
 // Function GA_Base.GA_Base_C.获取游戏事件管理器
 // 0x0020 (0x0020 - 0x0000)
@@ -1222,12 +847,7 @@ public:
 	class UBP_EventManager_C*                     K2Node_DynamicCast_AsBP_Event_Manager;             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_获取游戏事件管理器) == 0x000008, "Wrong alignment on GA_Base_C_获取游戏事件管理器");
-static_assert(sizeof(GA_Base_C_获取游戏事件管理器) == 0x000020, "Wrong size on GA_Base_C_获取游戏事件管理器");
-static_assert(offsetof(GA_Base_C_获取游戏事件管理器, 事件管理器) == 0x000000, "Member 'GA_Base_C_获取游戏事件管理器::事件管理器' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取游戏事件管理器, CallFunc_GetBpEventManager_ReturnValue) == 0x000008, "Member 'GA_Base_C_获取游戏事件管理器::CallFunc_GetBpEventManager_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取游戏事件管理器, K2Node_DynamicCast_AsBP_Event_Manager) == 0x000010, "Member 'GA_Base_C_获取游戏事件管理器::K2Node_DynamicCast_AsBP_Event_Manager' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取游戏事件管理器, K2Node_DynamicCast_bSuccess) == 0x000018, "Member 'GA_Base_C_获取游戏事件管理器::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取游戏事件管理器;
 
 // Function GA_Base.GA_Base_C.获取角色ID
 // 0x0030 (0x0030 - 0x0000)
@@ -1242,14 +862,7 @@ public:
 	int32                                         CallFunc_GetRoleId_ReturnValue;                    // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取角色ID) == 0x000008, "Wrong alignment on GA_Base_C_获取角色ID");
-static_assert(sizeof(GA_Base_C_获取角色ID) == 0x000030, "Wrong size on GA_Base_C_获取角色ID");
-static_assert(offsetof(GA_Base_C_获取角色ID, 目标) == 0x000000, "Member 'GA_Base_C_获取角色ID::目标' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取角色ID, RoleID) == 0x000008, "Member 'GA_Base_C_获取角色ID::RoleID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取角色ID, CallFunc_GetEntityId_self_CastInput) == 0x000010, "Member 'GA_Base_C_获取角色ID::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取角色ID, CallFunc_GetEntityId_ReturnValue) == 0x000020, "Member 'GA_Base_C_获取角色ID::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取角色ID, CallFunc_GetRoleId_ReturnValue) == 0x000024, "Member 'GA_Base_C_获取角色ID::CallFunc_GetRoleId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取角色ID, CallFunc_Conv_IntToFloat_ReturnValue) == 0x000028, "Member 'GA_Base_C_获取角色ID::CallFunc_Conv_IntToFloat_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取角色ID;
 
 // Function GA_Base.GA_Base_C.根据子弹实体ID销毁子弹
 // 0x0008 (0x0008 - 0x0000)
@@ -1260,11 +873,7 @@ public:
 	bool                                          isSummonChildBullet;                               // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_DestroyBullet_ReturnValue;                // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_根据子弹实体ID销毁子弹) == 0x000004, "Wrong alignment on GA_Base_C_根据子弹实体ID销毁子弹");
-static_assert(sizeof(GA_Base_C_根据子弹实体ID销毁子弹) == 0x000008, "Wrong size on GA_Base_C_根据子弹实体ID销毁子弹");
-static_assert(offsetof(GA_Base_C_根据子弹实体ID销毁子弹, 子弹ID) == 0x000000, "Member 'GA_Base_C_根据子弹实体ID销毁子弹::子弹ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_根据子弹实体ID销毁子弹, isSummonChildBullet) == 0x000004, "Member 'GA_Base_C_根据子弹实体ID销毁子弹::isSummonChildBullet' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_根据子弹实体ID销毁子弹, CallFunc_DestroyBullet_ReturnValue) == 0x000005, "Member 'GA_Base_C_根据子弹实体ID销毁子弹::CallFunc_DestroyBullet_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_根据子弹实体ID销毁子弹;
 
 // Function GA_Base.GA_Base_C.移除召唤物
 // 0x000C (0x000C - 0x0000)
@@ -1275,11 +884,7 @@ public:
 	int32                                         移除召唤物ID;                                      // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Conv_StringToInt_ReturnValue;             // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_移除召唤物) == 0x000004, "Wrong alignment on GA_Base_C_移除召唤物");
-static_assert(sizeof(GA_Base_C_移除召唤物) == 0x00000C, "Wrong size on GA_Base_C_移除召唤物");
-static_assert(offsetof(GA_Base_C_移除召唤物, 召唤者ID) == 0x000000, "Member 'GA_Base_C_移除召唤物::召唤者ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_移除召唤物, 移除召唤物ID) == 0x000004, "Member 'GA_Base_C_移除召唤物::移除召唤物ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_移除召唤物, CallFunc_Conv_StringToInt_ReturnValue) == 0x000008, "Member 'GA_Base_C_移除召唤物::CallFunc_Conv_StringToInt_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_移除召唤物;
 
 // Function GA_Base.GA_Base_C.修改当前技能打断等级
 // 0x0020 (0x0020 - 0x0000)
@@ -1291,11 +896,7 @@ public:
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_____GA______________;                     // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_修改当前技能打断等级) == 0x000008, "Wrong alignment on GA_Base_C_修改当前技能打断等级");
-static_assert(sizeof(GA_Base_C_修改当前技能打断等级) == 0x000020, "Wrong size on GA_Base_C_修改当前技能打断等级");
-static_assert(offsetof(GA_Base_C_修改当前技能打断等级, priority) == 0x000000, "Member 'GA_Base_C_修改当前技能打断等级::priority' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_修改当前技能打断等级, CallFunc__________) == 0x000008, "Member 'GA_Base_C_修改当前技能打断等级::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_修改当前技能打断等级, CallFunc_____GA______________) == 0x000010, "Member 'GA_Base_C_修改当前技能打断等级::CallFunc_____GA______________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_修改当前技能打断等级;
 
 // Function GA_Base.GA_Base_C.设置接收同打断等级打断
 // 0x0010 (0x0010 - 0x0000)
@@ -1306,10 +907,7 @@ public:
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置接收同打断等级打断) == 0x000008, "Wrong alignment on GA_Base_C_设置接收同打断等级打断");
-static_assert(sizeof(GA_Base_C_设置接收同打断等级打断) == 0x000010, "Wrong size on GA_Base_C_设置接收同打断等级打断");
-static_assert(offsetof(GA_Base_C_设置接收同打断等级打断, skillAcceptInput) == 0x000000, "Member 'GA_Base_C_设置接收同打断等级打断::skillAcceptInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置接收同打断等级打断, CallFunc__________) == 0x000008, "Member 'GA_Base_C_设置接收同打断等级打断::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置接收同打断等级打断;
 
 // Function GA_Base.GA_Base_C.通过角度获取目标附近的合法点
 // 0x0128 (0x0128 - 0x0000)
@@ -1352,38 +950,7 @@ public:
 	float                                         CallFunc_Conv_DoubleToFloat_ReturnValue;           // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0124(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_通过角度获取目标附近的合法点) == 0x000008, "Wrong alignment on GA_Base_C_通过角度获取目标附近的合法点");
-static_assert(sizeof(GA_Base_C_通过角度获取目标附近的合法点) == 0x000128, "Wrong size on GA_Base_C_通过角度获取目标附近的合法点");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 目标Actor) == 0x000000, "Member 'GA_Base_C_通过角度获取目标附近的合法点::目标Actor' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 旋转) == 0x000008, "Member 'GA_Base_C_通过角度获取目标附近的合法点::旋转' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 仰角) == 0x00000C, "Member 'GA_Base_C_通过角度获取目标附近的合法点::仰角' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 长度) == 0x000010, "Member 'GA_Base_C_通过角度获取目标附近的合法点::长度' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 合法点) == 0x000018, "Member 'GA_Base_C_通过角度获取目标附近的合法点::合法点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 碰撞挤压) == 0x000030, "Member 'GA_Base_C_通过角度获取目标附近的合法点::碰撞挤压' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 碰撞中途点B) == 0x000034, "Member 'GA_Base_C_通过角度获取目标附近的合法点::碰撞中途点B' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 碰撞中途点A) == 0x000040, "Member 'GA_Base_C_通过角度获取目标附近的合法点::碰撞中途点A' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 目标半径) == 0x00004C, "Member 'GA_Base_C_通过角度获取目标附近的合法点::目标半径' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 目标半高) == 0x000050, "Member 'GA_Base_C_通过角度获取目标附近的合法点::目标半高' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 施法者胶囊体半径) == 0x000054, "Member 'GA_Base_C_通过角度获取目标附近的合法点::施法者胶囊体半径' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 施法者胶囊体半高) == 0x000058, "Member 'GA_Base_C_通过角度获取目标附近的合法点::施法者胶囊体半高' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 施法者) == 0x000060, "Member 'GA_Base_C_通过角度获取目标附近的合法点::施法者' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 目标方向) == 0x000068, "Member 'GA_Base_C_通过角度获取目标附近的合法点::目标方向' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 参考终点) == 0x000078, "Member 'GA_Base_C_通过角度获取目标附近的合法点::参考终点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, 目标原点) == 0x000090, "Member 'GA_Base_C_通过角度获取目标附近的合法点::目标原点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc___Actor_________) == 0x0000A8, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc___Actor_________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc_GetScaledCapsuleHalfHeight_ReturnValue) == 0x0000C0, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc_GetScaledCapsuleHalfHeight_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc_GetScaledCapsuleRadius_ReturnValue) == 0x0000C4, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc_GetScaledCapsuleRadius_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x0000C8, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, K2Node_DynamicCast_AsTs_Base_Character) == 0x0000E0, "Member 'GA_Base_C_通过角度获取目标附近的合法点::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, K2Node_DynamicCast_bSuccess) == 0x0000E8, "Member 'GA_Base_C_通过角度获取目标附近的合法点::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc_GetScaledCapsuleRadius_ReturnValue_1) == 0x0000EC, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc_GetScaledCapsuleRadius_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc_GetScaledCapsuleHalfHeight_ReturnValue_1) == 0x0000F0, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc_GetScaledCapsuleHalfHeight_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc_Add_FloatFloat_ReturnValue) == 0x0000F4, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc__________) == 0x0000F8, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc_________________) == 0x000100, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc_________________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc_D_Vector_Distance2D_ReturnValue) == 0x000118, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc_D_Vector_Distance2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc_Conv_DoubleToFloat_ReturnValue) == 0x000120, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc_Conv_DoubleToFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_通过角度获取目标附近的合法点, CallFunc_Less_FloatFloat_ReturnValue) == 0x000124, "Member 'GA_Base_C_通过角度获取目标附近的合法点::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_通过角度获取目标附近的合法点;
 
 // Function GA_Base.GA_Base_C.获取目标到终点的合法点
 // 0x00E0 (0x00E0 - 0x0000)
@@ -1417,30 +984,7 @@ public:
 	float                                         CallFunc_GetScaledCapsuleRadius_ReturnValue_1;     // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetScaledCapsuleHalfHeight_ReturnValue_1; // 0x00DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取目标到终点的合法点) == 0x000008, "Wrong alignment on GA_Base_C_获取目标到终点的合法点");
-static_assert(sizeof(GA_Base_C_获取目标到终点的合法点) == 0x0000E0, "Wrong size on GA_Base_C_获取目标到终点的合法点");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 目标Actor) == 0x000000, "Member 'GA_Base_C_获取目标到终点的合法点::目标Actor' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 终点) == 0x000008, "Member 'GA_Base_C_获取目标到终点的合法点::终点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 合法点) == 0x000020, "Member 'GA_Base_C_获取目标到终点的合法点::合法点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 碰撞挤压) == 0x000038, "Member 'GA_Base_C_获取目标到终点的合法点::碰撞挤压' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 碰撞中途点B) == 0x00003C, "Member 'GA_Base_C_获取目标到终点的合法点::碰撞中途点B' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 碰撞中途点A) == 0x000048, "Member 'GA_Base_C_获取目标到终点的合法点::碰撞中途点A' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 目标半径) == 0x000054, "Member 'GA_Base_C_获取目标到终点的合法点::目标半径' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 目标半高) == 0x000058, "Member 'GA_Base_C_获取目标到终点的合法点::目标半高' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 施法者胶囊体半径) == 0x00005C, "Member 'GA_Base_C_获取目标到终点的合法点::施法者胶囊体半径' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 施法者胶囊体半高) == 0x000060, "Member 'GA_Base_C_获取目标到终点的合法点::施法者胶囊体半高' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, 起点) == 0x000068, "Member 'GA_Base_C_获取目标到终点的合法点::起点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x000080, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc_Add_FloatFloat_ReturnValue) == 0x000098, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc_________________) == 0x0000A0, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc_________________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc_D_Vector_Distance2D_ReturnValue) == 0x0000B8, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc_D_Vector_Distance2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc_GetScaledCapsuleRadius_ReturnValue) == 0x0000C0, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc_GetScaledCapsuleRadius_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc_Conv_DoubleToFloat_ReturnValue) == 0x0000C4, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc_Conv_DoubleToFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc_Less_FloatFloat_ReturnValue) == 0x0000C8, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc_GetScaledCapsuleHalfHeight_ReturnValue) == 0x0000CC, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc_GetScaledCapsuleHalfHeight_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc__________) == 0x0000D0, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc_GetScaledCapsuleRadius_ReturnValue_1) == 0x0000D8, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc_GetScaledCapsuleRadius_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标到终点的合法点, CallFunc_GetScaledCapsuleHalfHeight_ReturnValue_1) == 0x0000DC, "Member 'GA_Base_C_获取目标到终点的合法点::CallFunc_GetScaledCapsuleHalfHeight_ReturnValue_1' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取目标到终点的合法点;
 
 // Function GA_Base.GA_Base_C.获取目标正后方的合法点
 // 0x0178 (0x0178 - 0x0000)
@@ -1485,41 +1029,7 @@ public:
 	float                                         CallFunc_Conv_DoubleToFloat_ReturnValue;           // 0x0170(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0174(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_获取目标正后方的合法点) == 0x000008, "Wrong alignment on GA_Base_C_获取目标正后方的合法点");
-static_assert(sizeof(GA_Base_C_获取目标正后方的合法点) == 0x000178, "Wrong size on GA_Base_C_获取目标正后方的合法点");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 目标Actor) == 0x000000, "Member 'GA_Base_C_获取目标正后方的合法点::目标Actor' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 向后距离) == 0x000008, "Member 'GA_Base_C_获取目标正后方的合法点::向后距离' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 合法点) == 0x000010, "Member 'GA_Base_C_获取目标正后方的合法点::合法点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 碰撞挤压) == 0x000028, "Member 'GA_Base_C_获取目标正后方的合法点::碰撞挤压' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, DebugLine) == 0x000029, "Member 'GA_Base_C_获取目标正后方的合法点::DebugLine' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 碰撞中途点B) == 0x00002C, "Member 'GA_Base_C_获取目标正后方的合法点::碰撞中途点B' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 碰撞中途点A) == 0x000038, "Member 'GA_Base_C_获取目标正后方的合法点::碰撞中途点A' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 目标半径) == 0x000044, "Member 'GA_Base_C_获取目标正后方的合法点::目标半径' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 目标半高) == 0x000048, "Member 'GA_Base_C_获取目标正后方的合法点::目标半高' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 施法者胶囊体半径) == 0x00004C, "Member 'GA_Base_C_获取目标正后方的合法点::施法者胶囊体半径' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 施法者胶囊体半高) == 0x000050, "Member 'GA_Base_C_获取目标正后方的合法点::施法者胶囊体半高' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 施法者) == 0x000058, "Member 'GA_Base_C_获取目标正后方的合法点::施法者' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 背后终点) == 0x000060, "Member 'GA_Base_C_获取目标正后方的合法点::背后终点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 目标原点) == 0x000078, "Member 'GA_Base_C_获取目标正后方的合法点::目标原点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, 背后方向) == 0x000090, "Member 'GA_Base_C_获取目标正后方的合法点::背后方向' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_Conv_FloatToDouble_ReturnValue) == 0x0000A8, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_Conv_FloatToDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_D_GetActorForwardVector_ReturnValue) == 0x0000B0, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_D_GetActorForwardVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_D_Multiply_VectorFloat_ReturnValue) == 0x0000C8, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_D_Multiply_VectorFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_D_Multiply_VectorFloat_ReturnValue_1) == 0x0000E0, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_D_Multiply_VectorFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x0000F8, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_D_Add_VectorVector_ReturnValue) == 0x000110, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_D_Add_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_GetScaledCapsuleHalfHeight_ReturnValue) == 0x000128, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_GetScaledCapsuleHalfHeight_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_GetScaledCapsuleRadius_ReturnValue) == 0x00012C, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_GetScaledCapsuleRadius_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, K2Node_DynamicCast_AsTs_Base_Character) == 0x000130, "Member 'GA_Base_C_获取目标正后方的合法点::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, K2Node_DynamicCast_bSuccess) == 0x000138, "Member 'GA_Base_C_获取目标正后方的合法点::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_GetScaledCapsuleHalfHeight_ReturnValue_1) == 0x00013C, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_GetScaledCapsuleHalfHeight_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_GetScaledCapsuleRadius_ReturnValue_1) == 0x000140, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_GetScaledCapsuleRadius_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_Add_FloatFloat_ReturnValue) == 0x000144, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc__________) == 0x000148, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_________________) == 0x000150, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_________________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_D_Vector_Distance2D_ReturnValue) == 0x000168, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_D_Vector_Distance2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_Conv_DoubleToFloat_ReturnValue) == 0x000170, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_Conv_DoubleToFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取目标正后方的合法点, CallFunc_Less_FloatFloat_ReturnValue) == 0x000174, "Member 'GA_Base_C_获取目标正后方的合法点::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取目标正后方的合法点;
 
 // Function GA_Base.GA_Base_C.对圆柱体类型的合法点检测
 // 0x0708 (0x0708 - 0x0000)
@@ -1662,128 +1172,7 @@ public:
 	struct FVectorDouble                          CallFunc_Conv_VectorToVectorDouble_ReturnValue_2;  // 0x06D8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVectorDouble                          CallFunc_D_Subtract_VectorVector_ReturnValue_3;    // 0x06F0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_对圆柱体类型的合法点检测) == 0x000008, "Wrong alignment on GA_Base_C_对圆柱体类型的合法点检测");
-static_assert(sizeof(GA_Base_C_对圆柱体类型的合法点检测) == 0x000708, "Wrong size on GA_Base_C_对圆柱体类型的合法点检测");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 施法者半高) == 0x000000, "Member 'GA_Base_C_对圆柱体类型的合法点检测::施法者半高' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 施法者半径) == 0x000004, "Member 'GA_Base_C_对圆柱体类型的合法点检测::施法者半径' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 目标半高) == 0x000008, "Member 'GA_Base_C_对圆柱体类型的合法点检测::目标半高' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 目标半径) == 0x00000C, "Member 'GA_Base_C_对圆柱体类型的合法点检测::目标半径' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 起点) == 0x000010, "Member 'GA_Base_C_对圆柱体类型的合法点检测::起点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 终点) == 0x000028, "Member 'GA_Base_C_对圆柱体类型的合法点检测::终点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 合法点) == 0x000040, "Member 'GA_Base_C_对圆柱体类型的合法点检测::合法点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, DebugLine) == 0x000058, "Member 'GA_Base_C_对圆柱体类型的合法点检测::DebugLine' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 碰撞中途点B) == 0x000060, "Member 'GA_Base_C_对圆柱体类型的合法点检测::碰撞中途点B' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 碰撞中途点A) == 0x000078, "Member 'GA_Base_C_对圆柱体类型的合法点检测::碰撞中途点A' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 目标对象半径) == 0x000090, "Member 'GA_Base_C_对圆柱体类型的合法点检测::目标对象半径' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 目标对象半高) == 0x000094, "Member 'GA_Base_C_对圆柱体类型的合法点检测::目标对象半高' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 施法者胶囊体半径) == 0x000098, "Member 'GA_Base_C_对圆柱体类型的合法点检测::施法者胶囊体半径' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 施法者胶囊体半高) == 0x00009C, "Member 'GA_Base_C_对圆柱体类型的合法点检测::施法者胶囊体半高' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 目标终点) == 0x0000A0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::目标终点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 目标原点) == 0x0000B8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::目标原点' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, 目标方向) == 0x0000D0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::目标方向' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, ___object_Variable) == 0x0000E8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::___object_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, ___object_Variable_1) == 0x0000F8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::___object_Variable_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, ___object_Variable_2) == 0x000108, "Member 'GA_Base_C_对圆柱体类型的合法点检测::___object_Variable_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Subtract_VectorVector_ReturnValue) == 0x000118, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Subtract_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Normal_ReturnValue) == 0x000130, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Normal_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Conv_FloatToDouble_ReturnValue) == 0x000148, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Conv_FloatToDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Multiply_VectorFloat_ReturnValue) == 0x000150, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Multiply_VectorFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x000168, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Add_VectorVector_ReturnValue) == 0x000170, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Add_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Conv_FloatToDouble_ReturnValue_1) == 0x000188, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Conv_FloatToDouble_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakVectorDouble_X) == 0x000190, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakVectorDouble_X' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakVectorDouble_Y) == 0x000198, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakVectorDouble_Y' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakVectorDouble_Z) == 0x0001A0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakVectorDouble_Z' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Add_FloatFloat_ReturnValue) == 0x0001A8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Conv_FloatToDouble_ReturnValue_2) == 0x0001B0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Conv_FloatToDouble_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_MakeVectorDouble_ReturnValue) == 0x0001B8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_MakeVectorDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Multiply_VectorFloat_ReturnValue_1) == 0x0001D0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Multiply_VectorFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Greater_FloatFloat_ReturnValue) == 0x0001E8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x0001EC, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_MakeVector_ReturnValue) == 0x0001F0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_MakeVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Add_FloatFloat_ReturnValue) == 0x0001FC, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Conv_FloatToDouble_ReturnValue_3) == 0x000200, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Conv_FloatToDouble_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_MakeVectorDouble_ReturnValue_1) == 0x000208, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_MakeVectorDouble_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Subtract_FloatFloat_ReturnValue_1) == 0x000220, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Subtract_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Subtract_VectorVector_ReturnValue_1) == 0x000228, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Subtract_VectorVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Conv_FloatToDouble_ReturnValue_4) == 0x000240, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Conv_FloatToDouble_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Add_VectorVector_ReturnValue_1) == 0x000248, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Add_VectorVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakVectorDouble_X_1) == 0x000260, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakVectorDouble_X_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakVectorDouble_Y_1) == 0x000268, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakVectorDouble_Y_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakVectorDouble_Z_1) == 0x000270, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakVectorDouble_Z_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, K2Node_MakeArray_Array) == 0x000278, "Member 'GA_Base_C_对圆柱体类型的合法点检测::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Add_FloatFloat_ReturnValue_1) == 0x000288, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Add_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_LineTraceSingleForObjects_OutHit) == 0x000290, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_LineTraceSingleForObjects_OutHit' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_LineTraceSingleForObjects_ReturnValue) == 0x000324, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_LineTraceSingleForObjects_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_MakeVectorDouble_ReturnValue_2) == 0x000328, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_MakeVectorDouble_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_bBlockingHit) == 0x000340, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_bBlockingHit' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_bInitialOverlap) == 0x000341, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_bInitialOverlap' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Time) == 0x000344, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Time' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Distance) == 0x000348, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Distance' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Location) == 0x00034C, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Location' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_ImpactPoint) == 0x000358, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_ImpactPoint' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Normal) == 0x000364, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Normal' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_ImpactNormal) == 0x000370, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_ImpactNormal' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_PhysMat) == 0x000380, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_PhysMat' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitActor) == 0x000388, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitActor' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitComponent) == 0x000390, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitComponent' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitBoneName) == 0x000398, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitBoneName' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitItem) == 0x0003A4, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitItem' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_FaceIndex) == 0x0003A8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_FaceIndex' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_TraceStart) == 0x0003AC, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_TraceStart' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_TraceEnd) == 0x0003B8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_TraceEnd' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Add_VectorVector_ReturnValue) == 0x0003C4, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Add_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_MakeVector_ReturnValue_1) == 0x0003D0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_MakeVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Conv_VectorToVectorDouble_ReturnValue) == 0x0003E0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Conv_VectorToVectorDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, K2Node_MakeArray_Array_1) == 0x0003F8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::K2Node_MakeArray_Array_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Multiply_FloatFloat_ReturnValue_1) == 0x000408, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Multiply_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_LineTraceSingleForObjects_OutHit_1) == 0x00040C, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_LineTraceSingleForObjects_OutHit_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_LineTraceSingleForObjects_ReturnValue_1) == 0x0004A0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_LineTraceSingleForObjects_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Add_FloatFloat_ReturnValue_1) == 0x0004A4, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Add_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Conv_FloatToDouble_ReturnValue_5) == 0x0004A8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Conv_FloatToDouble_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_bBlockingHit_1) == 0x0004B0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_bBlockingHit_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_bInitialOverlap_1) == 0x0004B1, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_bInitialOverlap_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Time_1) == 0x0004B4, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Time_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Distance_1) == 0x0004B8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Distance_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Location_1) == 0x0004BC, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Location_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_ImpactPoint_1) == 0x0004C8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_ImpactPoint_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Normal_1) == 0x0004D4, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Normal_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_ImpactNormal_1) == 0x0004E0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_ImpactNormal_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_PhysMat_1) == 0x0004F0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_PhysMat_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitActor_1) == 0x0004F8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitActor_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitComponent_1) == 0x000500, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitComponent_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitBoneName_1) == 0x000508, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitBoneName_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitItem_1) == 0x000514, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitItem_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_FaceIndex_1) == 0x000518, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_FaceIndex_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_TraceStart_1) == 0x00051C, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_TraceStart_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_TraceEnd_1) == 0x000528, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_TraceEnd_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_MakeVectorDouble_ReturnValue_3) == 0x000538, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_MakeVectorDouble_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Add_VectorVector_ReturnValue_1) == 0x000550, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Add_VectorVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Subtract_VectorVector_ReturnValue_2) == 0x000560, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Subtract_VectorVector_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Conv_VectorToVectorDouble_ReturnValue_1) == 0x000578, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Conv_VectorToVectorDouble_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Conv_FloatToDouble_ReturnValue_6) == 0x000590, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Conv_FloatToDouble_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Multiply_VectorFloat_ReturnValue_2) == 0x000598, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Multiply_VectorFloat_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, K2Node_MakeArray_Array_2) == 0x0005B0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::K2Node_MakeArray_Array_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_LineTraceSingleForObjects_OutHit_2) == 0x0005C0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_LineTraceSingleForObjects_OutHit_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_LineTraceSingleForObjects_ReturnValue_2) == 0x000654, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_LineTraceSingleForObjects_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_bBlockingHit_2) == 0x000655, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_bBlockingHit_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_bInitialOverlap_2) == 0x000656, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_bInitialOverlap_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Time_2) == 0x000658, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Time_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Distance_2) == 0x00065C, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Distance_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Location_2) == 0x000660, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Location_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_ImpactPoint_2) == 0x00066C, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_ImpactPoint_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_Normal_2) == 0x000678, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_Normal_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_ImpactNormal_2) == 0x000684, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_ImpactNormal_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_PhysMat_2) == 0x000690, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_PhysMat_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitActor_2) == 0x000698, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitActor_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitComponent_2) == 0x0006A0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitComponent_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitBoneName_2) == 0x0006A8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitBoneName_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_HitItem_2) == 0x0006B4, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_HitItem_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_FaceIndex_2) == 0x0006B8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_FaceIndex_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_TraceStart_2) == 0x0006BC, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_TraceStart_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_BreakHitResult_TraceEnd_2) == 0x0006C8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_BreakHitResult_TraceEnd_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_Conv_VectorToVectorDouble_ReturnValue_2) == 0x0006D8, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_Conv_VectorToVectorDouble_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_对圆柱体类型的合法点检测, CallFunc_D_Subtract_VectorVector_ReturnValue_3) == 0x0006F0, "Member 'GA_Base_C_对圆柱体类型的合法点检测::CallFunc_D_Subtract_VectorVector_ReturnValue_3' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_对圆柱体类型的合法点检测;
 
 // Function GA_Base.GA_Base_C.进入瞄准模式
 // 0x0010 (0x0010 - 0x0000)
@@ -1796,12 +1185,7 @@ public:
 	uint8                                         Pad_3[0x5];                                        // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_进入瞄准模式) == 0x000008, "Wrong alignment on GA_Base_C_进入瞄准模式");
-static_assert(sizeof(GA_Base_C_进入瞄准模式) == 0x000010, "Wrong size on GA_Base_C_进入瞄准模式");
-static_assert(offsetof(GA_Base_C_进入瞄准模式, 瞄准键进入) == 0x000000, "Member 'GA_Base_C_进入瞄准模式::瞄准键进入' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_进入瞄准模式, 瞄准镜头类型) == 0x000001, "Member 'GA_Base_C_进入瞄准模式::瞄准镜头类型' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_进入瞄准模式, isWalk) == 0x000002, "Member 'GA_Base_C_进入瞄准模式::isWalk' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_进入瞄准模式, CallFunc__________) == 0x000008, "Member 'GA_Base_C_进入瞄准模式::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_进入瞄准模式;
 
 // Function GA_Base.GA_Base_C.退出瞄准模式
 // 0x0008 (0x0008 - 0x0000)
@@ -1810,9 +1194,7 @@ struct GA_Base_C_退出瞄准模式 final
 public:
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_退出瞄准模式) == 0x000008, "Wrong alignment on GA_Base_C_退出瞄准模式");
-static_assert(sizeof(GA_Base_C_退出瞄准模式) == 0x000008, "Wrong size on GA_Base_C_退出瞄准模式");
-static_assert(offsetof(GA_Base_C_退出瞄准模式, CallFunc__________) == 0x000000, "Member 'GA_Base_C_退出瞄准模式::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_退出瞄准模式;
 
 // Function GA_Base.GA_Base_C.设置黑板Rotator
 // 0x0040 (0x0040 - 0x0000)
@@ -1826,13 +1208,7 @@ public:
 	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置黑板Rotator) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板Rotator");
-static_assert(sizeof(GA_Base_C_设置黑板Rotator) == 0x000040, "Wrong size on GA_Base_C_设置黑板Rotator");
-static_assert(offsetof(GA_Base_C_设置黑板Rotator, 角色) == 0x000000, "Member 'GA_Base_C_设置黑板Rotator::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Rotator, key) == 0x000008, "Member 'GA_Base_C_设置黑板Rotator::key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Rotator, 值) == 0x000018, "Member 'GA_Base_C_设置黑板Rotator::值' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Rotator, CallFunc_GetEntityId_self_CastInput) == 0x000028, "Member 'GA_Base_C_设置黑板Rotator::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置黑板Rotator, CallFunc_GetEntityId_ReturnValue) == 0x000038, "Member 'GA_Base_C_设置黑板Rotator::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置黑板Rotator;
 
 // Function GA_Base.GA_Base_C.修改材质效果
 // 0x0038 (0x0038 - 0x0000)
@@ -1847,13 +1223,7 @@ public:
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetPathName_ReturnValue;                  // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_修改材质效果) == 0x000008, "Wrong alignment on GA_Base_C_修改材质效果");
-static_assert(sizeof(GA_Base_C_修改材质效果) == 0x000038, "Wrong size on GA_Base_C_修改材质效果");
-static_assert(offsetof(GA_Base_C_修改材质效果, Entity) == 0x000000, "Member 'GA_Base_C_修改材质效果::Entity' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_修改材质效果, IsGroup) == 0x000010, "Member 'GA_Base_C_修改材质效果::IsGroup' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_修改材质效果, 材质效果) == 0x000018, "Member 'GA_Base_C_修改材质效果::材质效果' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_修改材质效果, CallFunc_GetEntityId_ReturnValue) == 0x000020, "Member 'GA_Base_C_修改材质效果::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_修改材质效果, CallFunc_GetPathName_ReturnValue) == 0x000028, "Member 'GA_Base_C_修改材质效果::CallFunc_GetPathName_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_修改材质效果;
 
 // Function GA_Base.GA_Base_C.设置子弹目标
 // 0x0038 (0x0038 - 0x0000)
@@ -1867,13 +1237,7 @@ public:
 	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置子弹目标) == 0x000008, "Wrong alignment on GA_Base_C_设置子弹目标");
-static_assert(sizeof(GA_Base_C_设置子弹目标) == 0x000038, "Wrong size on GA_Base_C_设置子弹目标");
-static_assert(offsetof(GA_Base_C_设置子弹目标, Attacker) == 0x000000, "Member 'GA_Base_C_设置子弹目标::Attacker' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置子弹目标, Key) == 0x000008, "Member 'GA_Base_C_设置子弹目标::Key' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置子弹目标, TargetId) == 0x000018, "Member 'GA_Base_C_设置子弹目标::TargetId' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置子弹目标, CallFunc_GetEntityId_self_CastInput) == 0x000020, "Member 'GA_Base_C_设置子弹目标::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置子弹目标, CallFunc_GetEntityId_ReturnValue) == 0x000030, "Member 'GA_Base_C_设置子弹目标::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置子弹目标;
 
 // Function GA_Base.GA_Base_C.给对象添加标签
 // 0x0018 (0x0018 - 0x0000)
@@ -1883,10 +1247,7 @@ public:
 	class ATsBaseCharacter_C*                     Target;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           tag;                                               // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_给对象添加标签) == 0x000008, "Wrong alignment on GA_Base_C_给对象添加标签");
-static_assert(sizeof(GA_Base_C_给对象添加标签) == 0x000018, "Wrong size on GA_Base_C_给对象添加标签");
-static_assert(offsetof(GA_Base_C_给对象添加标签, Target) == 0x000000, "Member 'GA_Base_C_给对象添加标签::Target' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_给对象添加标签, tag) == 0x000008, "Member 'GA_Base_C_给对象添加标签::tag' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_给对象添加标签;
 
 // Function GA_Base.GA_Base_C.给对象移除标签
 // 0x0018 (0x0018 - 0x0000)
@@ -1896,10 +1257,7 @@ public:
 	class ATsBaseCharacter_C*                     Target;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           tag;                                               // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_给对象移除标签) == 0x000008, "Wrong alignment on GA_Base_C_给对象移除标签");
-static_assert(sizeof(GA_Base_C_给对象移除标签) == 0x000018, "Wrong size on GA_Base_C_给对象移除标签");
-static_assert(offsetof(GA_Base_C_给对象移除标签, Target) == 0x000000, "Member 'GA_Base_C_给对象移除标签::Target' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_给对象移除标签, tag) == 0x000008, "Member 'GA_Base_C_给对象移除标签::tag' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_给对象移除标签;
 
 // Function GA_Base.GA_Base_C.设置角色Pawn通道碰撞响应
 // 0x0010 (0x0010 - 0x0000)
@@ -1910,11 +1268,7 @@ public:
 	EPawnChannel                                  pawnChannel;                                       // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECollisionResponse                            newResponse;                                       // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置角色Pawn通道碰撞响应) == 0x000008, "Wrong alignment on GA_Base_C_设置角色Pawn通道碰撞响应");
-static_assert(sizeof(GA_Base_C_设置角色Pawn通道碰撞响应) == 0x000010, "Wrong size on GA_Base_C_设置角色Pawn通道碰撞响应");
-static_assert(offsetof(GA_Base_C_设置角色Pawn通道碰撞响应, 角色) == 0x000000, "Member 'GA_Base_C_设置角色Pawn通道碰撞响应::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色Pawn通道碰撞响应, pawnChannel) == 0x000008, "Member 'GA_Base_C_设置角色Pawn通道碰撞响应::pawnChannel' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色Pawn通道碰撞响应, newResponse) == 0x000009, "Member 'GA_Base_C_设置角色Pawn通道碰撞响应::newResponse' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置角色Pawn通道碰撞响应;
 
 // Function GA_Base.GA_Base_C.设置角色位置
 // 0x0078 (0x0078 - 0x0000)
@@ -1934,18 +1288,7 @@ public:
 	struct FVectorDouble                          CallFunc_D_Subtract_VectorVector_ReturnValue;      // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SetActorLocationWithContext_ReturnValue;  // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_设置角色位置) == 0x000008, "Wrong alignment on GA_Base_C_设置角色位置");
-static_assert(sizeof(GA_Base_C_设置角色位置) == 0x000078, "Wrong size on GA_Base_C_设置角色位置");
-static_assert(offsetof(GA_Base_C_设置角色位置, 角色) == 0x000000, "Member 'GA_Base_C_设置角色位置::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置, location) == 0x000008, "Member 'GA_Base_C_设置角色位置::location' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置, sweep) == 0x000020, "Member 'GA_Base_C_设置角色位置::sweep' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置, teleport) == 0x000021, "Member 'GA_Base_C_设置角色位置::teleport' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置, context) == 0x000028, "Member 'GA_Base_C_设置角色位置::context' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置, ReturnValue) == 0x000038, "Member 'GA_Base_C_设置角色位置::ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置, CallFunc_IsValid_ReturnValue) == 0x000039, "Member 'GA_Base_C_设置角色位置::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x000040, "Member 'GA_Base_C_设置角色位置::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置, CallFunc_D_Subtract_VectorVector_ReturnValue) == 0x000058, "Member 'GA_Base_C_设置角色位置::CallFunc_D_Subtract_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置, CallFunc_SetActorLocationWithContext_ReturnValue) == 0x000070, "Member 'GA_Base_C_设置角色位置::CallFunc_SetActorLocationWithContext_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置角色位置;
 
 // Function GA_Base.GA_Base_C.设置角色旋转
 // 0x0030 (0x0030 - 0x0000)
@@ -1960,14 +1303,7 @@ public:
 	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_SetActorRotationWithContext_ReturnValue;  // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_设置角色旋转) == 0x000008, "Wrong alignment on GA_Base_C_设置角色旋转");
-static_assert(sizeof(GA_Base_C_设置角色旋转) == 0x000030, "Wrong size on GA_Base_C_设置角色旋转");
-static_assert(offsetof(GA_Base_C_设置角色旋转, 角色) == 0x000000, "Member 'GA_Base_C_设置角色旋转::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色旋转, rotation) == 0x000008, "Member 'GA_Base_C_设置角色旋转::rotation' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色旋转, sweep) == 0x000014, "Member 'GA_Base_C_设置角色旋转::sweep' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色旋转, context) == 0x000018, "Member 'GA_Base_C_设置角色旋转::context' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色旋转, ReturnValue) == 0x000028, "Member 'GA_Base_C_设置角色旋转::ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色旋转, CallFunc_SetActorRotationWithContext_ReturnValue) == 0x000029, "Member 'GA_Base_C_设置角色旋转::CallFunc_SetActorRotationWithContext_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置角色旋转;
 
 // Function GA_Base.GA_Base_C.设置角色变换
 // 0x0220 (0x0220 - 0x0000)
@@ -2002,30 +1338,7 @@ public:
 	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x01F0(0x0010)(ReferenceParm)
 	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0200(0x0018)()
 };
-static_assert(alignof(GA_Base_C_设置角色变换) == 0x000010, "Wrong alignment on GA_Base_C_设置角色变换");
-static_assert(sizeof(GA_Base_C_设置角色变换) == 0x000220, "Wrong size on GA_Base_C_设置角色变换");
-static_assert(offsetof(GA_Base_C_设置角色变换, 角色) == 0x000000, "Member 'GA_Base_C_设置角色变换::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, Transform) == 0x000010, "Member 'GA_Base_C_设置角色变换::Transform' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, sweep) == 0x000050, "Member 'GA_Base_C_设置角色变换::sweep' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, context) == 0x000058, "Member 'GA_Base_C_设置角色变换::context' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_BreakTransformDouble_Location) == 0x000068, "Member 'GA_Base_C_设置角色变换::CallFunc_BreakTransformDouble_Location' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_BreakTransformDouble_Rotation) == 0x000080, "Member 'GA_Base_C_设置角色变换::CallFunc_BreakTransformDouble_Rotation' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_BreakTransformDouble_Scale) == 0x00008C, "Member 'GA_Base_C_设置角色变换::CallFunc_BreakTransformDouble_Scale' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_GetObjectName_ReturnValue) == 0x000098, "Member 'GA_Base_C_设置角色变换::CallFunc_GetObjectName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_EqualEqual_VectorVector_ReturnValue) == 0x0000A8, "Member 'GA_Base_C_设置角色变换::CallFunc_EqualEqual_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_Conv_StringToText_ReturnValue) == 0x0000B0, "Member 'GA_Base_C_设置角色变换::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_EqualEqual_VectorVector_ReturnValue_1) == 0x0000C8, "Member 'GA_Base_C_设置角色变换::CallFunc_EqualEqual_VectorVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, K2Node_MakeStruct_FormatArgumentData) == 0x0000D0, "Member 'GA_Base_C_设置角色变换::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_BooleanOR_ReturnValue) == 0x000110, "Member 'GA_Base_C_设置角色变换::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_Conv_VectorToString_ReturnValue) == 0x000118, "Member 'GA_Base_C_设置角色变换::CallFunc_Conv_VectorToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_Conv_StringToText_ReturnValue_1) == 0x000128, "Member 'GA_Base_C_设置角色变换::CallFunc_Conv_StringToText_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, K2Node_MakeStruct_FormatArgumentData_1) == 0x000140, "Member 'GA_Base_C_设置角色变换::K2Node_MakeStruct_FormatArgumentData_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc__________) == 0x000180, "Member 'GA_Base_C_设置角色变换::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_GetObjectName_ReturnValue_1) == 0x000188, "Member 'GA_Base_C_设置角色变换::CallFunc_GetObjectName_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_Conv_StringToText_ReturnValue_2) == 0x000198, "Member 'GA_Base_C_设置角色变换::CallFunc_Conv_StringToText_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, K2Node_MakeStruct_FormatArgumentData_2) == 0x0001B0, "Member 'GA_Base_C_设置角色变换::K2Node_MakeStruct_FormatArgumentData_2' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, K2Node_MakeArray_Array) == 0x0001F0, "Member 'GA_Base_C_设置角色变换::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色变换, CallFunc_Format_ReturnValue) == 0x000200, "Member 'GA_Base_C_设置角色变换::CallFunc_Format_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置角色变换;
 
 // Function GA_Base.GA_Base_C.设置角色位置和旋转
 // 0x0040 (0x0040 - 0x0000)
@@ -2039,13 +1352,7 @@ public:
 	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 context;                                           // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_设置角色位置和旋转) == 0x000008, "Wrong alignment on GA_Base_C_设置角色位置和旋转");
-static_assert(sizeof(GA_Base_C_设置角色位置和旋转) == 0x000040, "Wrong size on GA_Base_C_设置角色位置和旋转");
-static_assert(offsetof(GA_Base_C_设置角色位置和旋转, 角色) == 0x000000, "Member 'GA_Base_C_设置角色位置和旋转::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置和旋转, location) == 0x000008, "Member 'GA_Base_C_设置角色位置和旋转::location' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置和旋转, rotation) == 0x000020, "Member 'GA_Base_C_设置角色位置和旋转::rotation' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置和旋转, sweep) == 0x00002C, "Member 'GA_Base_C_设置角色位置和旋转::sweep' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色位置和旋转, context) == 0x000030, "Member 'GA_Base_C_设置角色位置和旋转::context' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置角色位置和旋转;
 
 // Function GA_Base.GA_Base_C.叠加角色世界旋转
 // 0x0028 (0x0028 - 0x0000)
@@ -2059,13 +1366,7 @@ public:
 	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 context;                                           // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_叠加角色世界旋转) == 0x000008, "Wrong alignment on GA_Base_C_叠加角色世界旋转");
-static_assert(sizeof(GA_Base_C_叠加角色世界旋转) == 0x000028, "Wrong size on GA_Base_C_叠加角色世界旋转");
-static_assert(offsetof(GA_Base_C_叠加角色世界旋转, 角色) == 0x000000, "Member 'GA_Base_C_叠加角色世界旋转::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_叠加角色世界旋转, rotation) == 0x000008, "Member 'GA_Base_C_叠加角色世界旋转::rotation' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_叠加角色世界旋转, sweep) == 0x000014, "Member 'GA_Base_C_叠加角色世界旋转::sweep' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_叠加角色世界旋转, teleport) == 0x000015, "Member 'GA_Base_C_叠加角色世界旋转::teleport' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_叠加角色世界旋转, context) == 0x000018, "Member 'GA_Base_C_叠加角色世界旋转::context' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_叠加角色世界旋转;
 
 // Function GA_Base.GA_Base_C.叠加角色世界位置
 // 0x0038 (0x0038 - 0x0000)
@@ -2079,13 +1380,7 @@ public:
 	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 context;                                           // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_叠加角色世界位置) == 0x000008, "Wrong alignment on GA_Base_C_叠加角色世界位置");
-static_assert(sizeof(GA_Base_C_叠加角色世界位置) == 0x000038, "Wrong size on GA_Base_C_叠加角色世界位置");
-static_assert(offsetof(GA_Base_C_叠加角色世界位置, 角色) == 0x000000, "Member 'GA_Base_C_叠加角色世界位置::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_叠加角色世界位置, location) == 0x000008, "Member 'GA_Base_C_叠加角色世界位置::location' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_叠加角色世界位置, sweep) == 0x000020, "Member 'GA_Base_C_叠加角色世界位置::sweep' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_叠加角色世界位置, teleport) == 0x000021, "Member 'GA_Base_C_叠加角色世界位置::teleport' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_叠加角色世界位置, context) == 0x000028, "Member 'GA_Base_C_叠加角色世界位置::context' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_叠加角色世界位置;
 
 // Function GA_Base.GA_Base_C.设置角色传送
 // 0x0048 (0x0048 - 0x0000)
@@ -2099,13 +1394,7 @@ public:
 	class FString                                 context;                                           // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_设置角色传送) == 0x000008, "Wrong alignment on GA_Base_C_设置角色传送");
-static_assert(sizeof(GA_Base_C_设置角色传送) == 0x000048, "Wrong size on GA_Base_C_设置角色传送");
-static_assert(offsetof(GA_Base_C_设置角色传送, 角色) == 0x000000, "Member 'GA_Base_C_设置角色传送::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色传送, location) == 0x000008, "Member 'GA_Base_C_设置角色传送::location' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色传送, Rotator) == 0x000020, "Member 'GA_Base_C_设置角色传送::Rotator' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色传送, context) == 0x000030, "Member 'GA_Base_C_设置角色传送::context' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色传送, CallFunc_IsValid_ReturnValue) == 0x000040, "Member 'GA_Base_C_设置角色传送::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置角色传送;
 
 // Function GA_Base.GA_Base_C.设置角色地面移动
 // 0x0030 (0x0030 - 0x0000)
@@ -2118,13 +1407,7 @@ public:
 	class FString                                 context;                                           // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_设置角色地面移动) == 0x000008, "Wrong alignment on GA_Base_C_设置角色地面移动");
-static_assert(sizeof(GA_Base_C_设置角色地面移动) == 0x000030, "Wrong size on GA_Base_C_设置角色地面移动");
-static_assert(offsetof(GA_Base_C_设置角色地面移动, 角色) == 0x000000, "Member 'GA_Base_C_设置角色地面移动::角色' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色地面移动, Velocity) == 0x000008, "Member 'GA_Base_C_设置角色地面移动::Velocity' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色地面移动, DeltaSeconds) == 0x000014, "Member 'GA_Base_C_设置角色地面移动::DeltaSeconds' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色地面移动, context) == 0x000018, "Member 'GA_Base_C_设置角色地面移动::context' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_设置角色地面移动, CallFunc_IsValid_ReturnValue) == 0x000028, "Member 'GA_Base_C_设置角色地面移动::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_设置角色地面移动;
 
 // Function GA_Base.GA_Base_C.伴生物获取召唤者对象
 // 0x0030 (0x0030 - 0x0000)
@@ -2140,15 +1423,7 @@ public:
 	class ATsBaseCharacter_C*                     CallFunc_____ID_______;                            // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_____ID___________;                        // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_伴生物获取召唤者对象) == 0x000008, "Wrong alignment on GA_Base_C_伴生物获取召唤者对象");
-static_assert(sizeof(GA_Base_C_伴生物获取召唤者对象) == 0x000030, "Wrong size on GA_Base_C_伴生物获取召唤者对象");
-static_assert(offsetof(GA_Base_C_伴生物获取召唤者对象, 对象) == 0x000000, "Member 'GA_Base_C_伴生物获取召唤者对象::对象' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_伴生物获取召唤者对象, 是否找到对象) == 0x000008, "Member 'GA_Base_C_伴生物获取召唤者对象::是否找到对象' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_伴生物获取召唤者对象, CallFunc__________) == 0x000010, "Member 'GA_Base_C_伴生物获取召唤者对象::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_伴生物获取召唤者对象, CallFunc_____ID___ID) == 0x000018, "Member 'GA_Base_C_伴生物获取召唤者对象::CallFunc_____ID___ID' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_伴生物获取召唤者对象, CallFunc_GetSummonerEntityId_ReturnValue) == 0x00001C, "Member 'GA_Base_C_伴生物获取召唤者对象::CallFunc_GetSummonerEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_伴生物获取召唤者对象, CallFunc_____ID_______) == 0x000020, "Member 'GA_Base_C_伴生物获取召唤者对象::CallFunc_____ID_______' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_伴生物获取召唤者对象, CallFunc_____ID___________) == 0x000028, "Member 'GA_Base_C_伴生物获取召唤者对象::CallFunc_____ID___________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_伴生物获取召唤者对象;
 
 // Function GA_Base.GA_Base_C.RemoveBuff
 // 0x0010 (0x0010 - 0x0000)
@@ -2158,10 +1433,7 @@ public:
 	int64                                         buffId;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_RemoveBuff) == 0x000008, "Wrong alignment on GA_Base_C_RemoveBuff");
-static_assert(sizeof(GA_Base_C_RemoveBuff) == 0x000010, "Wrong size on GA_Base_C_RemoveBuff");
-static_assert(offsetof(GA_Base_C_RemoveBuff, buffId) == 0x000000, "Member 'GA_Base_C_RemoveBuff::buffId' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_RemoveBuff, CallFunc__________) == 0x000008, "Member 'GA_Base_C_RemoveBuff::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_RemoveBuff;
 
 // Function GA_Base.GA_Base_C.RemoveTag
 // 0x0018 (0x0018 - 0x0000)
@@ -2172,10 +1444,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_RemoveTag) == 0x000008, "Wrong alignment on GA_Base_C_RemoveTag");
-static_assert(sizeof(GA_Base_C_RemoveTag) == 0x000018, "Wrong size on GA_Base_C_RemoveTag");
-static_assert(offsetof(GA_Base_C_RemoveTag, tag) == 0x000000, "Member 'GA_Base_C_RemoveTag::tag' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_RemoveTag, CallFunc__________) == 0x000010, "Member 'GA_Base_C_RemoveTag::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_RemoveTag;
 
 // Function GA_Base.GA_Base_C.AddTag
 // 0x0018 (0x0018 - 0x0000)
@@ -2186,10 +1455,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_AddTag) == 0x000008, "Wrong alignment on GA_Base_C_AddTag");
-static_assert(sizeof(GA_Base_C_AddTag) == 0x000018, "Wrong size on GA_Base_C_AddTag");
-static_assert(offsetof(GA_Base_C_AddTag, tag) == 0x000000, "Member 'GA_Base_C_AddTag::tag' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_AddTag, CallFunc__________) == 0x000010, "Member 'GA_Base_C_AddTag::CallFunc__________' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_AddTag;
 
 // Function GA_Base.GA_Base_C.Apply Buff with Level
 // 0x0008 (0x0008 - 0x0000)
@@ -2198,9 +1464,7 @@ struct GA_Base_C_Apply_Buff_with_Level final
 public:
 	int64                                         buffId;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_Apply_Buff_with_Level) == 0x000008, "Wrong alignment on GA_Base_C_Apply_Buff_with_Level");
-static_assert(sizeof(GA_Base_C_Apply_Buff_with_Level) == 0x000008, "Wrong size on GA_Base_C_Apply_Buff_with_Level");
-static_assert(offsetof(GA_Base_C_Apply_Buff_with_Level, buffId) == 0x000000, "Member 'GA_Base_C_Apply_Buff_with_Level::buffId' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_Apply_Buff_with_Level;
 
 // Function GA_Base.GA_Base_C.随机召唤
 // 0x0060 (0x0060 - 0x0000)
@@ -2214,13 +1478,7 @@ public:
 	int32                                         SkillId_0;                                         // 0x0050(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsVisivle;                                         // 0x0054(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_随机召唤) == 0x000010, "Wrong alignment on GA_Base_C_随机召唤");
-static_assert(sizeof(GA_Base_C_随机召唤) == 0x000060, "Wrong size on GA_Base_C_随机召唤");
-static_assert(offsetof(GA_Base_C_随机召唤, 召唤者Id) == 0x000000, "Member 'GA_Base_C_随机召唤::召唤者Id' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_随机召唤, Index_0) == 0x000004, "Member 'GA_Base_C_随机召唤::Index_0' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_随机召唤, Transform) == 0x000010, "Member 'GA_Base_C_随机召唤::Transform' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_随机召唤, SkillId_0) == 0x000050, "Member 'GA_Base_C_随机召唤::SkillId_0' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_随机召唤, IsVisivle) == 0x000054, "Member 'GA_Base_C_随机召唤::IsVisivle' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_随机召唤;
 
 // Function GA_Base.GA_Base_C.获取随机召唤物
 // 0x0010 (0x0010 - 0x0000)
@@ -2232,12 +1490,7 @@ public:
 	int32                                         实体Id;                                            // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetSummonRandomEntity_ReturnValue;        // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Base_C_获取随机召唤物) == 0x000004, "Wrong alignment on GA_Base_C_获取随机召唤物");
-static_assert(sizeof(GA_Base_C_获取随机召唤物) == 0x000010, "Wrong size on GA_Base_C_获取随机召唤物");
-static_assert(offsetof(GA_Base_C_获取随机召唤物, 召唤者) == 0x000000, "Member 'GA_Base_C_获取随机召唤物::召唤者' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取随机召唤物, Index_0) == 0x000004, "Member 'GA_Base_C_获取随机召唤物::Index_0' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取随机召唤物, 实体Id) == 0x000008, "Member 'GA_Base_C_获取随机召唤物::实体Id' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取随机召唤物, CallFunc_GetSummonRandomEntity_ReturnValue) == 0x00000C, "Member 'GA_Base_C_获取随机召唤物::CallFunc_GetSummonRandomEntity_ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_获取随机召唤物;
 
 // Function GA_Base.GA_Base_C.K2_CanActivateAbility
 // 0x0078 (0x0078 - 0x0000)
@@ -2248,11 +1501,7 @@ public:
 	struct FGameplayTagContainer                  RelevantTags;                                      // 0x0050(0x0020)(Parm, OutParm)
 	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Base_C_K2_CanActivateAbility) == 0x000008, "Wrong alignment on GA_Base_C_K2_CanActivateAbility");
-static_assert(sizeof(GA_Base_C_K2_CanActivateAbility) == 0x000078, "Wrong size on GA_Base_C_K2_CanActivateAbility");
-static_assert(offsetof(GA_Base_C_K2_CanActivateAbility, ActorInfo) == 0x000000, "Member 'GA_Base_C_K2_CanActivateAbility::ActorInfo' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_K2_CanActivateAbility, RelevantTags) == 0x000050, "Member 'GA_Base_C_K2_CanActivateAbility::RelevantTags' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_K2_CanActivateAbility, ReturnValue) == 0x000070, "Member 'GA_Base_C_K2_CanActivateAbility::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_GA_Base_C_K2_CanActivateAbility;
 
 }
 

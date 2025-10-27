@@ -21,35 +21,43 @@ namespace SDK
 class UGmDebugBlueprintFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void TsTestLifePoint(float p11, float p2, float p3, float p4, float p5, float p6, class UObject* __WorldContext);
-	static void TsGmLoadFightDt(int32 entityId, class UObject* __WorldContext);
-	static void TsSetAoeDestroyEnemyRange(float aoeDestroyEnemyRange, class UObject* __WorldContext);
-	static float TsGetAoeDestroyEnemyRange(class UObject* __WorldContext);
-	static void TsSetAoeDestroyEnemyActivated(bool aoeDestroyEnemyActivated, class UObject* __WorldContext);
-	static bool TsGetAoeDestroyEnemyActivated(class UObject* __WorldContext);
-	static void TsCheatInputRequest(int32 type, class UObject* __WorldContext);
-	static void TsGmStopGameCommandService(class UObject* __WorldContext);
-	static void TsGmStartGameCommandService(int32 port, class UObject* __WorldContext);
-	static void OpenWbpDebugWin(class UObject* __WorldContext);
-	static bool TsGmGetIsGameCommandServiceRunning(class UObject* __WorldContext);
-	static void TsGmShowEntityViewByPbDataId(int32 pbDataId, class UObject* __WorldContext);
-	static float TsGmGetEntityPbDataIdByChildActor(class AActor* childActor, class UObject* __WorldContext);
-	static class AActor* TsGmGetEntityActorByChildActor(class AActor* childActor, class UObject* __WorldContext);
-	static bool TsGetGmIsOpen(class UObject* __WorldContext);
 	static void TsRunGm(const class FString& gmStr, class UObject* __WorldContext);
+	static bool TsGetGmIsOpen(class UObject* __WorldContext);
+	static class AActor* TsGmGetEntityActorByChildActor(class AActor* childActor, class UObject* __WorldContext);
+	static float TsGmGetEntityPbDataIdByChildActor(class AActor* childActor, class UObject* __WorldContext);
+	static void TsGmShowEntityViewByPbDataId(int32 pbDataId, class UObject* __WorldContext);
+	static bool TsGmGetIsGameCommandServiceRunning(class UObject* __WorldContext);
+	static void OpenWbpDebugWin(class UObject* __WorldContext);
+	static void TsGmStartGameCommandService(int32 port, class UObject* __WorldContext);
+	static void TsGmStopGameCommandService(class UObject* __WorldContext);
+	static void TsCheatInputRequest(int32 type, class UObject* __WorldContext);
+	static bool TsGetAoeDestroyEnemyActivated(class UObject* __WorldContext);
+	static void TsSetAoeDestroyEnemyActivated(bool aoeDestroyEnemyActivated, class UObject* __WorldContext);
+	static float TsGetAoeDestroyEnemyRange(class UObject* __WorldContext);
+	static void TsSetAoeDestroyEnemyRange(float aoeDestroyEnemyRange, class UObject* __WorldContext);
+	static void TsGmLoadFightDt(int32 entityId, class UObject* __WorldContext);
+	static void TsTestLifePoint(float p11, float p2, float p3, float p4, float p5, float p6, class UObject* __WorldContext);
+	static void InitLevelRangeDebugData(class UObject* __WorldContext);
+	static void GetLevelRangeDebugData(int32 type, bool& enable, float& r, float& g, float& b, class UObject* __WorldContext);
+	static void SetLevelRangeDebugMode(int32 mode, class UObject* __WorldContext);
+	static void SetLevelRangeDebugData(int32 type, bool enable, float r, float g, float b, class UObject* __WorldContext);
+	static int32 GetLevelRangeDebugMode(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"GmDebugBlueprintFunctionLibrary_C">();
+		BP_STATIC_CLASS_IMPL("GmDebugBlueprintFunctionLibrary_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GmDebugBlueprintFunctionLibrary_C")
 	}
 	static class UGmDebugBlueprintFunctionLibrary_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UGmDebugBlueprintFunctionLibrary_C>();
 	}
 };
-static_assert(alignof(UGmDebugBlueprintFunctionLibrary_C) == 0x000008, "Wrong alignment on UGmDebugBlueprintFunctionLibrary_C");
-static_assert(sizeof(UGmDebugBlueprintFunctionLibrary_C) == 0x000030, "Wrong size on UGmDebugBlueprintFunctionLibrary_C");
+DUMPER7_ASSERTS_UGmDebugBlueprintFunctionLibrary_C;
 
 }
 

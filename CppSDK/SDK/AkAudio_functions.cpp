@@ -17,6 +17,31 @@
 namespace SDK
 {
 
+// Function AkAudio.AkMacInitializationSettings.MigrateMultiCoreRendering
+// (Final, Native, Public)
+// Parameters:
+// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAkMacInitializationSettings::MigrateMultiCoreRendering(bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AkMacInitializationSettings", "MigrateMultiCoreRendering");
+
+	Params::AkMacInitializationSettings_MigrateMultiCoreRendering Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function AkAudio.AkPortalComponent.ClosePortal
 // (Final, Native, Public, BlueprintCallable)
 
@@ -262,81 +287,6 @@ int32 UAkAudioType::GetWwiseShortID() const
 }
 
 
-// Function AkAudio.AkItemProperties.SetSearchText
-// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    newText                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAkItemProperties::SetSearchText(const class FString& newText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AkItemProperties", "SetSearchText");
-
-	Params::AkItemProperties_SetSearchText Parms{};
-
-	Parms.newText = std::move(newText);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AkAudio.AkItemProperties.GetSearchText
-// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UAkItemProperties::GetSearchText() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AkItemProperties", "GetSearchText");
-
-	Params::AkItemProperties_GetSearchText Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AkAudio.AkItemProperties.GetSelectedProperty
-// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UAkItemProperties::GetSelectedProperty() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AkItemProperties", "GetSelectedProperty");
-
-	Params::AkItemProperties_GetSelectedProperty Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AkAudio.AkAmbientSound.StartAmbientSound
 // (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
 
@@ -370,31 +320,6 @@ void AAkAmbientSound::StopAmbientSound()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AkAudio.AkOpenHarmonyInitializationSettings.MigrateMultiCoreRendering
-// (Final, Native, Public)
-// Parameters:
-// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAkOpenHarmonyInitializationSettings::MigrateMultiCoreRendering(bool NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AkOpenHarmonyInitializationSettings", "MigrateMultiCoreRendering");
-
-	Params::AkOpenHarmonyInitializationSettings_MigrateMultiCoreRendering Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -1430,87 +1355,6 @@ bool UAkCheckBox::IsPressed() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function AkAudio.AkItemPropertiesConv.Conv_FAkPropertyToControlToString
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FAkPropertyToControl&      INAkPropertyToControl                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UAkItemPropertiesConv::Conv_FAkPropertyToControlToString(const struct FAkPropertyToControl& INAkPropertyToControl)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AkItemPropertiesConv", "Conv_FAkPropertyToControlToString");
-
-	Params::AkItemPropertiesConv_Conv_FAkPropertyToControlToString Parms{};
-
-	Parms.INAkPropertyToControl = std::move(INAkPropertyToControl);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AkAudio.AkItemPropertiesConv.Conv_FAkPropertyToControlToText
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FAkPropertyToControl&      INAkPropertyToControl                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText UAkItemPropertiesConv::Conv_FAkPropertyToControlToText(const struct FAkPropertyToControl& INAkPropertyToControl)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AkItemPropertiesConv", "Conv_FAkPropertyToControlToText");
-
-	Params::AkItemPropertiesConv_Conv_FAkPropertyToControlToText Parms{};
-
-	Parms.INAkPropertyToControl = std::move(INAkPropertyToControl);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AkAudio.AkLateReverbComponent.AssociateAkTextureSetComponent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UAkAcousticTextureSetComponent*   textureSetComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAkLateReverbComponent::AssociateAkTextureSetComponent(class UAkAcousticTextureSetComponent* textureSetComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AkLateReverbComponent", "AssociateAkTextureSetComponent");
-
-	Params::AkLateReverbComponent_AssociateAkTextureSetComponent Parms{};
-
-	Parms.textureSetComponent = textureSetComponent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -3453,62 +3297,6 @@ void UAkGameplayStatics::WakeupFromSuspend()
 }
 
 
-// Function AkAudio.AkItemBoolPropertiesConv.Conv_FAkBoolPropertyToControlToString
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FAkBoolPropertyToControl&  INAkBoolPropertyToControl                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UAkItemBoolPropertiesConv::Conv_FAkBoolPropertyToControlToString(const struct FAkBoolPropertyToControl& INAkBoolPropertyToControl)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AkItemBoolPropertiesConv", "Conv_FAkBoolPropertyToControlToString");
-
-	Params::AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToString Parms{};
-
-	Parms.INAkBoolPropertyToControl = std::move(INAkBoolPropertyToControl);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AkAudio.AkItemBoolPropertiesConv.Conv_FAkBoolPropertyToControlToText
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FAkBoolPropertyToControl&  INAkBoolPropertyToControl                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText UAkItemBoolPropertiesConv::Conv_FAkBoolPropertyToControlToText(const struct FAkBoolPropertyToControl& INAkBoolPropertyToControl)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AkItemBoolPropertiesConv", "Conv_FAkBoolPropertyToControlToText");
-
-	Params::AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToText Parms{};
-
-	Parms.INAkBoolPropertyToControl = std::move(INAkBoolPropertyToControl);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AkAudio.AkMIDIEventCallbackInfo.GetCc
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -3791,31 +3579,6 @@ EAkMidiEventType UAkMIDIEventCallbackInfo::GetType()
 }
 
 
-// Function AkAudio.AkMacInitializationSettings.MigrateMultiCoreRendering
-// (Final, Native, Public)
-// Parameters:
-// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAkMacInitializationSettings::MigrateMultiCoreRendering(bool NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AkMacInitializationSettings", "MigrateMultiCoreRendering");
-
-	Params::AkMacInitializationSettings_MigrateMultiCoreRendering Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function AkAudio.AkGeometryComponent.ConvertMesh
 // (Final, Native, Public, BlueprintCallable)
 
@@ -3917,6 +3680,62 @@ void UAkHololensInitializationSettings::MigrateMultiCoreRendering(bool NewValue)
 }
 
 
+// Function AkAudio.AkItemBoolPropertiesConv.Conv_FAkBoolPropertyToControlToString
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FAkBoolPropertyToControl&  INAkBoolPropertyToControl                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UAkItemBoolPropertiesConv::Conv_FAkBoolPropertyToControlToString(const struct FAkBoolPropertyToControl& INAkBoolPropertyToControl)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AkItemBoolPropertiesConv", "Conv_FAkBoolPropertyToControlToString");
+
+	Params::AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToString Parms{};
+
+	Parms.INAkBoolPropertyToControl = std::move(INAkBoolPropertyToControl);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AkAudio.AkItemBoolPropertiesConv.Conv_FAkBoolPropertyToControlToText
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FAkBoolPropertyToControl&  INAkBoolPropertyToControl                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UAkItemBoolPropertiesConv::Conv_FAkBoolPropertyToControlToText(const struct FAkBoolPropertyToControl& INAkBoolPropertyToControl)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AkItemBoolPropertiesConv", "Conv_FAkBoolPropertyToControlToText");
+
+	Params::AkItemBoolPropertiesConv_Conv_FAkBoolPropertyToControlToText Parms{};
+
+	Parms.INAkBoolPropertyToControl = std::move(INAkBoolPropertyToControl);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function AkAudio.AkItemBoolProperties.SetSearchText
 // (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
 // Parameters:
@@ -3992,6 +3811,162 @@ class FString UAkItemBoolProperties::GetSelectedProperty() const
 }
 
 
+// Function AkAudio.AkItemPropertiesConv.Conv_FAkPropertyToControlToString
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FAkPropertyToControl&      INAkPropertyToControl                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UAkItemPropertiesConv::Conv_FAkPropertyToControlToString(const struct FAkPropertyToControl& INAkPropertyToControl)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AkItemPropertiesConv", "Conv_FAkPropertyToControlToString");
+
+	Params::AkItemPropertiesConv_Conv_FAkPropertyToControlToString Parms{};
+
+	Parms.INAkPropertyToControl = std::move(INAkPropertyToControl);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AkAudio.AkItemPropertiesConv.Conv_FAkPropertyToControlToText
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FAkPropertyToControl&      INAkPropertyToControl                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UAkItemPropertiesConv::Conv_FAkPropertyToControlToText(const struct FAkPropertyToControl& INAkPropertyToControl)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AkItemPropertiesConv", "Conv_FAkPropertyToControlToText");
+
+	Params::AkItemPropertiesConv_Conv_FAkPropertyToControlToText Parms{};
+
+	Parms.INAkPropertyToControl = std::move(INAkPropertyToControl);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AkAudio.AkItemProperties.SetSearchText
+// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    newText                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAkItemProperties::SetSearchText(const class FString& newText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AkItemProperties", "SetSearchText");
+
+	Params::AkItemProperties_SetSearchText Parms{};
+
+	Parms.newText = std::move(newText);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AkAudio.AkItemProperties.GetSearchText
+// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UAkItemProperties::GetSearchText() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AkItemProperties", "GetSearchText");
+
+	Params::AkItemProperties_GetSearchText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AkAudio.AkItemProperties.GetSelectedProperty
+// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UAkItemProperties::GetSelectedProperty() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AkItemProperties", "GetSelectedProperty");
+
+	Params::AkItemProperties_GetSelectedProperty Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AkAudio.AkLateReverbComponent.AssociateAkTextureSetComponent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UAkAcousticTextureSetComponent*   textureSetComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAkLateReverbComponent::AssociateAkTextureSetComponent(class UAkAcousticTextureSetComponent* textureSetComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AkLateReverbComponent", "AssociateAkTextureSetComponent");
+
+	Params::AkLateReverbComponent_AssociateAkTextureSetComponent Parms{};
+
+	Parms.textureSetComponent = textureSetComponent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function AkAudio.AkLinuxInitializationSettings.MigrateMultiCoreRendering
 // (Final, Native, Public)
 // Parameters:
@@ -4005,6 +3980,31 @@ void UAkLinuxInitializationSettings::MigrateMultiCoreRendering(bool NewValue)
 		Func = Class->GetFunction("AkLinuxInitializationSettings", "MigrateMultiCoreRendering");
 
 	Params::AkLinuxInitializationSettings_MigrateMultiCoreRendering Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AkAudio.AkOpenHarmonyInitializationSettings.MigrateMultiCoreRendering
+// (Final, Native, Public)
+// Parameters:
+// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAkOpenHarmonyInitializationSettings::MigrateMultiCoreRendering(bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AkOpenHarmonyInitializationSettings", "MigrateMultiCoreRendering");
+
+	Params::AkOpenHarmonyInitializationSettings_MigrateMultiCoreRendering Parms{};
 
 	Parms.NewValue = NewValue;
 

@@ -32,17 +32,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"TsUiSceneDangoActor_C">();
+		BP_STATIC_CLASS_IMPL("TsUiSceneDangoActor_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TsUiSceneDangoActor_C")
 	}
 	static class ATsUiSceneDangoActor_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ATsUiSceneDangoActor_C>();
 	}
 };
-static_assert(alignof(ATsUiSceneDangoActor_C) == 0x000008, "Wrong alignment on ATsUiSceneDangoActor_C");
-static_assert(sizeof(ATsUiSceneDangoActor_C) == 0x0002C0, "Wrong size on ATsUiSceneDangoActor_C");
-static_assert(offsetof(ATsUiSceneDangoActor_C, UberGraphFrame) == 0x0002B0, "Member 'ATsUiSceneDangoActor_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsUiSceneDangoActor_C, DefaultSceneRoot) == 0x0002B8, "Member 'ATsUiSceneDangoActor_C::DefaultSceneRoot' has a wrong offset!");
+DUMPER7_ASSERTS_ATsUiSceneDangoActor_C;
 
 }
 

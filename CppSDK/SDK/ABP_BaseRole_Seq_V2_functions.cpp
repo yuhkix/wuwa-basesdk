@@ -37,6 +37,26 @@ void UABP_BaseRole_Seq_V2_C::ExecuteUbergraph_ABP_BaseRole_Seq_V2(int32 EntryPoi
 }
 
 
+// Function ABP_BaseRole_Seq_V2.ABP_BaseRole_Seq_V2_C.SetStateAnimAlpha
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   Alpha                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_BaseRole_Seq_V2_C::SetStateAnimAlpha(float Alpha)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRole_Seq_V2_C", "SetStateAnimAlpha");
+
+	Params::ABP_BaseRole_Seq_V2_C_SetStateAnimAlpha Parms{};
+
+	Parms.Alpha = Alpha;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function ABP_BaseRole_Seq_V2.ABP_BaseRole_Seq_V2_C.BlueprintUpdateAnimation
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -168,6 +188,26 @@ void UABP_BaseRole_Seq_V2_C::修型层(const struct FPoseLink& InPose_0, struct 
 
 	if (修型层_0 != nullptr)
 		*修型层_0 = std::move(Parms.修型层_0);
+}
+
+
+// Function ABP_BaseRole_Seq_V2.ABP_BaseRole_Seq_V2_C.GetStateAnimAlpha
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UABP_BaseRole_Seq_V2_C::GetStateAnimAlpha()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRole_Seq_V2_C", "GetStateAnimAlpha");
+
+	Params::ABP_BaseRole_Seq_V2_C_GetStateAnimAlpha Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 }

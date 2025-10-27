@@ -31,15 +31,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"WwiseExternalSourceStatics">();
+		STATIC_CLASS_IMPL("WwiseExternalSourceStatics")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"WwiseExternalSourceStatics")
 	}
 	static class UWwiseExternalSourceStatics* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UWwiseExternalSourceStatics>();
 	}
 };
-static_assert(alignof(UWwiseExternalSourceStatics) == 0x000008, "Wrong alignment on UWwiseExternalSourceStatics");
-static_assert(sizeof(UWwiseExternalSourceStatics) == 0x000030, "Wrong size on UWwiseExternalSourceStatics");
+DUMPER7_ASSERTS_UWwiseExternalSourceStatics;
 
 // Class WwiseFileHandler.WwiseFileHandlerSettings
 // 0x0018 (0x0048 - 0x0030)
@@ -59,22 +62,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"WwiseFileHandlerSettings">();
+		STATIC_CLASS_IMPL("WwiseFileHandlerSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"WwiseFileHandlerSettings")
 	}
 	static class UWwiseFileHandlerSettings* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UWwiseFileHandlerSettings>();
 	}
 };
-static_assert(alignof(UWwiseFileHandlerSettings) == 0x000008, "Wrong alignment on UWwiseFileHandlerSettings");
-static_assert(sizeof(UWwiseFileHandlerSettings) == 0x000048, "Wrong size on UWwiseFileHandlerSettings");
-static_assert(offsetof(UWwiseFileHandlerSettings, bUseSharedOpQueue) == 0x000030, "Member 'UWwiseFileHandlerSettings::bUseSharedOpQueue' has a wrong offset!");
-static_assert(offsetof(UWwiseFileHandlerSettings, bIOInSharedOpQueue) == 0x000031, "Member 'UWwiseFileHandlerSettings::bIOInSharedOpQueue' has a wrong offset!");
-static_assert(offsetof(UWwiseFileHandlerSettings, FileCacheOpenQueuePriority) == 0x000034, "Member 'UWwiseFileHandlerSettings::FileCacheOpenQueuePriority' has a wrong offset!");
-static_assert(offsetof(UWwiseFileHandlerSettings, FileCacheDeleteQueuePriority) == 0x000038, "Member 'UWwiseFileHandlerSettings::FileCacheDeleteQueuePriority' has a wrong offset!");
-static_assert(offsetof(UWwiseFileHandlerSettings, FileHandlerOpQueuePriority) == 0x00003C, "Member 'UWwiseFileHandlerSettings::FileHandlerOpQueuePriority' has a wrong offset!");
-static_assert(offsetof(UWwiseFileHandlerSettings, IOHookBatchOpQueuePriority) == 0x000040, "Member 'UWwiseFileHandlerSettings::IOHookBatchOpQueuePriority' has a wrong offset!");
-static_assert(offsetof(UWwiseFileHandlerSettings, bUseMediaExtDecrement) == 0x000044, "Member 'UWwiseFileHandlerSettings::bUseMediaExtDecrement' has a wrong offset!");
+DUMPER7_ASSERTS_UWwiseFileHandlerSettings;
 
 }
 

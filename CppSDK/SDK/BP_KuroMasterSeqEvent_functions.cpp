@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.ExecuteUbergraph_BP_KuroMasterSeqEvent
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -526,6 +526,66 @@ void ABP_KuroMasterSeqEvent_C::背景Icon(bool 显示, class UTexture2D* Icon)
 
 	Parms.显示 = 显示;
 	Parms.Icon = Icon;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.额外Seq播放
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ULevelSequence*                   Seq                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             componentName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             boneName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   frame                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_KuroMasterSeqEvent_C::额外Seq播放(class ULevelSequence* Seq, class FName componentName, class FName boneName, float frame)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroMasterSeqEvent_C", "额外Seq播放");
+
+	Params::BP_KuroMasterSeqEvent_C_额外Seq播放 Parms{};
+
+	Parms.Seq = Seq;
+	Parms.componentName = componentName;
+	Parms.boneName = boneName;
+	Parms.frame = frame;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.额外Seq停止
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroMasterSeqEvent_C::额外Seq停止()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroMasterSeqEvent_C", "额外Seq停止");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.绑定物品检视Actor
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FMovieSceneObjectBindingID&binding                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+
+void ABP_KuroMasterSeqEvent_C::绑定物品检视Actor(const struct FMovieSceneObjectBindingID& binding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroMasterSeqEvent_C", "绑定物品检视Actor");
+
+	Params::BP_KuroMasterSeqEvent_C_绑定物品检视Actor Parms{};
+
+	Parms.binding = std::move(binding);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -30,6 +30,7 @@ public:
 	int32                                         DelayMerge;                                        // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Icon透明度;                                        // 0x02DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	float                                         Icon遮罩透明度;                                    // 0x02E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	int32                                         counter;                                           // 0x02E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_KuroMasterSeqEvent(int32 EntryPoint);
@@ -58,26 +59,25 @@ public:
 	void 关闭Spine动画(const class FString& spineName);
 	void 关闭Spine动画_数组_(TArray<class FString>& spineArray);
 	void 背景Icon(bool 显示, class UTexture2D* Icon);
+	void 额外Seq播放(class ULevelSequence* Seq, class FName componentName, class FName boneName, float frame);
+	void 额外Seq停止();
+	void 绑定物品检视Actor(const struct FMovieSceneObjectBindingID& binding);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BP_KuroMasterSeqEvent_C">();
+		BP_STATIC_CLASS_IMPL("BP_KuroMasterSeqEvent_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BP_KuroMasterSeqEvent_C")
 	}
 	static class ABP_KuroMasterSeqEvent_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ABP_KuroMasterSeqEvent_C>();
 	}
 };
-static_assert(alignof(ABP_KuroMasterSeqEvent_C) == 0x000008, "Wrong alignment on ABP_KuroMasterSeqEvent_C");
-static_assert(sizeof(ABP_KuroMasterSeqEvent_C) == 0x0002E8, "Wrong size on ABP_KuroMasterSeqEvent_C");
-static_assert(offsetof(ABP_KuroMasterSeqEvent_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_KuroMasterSeqEvent_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ABP_KuroMasterSeqEvent_C, DefaultSceneRoot) == 0x0002B8, "Member 'ABP_KuroMasterSeqEvent_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_KuroMasterSeqEvent_C, ModifiedNearClipPlane) == 0x0002C0, "Member 'ABP_KuroMasterSeqEvent_C::ModifiedNearClipPlane' has a wrong offset!");
-static_assert(offsetof(ABP_KuroMasterSeqEvent_C, OnScreenShotFade) == 0x0002C8, "Member 'ABP_KuroMasterSeqEvent_C::OnScreenShotFade' has a wrong offset!");
-static_assert(offsetof(ABP_KuroMasterSeqEvent_C, DelayMerge) == 0x0002D8, "Member 'ABP_KuroMasterSeqEvent_C::DelayMerge' has a wrong offset!");
-static_assert(offsetof(ABP_KuroMasterSeqEvent_C, Icon透明度) == 0x0002DC, "Member 'ABP_KuroMasterSeqEvent_C::Icon透明度' has a wrong offset!");
-static_assert(offsetof(ABP_KuroMasterSeqEvent_C, Icon遮罩透明度) == 0x0002E0, "Member 'ABP_KuroMasterSeqEvent_C::Icon遮罩透明度' has a wrong offset!");
+DUMPER7_ASSERTS_ABP_KuroMasterSeqEvent_C;
 
 }
 

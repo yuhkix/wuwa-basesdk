@@ -53,15 +53,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"DataTableUtil_C">();
+		BP_STATIC_CLASS_IMPL("DataTableUtil_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DataTableUtil_C")
 	}
 	static class UDataTableUtil_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UDataTableUtil_C>();
 	}
 };
-static_assert(alignof(UDataTableUtil_C) == 0x000008, "Wrong alignment on UDataTableUtil_C");
-static_assert(sizeof(UDataTableUtil_C) == 0x000030, "Wrong size on UDataTableUtil_C");
+DUMPER7_ASSERTS_UDataTableUtil_C;
 
 }
 

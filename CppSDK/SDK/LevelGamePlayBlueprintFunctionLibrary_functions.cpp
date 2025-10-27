@@ -160,5 +160,106 @@ bool ULevelGamePlayBlueprintFunctionLibrary_C::ApplyScanEffect(class AActor* inA
 	return Parms.ReturnValue;
 }
 
+
+// Function LevelGamePlayBlueprintFunctionLibrary.LevelGamePlayBlueprintFunctionLibrary_C.DifferenceSelectedActorsSplines
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FKuroGeometryGeneralPolygonList  ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+struct FKuroGeometryGeneralPolygonList ULevelGamePlayBlueprintFunctionLibrary_C::DifferenceSelectedActorsSplines(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LevelGamePlayBlueprintFunctionLibrary_C", "DifferenceSelectedActorsSplines");
+
+	Params::LevelGamePlayBlueprintFunctionLibrary_C_DifferenceSelectedActorsSplines Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LevelGamePlayBlueprintFunctionLibrary.LevelGamePlayBlueprintFunctionLibrary_C.GetPolygonListFromSplines
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class USplineComponent*>&        splines                                                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FKuroGeometryGeneralPolygonList  ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+struct FKuroGeometryGeneralPolygonList ULevelGamePlayBlueprintFunctionLibrary_C::GetPolygonListFromSplines(TArray<class USplineComponent*>& splines, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LevelGamePlayBlueprintFunctionLibrary_C", "GetPolygonListFromSplines");
+
+	Params::LevelGamePlayBlueprintFunctionLibrary_C_GetPolygonListFromSplines Parms{};
+
+	Parms.splines = std::move(splines);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	splines = std::move(Parms.splines);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LevelGamePlayBlueprintFunctionLibrary.LevelGamePlayBlueprintFunctionLibrary_C.PolygonsOpenPathsDifferenceViaSplines
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class USplineComponent*>&        subjects                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// TArray<class USplineComponent*>&        openPaths                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// float                                   strokeWidth                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EJoinType                               joinType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndType                                endType                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FKuroGeometryGeneralPolygonList  ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+struct FKuroGeometryGeneralPolygonList ULevelGamePlayBlueprintFunctionLibrary_C::PolygonsOpenPathsDifferenceViaSplines(TArray<class USplineComponent*>& subjects, TArray<class USplineComponent*>& openPaths, float strokeWidth, EJoinType joinType, EEndType endType, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LevelGamePlayBlueprintFunctionLibrary_C", "PolygonsOpenPathsDifferenceViaSplines");
+
+	Params::LevelGamePlayBlueprintFunctionLibrary_C_PolygonsOpenPathsDifferenceViaSplines Parms{};
+
+	Parms.subjects = std::move(subjects);
+	Parms.openPaths = std::move(openPaths);
+	Parms.strokeWidth = strokeWidth;
+	Parms.joinType = joinType;
+	Parms.endType = endType;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	subjects = std::move(Parms.subjects);
+	openPaths = std::move(Parms.openPaths);
+
+	return Parms.ReturnValue;
+}
+
 }
 

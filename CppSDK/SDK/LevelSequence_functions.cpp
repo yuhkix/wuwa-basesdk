@@ -42,6 +42,119 @@ void ULevelSequenceBurnInOptions::SetBurnIn(const struct FSoftClassPath& InBurnI
 }
 
 
+// Function LevelSequence.LevelSequenceMediaController.OnRep_ServerStartTimeSeconds
+// (Final, Native, Private)
+
+void ALevelSequenceMediaController::OnRep_ServerStartTimeSeconds()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequenceMediaController", "OnRep_ServerStartTimeSeconds");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LevelSequence.LevelSequenceMediaController.Play
+// (Final, Native, Public, BlueprintCallable)
+
+void ALevelSequenceMediaController::Play()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequenceMediaController", "Play");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LevelSequence.LevelSequenceMediaController.SynchronizeToServer
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   DesyncThresholdSeconds                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ALevelSequenceMediaController::SynchronizeToServer(float DesyncThresholdSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequenceMediaController", "SynchronizeToServer");
+
+	Params::LevelSequenceMediaController_SynchronizeToServer Parms{};
+
+	Parms.DesyncThresholdSeconds = DesyncThresholdSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LevelSequence.LevelSequenceMediaController.GetMediaComponent
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UMediaComponent*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMediaComponent* ALevelSequenceMediaController::GetMediaComponent() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequenceMediaController", "GetMediaComponent");
+
+	Params::LevelSequenceMediaController_GetMediaComponent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LevelSequence.LevelSequenceMediaController.GetSequence
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ALevelSequenceActor*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ALevelSequenceActor* ALevelSequenceMediaController::GetSequence() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequenceMediaController", "GetSequence");
+
+	Params::LevelSequenceMediaController_GetSequence Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LevelSequence.LevelSequenceActor.AddBinding
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1074,119 +1187,6 @@ class AActor* ULevelSequencePlayer::GetSpawnedActorByGuid(const struct FGuid& Gu
 
 	Parms.Guid = std::move(Guid);
 	Parms.bIncludeSubSequence = bIncludeSubSequence;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LevelSequence.LevelSequenceMediaController.OnRep_ServerStartTimeSeconds
-// (Final, Native, Private)
-
-void ALevelSequenceMediaController::OnRep_ServerStartTimeSeconds()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequenceMediaController", "OnRep_ServerStartTimeSeconds");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LevelSequence.LevelSequenceMediaController.Play
-// (Final, Native, Public, BlueprintCallable)
-
-void ALevelSequenceMediaController::Play()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequenceMediaController", "Play");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LevelSequence.LevelSequenceMediaController.SynchronizeToServer
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   DesyncThresholdSeconds                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ALevelSequenceMediaController::SynchronizeToServer(float DesyncThresholdSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequenceMediaController", "SynchronizeToServer");
-
-	Params::LevelSequenceMediaController_SynchronizeToServer Parms{};
-
-	Parms.DesyncThresholdSeconds = DesyncThresholdSeconds;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function LevelSequence.LevelSequenceMediaController.GetMediaComponent
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UMediaComponent*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMediaComponent* ALevelSequenceMediaController::GetMediaComponent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequenceMediaController", "GetMediaComponent");
-
-	Params::LevelSequenceMediaController_GetMediaComponent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function LevelSequence.LevelSequenceMediaController.GetSequence
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ALevelSequenceActor*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ALevelSequenceActor* ALevelSequenceMediaController::GetSequence() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequenceMediaController", "GetSequence");
-
-	Params::LevelSequenceMediaController_GetSequence Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

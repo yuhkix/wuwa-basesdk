@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum ESkillBehaviorConditionType.ESkillBehaviorConditionType
-// NumValues: 0x0007
+// NumValues: 0x0009
 enum class ESkillBehaviorConditionType : uint8
 {
 	NewEnumerator0                           = 0,
@@ -24,7 +24,9 @@ enum class ESkillBehaviorConditionType : uint8
 	NewEnumerator5                           = 3,
 	NewEnumerator6                           = 4,
 	NewEnumerator7                           = 5,
-	ESkillBehaviorConditionType_MAX          = 6,
+	NewEnumerator8                           = 6,
+	NewEnumerator9                           = 7,
+	ESkillBehaviorConditionType_MAX          = 8,
 };
 
 }

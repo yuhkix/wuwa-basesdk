@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsAnimNotifyStateRoleRotate.TsAnimNotifyStateRoleRotate_C.K2_NotifyBegin
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -38,7 +38,12 @@ bool UTsAnimNotifyStateRoleRotate_C::K2_NotifyBegin(class USkeletalMeshComponent
 	Parms.Animation = Animation;
 	Parms.TotalDuration = TotalDuration;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }

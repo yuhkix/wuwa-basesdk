@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "EInputState_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "EWeatherState_structs.hpp"
+#include "ERelation_structs.hpp"
 #include "EInputAction_structs.hpp"
+#include "EInputState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "EDetachType_structs.hpp"
-#include "ERelation_structs.hpp"
 #include "EPawnChannel_structs.hpp"
-#include "EWeatherState_structs.hpp"
 #include "EWuYinQuState_structs.hpp"
 
 
@@ -34,11 +34,7 @@ public:
 	TArray<class FString>                         tags1;                                             // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_AddPublicTags) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_AddPublicTags");
-static_assert(sizeof(WorldFunctionLibrary_C_AddPublicTags) == 0x000020, "Wrong size on WorldFunctionLibrary_C_AddPublicTags");
-static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, entityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_AddPublicTags::entityId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, tags1) == 0x000008, "Member 'WorldFunctionLibrary_C_AddPublicTags::tags1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_AddPublicTags::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_AddPublicTags;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemovePublicTags
 // 0x0020 (0x0020 - 0x0000)
@@ -50,11 +46,7 @@ public:
 	TArray<class FString>                         tags1;                                             // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_RemovePublicTags) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_RemovePublicTags");
-static_assert(sizeof(WorldFunctionLibrary_C_RemovePublicTags) == 0x000020, "Wrong size on WorldFunctionLibrary_C_RemovePublicTags");
-static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, entityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_RemovePublicTags::entityId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, tags1) == 0x000008, "Member 'WorldFunctionLibrary_C_RemovePublicTags::tags1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_RemovePublicTags::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_RemovePublicTags;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetIntValueByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -67,12 +59,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetIntValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetIntValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetIntValueByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_GetIntValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetIntValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetIntValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValueByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetIntValueByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValueByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetIntValueByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetIntValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetIntValueByEntityWithCharacter
 // 0x0028 (0x0028 - 0x0000)
@@ -84,12 +71,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter");
-static_assert(sizeof(WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter) == 0x000028, "Wrong size on WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter, entity) == 0x000000, "Member 'WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter::entity' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetIntValueByEntityWithCharacter;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetIntValueByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -103,12 +85,7 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetIntValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetIntValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetIntValueByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_SetIntValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetIntValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetIntValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValueByEntity, value) == 0x000018, "Member 'WorldFunctionLibrary_C_SetIntValueByEntity::value' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValueByEntity, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_SetIntValueByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetIntValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetIntValueByEntityWithCharacter
 // 0x0028 (0x0028 - 0x0000)
@@ -121,12 +98,7 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter");
-static_assert(sizeof(WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter) == 0x000028, "Wrong size on WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter, entity) == 0x000000, "Member 'WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter::entity' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter, value) == 0x000018, "Member 'WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter::value' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetIntValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -139,12 +111,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int32>                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetIntValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetIntValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetIntValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_GetIntValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetIntValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetIntValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValuesByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetIntValuesByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetIntValuesByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetIntValuesByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetIntValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetLongValueByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -157,12 +124,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetLongValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetLongValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetLongValueByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_GetLongValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetLongValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetLongValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetLongValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetLongValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetLongValueByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetLongValueByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetLongValueByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetLongValueByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetLongValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetLongValueByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -175,12 +137,7 @@ public:
 	int64                                         value;                                             // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetLongValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetLongValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetLongValueByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_SetLongValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetLongValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetLongValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetLongValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetLongValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetLongValueByEntity, value) == 0x000018, "Member 'WorldFunctionLibrary_C_SetLongValueByEntity::value' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetLongValueByEntity, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_SetLongValueByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetLongValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetLongValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -193,12 +150,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int64>                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetLongValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetLongValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetLongValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_GetLongValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetLongValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetLongValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetLongValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetLongValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetLongValuesByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetLongValuesByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetLongValuesByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetLongValuesByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetLongValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetBooleanValueByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -211,12 +163,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetBooleanValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetBooleanValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetBooleanValueByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_GetBooleanValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBooleanValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetBooleanValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBooleanValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetBooleanValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBooleanValueByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetBooleanValueByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBooleanValueByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetBooleanValueByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetBooleanValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetBooleanValueByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -230,12 +177,7 @@ public:
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetBooleanValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetBooleanValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetBooleanValueByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_SetBooleanValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetBooleanValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetBooleanValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetBooleanValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetBooleanValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetBooleanValueByEntity, value) == 0x000018, "Member 'WorldFunctionLibrary_C_SetBooleanValueByEntity::value' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetBooleanValueByEntity, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_SetBooleanValueByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetBooleanValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetFloatValueByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -248,12 +190,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetFloatValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetFloatValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetFloatValueByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_GetFloatValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFloatValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetFloatValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFloatValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetFloatValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFloatValueByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetFloatValueByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFloatValueByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetFloatValueByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetFloatValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetFloatValueByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -267,12 +204,7 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetFloatValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetFloatValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetFloatValueByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_SetFloatValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetFloatValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetFloatValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValueByEntity, value) == 0x000018, "Member 'WorldFunctionLibrary_C_SetFloatValueByEntity::value' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValueByEntity, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_SetFloatValueByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetFloatValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetFloatValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -285,12 +217,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<float>                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetFloatValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetFloatValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetFloatValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_GetFloatValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFloatValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetFloatValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFloatValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetFloatValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFloatValuesByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetFloatValuesByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFloatValuesByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetFloatValuesByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetFloatValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetStringValueByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -303,12 +230,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetStringValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetStringValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetStringValueByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_GetStringValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetStringValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetStringValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetStringValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetStringValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetStringValueByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetStringValueByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetStringValueByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetStringValueByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetStringValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetStringValueByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -321,12 +243,7 @@ public:
 	class FString                                 value;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetStringValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetStringValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetStringValueByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetStringValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetStringValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetStringValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetStringValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetStringValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetStringValueByEntity, value) == 0x000018, "Member 'WorldFunctionLibrary_C_SetStringValueByEntity::value' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetStringValueByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetStringValueByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetStringValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetStringValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -339,12 +256,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class FString>                         ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetStringValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetStringValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetStringValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_GetStringValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetStringValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetStringValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetStringValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetStringValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetStringValuesByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetStringValuesByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetStringValuesByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetStringValuesByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetStringValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemoveValueByEntity
 // 0x0020 (0x0020 - 0x0000)
@@ -356,11 +268,7 @@ public:
 	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_RemoveValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_RemoveValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_RemoveValueByEntity) == 0x000020, "Wrong size on WorldFunctionLibrary_C_RemoveValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_RemoveValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_RemoveValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemoveValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_RemoveValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemoveValueByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_RemoveValueByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_RemoveValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.HasValueByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -373,12 +281,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_HasValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_HasValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_HasValueByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_HasValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_HasValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_HasValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_HasValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_HasValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_HasValueByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_HasValueByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_HasValueByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_HasValueByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_HasValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetVectorValueByEntity
 // 0x0038 (0x0038 - 0x0000)
@@ -391,12 +294,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVectorDouble                          ReturnValue;                                       // 0x0020(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetVectorValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetVectorValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetVectorValueByEntity) == 0x000038, "Wrong size on WorldFunctionLibrary_C_GetVectorValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVectorValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetVectorValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVectorValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetVectorValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVectorValueByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetVectorValueByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVectorValueByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetVectorValueByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetVectorValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetVectorValueByEntity
 // 0x0038 (0x0038 - 0x0000)
@@ -409,12 +307,7 @@ public:
 	struct FVectorDouble                          value;                                             // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetVectorValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetVectorValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetVectorValueByEntity) == 0x000038, "Wrong size on WorldFunctionLibrary_C_SetVectorValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetVectorValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetVectorValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValueByEntity, value) == 0x000018, "Member 'WorldFunctionLibrary_C_SetVectorValueByEntity::value' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValueByEntity, __WorldContext) == 0x000030, "Member 'WorldFunctionLibrary_C_SetVectorValueByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetVectorValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetVectorValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -427,12 +320,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FVectorDouble>                  ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetVectorValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetVectorValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetVectorValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_GetVectorValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVectorValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetVectorValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVectorValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetVectorValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVectorValuesByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetVectorValuesByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVectorValuesByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetVectorValuesByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetVectorValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetRotatorValueByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -445,12 +333,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               ReturnValue;                                       // 0x0020(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetRotatorValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetRotatorValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetRotatorValueByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_GetRotatorValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRotatorValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetRotatorValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRotatorValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetRotatorValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRotatorValueByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetRotatorValueByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRotatorValueByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetRotatorValueByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetRotatorValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetRotatorValueByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -464,12 +347,7 @@ public:
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetRotatorValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetRotatorValueByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetRotatorValueByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetRotatorValueByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValueByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetRotatorValueByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValueByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetRotatorValueByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValueByEntity, value) == 0x000018, "Member 'WorldFunctionLibrary_C_SetRotatorValueByEntity::value' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValueByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetRotatorValueByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetRotatorValueByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetRotatorValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -482,12 +360,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FRotator>                       ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetRotatorValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetRotatorValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetRotatorValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_GetRotatorValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRotatorValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetRotatorValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRotatorValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetRotatorValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRotatorValuesByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetRotatorValuesByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRotatorValuesByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetRotatorValuesByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetRotatorValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntityIdByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -500,12 +373,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEntityIdByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntityIdByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEntityIdByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_GetEntityIdByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntityIdByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntityIdByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetEntityIdByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetEntityIdByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntityIdByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetEntityIdByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -519,12 +387,7 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetEntityIdByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetEntityIdByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetEntityIdByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_SetEntityIdByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityIdByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetEntityIdByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityIdByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetEntityIdByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityIdByEntity, value) == 0x000018, "Member 'WorldFunctionLibrary_C_SetEntityIdByEntity::value' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityIdByEntity, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_SetEntityIdByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetEntityIdByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntityIdsByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -537,12 +400,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int32>                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEntityIdsByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntityIdsByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEntityIdsByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_GetEntityIdsByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdsByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntityIdsByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdsByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntityIdsByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdsByEntity, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_GetEntityIdsByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdsByEntity, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_GetEntityIdsByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntityIdsByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetEntityIdsByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -555,12 +413,7 @@ public:
 	TArray<int32>                                 values1;                                           // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetEntityIdsByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetEntityIdsByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetEntityIdsByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetEntityIdsByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityIdsByEntity, entityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_SetEntityIdsByEntity::entityId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityIdsByEntity, key1) == 0x000008, "Member 'WorldFunctionLibrary_C_SetEntityIdsByEntity::key1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityIdsByEntity, values1) == 0x000018, "Member 'WorldFunctionLibrary_C_SetEntityIdsByEntity::values1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityIdsByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetEntityIdsByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetEntityIdsByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetBlackboardInfosByEntity
 // 0x0020 (0x0020 - 0x0000)
@@ -572,11 +425,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetBlackboardInfosByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetBlackboardInfosByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetBlackboardInfosByEntity) == 0x000020, "Wrong size on WorldFunctionLibrary_C_GetBlackboardInfosByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBlackboardInfosByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetBlackboardInfosByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBlackboardInfosByEntity, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetBlackboardInfosByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBlackboardInfosByEntity, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetBlackboardInfosByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetBlackboardInfosByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemoveStandaloneEntity
 // 0x0010 (0x0010 - 0x0000)
@@ -587,11 +436,7 @@ public:
 	int32                                         removeEntityType;                                  // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_RemoveStandaloneEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_RemoveStandaloneEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_RemoveStandaloneEntity) == 0x000010, "Wrong size on WorldFunctionLibrary_C_RemoveStandaloneEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_RemoveStandaloneEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_RemoveStandaloneEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemoveStandaloneEntity, removeEntityType) == 0x000004, "Member 'WorldFunctionLibrary_C_RemoveStandaloneEntity::removeEntityType' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemoveStandaloneEntity, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_RemoveStandaloneEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_RemoveStandaloneEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetDynamicEntity
 // 0x0018 (0x0018 - 0x0000)
@@ -603,11 +448,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetDynamicEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetDynamicEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetDynamicEntity) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetDynamicEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetDynamicEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetDynamicEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetDynamicEntity, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetDynamicEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetDynamicEntity, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetDynamicEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetDynamicEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetWorldOwner
 // 0x0010 (0x0010 - 0x0000)
@@ -617,10 +458,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetWorldOwner) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetWorldOwner");
-static_assert(sizeof(WorldFunctionLibrary_C_GetWorldOwner) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetWorldOwner");
-static_assert(offsetof(WorldFunctionLibrary_C_GetWorldOwner, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetWorldOwner::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetWorldOwner, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetWorldOwner::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetWorldOwner;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GenUniqueId
 // 0x0010 (0x0010 - 0x0000)
@@ -630,10 +468,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GenUniqueId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GenUniqueId");
-static_assert(sizeof(WorldFunctionLibrary_C_GenUniqueId) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GenUniqueId");
-static_assert(offsetof(WorldFunctionLibrary_C_GenUniqueId, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GenUniqueId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GenUniqueId, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GenUniqueId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GenUniqueId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntityIdByCreature
 // 0x0018 (0x0018 - 0x0000)
@@ -644,11 +479,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEntityIdByCreature) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntityIdByCreature");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEntityIdByCreature) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetEntityIdByCreature");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdByCreature, creatureDataId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntityIdByCreature::creatureDataId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdByCreature, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntityIdByCreature::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityIdByCreature, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetEntityIdByCreature::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntityIdByCreature;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetCreatureDataIdByEntity
 // 0x0018 (0x0018 - 0x0000)
@@ -660,11 +491,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetCreatureDataIdByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetCreatureDataIdByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetCreatureDataIdByEntity) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetCreatureDataIdByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCreatureDataIdByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetCreatureDataIdByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCreatureDataIdByEntity, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetCreatureDataIdByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCreatureDataIdByEntity, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetCreatureDataIdByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetCreatureDataIdByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetPlayerIdByEntity
 // 0x0018 (0x0018 - 0x0000)
@@ -676,11 +503,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetPlayerIdByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetPlayerIdByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetPlayerIdByEntity) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetPlayerIdByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetPlayerIdByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetPlayerIdByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetPlayerIdByEntity, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetPlayerIdByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetPlayerIdByEntity, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetPlayerIdByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetPlayerIdByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetRoleElementId
 // 0x0018 (0x0018 - 0x0000)
@@ -692,11 +515,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetRoleElementId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetRoleElementId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetRoleElementId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetRoleElementId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRoleElementId, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetRoleElementId::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRoleElementId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetRoleElementId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRoleElementId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetRoleElementId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetRoleElementId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetOwnerIdByEntity
 // 0x0018 (0x0018 - 0x0000)
@@ -708,11 +527,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetOwnerIdByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetOwnerIdByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetOwnerIdByEntity) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetOwnerIdByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetOwnerIdByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetOwnerIdByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetOwnerIdByEntity, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetOwnerIdByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetOwnerIdByEntity, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetOwnerIdByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetOwnerIdByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.AddPrivateTags
 // 0x0020 (0x0020 - 0x0000)
@@ -724,11 +539,7 @@ public:
 	TArray<class FString>                         tags;                                              // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_AddPrivateTags) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_AddPrivateTags");
-static_assert(sizeof(WorldFunctionLibrary_C_AddPrivateTags) == 0x000020, "Wrong size on WorldFunctionLibrary_C_AddPrivateTags");
-static_assert(offsetof(WorldFunctionLibrary_C_AddPrivateTags, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_AddPrivateTags::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AddPrivateTags, tags) == 0x000008, "Member 'WorldFunctionLibrary_C_AddPrivateTags::tags' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AddPrivateTags, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_AddPrivateTags::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_AddPrivateTags;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemovePrivateTags
 // 0x0020 (0x0020 - 0x0000)
@@ -740,11 +551,7 @@ public:
 	TArray<class FString>                         tags;                                              // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_RemovePrivateTags) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_RemovePrivateTags");
-static_assert(sizeof(WorldFunctionLibrary_C_RemovePrivateTags) == 0x000020, "Wrong size on WorldFunctionLibrary_C_RemovePrivateTags");
-static_assert(offsetof(WorldFunctionLibrary_C_RemovePrivateTags, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_RemovePrivateTags::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemovePrivateTags, tags) == 0x000008, "Member 'WorldFunctionLibrary_C_RemovePrivateTags::tags' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemovePrivateTags, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_RemovePrivateTags::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_RemovePrivateTags;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.ActorHasSceneItemTag
 // 0x0020 (0x0020 - 0x0000)
@@ -757,12 +564,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_ActorHasSceneItemTag) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ActorHasSceneItemTag");
-static_assert(sizeof(WorldFunctionLibrary_C_ActorHasSceneItemTag) == 0x000020, "Wrong size on WorldFunctionLibrary_C_ActorHasSceneItemTag");
-static_assert(offsetof(WorldFunctionLibrary_C_ActorHasSceneItemTag, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_ActorHasSceneItemTag::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ActorHasSceneItemTag, tag) == 0x000008, "Member 'WorldFunctionLibrary_C_ActorHasSceneItemTag::tag' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ActorHasSceneItemTag, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_ActorHasSceneItemTag::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ActorHasSceneItemTag, ReturnValue) == 0x000018, "Member 'WorldFunctionLibrary_C_ActorHasSceneItemTag::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_ActorHasSceneItemTag;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.CheckConfigIdByActor
 // 0x0020 (0x0020 - 0x0000)
@@ -775,12 +577,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_CheckConfigIdByActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_CheckConfigIdByActor");
-static_assert(sizeof(WorldFunctionLibrary_C_CheckConfigIdByActor) == 0x000020, "Wrong size on WorldFunctionLibrary_C_CheckConfigIdByActor");
-static_assert(offsetof(WorldFunctionLibrary_C_CheckConfigIdByActor, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_CheckConfigIdByActor::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_CheckConfigIdByActor, configId) == 0x000008, "Member 'WorldFunctionLibrary_C_CheckConfigIdByActor::configId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_CheckConfigIdByActor, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_CheckConfigIdByActor::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_CheckConfigIdByActor, ReturnValue) == 0x000018, "Member 'WorldFunctionLibrary_C_CheckConfigIdByActor::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_CheckConfigIdByActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.StartStandalone
 // 0x0008 (0x0008 - 0x0000)
@@ -789,9 +586,7 @@ struct WorldFunctionLibrary_C_StartStandalone final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_StartStandalone) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_StartStandalone");
-static_assert(sizeof(WorldFunctionLibrary_C_StartStandalone) == 0x000008, "Wrong size on WorldFunctionLibrary_C_StartStandalone");
-static_assert(offsetof(WorldFunctionLibrary_C_StartStandalone, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_StartStandalone::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_StartStandalone;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.PlayWuYinSequence
 // 0x0018 (0x0018 - 0x0000)
@@ -801,10 +596,7 @@ public:
 	class FString                                 sequenceName;                                      // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_PlayWuYinSequence) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_PlayWuYinSequence");
-static_assert(sizeof(WorldFunctionLibrary_C_PlayWuYinSequence) == 0x000018, "Wrong size on WorldFunctionLibrary_C_PlayWuYinSequence");
-static_assert(offsetof(WorldFunctionLibrary_C_PlayWuYinSequence, sequenceName) == 0x000000, "Member 'WorldFunctionLibrary_C_PlayWuYinSequence::sequenceName' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_PlayWuYinSequence, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_PlayWuYinSequence::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_PlayWuYinSequence;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.PlayWuYinLevelSequence
 // 0x0028 (0x0028 - 0x0000)
@@ -817,12 +609,7 @@ public:
 	class FString                                 sequenceActorName;                                 // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_PlayWuYinLevelSequence) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_PlayWuYinLevelSequence");
-static_assert(sizeof(WorldFunctionLibrary_C_PlayWuYinLevelSequence) == 0x000028, "Wrong size on WorldFunctionLibrary_C_PlayWuYinLevelSequence");
-static_assert(offsetof(WorldFunctionLibrary_C_PlayWuYinLevelSequence, loopStartFrame) == 0x000000, "Member 'WorldFunctionLibrary_C_PlayWuYinLevelSequence::loopStartFrame' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_PlayWuYinLevelSequence, director) == 0x000008, "Member 'WorldFunctionLibrary_C_PlayWuYinLevelSequence::director' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_PlayWuYinLevelSequence, sequenceActorName) == 0x000010, "Member 'WorldFunctionLibrary_C_PlayWuYinLevelSequence::sequenceActorName' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_PlayWuYinLevelSequence, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_PlayWuYinLevelSequence::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_PlayWuYinLevelSequence;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsOpenWorld
 // 0x0010 (0x0010 - 0x0000)
@@ -832,10 +619,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_IsOpenWorld) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_IsOpenWorld");
-static_assert(sizeof(WorldFunctionLibrary_C_IsOpenWorld) == 0x000010, "Wrong size on WorldFunctionLibrary_C_IsOpenWorld");
-static_assert(offsetof(WorldFunctionLibrary_C_IsOpenWorld, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_IsOpenWorld::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_IsOpenWorld, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_IsOpenWorld::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsOpenWorld;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetRoleId
 // 0x0018 (0x0018 - 0x0000)
@@ -847,11 +631,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetRoleId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetRoleId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetRoleId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetRoleId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRoleId, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetRoleId::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRoleId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetRoleId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRoleId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetRoleId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetRoleId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SummonRequest
 // 0x0070 (0x0070 - 0x0000)
@@ -867,15 +647,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0058(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ReturnValue;                                       // 0x0060(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SummonRequest) == 0x000010, "Wrong alignment on WorldFunctionLibrary_C_SummonRequest");
-static_assert(sizeof(WorldFunctionLibrary_C_SummonRequest) == 0x000070, "Wrong size on WorldFunctionLibrary_C_SummonRequest");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRequest, skillId) == 0x000000, "Member 'WorldFunctionLibrary_C_SummonRequest::skillId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRequest, isVisible) == 0x000004, "Member 'WorldFunctionLibrary_C_SummonRequest::isVisible' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRequest, transform) == 0x000010, "Member 'WorldFunctionLibrary_C_SummonRequest::transform' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRequest, summonerId) == 0x000050, "Member 'WorldFunctionLibrary_C_SummonRequest::summonerId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRequest, summonConfigId) == 0x000054, "Member 'WorldFunctionLibrary_C_SummonRequest::summonConfigId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRequest, __WorldContext) == 0x000058, "Member 'WorldFunctionLibrary_C_SummonRequest::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRequest, ReturnValue) == 0x000060, "Member 'WorldFunctionLibrary_C_SummonRequest::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SummonRequest;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.JumpToMarkLevelSequence
 // 0x0020 (0x0020 - 0x0000)
@@ -886,11 +658,7 @@ public:
 	class FString                                 markName;                                          // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_JumpToMarkLevelSequence) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_JumpToMarkLevelSequence");
-static_assert(sizeof(WorldFunctionLibrary_C_JumpToMarkLevelSequence) == 0x000020, "Wrong size on WorldFunctionLibrary_C_JumpToMarkLevelSequence");
-static_assert(offsetof(WorldFunctionLibrary_C_JumpToMarkLevelSequence, director) == 0x000000, "Member 'WorldFunctionLibrary_C_JumpToMarkLevelSequence::director' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_JumpToMarkLevelSequence, markName) == 0x000008, "Member 'WorldFunctionLibrary_C_JumpToMarkLevelSequence::markName' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_JumpToMarkLevelSequence, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_JumpToMarkLevelSequence::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_JumpToMarkLevelSequence;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.ChangeBattleState
 // 0x0028 (0x0028 - 0x0000)
@@ -903,12 +671,7 @@ public:
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_ChangeBattleState) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ChangeBattleState");
-static_assert(sizeof(WorldFunctionLibrary_C_ChangeBattleState) == 0x000028, "Wrong size on WorldFunctionLibrary_C_ChangeBattleState");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeBattleState, director) == 0x000000, "Member 'WorldFunctionLibrary_C_ChangeBattleState::director' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeBattleState, battleActorName) == 0x000008, "Member 'WorldFunctionLibrary_C_ChangeBattleState::battleActorName' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeBattleState, targetState) == 0x000018, "Member 'WorldFunctionLibrary_C_ChangeBattleState::targetState' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeBattleState, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_ChangeBattleState::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_ChangeBattleState;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemoveSummonEntityRequest
 // 0x0018 (0x0018 - 0x0000)
@@ -921,12 +684,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_RemoveSummonEntityRequest) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_RemoveSummonEntityRequest");
-static_assert(sizeof(WorldFunctionLibrary_C_RemoveSummonEntityRequest) == 0x000018, "Wrong size on WorldFunctionLibrary_C_RemoveSummonEntityRequest");
-static_assert(offsetof(WorldFunctionLibrary_C_RemoveSummonEntityRequest, skillId) == 0x000000, "Member 'WorldFunctionLibrary_C_RemoveSummonEntityRequest::skillId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemoveSummonEntityRequest, summonerId) == 0x000004, "Member 'WorldFunctionLibrary_C_RemoveSummonEntityRequest::summonerId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemoveSummonEntityRequest, removeId) == 0x000008, "Member 'WorldFunctionLibrary_C_RemoveSummonEntityRequest::removeId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemoveSummonEntityRequest, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_RemoveSummonEntityRequest::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_RemoveSummonEntityRequest;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.AiChangeBattleState
 // 0x0020 (0x0020 - 0x0000)
@@ -938,11 +696,7 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_AiChangeBattleState) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_AiChangeBattleState");
-static_assert(sizeof(WorldFunctionLibrary_C_AiChangeBattleState) == 0x000020, "Wrong size on WorldFunctionLibrary_C_AiChangeBattleState");
-static_assert(offsetof(WorldFunctionLibrary_C_AiChangeBattleState, battleActorName) == 0x000000, "Member 'WorldFunctionLibrary_C_AiChangeBattleState::battleActorName' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AiChangeBattleState, targetState) == 0x000010, "Member 'WorldFunctionLibrary_C_AiChangeBattleState::targetState' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AiChangeBattleState, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_AiChangeBattleState::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_AiChangeBattleState;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetCurrentDayState
 // 0x0010 (0x0010 - 0x0000)
@@ -952,10 +706,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetCurrentDayState) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetCurrentDayState");
-static_assert(sizeof(WorldFunctionLibrary_C_GetCurrentDayState) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetCurrentDayState");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCurrentDayState, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetCurrentDayState::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCurrentDayState, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetCurrentDayState::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetCurrentDayState;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetCurrentWeatherState
 // 0x0010 (0x0010 - 0x0000)
@@ -965,10 +716,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EWeatherState                                 ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetCurrentWeatherState) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetCurrentWeatherState");
-static_assert(sizeof(WorldFunctionLibrary_C_GetCurrentWeatherState) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetCurrentWeatherState");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCurrentWeatherState, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetCurrentWeatherState::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCurrentWeatherState, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetCurrentWeatherState::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetCurrentWeatherState;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetBattleMode
 // 0x0010 (0x0010 - 0x0000)
@@ -978,10 +726,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetBattleMode) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetBattleMode");
-static_assert(sizeof(WorldFunctionLibrary_C_GetBattleMode) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetBattleMode");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBattleMode, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetBattleMode::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBattleMode, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetBattleMode::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetBattleMode;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SwitchBattleMode
 // 0x0008 (0x0008 - 0x0000)
@@ -990,9 +735,7 @@ struct WorldFunctionLibrary_C_SwitchBattleMode final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SwitchBattleMode) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SwitchBattleMode");
-static_assert(sizeof(WorldFunctionLibrary_C_SwitchBattleMode) == 0x000008, "Wrong size on WorldFunctionLibrary_C_SwitchBattleMode");
-static_assert(offsetof(WorldFunctionLibrary_C_SwitchBattleMode, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_SwitchBattleMode::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SwitchBattleMode;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetBuffSyncMode
 // 0x0010 (0x0010 - 0x0000)
@@ -1002,10 +745,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetBuffSyncMode) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetBuffSyncMode");
-static_assert(sizeof(WorldFunctionLibrary_C_GetBuffSyncMode) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetBuffSyncMode");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBuffSyncMode, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetBuffSyncMode::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetBuffSyncMode, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetBuffSyncMode::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetBuffSyncMode;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SwitchBuffSyncMode
 // 0x0008 (0x0008 - 0x0000)
@@ -1014,9 +754,7 @@ struct WorldFunctionLibrary_C_SwitchBuffSyncMode final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SwitchBuffSyncMode) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SwitchBuffSyncMode");
-static_assert(sizeof(WorldFunctionLibrary_C_SwitchBuffSyncMode) == 0x000008, "Wrong size on WorldFunctionLibrary_C_SwitchBuffSyncMode");
-static_assert(offsetof(WorldFunctionLibrary_C_SwitchBuffSyncMode, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_SwitchBuffSyncMode::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SwitchBuffSyncMode;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetServerLogMode
 // 0x0010 (0x0010 - 0x0000)
@@ -1026,10 +764,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetServerLogMode) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetServerLogMode");
-static_assert(sizeof(WorldFunctionLibrary_C_GetServerLogMode) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetServerLogMode");
-static_assert(offsetof(WorldFunctionLibrary_C_GetServerLogMode, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetServerLogMode::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetServerLogMode, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetServerLogMode::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetServerLogMode;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SwitchServerLogMode
 // 0x0008 (0x0008 - 0x0000)
@@ -1038,9 +773,7 @@ struct WorldFunctionLibrary_C_SwitchServerLogMode final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SwitchServerLogMode) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SwitchServerLogMode");
-static_assert(sizeof(WorldFunctionLibrary_C_SwitchServerLogMode) == 0x000008, "Wrong size on WorldFunctionLibrary_C_SwitchServerLogMode");
-static_assert(offsetof(WorldFunctionLibrary_C_SwitchServerLogMode, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_SwitchServerLogMode::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SwitchServerLogMode;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.ChangeEntityState
 // 0x0030 (0x0030 - 0x0000)
@@ -1055,13 +788,7 @@ public:
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_ChangeEntityState) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ChangeEntityState");
-static_assert(sizeof(WorldFunctionLibrary_C_ChangeEntityState) == 0x000030, "Wrong size on WorldFunctionLibrary_C_ChangeEntityState");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeEntityState, entityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_ChangeEntityState::entityId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeEntityState, state1) == 0x000008, "Member 'WorldFunctionLibrary_C_ChangeEntityState::state1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeEntityState, changerstActor) == 0x000018, "Member 'WorldFunctionLibrary_C_ChangeEntityState::changerstActor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeEntityState, changerstEntityId) == 0x000020, "Member 'WorldFunctionLibrary_C_ChangeEntityState::changerstEntityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeEntityState, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_ChangeEntityState::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_ChangeEntityState;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntityTypeByEntity
 // 0x0018 (0x0018 - 0x0000)
@@ -1073,11 +800,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEntityTypeByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntityTypeByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEntityTypeByEntity) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetEntityTypeByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityTypeByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntityTypeByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityTypeByEntity, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntityTypeByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityTypeByEntity, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetEntityTypeByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntityTypeByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntityTypeByActor
 // 0x0018 (0x0018 - 0x0000)
@@ -1088,11 +811,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEntityTypeByActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntityTypeByActor");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEntityTypeByActor) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetEntityTypeByActor");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityTypeByActor, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntityTypeByActor::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityTypeByActor, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntityTypeByActor::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityTypeByActor, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetEntityTypeByActor::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntityTypeByActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetConfigIdByActor
 // 0x0018 (0x0018 - 0x0000)
@@ -1103,11 +822,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetConfigIdByActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetConfigIdByActor");
-static_assert(sizeof(WorldFunctionLibrary_C_GetConfigIdByActor) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetConfigIdByActor");
-static_assert(offsetof(WorldFunctionLibrary_C_GetConfigIdByActor, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_GetConfigIdByActor::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetConfigIdByActor, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetConfigIdByActor::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetConfigIdByActor, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetConfigIdByActor::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetConfigIdByActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetMonsterType
 // 0x0018 (0x0018 - 0x0000)
@@ -1118,11 +833,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetMonsterType) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetMonsterType");
-static_assert(sizeof(WorldFunctionLibrary_C_GetMonsterType) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetMonsterType");
-static_assert(offsetof(WorldFunctionLibrary_C_GetMonsterType, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_GetMonsterType::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetMonsterType, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetMonsterType::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetMonsterType, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetMonsterType::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetMonsterType;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetWuYinQuDebugInfo
 // 0x0018 (0x0018 - 0x0000)
@@ -1132,10 +843,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class FString>                         ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetWuYinQuDebugInfo) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetWuYinQuDebugInfo");
-static_assert(sizeof(WorldFunctionLibrary_C_GetWuYinQuDebugInfo) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetWuYinQuDebugInfo");
-static_assert(offsetof(WorldFunctionLibrary_C_GetWuYinQuDebugInfo, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetWuYinQuDebugInfo::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetWuYinQuDebugInfo, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetWuYinQuDebugInfo::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetWuYinQuDebugInfo;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.TestSpawnTemplateEntityPush
 // 0x0050 (0x0050 - 0x0000)
@@ -1150,14 +858,7 @@ public:
 	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_TestSpawnTemplateEntityPush) == 0x000010, "Wrong alignment on WorldFunctionLibrary_C_TestSpawnTemplateEntityPush");
-static_assert(sizeof(WorldFunctionLibrary_C_TestSpawnTemplateEntityPush) == 0x000050, "Wrong size on WorldFunctionLibrary_C_TestSpawnTemplateEntityPush");
-static_assert(offsetof(WorldFunctionLibrary_C_TestSpawnTemplateEntityPush, creatureDataId) == 0x000000, "Member 'WorldFunctionLibrary_C_TestSpawnTemplateEntityPush::creatureDataId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_TestSpawnTemplateEntityPush, configId) == 0x000008, "Member 'WorldFunctionLibrary_C_TestSpawnTemplateEntityPush::configId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_TestSpawnTemplateEntityPush, level) == 0x00000C, "Member 'WorldFunctionLibrary_C_TestSpawnTemplateEntityPush::level' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_TestSpawnTemplateEntityPush, transform) == 0x000010, "Member 'WorldFunctionLibrary_C_TestSpawnTemplateEntityPush::transform' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_TestSpawnTemplateEntityPush, extraRatioConfigId) == 0x000040, "Member 'WorldFunctionLibrary_C_TestSpawnTemplateEntityPush::extraRatioConfigId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_TestSpawnTemplateEntityPush, __WorldContext) == 0x000048, "Member 'WorldFunctionLibrary_C_TestSpawnTemplateEntityPush::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_TestSpawnTemplateEntityPush;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetChangeFootStep
 // 0x0010 (0x0010 - 0x0000)
@@ -1167,10 +868,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetChangeFootStep) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetChangeFootStep");
-static_assert(sizeof(WorldFunctionLibrary_C_GetChangeFootStep) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetChangeFootStep");
-static_assert(offsetof(WorldFunctionLibrary_C_GetChangeFootStep, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetChangeFootStep::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetChangeFootStep, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetChangeFootStep::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetChangeFootStep;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetChangeFootStepMaterialId
 // 0x0010 (0x0010 - 0x0000)
@@ -1180,10 +878,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetChangeFootStepMaterialId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetChangeFootStepMaterialId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetChangeFootStepMaterialId) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetChangeFootStepMaterialId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetChangeFootStepMaterialId, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetChangeFootStepMaterialId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetChangeFootStepMaterialId, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetChangeFootStepMaterialId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetChangeFootStepMaterialId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntityDebugInfoManager
 // 0x0010 (0x0010 - 0x0000)
@@ -1193,10 +888,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UTsEntityDebugInfoManager_C*            ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEntityDebugInfoManager) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntityDebugInfoManager");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEntityDebugInfoManager) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetEntityDebugInfoManager");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityDebugInfoManager, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntityDebugInfoManager::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityDebugInfoManager, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntityDebugInfoManager::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntityDebugInfoManager;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetActorByCreatureDataId
 // 0x0018 (0x0018 - 0x0000)
@@ -1207,11 +899,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetActorByCreatureDataId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetActorByCreatureDataId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetActorByCreatureDataId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetActorByCreatureDataId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorByCreatureDataId, creatureDataId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetActorByCreatureDataId::creatureDataId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorByCreatureDataId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetActorByCreatureDataId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorByCreatureDataId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetActorByCreatureDataId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetActorByCreatureDataId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetActorByPbDataId
 // 0x0018 (0x0018 - 0x0000)
@@ -1223,11 +911,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetActorByPbDataId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetActorByPbDataId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetActorByPbDataId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetActorByPbDataId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorByPbDataId, pbDataId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetActorByPbDataId::pbDataId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorByPbDataId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetActorByPbDataId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorByPbDataId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetActorByPbDataId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetActorByPbDataId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.ChangeSubLevel
 // 0x0058 (0x0058 - 0x0000)
@@ -1243,14 +927,7 @@ public:
 	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0050(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_ChangeSubLevel) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ChangeSubLevel");
-static_assert(sizeof(WorldFunctionLibrary_C_ChangeSubLevel) == 0x000058, "Wrong size on WorldFunctionLibrary_C_ChangeSubLevel");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeSubLevel, unloadLevels) == 0x000000, "Member 'WorldFunctionLibrary_C_ChangeSubLevel::unloadLevels' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeSubLevel, levels) == 0x000010, "Member 'WorldFunctionLibrary_C_ChangeSubLevel::levels' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeSubLevel, screenEffect) == 0x000020, "Member 'WorldFunctionLibrary_C_ChangeSubLevel::screenEffect' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeSubLevel, location) == 0x000028, "Member 'WorldFunctionLibrary_C_ChangeSubLevel::location' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeSubLevel, rotator) == 0x000040, "Member 'WorldFunctionLibrary_C_ChangeSubLevel::rotator' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeSubLevel, __WorldContext) == 0x000050, "Member 'WorldFunctionLibrary_C_ChangeSubLevel::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_ChangeSubLevel;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.MonsterBoomRequest
 // 0x0018 (0x0018 - 0x0000)
@@ -1262,11 +939,7 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_MonsterBoomRequest) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_MonsterBoomRequest");
-static_assert(sizeof(WorldFunctionLibrary_C_MonsterBoomRequest) == 0x000018, "Wrong size on WorldFunctionLibrary_C_MonsterBoomRequest");
-static_assert(offsetof(WorldFunctionLibrary_C_MonsterBoomRequest, creatureDataId) == 0x000000, "Member 'WorldFunctionLibrary_C_MonsterBoomRequest::creatureDataId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_MonsterBoomRequest, delay) == 0x000008, "Member 'WorldFunctionLibrary_C_MonsterBoomRequest::delay' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_MonsterBoomRequest, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_MonsterBoomRequest::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_MonsterBoomRequest;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetVisionEntityId
 // 0x0018 (0x0018 - 0x0000)
@@ -1278,11 +951,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetVisionEntityId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetVisionEntityId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetVisionEntityId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetVisionEntityId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVisionEntityId, ownerEntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetVisionEntityId::ownerEntityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVisionEntityId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetVisionEntityId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVisionEntityId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetVisionEntityId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetVisionEntityId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetCustomEntityId
 // 0x0018 (0x0018 - 0x0000)
@@ -1294,12 +963,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetCustomEntityId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetCustomEntityId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetCustomEntityId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetCustomEntityId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCustomEntityId, ownerEntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetCustomEntityId::ownerEntityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCustomEntityId, pos) == 0x000004, "Member 'WorldFunctionLibrary_C_GetCustomEntityId::pos' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCustomEntityId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetCustomEntityId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetCustomEntityId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetCustomEntityId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetCustomEntityId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetVisionEnable
 // 0x0010 (0x0010 - 0x0000)
@@ -1311,11 +975,7 @@ public:
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetVisionEnable) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetVisionEnable");
-static_assert(sizeof(WorldFunctionLibrary_C_SetVisionEnable) == 0x000010, "Wrong size on WorldFunctionLibrary_C_SetVisionEnable");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVisionEnable, ownerEntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetVisionEnable::ownerEntityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVisionEnable, enable) == 0x000004, "Member 'WorldFunctionLibrary_C_SetVisionEnable::enable' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVisionEnable, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_SetVisionEnable::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetVisionEnable;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetServerIdByEntityId
 // 0x0018 (0x0018 - 0x0000)
@@ -1327,11 +987,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetServerIdByEntityId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetServerIdByEntityId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetServerIdByEntityId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetServerIdByEntityId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetServerIdByEntityId, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetServerIdByEntityId::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetServerIdByEntityId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetServerIdByEntityId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetServerIdByEntityId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetServerIdByEntityId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetServerIdByEntityId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsNeedPostEffect
 // 0x0018 (0x0018 - 0x0000)
@@ -1342,11 +998,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_IsNeedPostEffect) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_IsNeedPostEffect");
-static_assert(sizeof(WorldFunctionLibrary_C_IsNeedPostEffect) == 0x000018, "Wrong size on WorldFunctionLibrary_C_IsNeedPostEffect");
-static_assert(offsetof(WorldFunctionLibrary_C_IsNeedPostEffect, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_IsNeedPostEffect::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_IsNeedPostEffect, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_IsNeedPostEffect::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_IsNeedPostEffect, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_IsNeedPostEffect::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsNeedPostEffect;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.EvalScript
 // 0x0028 (0x0028 - 0x0000)
@@ -1357,11 +1009,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_EvalScript) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_EvalScript");
-static_assert(sizeof(WorldFunctionLibrary_C_EvalScript) == 0x000028, "Wrong size on WorldFunctionLibrary_C_EvalScript");
-static_assert(offsetof(WorldFunctionLibrary_C_EvalScript, script) == 0x000000, "Member 'WorldFunctionLibrary_C_EvalScript::script' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EvalScript, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_EvalScript::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EvalScript, ReturnValue) == 0x000018, "Member 'WorldFunctionLibrary_C_EvalScript::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_EvalScript;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetInitPositionByEntity
 // 0x0028 (0x0028 - 0x0000)
@@ -1373,11 +1021,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVectorDouble                          ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetInitPositionByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetInitPositionByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetInitPositionByEntity) == 0x000028, "Wrong size on WorldFunctionLibrary_C_GetInitPositionByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetInitPositionByEntity, entityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_GetInitPositionByEntity::entityId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetInitPositionByEntity, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetInitPositionByEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetInitPositionByEntity, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetInitPositionByEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetInitPositionByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.DisableCreatureActor
 // 0x0030 (0x0030 - 0x0000)
@@ -1390,13 +1034,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0028(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_DisableCreatureActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_DisableCreatureActor");
-static_assert(sizeof(WorldFunctionLibrary_C_DisableCreatureActor) == 0x000030, "Wrong size on WorldFunctionLibrary_C_DisableCreatureActor");
-static_assert(offsetof(WorldFunctionLibrary_C_DisableCreatureActor, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_DisableCreatureActor::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DisableCreatureActor, callObject) == 0x000008, "Member 'WorldFunctionLibrary_C_DisableCreatureActor::callObject' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DisableCreatureActor, reason) == 0x000010, "Member 'WorldFunctionLibrary_C_DisableCreatureActor::reason' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DisableCreatureActor, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_DisableCreatureActor::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DisableCreatureActor, ReturnValue) == 0x000028, "Member 'WorldFunctionLibrary_C_DisableCreatureActor::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_DisableCreatureActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.EnableCreatureActor
 // 0x0028 (0x0028 - 0x0000)
@@ -1410,13 +1048,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_EnableCreatureActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_EnableCreatureActor");
-static_assert(sizeof(WorldFunctionLibrary_C_EnableCreatureActor) == 0x000028, "Wrong size on WorldFunctionLibrary_C_EnableCreatureActor");
-static_assert(offsetof(WorldFunctionLibrary_C_EnableCreatureActor, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_EnableCreatureActor::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EnableCreatureActor, callObject) == 0x000008, "Member 'WorldFunctionLibrary_C_EnableCreatureActor::callObject' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EnableCreatureActor, handle) == 0x000010, "Member 'WorldFunctionLibrary_C_EnableCreatureActor::handle' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EnableCreatureActor, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_EnableCreatureActor::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EnableCreatureActor, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_EnableCreatureActor::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_EnableCreatureActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.DisableCreatureCollision
 // 0x0030 (0x0030 - 0x0000)
@@ -1429,13 +1061,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0028(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_DisableCreatureCollision) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_DisableCreatureCollision");
-static_assert(sizeof(WorldFunctionLibrary_C_DisableCreatureCollision) == 0x000030, "Wrong size on WorldFunctionLibrary_C_DisableCreatureCollision");
-static_assert(offsetof(WorldFunctionLibrary_C_DisableCreatureCollision, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_DisableCreatureCollision::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DisableCreatureCollision, callObject) == 0x000008, "Member 'WorldFunctionLibrary_C_DisableCreatureCollision::callObject' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DisableCreatureCollision, reason) == 0x000010, "Member 'WorldFunctionLibrary_C_DisableCreatureCollision::reason' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DisableCreatureCollision, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_DisableCreatureCollision::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DisableCreatureCollision, ReturnValue) == 0x000028, "Member 'WorldFunctionLibrary_C_DisableCreatureCollision::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_DisableCreatureCollision;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.EnableCreatureCollision
 // 0x0028 (0x0028 - 0x0000)
@@ -1449,13 +1075,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_EnableCreatureCollision) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_EnableCreatureCollision");
-static_assert(sizeof(WorldFunctionLibrary_C_EnableCreatureCollision) == 0x000028, "Wrong size on WorldFunctionLibrary_C_EnableCreatureCollision");
-static_assert(offsetof(WorldFunctionLibrary_C_EnableCreatureCollision, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_EnableCreatureCollision::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EnableCreatureCollision, callObject) == 0x000008, "Member 'WorldFunctionLibrary_C_EnableCreatureCollision::callObject' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EnableCreatureCollision, handle) == 0x000010, "Member 'WorldFunctionLibrary_C_EnableCreatureCollision::handle' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EnableCreatureCollision, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_EnableCreatureCollision::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EnableCreatureCollision, ReturnValue) == 0x000020, "Member 'WorldFunctionLibrary_C_EnableCreatureCollision::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_EnableCreatureCollision;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetCameraShakeModify
 // 0x0010 (0x0010 - 0x0000)
@@ -1466,10 +1086,7 @@ public:
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetCameraShakeModify) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetCameraShakeModify");
-static_assert(sizeof(WorldFunctionLibrary_C_SetCameraShakeModify) == 0x000010, "Wrong size on WorldFunctionLibrary_C_SetCameraShakeModify");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCameraShakeModify, modify) == 0x000000, "Member 'WorldFunctionLibrary_C_SetCameraShakeModify::modify' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCameraShakeModify, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_SetCameraShakeModify::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetCameraShakeModify;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetFormationAllEntityId
 // 0x0058 (0x0058 - 0x0000)
@@ -1479,10 +1096,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMap<int32, bool>                             ReturnValue;                                       // 0x0008(0x0050)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetFormationAllEntityId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetFormationAllEntityId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetFormationAllEntityId) == 0x000058, "Wrong size on WorldFunctionLibrary_C_GetFormationAllEntityId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFormationAllEntityId, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetFormationAllEntityId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFormationAllEntityId, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetFormationAllEntityId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetFormationAllEntityId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetCollisionResponseToPawn
 // 0x0018 (0x0018 - 0x0000)
@@ -1495,12 +1109,7 @@ public:
 	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetCollisionResponseToPawn) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetCollisionResponseToPawn");
-static_assert(sizeof(WorldFunctionLibrary_C_SetCollisionResponseToPawn) == 0x000018, "Wrong size on WorldFunctionLibrary_C_SetCollisionResponseToPawn");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCollisionResponseToPawn, actor) == 0x000000, "Member 'WorldFunctionLibrary_C_SetCollisionResponseToPawn::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCollisionResponseToPawn, pawnChannel) == 0x000008, "Member 'WorldFunctionLibrary_C_SetCollisionResponseToPawn::pawnChannel' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCollisionResponseToPawn, newResponse) == 0x000009, "Member 'WorldFunctionLibrary_C_SetCollisionResponseToPawn::newResponse' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCollisionResponseToPawn, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_SetCollisionResponseToPawn::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetCollisionResponseToPawn;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsGameRunning
 // 0x0010 (0x0010 - 0x0000)
@@ -1510,10 +1119,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_IsGameRunning) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_IsGameRunning");
-static_assert(sizeof(WorldFunctionLibrary_C_IsGameRunning) == 0x000010, "Wrong size on WorldFunctionLibrary_C_IsGameRunning");
-static_assert(offsetof(WorldFunctionLibrary_C_IsGameRunning, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_IsGameRunning::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_IsGameRunning, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_IsGameRunning::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsGameRunning;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetEntityLocation
 // 0x0030 (0x0030 - 0x0000)
@@ -1528,13 +1134,7 @@ public:
 	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetEntityLocation) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetEntityLocation");
-static_assert(sizeof(WorldFunctionLibrary_C_SetEntityLocation) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetEntityLocation");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityLocation, entityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_SetEntityLocation::entityId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityLocation, location) == 0x000008, "Member 'WorldFunctionLibrary_C_SetEntityLocation::location' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityLocation, sweep) == 0x000020, "Member 'WorldFunctionLibrary_C_SetEntityLocation::sweep' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityLocation, teleport) == 0x000021, "Member 'WorldFunctionLibrary_C_SetEntityLocation::teleport' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityLocation, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetEntityLocation::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetEntityLocation;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetEntityLocationAndRotation
 // 0x0038 (0x0038 - 0x0000)
@@ -1549,13 +1149,7 @@ public:
 	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetEntityLocationAndRotation) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetEntityLocationAndRotation");
-static_assert(sizeof(WorldFunctionLibrary_C_SetEntityLocationAndRotation) == 0x000038, "Wrong size on WorldFunctionLibrary_C_SetEntityLocationAndRotation");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityLocationAndRotation, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetEntityLocationAndRotation::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityLocationAndRotation, location) == 0x000008, "Member 'WorldFunctionLibrary_C_SetEntityLocationAndRotation::location' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityLocationAndRotation, rotation) == 0x000020, "Member 'WorldFunctionLibrary_C_SetEntityLocationAndRotation::rotation' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityLocationAndRotation, sweep) == 0x00002C, "Member 'WorldFunctionLibrary_C_SetEntityLocationAndRotation::sweep' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityLocationAndRotation, __WorldContext) == 0x000030, "Member 'WorldFunctionLibrary_C_SetEntityLocationAndRotation::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetEntityLocationAndRotation;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetEntityRotation
 // 0x0020 (0x0020 - 0x0000)
@@ -1568,12 +1162,7 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetEntityRotation) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetEntityRotation");
-static_assert(sizeof(WorldFunctionLibrary_C_SetEntityRotation) == 0x000020, "Wrong size on WorldFunctionLibrary_C_SetEntityRotation");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityRotation, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetEntityRotation::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityRotation, rotation) == 0x000004, "Member 'WorldFunctionLibrary_C_SetEntityRotation::rotation' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityRotation, sweep) == 0x000010, "Member 'WorldFunctionLibrary_C_SetEntityRotation::sweep' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetEntityRotation, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_SetEntityRotation::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetEntityRotation;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetTestSpawnTemplateEntityString
 // 0x0018 (0x0018 - 0x0000)
@@ -1583,10 +1172,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class FString>                         ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetTestSpawnTemplateEntityString) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetTestSpawnTemplateEntityString");
-static_assert(sizeof(WorldFunctionLibrary_C_GetTestSpawnTemplateEntityString) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetTestSpawnTemplateEntityString");
-static_assert(offsetof(WorldFunctionLibrary_C_GetTestSpawnTemplateEntityString, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetTestSpawnTemplateEntityString::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetTestSpawnTemplateEntityString, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetTestSpawnTemplateEntityString::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetTestSpawnTemplateEntityString;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.ShowCharacterCollision
 // 0x0010 (0x0010 - 0x0000)
@@ -1598,11 +1184,7 @@ public:
 	int32                                         entityId1;                                         // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_ShowCharacterCollision) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ShowCharacterCollision");
-static_assert(sizeof(WorldFunctionLibrary_C_ShowCharacterCollision) == 0x000010, "Wrong size on WorldFunctionLibrary_C_ShowCharacterCollision");
-static_assert(offsetof(WorldFunctionLibrary_C_ShowCharacterCollision, isShow) == 0x000000, "Member 'WorldFunctionLibrary_C_ShowCharacterCollision::isShow' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ShowCharacterCollision, entityId1) == 0x000004, "Member 'WorldFunctionLibrary_C_ShowCharacterCollision::entityId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ShowCharacterCollision, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_ShowCharacterCollision::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_ShowCharacterCollision;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEnableCollisionDebug
 // 0x0018 (0x0018 - 0x0000)
@@ -1614,11 +1196,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEnableCollisionDebug) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEnableCollisionDebug");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEnableCollisionDebug) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetEnableCollisionDebug");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEnableCollisionDebug, entityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEnableCollisionDebug::entityId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEnableCollisionDebug, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEnableCollisionDebug::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEnableCollisionDebug, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetEnableCollisionDebug::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEnableCollisionDebug;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.ChangeRole
 // 0x0010 (0x0010 - 0x0000)
@@ -1629,10 +1207,7 @@ public:
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_ChangeRole) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ChangeRole");
-static_assert(sizeof(WorldFunctionLibrary_C_ChangeRole) == 0x000010, "Wrong size on WorldFunctionLibrary_C_ChangeRole");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeRole, pos) == 0x000000, "Member 'WorldFunctionLibrary_C_ChangeRole::pos' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeRole, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_ChangeRole::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_ChangeRole;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.InitGameSplineBySplineEntity
 // 0x0020 (0x0020 - 0x0000)
@@ -1645,12 +1220,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class USplineComponent*                       ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_InitGameSplineBySplineEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_InitGameSplineBySplineEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_InitGameSplineBySplineEntity) == 0x000020, "Wrong size on WorldFunctionLibrary_C_InitGameSplineBySplineEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_InitGameSplineBySplineEntity, pbDataId1) == 0x000000, "Member 'WorldFunctionLibrary_C_InitGameSplineBySplineEntity::pbDataId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_InitGameSplineBySplineEntity, inSplineActor1) == 0x000008, "Member 'WorldFunctionLibrary_C_InitGameSplineBySplineEntity::inSplineActor1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_InitGameSplineBySplineEntity, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_InitGameSplineBySplineEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_InitGameSplineBySplineEntity, ReturnValue) == 0x000018, "Member 'WorldFunctionLibrary_C_InitGameSplineBySplineEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_InitGameSplineBySplineEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetNewUiSceneDebugOpen
 // 0x0010 (0x0010 - 0x0000)
@@ -1661,10 +1231,7 @@ public:
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetNewUiSceneDebugOpen) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetNewUiSceneDebugOpen");
-static_assert(sizeof(WorldFunctionLibrary_C_SetNewUiSceneDebugOpen) == 0x000010, "Wrong size on WorldFunctionLibrary_C_SetNewUiSceneDebugOpen");
-static_assert(offsetof(WorldFunctionLibrary_C_SetNewUiSceneDebugOpen, UseNewUiSceneWorkflow) == 0x000000, "Member 'WorldFunctionLibrary_C_SetNewUiSceneDebugOpen::UseNewUiSceneWorkflow' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetNewUiSceneDebugOpen, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_SetNewUiSceneDebugOpen::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetNewUiSceneDebugOpen;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetCustomEntityEnable
 // 0x0030 (0x0030 - 0x0000)
@@ -1679,14 +1246,7 @@ public:
 	class FString                                 reason;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetCustomEntityEnable) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetCustomEntityEnable");
-static_assert(sizeof(WorldFunctionLibrary_C_SetCustomEntityEnable) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetCustomEntityEnable");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCustomEntityEnable, ownerEntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetCustomEntityEnable::ownerEntityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCustomEntityEnable, pos) == 0x000004, "Member 'WorldFunctionLibrary_C_SetCustomEntityEnable::pos' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCustomEntityEnable, enable) == 0x000008, "Member 'WorldFunctionLibrary_C_SetCustomEntityEnable::enable' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCustomEntityEnable, callObject) == 0x000010, "Member 'WorldFunctionLibrary_C_SetCustomEntityEnable::callObject' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCustomEntityEnable, reason) == 0x000018, "Member 'WorldFunctionLibrary_C_SetCustomEntityEnable::reason' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetCustomEntityEnable, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetCustomEntityEnable::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetCustomEntityEnable;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.UiCameraAnimationDisablePlayerActor
 // 0x0008 (0x0008 - 0x0000)
@@ -1695,9 +1255,7 @@ struct WorldFunctionLibrary_C_UiCameraAnimationDisablePlayerActor final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_UiCameraAnimationDisablePlayerActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_UiCameraAnimationDisablePlayerActor");
-static_assert(sizeof(WorldFunctionLibrary_C_UiCameraAnimationDisablePlayerActor) == 0x000008, "Wrong size on WorldFunctionLibrary_C_UiCameraAnimationDisablePlayerActor");
-static_assert(offsetof(WorldFunctionLibrary_C_UiCameraAnimationDisablePlayerActor, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_UiCameraAnimationDisablePlayerActor::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_UiCameraAnimationDisablePlayerActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.UiCameraAnimationEnablePlayerActor
 // 0x0008 (0x0008 - 0x0000)
@@ -1706,9 +1264,7 @@ struct WorldFunctionLibrary_C_UiCameraAnimationEnablePlayerActor final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_UiCameraAnimationEnablePlayerActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_UiCameraAnimationEnablePlayerActor");
-static_assert(sizeof(WorldFunctionLibrary_C_UiCameraAnimationEnablePlayerActor) == 0x000008, "Wrong size on WorldFunctionLibrary_C_UiCameraAnimationEnablePlayerActor");
-static_assert(offsetof(WorldFunctionLibrary_C_UiCameraAnimationEnablePlayerActor, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_UiCameraAnimationEnablePlayerActor::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_UiCameraAnimationEnablePlayerActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.UiCameraAnimationDisableCustomCreatureActor
 // 0x0010 (0x0010 - 0x0000)
@@ -1719,10 +1275,7 @@ public:
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor");
-static_assert(sizeof(WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor) == 0x000010, "Wrong size on WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor");
-static_assert(offsetof(WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor, position1) == 0x000000, "Member 'WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor::position1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.UiCameraAnimationEnableCustomCreatureActor
 // 0x0008 (0x0008 - 0x0000)
@@ -1731,9 +1284,7 @@ struct WorldFunctionLibrary_C_UiCameraAnimationEnableCustomCreatureActor final
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_UiCameraAnimationEnableCustomCreatureActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_UiCameraAnimationEnableCustomCreatureActor");
-static_assert(sizeof(WorldFunctionLibrary_C_UiCameraAnimationEnableCustomCreatureActor) == 0x000008, "Wrong size on WorldFunctionLibrary_C_UiCameraAnimationEnableCustomCreatureActor");
-static_assert(offsetof(WorldFunctionLibrary_C_UiCameraAnimationEnableCustomCreatureActor, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_UiCameraAnimationEnableCustomCreatureActor::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_UiCameraAnimationEnableCustomCreatureActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetControlVisionEntityId
 // 0x0018 (0x0018 - 0x0000)
@@ -1745,11 +1296,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetControlVisionEntityId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetControlVisionEntityId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetControlVisionEntityId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetControlVisionEntityId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetControlVisionEntityId, ownerEntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetControlVisionEntityId::ownerEntityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetControlVisionEntityId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetControlVisionEntityId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetControlVisionEntityId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetControlVisionEntityId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetControlVisionEntityId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.UiCameraAnimationBroadSequenceEvent
 // 0x0018 (0x0018 - 0x0000)
@@ -1759,10 +1306,7 @@ public:
 	class FString                                 sequenceEventName;                                 // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_UiCameraAnimationBroadSequenceEvent) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_UiCameraAnimationBroadSequenceEvent");
-static_assert(sizeof(WorldFunctionLibrary_C_UiCameraAnimationBroadSequenceEvent) == 0x000018, "Wrong size on WorldFunctionLibrary_C_UiCameraAnimationBroadSequenceEvent");
-static_assert(offsetof(WorldFunctionLibrary_C_UiCameraAnimationBroadSequenceEvent, sequenceEventName) == 0x000000, "Member 'WorldFunctionLibrary_C_UiCameraAnimationBroadSequenceEvent::sequenceEventName' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_UiCameraAnimationBroadSequenceEvent, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_UiCameraAnimationBroadSequenceEvent::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_UiCameraAnimationBroadSequenceEvent;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetSummonerEntityId
 // 0x0018 (0x0018 - 0x0000)
@@ -1774,11 +1318,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetSummonerEntityId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetSummonerEntityId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetSummonerEntityId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetSummonerEntityId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetSummonerEntityId, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetSummonerEntityId::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetSummonerEntityId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetSummonerEntityId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetSummonerEntityId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetSummonerEntityId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetSummonerEntityId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.ChangeRoleInExitSkill
 // 0x0018 (0x0018 - 0x0000)
@@ -1789,11 +1329,7 @@ public:
 	class AActor*                                 goBattlePlayer;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_ChangeRoleInExitSkill) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ChangeRoleInExitSkill");
-static_assert(sizeof(WorldFunctionLibrary_C_ChangeRoleInExitSkill) == 0x000018, "Wrong size on WorldFunctionLibrary_C_ChangeRoleInExitSkill");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeRoleInExitSkill, goDownPlayer) == 0x000000, "Member 'WorldFunctionLibrary_C_ChangeRoleInExitSkill::goDownPlayer' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeRoleInExitSkill, goBattlePlayer) == 0x000008, "Member 'WorldFunctionLibrary_C_ChangeRoleInExitSkill::goBattlePlayer' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_ChangeRoleInExitSkill, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_ChangeRoleInExitSkill::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_ChangeRoleInExitSkill;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetSummonEntityIds
 // 0x0020 (0x0020 - 0x0000)
@@ -1805,11 +1341,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int32>                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetSummonEntityIds) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetSummonEntityIds");
-static_assert(sizeof(WorldFunctionLibrary_C_GetSummonEntityIds) == 0x000020, "Wrong size on WorldFunctionLibrary_C_GetSummonEntityIds");
-static_assert(offsetof(WorldFunctionLibrary_C_GetSummonEntityIds, ownerEntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetSummonEntityIds::ownerEntityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetSummonEntityIds, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetSummonEntityIds::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetSummonEntityIds, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetSummonEntityIds::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetSummonEntityIds;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetVisionId
 // 0x0018 (0x0018 - 0x0000)
@@ -1821,11 +1353,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetVisionId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetVisionId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetVisionId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetVisionId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVisionId, visionEntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetVisionId::visionEntityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVisionId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetVisionId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetVisionId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetVisionId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetVisionId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntityDestructible
 // 0x0018 (0x0018 - 0x0000)
@@ -1837,11 +1365,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEntityDestructible) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntityDestructible");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEntityDestructible) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetEntityDestructible");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityDestructible, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntityDestructible::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityDestructible, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntityDestructible::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityDestructible, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetEntityDestructible::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntityDestructible;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntityActorByChildActor
 // 0x0018 (0x0018 - 0x0000)
@@ -1852,11 +1376,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEntityActorByChildActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntityActorByChildActor");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEntityActorByChildActor) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetEntityActorByChildActor");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityActorByChildActor, childActor) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntityActorByChildActor::childActor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityActorByChildActor, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntityActorByChildActor::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityActorByChildActor, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetEntityActorByChildActor::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntityActorByChildActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetActorsByPbDataIdArray
 // 0x0028 (0x0028 - 0x0000)
@@ -1867,11 +1387,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class AActor*>                         ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetActorsByPbDataIdArray) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetActorsByPbDataIdArray");
-static_assert(sizeof(WorldFunctionLibrary_C_GetActorsByPbDataIdArray) == 0x000028, "Wrong size on WorldFunctionLibrary_C_GetActorsByPbDataIdArray");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorsByPbDataIdArray, pbDataIdArray) == 0x000000, "Member 'WorldFunctionLibrary_C_GetActorsByPbDataIdArray::pbDataIdArray' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorsByPbDataIdArray, __WorldContext) == 0x000010, "Member 'WorldFunctionLibrary_C_GetActorsByPbDataIdArray::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorsByPbDataIdArray, ReturnValue) == 0x000018, "Member 'WorldFunctionLibrary_C_GetActorsByPbDataIdArray::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetActorsByPbDataIdArray;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetTimeDilation
 // 0x0010 (0x0010 - 0x0000)
@@ -1882,10 +1398,7 @@ public:
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetTimeDilation) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetTimeDilation");
-static_assert(sizeof(WorldFunctionLibrary_C_SetTimeDilation) == 0x000010, "Wrong size on WorldFunctionLibrary_C_SetTimeDilation");
-static_assert(offsetof(WorldFunctionLibrary_C_SetTimeDilation, timeDilation) == 0x000000, "Member 'WorldFunctionLibrary_C_SetTimeDilation::timeDilation' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetTimeDilation, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_SetTimeDilation::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetTimeDilation;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.EntityIsInit
 // 0x0018 (0x0018 - 0x0000)
@@ -1897,11 +1410,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_EntityIsInit) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_EntityIsInit");
-static_assert(sizeof(WorldFunctionLibrary_C_EntityIsInit) == 0x000018, "Wrong size on WorldFunctionLibrary_C_EntityIsInit");
-static_assert(offsetof(WorldFunctionLibrary_C_EntityIsInit, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_EntityIsInit::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EntityIsInit, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_EntityIsInit::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_EntityIsInit, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_EntityIsInit::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_EntityIsInit;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetActorByEntityId
 // 0x0018 (0x0018 - 0x0000)
@@ -1913,11 +1422,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetActorByEntityId) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetActorByEntityId");
-static_assert(sizeof(WorldFunctionLibrary_C_GetActorByEntityId) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetActorByEntityId");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorByEntityId, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetActorByEntityId::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorByEntityId, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetActorByEntityId::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetActorByEntityId, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetActorByEntityId::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetActorByEntityId;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntityEnable
 // 0x0018 (0x0018 - 0x0000)
@@ -1929,11 +1434,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEntityEnable) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntityEnable");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEntityEnable) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetEntityEnable");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityEnable, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntityEnable::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityEnable, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntityEnable::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntityEnable, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetEntityEnable::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntityEnable;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetFormationControlledRoles
 // 0x0018 (0x0018 - 0x0000)
@@ -1943,10 +1444,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class AActor*>                         ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetFormationControlledRoles) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetFormationControlledRoles");
-static_assert(sizeof(WorldFunctionLibrary_C_GetFormationControlledRoles) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetFormationControlledRoles");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFormationControlledRoles, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetFormationControlledRoles::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetFormationControlledRoles, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetFormationControlledRoles::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetFormationControlledRoles;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetTimeDilation
 // 0x0010 (0x0010 - 0x0000)
@@ -1956,10 +1454,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetTimeDilation) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetTimeDilation");
-static_assert(sizeof(WorldFunctionLibrary_C_GetTimeDilation) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetTimeDilation");
-static_assert(offsetof(WorldFunctionLibrary_C_GetTimeDilation, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetTimeDilation::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetTimeDilation, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetTimeDilation::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetTimeDilation;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetRoleIdIgnoreTrial
 // 0x0018 (0x0018 - 0x0000)
@@ -1971,11 +1466,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetRoleIdIgnoreTrial) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetRoleIdIgnoreTrial");
-static_assert(sizeof(WorldFunctionLibrary_C_GetRoleIdIgnoreTrial) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetRoleIdIgnoreTrial");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRoleIdIgnoreTrial, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetRoleIdIgnoreTrial::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRoleIdIgnoreTrial, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetRoleIdIgnoreTrial::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetRoleIdIgnoreTrial, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetRoleIdIgnoreTrial::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetRoleIdIgnoreTrial;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetIntValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -1988,12 +1479,7 @@ public:
 	TArray<int32>                                 values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetIntValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetIntValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetIntValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetIntValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetIntValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetIntValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValuesByEntity, values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetIntValuesByEntity::values' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetIntValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetIntValuesByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetIntValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetLongValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -2006,12 +1492,7 @@ public:
 	TArray<int64>                                 values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetLongValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetLongValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetLongValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetLongValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetLongValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetLongValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetLongValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetLongValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetLongValuesByEntity, values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetLongValuesByEntity::values' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetLongValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetLongValuesByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetLongValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetFloatValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -2024,12 +1505,7 @@ public:
 	TArray<float>                                 values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetFloatValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetFloatValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetFloatValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetFloatValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetFloatValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetFloatValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValuesByEntity, values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetFloatValuesByEntity::values' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetFloatValuesByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetFloatValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetStringValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -2042,12 +1518,7 @@ public:
 	TArray<class FString>                         values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetStringValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetStringValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetStringValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetStringValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetStringValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetStringValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetStringValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetStringValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetStringValuesByEntity, values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetStringValuesByEntity::values' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetStringValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetStringValuesByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetStringValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetVectorValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -2060,12 +1531,7 @@ public:
 	TArray<struct FVectorDouble>                  values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetVectorValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetVectorValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetVectorValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetVectorValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetVectorValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetVectorValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValuesByEntity, values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetVectorValuesByEntity::values' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetVectorValuesByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetVectorValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetRotatorValuesByEntity
 // 0x0030 (0x0030 - 0x0000)
@@ -2078,12 +1544,7 @@ public:
 	TArray<struct FRotator>                       values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetRotatorValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetRotatorValuesByEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_SetRotatorValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetRotatorValuesByEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValuesByEntity, entityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetRotatorValuesByEntity::entityId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValuesByEntity, key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetRotatorValuesByEntity::key' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValuesByEntity, values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetRotatorValuesByEntity::values' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetRotatorValuesByEntity::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetRotatorValuesByEntity;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntitiesInRange
 // 0x0020 (0x0020 - 0x0000)
@@ -2096,12 +1557,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int32>                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetEntitiesInRange) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntitiesInRange");
-static_assert(sizeof(WorldFunctionLibrary_C_GetEntitiesInRange) == 0x000020, "Wrong size on WorldFunctionLibrary_C_GetEntitiesInRange");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntitiesInRange, distance) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntitiesInRange::distance' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntitiesInRange, relation) == 0x000004, "Member 'WorldFunctionLibrary_C_GetEntitiesInRange::relation' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntitiesInRange, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntitiesInRange::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetEntitiesInRange, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetEntitiesInRange::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntitiesInRange;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.AttachToActor
 // 0x0058 (0x0058 - 0x0000)
@@ -2124,21 +1580,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_AttachToActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_AttachToActor");
-static_assert(sizeof(WorldFunctionLibrary_C_AttachToActor) == 0x000058, "Wrong size on WorldFunctionLibrary_C_AttachToActor");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, callObject1) == 0x000000, "Member 'WorldFunctionLibrary_C_AttachToActor::callObject1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, actor1) == 0x000008, "Member 'WorldFunctionLibrary_C_AttachToActor::actor1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, parentActor1) == 0x000010, "Member 'WorldFunctionLibrary_C_AttachToActor::parentActor1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, detachType1) == 0x000018, "Member 'WorldFunctionLibrary_C_AttachToActor::detachType1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, reason1) == 0x000020, "Member 'WorldFunctionLibrary_C_AttachToActor::reason1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, socketName1) == 0x000030, "Member 'WorldFunctionLibrary_C_AttachToActor::socketName1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, locationRule1) == 0x00003C, "Member 'WorldFunctionLibrary_C_AttachToActor::locationRule1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, rotationRule1) == 0x00003D, "Member 'WorldFunctionLibrary_C_AttachToActor::rotationRule1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, scaleRule1) == 0x00003E, "Member 'WorldFunctionLibrary_C_AttachToActor::scaleRule1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, bWeldSimulatedBodies1) == 0x00003F, "Member 'WorldFunctionLibrary_C_AttachToActor::bWeldSimulatedBodies1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, doAttach) == 0x000040, "Member 'WorldFunctionLibrary_C_AttachToActor::doAttach' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, __WorldContext) == 0x000048, "Member 'WorldFunctionLibrary_C_AttachToActor::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, ReturnValue) == 0x000050, "Member 'WorldFunctionLibrary_C_AttachToActor::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_AttachToActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetPlayerFollower
 // 0x0010 (0x0010 - 0x0000)
@@ -2148,10 +1590,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetPlayerFollower) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetPlayerFollower");
-static_assert(sizeof(WorldFunctionLibrary_C_GetPlayerFollower) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetPlayerFollower");
-static_assert(offsetof(WorldFunctionLibrary_C_GetPlayerFollower, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetPlayerFollower::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetPlayerFollower, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetPlayerFollower::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetPlayerFollower;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.AttachToComponent
 // 0x0058 (0x0058 - 0x0000)
@@ -2174,21 +1613,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_AttachToComponent) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_AttachToComponent");
-static_assert(sizeof(WorldFunctionLibrary_C_AttachToComponent) == 0x000058, "Wrong size on WorldFunctionLibrary_C_AttachToComponent");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, callObject) == 0x000000, "Member 'WorldFunctionLibrary_C_AttachToComponent::callObject' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, actor) == 0x000008, "Member 'WorldFunctionLibrary_C_AttachToComponent::actor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, parentComponent) == 0x000010, "Member 'WorldFunctionLibrary_C_AttachToComponent::parentComponent' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, detachType) == 0x000018, "Member 'WorldFunctionLibrary_C_AttachToComponent::detachType' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, reason) == 0x000020, "Member 'WorldFunctionLibrary_C_AttachToComponent::reason' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, socketName) == 0x000030, "Member 'WorldFunctionLibrary_C_AttachToComponent::socketName' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, locationRule) == 0x00003C, "Member 'WorldFunctionLibrary_C_AttachToComponent::locationRule' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, rotationRule) == 0x00003D, "Member 'WorldFunctionLibrary_C_AttachToComponent::rotationRule' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, scaleRule) == 0x00003E, "Member 'WorldFunctionLibrary_C_AttachToComponent::scaleRule' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, bWeldSimulatedBodies) == 0x00003F, "Member 'WorldFunctionLibrary_C_AttachToComponent::bWeldSimulatedBodies' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, doAttach) == 0x000040, "Member 'WorldFunctionLibrary_C_AttachToComponent::doAttach' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, __WorldContext) == 0x000048, "Member 'WorldFunctionLibrary_C_AttachToComponent::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, ReturnValue) == 0x000050, "Member 'WorldFunctionLibrary_C_AttachToComponent::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_AttachToComponent;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.DetachActor
 // 0x0040 (0x0040 - 0x0000)
@@ -2207,17 +1632,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_DetachActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_DetachActor");
-static_assert(sizeof(WorldFunctionLibrary_C_DetachActor) == 0x000040, "Wrong size on WorldFunctionLibrary_C_DetachActor");
-static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, callObject) == 0x000000, "Member 'WorldFunctionLibrary_C_DetachActor::callObject' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, srcActor) == 0x000008, "Member 'WorldFunctionLibrary_C_DetachActor::srcActor' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, destroy) == 0x000010, "Member 'WorldFunctionLibrary_C_DetachActor::destroy' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, reason) == 0x000018, "Member 'WorldFunctionLibrary_C_DetachActor::reason' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, locationRule) == 0x000028, "Member 'WorldFunctionLibrary_C_DetachActor::locationRule' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, rotationRule) == 0x000029, "Member 'WorldFunctionLibrary_C_DetachActor::rotationRule' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, scaleRule) == 0x00002A, "Member 'WorldFunctionLibrary_C_DetachActor::scaleRule' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, __WorldContext) == 0x000030, "Member 'WorldFunctionLibrary_C_DetachActor::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, ReturnValue) == 0x000038, "Member 'WorldFunctionLibrary_C_DetachActor::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_DetachActor;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsPlayerFollowerEnable
 // 0x0010 (0x0010 - 0x0000)
@@ -2227,10 +1642,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_IsPlayerFollowerEnable) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_IsPlayerFollowerEnable");
-static_assert(sizeof(WorldFunctionLibrary_C_IsPlayerFollowerEnable) == 0x000010, "Wrong size on WorldFunctionLibrary_C_IsPlayerFollowerEnable");
-static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerEnable, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerEnable::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerEnable, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerEnable::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsPlayerFollowerEnable;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetPlayerFollowerEnable
 // 0x0010 (0x0010 - 0x0000)
@@ -2241,10 +1653,7 @@ public:
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SetPlayerFollowerEnable) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetPlayerFollowerEnable");
-static_assert(sizeof(WorldFunctionLibrary_C_SetPlayerFollowerEnable) == 0x000010, "Wrong size on WorldFunctionLibrary_C_SetPlayerFollowerEnable");
-static_assert(offsetof(WorldFunctionLibrary_C_SetPlayerFollowerEnable, enable) == 0x000000, "Member 'WorldFunctionLibrary_C_SetPlayerFollowerEnable::enable' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SetPlayerFollowerEnable, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_SetPlayerFollowerEnable::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetPlayerFollowerEnable;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsPlayerFollowerNeedInput
 // 0x0018 (0x0018 - 0x0000)
@@ -2257,12 +1666,7 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_IsPlayerFollowerNeedInput");
-static_assert(sizeof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput) == 0x000018, "Wrong size on WorldFunctionLibrary_C_IsPlayerFollowerNeedInput");
-static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput, action) == 0x000000, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerNeedInput::action' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput, state) == 0x000001, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerNeedInput::state' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerNeedInput::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerNeedInput::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsPlayerFollowerNeedInput;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.RegisterToBpActorController
 // 0x0028 (0x0028 - 0x0000)
@@ -2274,11 +1678,7 @@ public:
 	TScriptInterface<class IBPI_SceneBp_C>        sceneBp;                                           // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_RegisterToBpActorController) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_RegisterToBpActorController");
-static_assert(sizeof(WorldFunctionLibrary_C_RegisterToBpActorController) == 0x000028, "Wrong size on WorldFunctionLibrary_C_RegisterToBpActorController");
-static_assert(offsetof(WorldFunctionLibrary_C_RegisterToBpActorController, groupTag) == 0x000000, "Member 'WorldFunctionLibrary_C_RegisterToBpActorController::groupTag' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RegisterToBpActorController, sceneBp) == 0x000010, "Member 'WorldFunctionLibrary_C_RegisterToBpActorController::sceneBp' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RegisterToBpActorController, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_RegisterToBpActorController::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_RegisterToBpActorController;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.UnregisterToBpActorController
 // 0x0028 (0x0028 - 0x0000)
@@ -2290,11 +1690,7 @@ public:
 	TScriptInterface<class IBPI_SceneBp_C>        sceneBp;                                           // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_UnregisterToBpActorController) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_UnregisterToBpActorController");
-static_assert(sizeof(WorldFunctionLibrary_C_UnregisterToBpActorController) == 0x000028, "Wrong size on WorldFunctionLibrary_C_UnregisterToBpActorController");
-static_assert(offsetof(WorldFunctionLibrary_C_UnregisterToBpActorController, groupTag) == 0x000000, "Member 'WorldFunctionLibrary_C_UnregisterToBpActorController::groupTag' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_UnregisterToBpActorController, sceneBp) == 0x000010, "Member 'WorldFunctionLibrary_C_UnregisterToBpActorController::sceneBp' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_UnregisterToBpActorController, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_UnregisterToBpActorController::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_UnregisterToBpActorController;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.SummonRandomRequest
 // 0x0060 (0x0060 - 0x0000)
@@ -2310,14 +1706,7 @@ public:
 	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0058(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_SummonRandomRequest) == 0x000010, "Wrong alignment on WorldFunctionLibrary_C_SummonRandomRequest");
-static_assert(sizeof(WorldFunctionLibrary_C_SummonRandomRequest) == 0x000060, "Wrong size on WorldFunctionLibrary_C_SummonRandomRequest");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, summonerId) == 0x000000, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::summonerId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, index) == 0x000004, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::index' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, transform) == 0x000010, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::transform' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, skillId) == 0x000050, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::skillId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, isVisible) == 0x000054, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::isVisible' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, __WorldContext) == 0x000058, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::__WorldContext' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SummonRandomRequest;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetSummonRandomEntity
 // 0x0018 (0x0018 - 0x0000)
@@ -2329,12 +1718,38 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(WorldFunctionLibrary_C_GetSummonRandomEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetSummonRandomEntity");
-static_assert(sizeof(WorldFunctionLibrary_C_GetSummonRandomEntity) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetSummonRandomEntity");
-static_assert(offsetof(WorldFunctionLibrary_C_GetSummonRandomEntity, summonerId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetSummonRandomEntity::summonerId' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetSummonRandomEntity, index) == 0x000004, "Member 'WorldFunctionLibrary_C_GetSummonRandomEntity::index' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetSummonRandomEntity, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetSummonRandomEntity::__WorldContext' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_GetSummonRandomEntity, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetSummonRandomEntity::ReturnValue' has a wrong offset!");
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetSummonRandomEntity;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetTrapDefenseUseBpUsing
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_GetTrapDefenseUseBpUsing final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetTrapDefenseUseBpUsing;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.DisableAllRoleWithoutControl
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_DisableAllRoleWithoutControl final
+{
+public:
+	bool                                          needEffect;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_DisableAllRoleWithoutControl;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetFormationActors
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_GetFormationActors final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class AActor*>                         ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ReturnParm)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetFormationActors;
 
 }
 

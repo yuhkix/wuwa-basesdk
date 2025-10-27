@@ -25,29 +25,31 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_TsCharacterController_C;            // 0x0778(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void OnSetupInputComponent();
-	void OnSetUiRootDeactivate();
-	void OnSetUiRootActive();
-	void ReceivePostProcessInput(const float DeltaTime, const bool bGamePaused);
-	void ReceivePreProcessInput(const float DeltaTime, const bool bGamePaused);
-	void ReceivePossess(class APawn* PossessedPawn);
-	void ReceiveBeginPlay();
-	void ReceiveUnPossess(class APawn* UnpossessedPawn);
 	void ExecuteUbergraph_TsCharacterController(int32 EntryPoint);
+	void ReceiveUnPossess(class APawn* UnpossessedPawn);
+	void ReceiveBeginPlay();
+	void ReceivePossess(class APawn* PossessedPawn);
+	void ReceivePreProcessInput(const float DeltaTime, const bool bGamePaused);
+	void ReceivePostProcessInput(const float DeltaTime, const bool bGamePaused);
+	void OnSetUiRootActive();
+	void OnSetUiRootDeactivate();
+	void OnSetupInputComponent();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"TsCharacterController_C">();
+		BP_STATIC_CLASS_IMPL("TsCharacterController_C")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TsCharacterController_C")
 	}
 	static class ATsCharacterController_C* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ATsCharacterController_C>();
 	}
 };
-static_assert(alignof(ATsCharacterController_C) == 0x000008, "Wrong alignment on ATsCharacterController_C");
-static_assert(sizeof(ATsCharacterController_C) == 0x000780, "Wrong size on ATsCharacterController_C");
-static_assert(offsetof(ATsCharacterController_C, UberGraphFrame_TsCharacterController_C) == 0x000778, "Member 'ATsCharacterController_C::UberGraphFrame_TsCharacterController_C' has a wrong offset!");
+DUMPER7_ASSERTS_ATsCharacterController_C;
 
 }
 
